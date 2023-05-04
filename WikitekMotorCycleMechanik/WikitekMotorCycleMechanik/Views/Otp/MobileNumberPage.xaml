@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.Otp.MobileNumberPage"
+             xmlns:local="clr-namespace:WikitekMotorCycleMechanik.CustomControls"
+             Title="Forgot Password"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <Grid RowSpacing="0" Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75*"/>
+                <RowDefinition Height="25*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" VerticalOptions="Center" RowSpacing="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" 
+                       Text="Enter your registered mobile number"
+                       Style="{StaticResource lbl}" 
+                       HorizontalTextAlignment="Center"/>
+                <Frame Grid.Row="1" Style="{StaticResource frame}" VerticalOptions="Center" Margin="20,0,20,0">
+                    <local:CustomEntry x:Name="txt_new_pass" 
+                                       Text="{Binding mobile_number}"
+                                       Placeholder="Enter here...." 
+                                       Keyboard="Numeric"
+                                       MaxLength="10"
+                                       Style="{StaticResource ent}"/>
+                </Frame>
+            </Grid>
+            <Button Grid.Row="1" Text="Submit" 
+                    Style="{StaticResource btn}"
+                    Command="{Binding SubmitCommand}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

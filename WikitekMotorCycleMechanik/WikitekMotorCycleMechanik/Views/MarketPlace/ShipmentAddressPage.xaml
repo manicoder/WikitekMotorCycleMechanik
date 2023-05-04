@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.MarketPlace.ShipmentAddressPage"
+             xmlns:local="clr-namespace:WikitekMotorCycleMechanik.CustomControls"
+             xmlns:converter="clr-namespace:WikitekMotorCycleMechanik.Converters"
+             BackgroundColor="{StaticResource page_bg_color}"
+             Title="SHIPMENT ADDRESS">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:DropDownTextColor x:Key="color" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid RowSpacing="10" Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label
+                        Grid.Row="0"
+                        Text="Billing Address : "
+                        Style="{StaticResource lbl}"
+                        Margin="0"
+                        FontAttributes="Bold"/>
+
+                    <Frame Grid.Row="1" Style="{StaticResource frame}">
+                        <local:CustomEntry Text="{Binding user_nameBilling,Mode=TwoWay}"
+                                   Placeholder="User name" 
+                                   Style="{StaticResource ent}"/>
+                    </Frame>
+
+                    <Frame Grid.Row="2" Style="{StaticResource frame}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1.5"/>
+                                <ColumnDefinition>
+                                    <ColumnDefinition.Width>
+                                        <OnIdiom x:TypeArguments="GridLength" Tablet="40" Phone="35" />
+                                    </ColumnDefinition.Width>
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="txt_country1" 
+                                        Text="{Binding countryBilling}" 
+                                        Style="{StaticResource ent}" 
+                                        VerticalTextAlignment="Center"
+                                        Margin="5,0"
+                                        TextColor="{Binding Source={x:Reference txt_country1},Path=Text,Converter={StaticResource color}}" />
+                            <BoxView Grid.Column="1" 
+                                        BackgroundColor="{StaticResource theme_color}"/>
+                            <Image Grid.Column="2" 
+                                        Source="ic_sort_down.png"
+                                        HorizontalOptions="Center" 
+                                        VerticalOptions="Center" >
+                            </Image>
+
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CountryBillingCommand}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+
+                    <Frame Grid.Row="3" Style="{StaticResource frame}">
+                        <local:CustomEntry Text="{Binding pin_codeBilling}" 
+                                   Placeholder="Pin code"  
+                                   Style="{StaticResource ent}"
+                                   Keyboard="Numeric"/>
+                    </Frame>
+
+                    <Frame Grid.Row="4" 
+                                Style="{StaticResource frame}"
+                                IsVisible="{Binding is_visible2}">
+                        <Label Text="{Binding pincode_detailBilling.district.name}" 
+                                   Style="{StaticResource lbl}"
+                               VerticalTextAlignment="Center"/>
+                    </Frame>
+
+                    <Frame Grid.Row="5" 
+                                Style="{StaticResource frame}" 
+                                IsVisible="{Binding is_visible2}">
+                        <Label Text="{Binding pincode_detailBilling.district.state.name}" 
+                                   Style="{StaticResource lbl}"
+                               VerticalTextAlignment="Center"/>
+                    </Frame>
+
+                    <Frame Grid.Row="6" 
+                                Style="{StaticResource frame}" 
+                                Padding="15,0,15,4" 
+                                HeightRequest="70"
+                                IsVisible="{Binding is_visible2}">
+                        <local:CustomEditor Text="{Binding addressBilling}" 
+                                    Placeholder="Address"  
+                                    Style="{StaticResource editor}"
+                                    VerticalOptions="CenterAndExpand"/>
+                    </Frame>
+
+                    <Grid Grid.Row="7" ColumnDefinitions="Auto,Auto">
+                        <CheckBox IsChecked="{Binding isSelected}"
+                                  Color="{StaticResource theme_color}"/>
+                        <ImageButton
+                                BackgroundColor="Transparent"
+                                Command="{Binding CheckChangedCommand}"/>
+                        <Label 
+                                Grid.Column="1"
+                                Text="My Billing and Shipping address are same."
+                                Style="{StaticResource lbl}"
+                                VerticalTextAlignment="Center"/>
+                    </Grid>
+
+                    <Grid Grid.Row="8" IsVisible="{Binding isBillingVisible}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label
+                            Grid.Row="0"
+                            Text="Shipping Address : "
+                            Style="{StaticResource lbl}"
+                            Margin="0"
+                            FontAttributes="Bold"/>
+
+                        <Frame Grid.Row="1" Style="{StaticResource frame}">
+                            <local:CustomEntry Text="{Binding user_name,Mode=TwoWay}"
+                                   Placeholder="User name" 
+                                   Style="{StaticResource ent}"/>
+                        </Frame>
+
+                        <Frame Grid.Row="2" Style="{StaticResource frame}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="1.5"/>
+                                    <ColumnDefinition>
+                                        <ColumnDefinition.Width>
+                                            <OnIdiom x:TypeArguments="GridLength" Tablet="40" Phone="35" />
+                                        </ColumnDefinition.Width>
+                                    </ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label x:Name="txt_country" 
+                                    Text="{Binding country}" 
+                                    Style="{StaticResource ent}" 
+                                    VerticalTextAlignment="Center"
+                                    Margin="5,0"
+                                    TextColor="{Binding Source={x:Reference txt_country},Path=Text,Converter={StaticResource color}}" />
+                                <BoxView Grid.Column="1" 
+                                    BackgroundColor="{StaticResource theme_color}"/>
+                                <Image Grid.Column="2" 
+                                    Source="ic_sort_down.png"
+                                    HorizontalOptions="Center" 
+                                    VerticalOptions="Center" >
+                                </Image>
+                                <!--<Label Grid.Column="2" 
+                           Text="&#xF035D;" 
+                           TextColor="{StaticResource theme_color}"
+                           HorizontalTextAlignment="Center" 
+                           VerticalTextAlignment="Center" >
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Tablet="50" Phone="40"/>
+                        </Label.FontSize>
+                    </Label>-->
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding CountryCommand}"/>
+                                </Grid.GestureRecognizers>
+                            </Grid>
+                        </Frame>
+
+                        <Frame Grid.Row="3" Style="{StaticResource frame}">
+                            <local:CustomEntry Text="{Binding pin_code}" 
+                                   Placeholder="Pin code"  
+                                   Style="{StaticResource ent}"
+                                   Keyboard="Numeric"/>
+                        </Frame>
+
+                        <Frame Grid.Row="4" 
+                            Style="{StaticResource frame}"
+                            IsVisible="{Binding is_visible}">
+                            <Label Text="{Binding pincode_detail.district.name}" 
+                                   Style="{StaticResource lbl}"
+                                   VerticalTextAlignment="Center"/>
+                        </Frame>
+
+                        <Frame Grid.Row="5" 
+                            Style="{StaticResource frame}" 
+                            IsVisible="{Binding is_visible}">
+                            <Label Text="{Binding pincode_detail.district.state.name}" 
+                                   Style="{StaticResource lbl}"
+                                   VerticalTextAlignment="Center"/>
+                        </Frame>
+
+                        <Frame Grid.Row="6" 
+                            Style="{StaticResource frame}" 
+                            Padding="15,0,15,4" 
+                            HeightRequest="70"
+                            IsVisible="{Binding is_visible}">
+                            <local:CustomEditor Text="{Binding address}" 
+                                    Placeholder="Address"  
+                                    Style="{StaticResource editor}"
+                                    VerticalOptions="CenterAndExpand"/>
+                        </Frame>
+                    </Grid>
+
+                </Grid>
+                <Button Grid.Row="9"
+                    Text="Summarize Order"
+                    Style="{StaticResource btn}"
+                    IsVisible="{Binding is_visible2}"
+                    Command="{Binding SummarizeOrderCommand}"
+                    Margin="10"/>
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

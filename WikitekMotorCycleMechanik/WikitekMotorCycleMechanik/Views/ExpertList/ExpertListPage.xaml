@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.ExpertList.ExpertListPage"
+             Title="Experts"
+             BackgroundColor="{StaticResource page_bg_color}"
+             x:Name="page">
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding expert_list}" 
+                  HasUnevenRows="true" 
+                  SeparatorVisibility="Default" 
+                  VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame HasShadow="True" CornerRadius="3" Padding="5,2,5,2" Margin="5">
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="1"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid Margin="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0" RowSpacing="3">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" Text="{Binding first_name}"
+                                                   Style="{StaticResource lbl}" />
+                                        <Label Grid.Row="1" Text="{Binding workshop}" 
+                                                   Style="{StaticResource lbl}" />
+                                    </Grid>
+                                    <Label Grid.Column="1" 
+                                           Text="{Binding status}" 
+                                           TextColor="{Binding status_color}"
+                                           HorizontalTextAlignment="End"
+                                           Style="{StaticResource lbl}" 
+                                           FontAttributes="Bold" />
+                                </Grid>
+                                <BoxView Grid.Row="1" BackgroundColor="#B2B2B2"></BoxView>
+                                <Grid Grid.Row="2" Margin="5" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0" RowSpacing="3">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" Text="{Binding mobile}" Style="{StaticResource lbl}"/>
+                                        <Label Grid.Row="1" Text="Request Remote Support?" 
+                                                   Style="{StaticResource lbl}"/>
+                                    </Grid>
+                                    <Button Grid.Column="1" 
+                                            Text="Send Request" 
+                                            HorizontalOptions="End"
+                                            VerticalOptions="Center"
+                                            TextColor="#FFF"
+                                            BackgroundColor="{StaticResource theme_color}"
+                                            IsEnabled="{Binding btnIsActive}" 
+                                            Command="{Binding Source={x:Reference page}, Path=BindingContext.SendRemoteRequestCommand}"
+                                            CommandParameter="{Binding .}"/>
+                                </Grid>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

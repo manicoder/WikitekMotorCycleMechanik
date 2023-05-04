@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  mc:Ignorable="d"
+                  x:Class="WikitekMotorCycleMechanik.Views.MasterDetail.MasterDetailView"
+                  xmlns:converter="clr-namespace:WikitekMotorCycleMechanik.Converters"
+                  BackgroundColor="{StaticResource page_bg_color}"
+                  NavigationPage.HasNavigationBar="False">
+    <MasterDetailPage.Resources>
+        <converter:ByteToImageFieldConverterUser x:Key="ByteToImage" />
+        <Style x:Key="lbl" TargetType="Label">
+            <Setter Property="TextColor" Value="#424949" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+        </Style>
+
+
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="#f9f9f9" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+
+    </MasterDetailPage.Resources>
+    <MasterDetailPage.Master>
+        <ContentPage Title="Master Page">
+            <ContentPage.Resources>
+                <ResourceDictionary>
+                    <converter:ImageSourceConverter x:Key="color" />
+                </ResourceDictionary>
+            </ContentPage.Resources>
+            <ContentPage.Content>
+                <Grid RowSpacing="0" BackgroundColor="#FFF">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid BackgroundColor="{StaticResource theme_color}" RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="12"/>
+                            <!--<RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="15" Phone="15" />
+                            </RowDefinition.Height>-->
+
+                            <RowDefinition>
+                                <RowDefinition.Height>
+                                    <OnIdiom x:TypeArguments="GridLength" Tablet="120" Phone="100" />
+                                </RowDefinition.Height>
+                            </RowDefinition>
+                            <RowDefinition Height="12"/>
+
+                            <RowDefinition Height="Auto"/>
+
+                            <RowDefinition Height="Auto"/>
+
+                            <RowDefinition Height="12"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition>
+                                    <ColumnDefinition.Width>
+                                        <OnIdiom x:TypeArguments="GridLength" Tablet="120" Phone="100" />
+                                    </ColumnDefinition.Width>
+                                </ColumnDefinition>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+                                <Frame HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" CornerRadius="60"
+                                       Padding="0" BorderColor="#ffffff" >
+                                    <Grid>
+                                        <Image x:Name="user_image" 
+                                               Source="{Binding user.picture_local,Converter={StaticResource ByteToImage}}" 
+                                               Aspect="Fill"/>
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </Grid>
+                        <Label Grid.Row="3" Text="{Binding user_name}" Style="{StaticResource lbl}" TextColor="#fff"
+                               HorizontalTextAlignment="Center">
+                        </Label>
+                        <Label Grid.Row="4" Text="{Binding user.role}" Style="{StaticResource lbl}"
+                               TextColor="#fff" HorizontalTextAlignment="Center"/>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="profile_Tapped"/>
+                        </Grid.GestureRecognizers>
+                    </Grid>
+
+                    <ListView Grid.Row="1" 
+                              x:Name="listView" 
+                              ItemsSource="{Binding menu_list}" 
+                              SeparatorVisibility="Default" 
+                              HasUnevenRows="True"
+                              VerticalOptions="FillAndExpand"
+                              ItemTapped="listView_ItemTapped" 
+                              Margin="0,5,0,0">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell Height="45">
+                                    <Grid ColumnDefinitions="45,*" ColumnSpacing="5" VerticalOptions="FillAndExpand" Margin="3,0,0,0">
+                                        <Image Grid.Column="0" 
+                                               Source="{Binding IconSource}"
+                                               Margin="{Binding IconMargin}"/>
+                                        <Label Grid.Column="1" 
+                                               Text="{Binding Title}"
+                                               Style="{StaticResource lbl}" >
+                                        </Label>
+                                        <!--<Grid.HeightRequest>
+                                            <OnIdiom x:TypeArguments="x:Double" Phone="50" Tablet="50" />
+                                        </Grid.HeightRequest>-->
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <!--<CollectionView Grid.Row="1" ItemsSource="{Binding menu_list}" 
+                                    ItemSizingStrategy="MeasureAllItems">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical" ItemSpacing="0" />
+                        </CollectionView.ItemsLayout>
+                       <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="55"/>
+                                        <RowDefinition Height="1"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Text="{Binding name}" Style="{StaticResource lbl}"
+                                           ClassId="dcli">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="menu_clicked"/>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <BoxView Grid.Row="1" BackgroundColor="{StaticResource theme_color}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                        <CollectionView.EmptyView>
+                            <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                <Label Text="No jobcard found." FontAttributes="Bold" FontSize="18"
+                               TextColor="{StaticResource text_color}" VerticalTextAlignment="Center"
+                               HorizontalTextAlignment="Center" />
+                            </Grid>
+                        </CollectionView.EmptyView>
+                    </CollectionView>-->
+                    <Label Grid.Row="2" Text="Help Line No: 9028347071" 
+                           HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                           FontSize="18" TextColor="{StaticResource theme_color}"
+                           FontAttributes="Bold"/>
+                    <Label Grid.Row="3" x:Name="AppV" Text="{Binding version,Mode=TwoWay}" 
+                           HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                           FontSize="15" TextColor="#424949"/>
+                </Grid>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>

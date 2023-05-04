@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="launcher_background">#FFFFFF</color>
+  <color name="splash_background">#FFFFFF</color>
+  
+  <color name="wikitekColorPrimary">#3e4095</color>
+  <color name="wikitekColorAccent">#3e4095</color>
+  <color name="wikitekColorPrimaryDark">#313377</color>
+
+  <color name="rsangleColorPrimary">#37a437</color>
+  <color name="rsangleColorAccent">#37a437</color>
+  <color name="rsangleColorPrimaryDark">#2c832c</color>
+
+  <color name="mobitekColorPrimary">#b85e00</color>
+  <color name="mobitekColorAccent">#b85e00</color>
+  <color name="mobitekColorPrimaryDark">#934b00</color>
+</resources>

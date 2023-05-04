@@ -1,0 +1,3252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ABBREVIATIONS" xml:space="preserve">
+    <value>ಅಬ್ಬರಿವಿಯೇಷನ್ಸ್ </value>
+  </data>
+  <data name="abnormal" xml:space="preserve">
+    <value>ಅಬ್ನಾರ್ಮಲ್ </value>
+  </data>
+  <data name="abnormally" xml:space="preserve">
+    <value>ಅಬ್ನೊರ್ಮಲಿ </value>
+  </data>
+  <data name="above" xml:space="preserve">
+    <value>ಅಬೊವ್ </value>
+  </data>
+  <data name="abs" xml:space="preserve">
+    <value>ಎಬಿಎಸ್ </value>
+  </data>
+  <data name="absolute" xml:space="preserve">
+    <value>ಅಭ್ಸೋಲೂಟ್</value>
+  </data>
+  <data name="accelarter" xml:space="preserve">
+    <value>ಆಕ್ಸಿಲರೇಟರ್ </value>
+  </data>
+  <data name="accelerator" xml:space="preserve">
+    <value>ಆಕ್ಸಿಲರೇಟರ್ </value>
+  </data>
+  <data name="accept" xml:space="preserve">
+    <value>ಅಚ್ಛೇಪ್ಟ್ </value>
+  </data>
+  <data name="access" xml:space="preserve">
+    <value>ಆಕ್ಸೆಸ್ </value>
+  </data>
+  <data name="achieved" xml:space="preserve">
+    <value>ಆಚೆಈವೆಡ್ </value>
+  </data>
+  <data name="act" xml:space="preserve">
+    <value>ಆಕ್ಟ್ </value>
+  </data>
+  <data name="activated" xml:space="preserve">
+    <value>ಆಕ್ಟಿವಾಟೆಡ್ </value>
+  </data>
+  <data name="active" xml:space="preserve">
+    <value>ಆಕ್ಟಿವ್ </value>
+  </data>
+  <data name="activity" xml:space="preserve">
+    <value>ಆಕ್ಟಿವಿಟಿ  </value>
+  </data>
+  <data name="actual" xml:space="preserve">
+    <value>ಅಕ್ಟುಅಲ್ಲ್ </value>
+  </data>
+  <data name="actuation" xml:space="preserve">
+    <value>ಅಕ್ಟುಯೇಷನ್ </value>
+  </data>
+  <data name="actuator" xml:space="preserve">
+    <value>ಅಕ್ಟುಟರ್</value>
+  </data>
+  <data name="adaptive" xml:space="preserve">
+    <value>ಅಡಾಪ್ಟಿವ್ </value>
+  </data>
+  <data name="Additional" xml:space="preserve">
+    <value>ಅಡಿಷನಲ್ </value>
+  </data>
+  <data name="adjustment" xml:space="preserve">
+    <value>ಅಡ್ಜಸ್ಟ್ಮೆಂಟ್ </value>
+  </data>
+  <data name="admissible" xml:space="preserve">
+    <value>ಅಡ್ಮಿಸ್ಸಿಬ್ಳೆ </value>
+  </data>
+  <data name="advance" xml:space="preserve">
+    <value>ಅಡ್ವಾನ್ಸ್ </value>
+  </data>
+  <data name="adverse" xml:space="preserve">
+    <value>ಆಡ್ವೇರ್ಸ್ </value>
+  </data>
+  <data name="after" xml:space="preserve">
+    <value>ಆಫ್ಟರ್ </value>
+  </data>
+  <data name="aftertreatment" xml:space="preserve">
+    <value>ಆಫ್ಟರ್ ಟ್ರೀಟ್ಮೆಂಟ್ </value>
+  </data>
+  <data name="again" xml:space="preserve">
+    <value>ಅಗೈನ್ </value>
+  </data>
+  <data name="air" xml:space="preserve">
+    <value>ಏರ್  </value>
+  </data>
+  <data name="airflow" xml:space="preserve">
+    <value>ಐರ್ಫ್ಲೌ </value>
+  </data>
+  <data name="alarm" xml:space="preserve">
+    <value>ಅಲಾರ್ಮ್ </value>
+  </data>
+  <data name="alive" xml:space="preserve">
+    <value>ಅಲ್ಯ್ವ್ </value>
+  </data>
+  <data name="allowable" xml:space="preserve">
+    <value>ಅಲ್ಲೋವಬ್ಲ್ </value>
+  </data>
+  <data name="allowed" xml:space="preserve">
+    <value>ಅಲೋವೆಡ್ </value>
+  </data>
+  <data name="also" xml:space="preserve">
+    <value>ಆಲ್ಸೋ </value>
+  </data>
+  <data name="alternative" xml:space="preserve">
+    <value>ಆಲ್ಟರ್ನೇಟಿವ್ </value>
+  </data>
+  <data name="ambient" xml:space="preserve">
+    <value>ಆಂಬಿಯೆಂಟ್</value>
+  </data>
+  <data name="amplitude" xml:space="preserve">
+    <value>ಅಂಪ್ಲಿಟ್ಯೂಡ್</value>
+  </data>
+  <data name="an" xml:space="preserve">
+    <value>ಆನ್ </value>
+  </data>
+  <data name="analog" xml:space="preserve">
+    <value>ಅನಲಾಗ್ </value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>ಅಂಡ್ </value>
+  </data>
+  <data name="angles" xml:space="preserve">
+    <value>ಏಂಗೆಲ್ಸ್ </value>
+  </data>
+  <data name="anticipate" xml:space="preserve">
+    <value>ಅಂಟಿಸಿಪೇಟ್ </value>
+  </data>
+  <data name="any" xml:space="preserve">
+    <value>ಎನಿ </value>
+  </data>
+  <data name="appearance" xml:space="preserve">
+    <value>ಅಪಿಯರೆನ್ಸ್ </value>
+  </data>
+  <data name="APPLICATION" xml:space="preserve">
+    <value>ಅಪ್ಲಿಕೇಶನ್ </value>
+  </data>
+  <data name="approximate" xml:space="preserve">
+    <value>ಅಪಪ್ರಾಕ್ಸಿಮಾಟ್ </value>
+  </data>
+  <data name="are" xml:space="preserve">
+    <value>ಆರ್ </value>
+  </data>
+  <data name="area" xml:space="preserve">
+    <value>ಏರಿಯಾ </value>
+  </data>
+  <data name="as" xml:space="preserve">
+    <value>ಎಸ್</value>
+  </data>
+  <data name="assembly" xml:space="preserve">
+    <value>ಅಸ್ಸೆಂಬಲಿ </value>
+  </data>
+  <data name="assisted" xml:space="preserve">
+    <value>ಅಸ್ಸಿಸ್ಟಡ್ </value>
+  </data>
+  <data name="at" xml:space="preserve">
+    <value>ಅಟ್ </value>
+  </data>
+  <data name="atlow" xml:space="preserve">
+    <value>ಅಟ್ ಲೊ </value>
+  </data>
+  <data name="atmospheric" xml:space="preserve">
+    <value>ಆತ್ಮೋಸ್ಫೆರಿಕ್ </value>
+  </data>
+  <data name="attempted" xml:space="preserve">
+    <value>ಅಟ್ಟಂಪ್ಟೆಡ್ </value>
+  </data>
+  <data name="authorised" xml:space="preserve">
+    <value>ಆಥೋರಿಜ್ಡ್ </value>
+  </data>
+  <data name="authorization" xml:space="preserve">
+    <value>ಆಥೋರಿಝಷನ್ </value>
+  </data>
+  <data name="auto" xml:space="preserve">
+    <value>ಆಟೋ </value>
+  </data>
+  <data name="automatic" xml:space="preserve">
+    <value>ಆಟೋಮ್ಯಾಟಿಕ್ </value>
+  </data>
+  <data name="auxiliary" xml:space="preserve">
+    <value>ಆಕ್ಸಿಲರಿ </value>
+  </data>
+  <data name="average" xml:space="preserve">
+    <value>ಆವರೇಜ್  </value>
+  </data>
+  <data name="back" xml:space="preserve">
+    <value>ಬ್ಯಾಕ್ </value>
+  </data>
+  <data name="backbone" xml:space="preserve">
+    <value>ಬ್ಯಾಕ್ ಬೋನ್ </value>
+  </data>
+  <data name="background" xml:space="preserve">
+    <value>ಬ್ಯಾಕ್ ಗ್ರೌಂಡ್ </value>
+  </data>
+  <data name="bad" xml:space="preserve">
+    <value>ಬ್ಯಾಡ </value>
+  </data>
+  <data name="balance" xml:space="preserve">
+    <value>ಬ್ಯಾಲೆನ್ಸ್ </value>
+  </data>
+  <data name="bank" xml:space="preserve">
+    <value>ಬ್ಯಾಂಕ್ </value>
+  </data>
+  <data name="banks" xml:space="preserve">
+    <value>ಬ್ಯಾಂಕ್ಸ್ </value>
+  </data>
+  <data name="barometer" xml:space="preserve">
+    <value>ಬ್ಯಾರೋಮೀಟರ್ </value>
+  </data>
+  <data name="barometric" xml:space="preserve">
+    <value>ಬರೊಮೆಟ್ರಿಕ್ </value>
+  </data>
+  <data name="based" xml:space="preserve">
+    <value>ಬೇಸ್ಡ್ </value>
+  </data>
+  <data name="basic" xml:space="preserve">
+    <value>ಬೇಸಿಕ್ </value>
+  </data>
+  <data name="Batter" xml:space="preserve">
+    <value>ಬ್ಯಾಟರ್ </value>
+  </data>
+  <data name="battery" xml:space="preserve">
+    <value>ಬ್ಯಾಟರಿ </value>
+  </data>
+  <data name="be" xml:space="preserve">
+    <value>ಬಿ </value>
+  </data>
+  <data name="because" xml:space="preserve">
+    <value>ಬಿಕೌಸ</value>
+  </data>
+  <data name="been" xml:space="preserve">
+    <value>ಬೀನ್ </value>
+  </data>
+  <data name="Beep" xml:space="preserve">
+    <value>ಬೀಪ್ </value>
+  </data>
+  <data name="before" xml:space="preserve">
+    <value>ಬಿಫೋರ್ </value>
+  </data>
+  <data name="begin" xml:space="preserve">
+    <value>ಬಿಗಿನ್ </value>
+  </data>
+  <data name="below" xml:space="preserve">
+    <value>ಬಿಲೋ </value>
+  </data>
+  <data name="bends" xml:space="preserve">
+    <value>ಬೆಂಡ್ಸ್ </value>
+  </data>
+  <data name="better" xml:space="preserve">
+    <value>ಬೆಟರ್ </value>
+  </data>
+  <data name="between" xml:space="preserve">
+    <value>ಬಿಟ್ವೀನ್ </value>
+  </data>
+  <data name="Blockage" xml:space="preserve">
+    <value>ಬ್ಲಾಕೇಜ್ </value>
+  </data>
+  <data name="blocked" xml:space="preserve">
+    <value>ಬ್ಲಾಕೆಡ್ </value>
+  </data>
+  <data name="blocks" xml:space="preserve">
+    <value>ಬ್ಲಾಕ್ಸ್ </value>
+  </data>
+  <data name="blown" xml:space="preserve">
+    <value>ಬ್ಲೌನ್ </value>
+  </data>
+  <data name="blue" xml:space="preserve">
+    <value>ಬ್ಲೂ </value>
+  </data>
+  <data name="body" xml:space="preserve">
+    <value>ಬಾಡಿ </value>
+  </data>
+  <data name="boost" xml:space="preserve">
+    <value>ಬೂಸ್ಟ್ </value>
+  </data>
+  <data name="booster" xml:space="preserve">
+    <value>ಬೂಸ್ಟರ್ </value>
+  </data>
+  <data name="both" xml:space="preserve">
+    <value>ಬೋಥ್ </value>
+  </data>
+  <data name="box" xml:space="preserve">
+    <value>ಬಾಕ್ಸ್ </value>
+  </data>
+  <data name="brake" xml:space="preserve">
+    <value>ಬ್ರೆಕ್ </value>
+  </data>
+  <data name="braking" xml:space="preserve">
+    <value>ಬ್ರೆಕಿಂಗ್ </value>
+  </data>
+  <data name="broken" xml:space="preserve">
+    <value>ಬ್ರೋಕನ್ </value>
+  </data>
+  <data name="buffered" xml:space="preserve">
+    <value>ಬಫ್ಫ್ರ್ಡ್ </value>
+  </data>
+  <data name="build" xml:space="preserve">
+    <value>ಬಿಲ್ಡ್ </value>
+  </data>
+  <data name="burning" xml:space="preserve">
+    <value>ಬರ್ನಿಂಗ್ </value>
+  </data>
+  <data name="bus" xml:space="preserve">
+    <value>ಬಸ್ </value>
+  </data>
+  <data name="but" xml:space="preserve">
+    <value>ಬಟ್ </value>
+  </data>
+  <data name="button" xml:space="preserve">
+    <value>ಬಟನ್ </value>
+  </data>
+  <data name="by" xml:space="preserve">
+    <value>ಬೈ </value>
+  </data>
+  <data name="bypass" xml:space="preserve">
+    <value>ಬೈಪಾಸ್ </value>
+  </data>
+  <data name="byte" xml:space="preserve">
+    <value>ಬೈಟ್ </value>
+  </data>
+  <data name="bytes" xml:space="preserve">
+    <value>ಬೈಟಸ್ </value>
+  </data>
+  <data name="calculated" xml:space="preserve">
+    <value>ಕ್ಯಾಲ್ಕ್ಯುಲೇಟೆಡ್</value>
+  </data>
+  <data name="calculation" xml:space="preserve">
+    <value>ಕ್ಯಾಲ್ಕ್ಯುಲೇಷನ್ </value>
+  </data>
+  <data name="calibration" xml:space="preserve">
+    <value>ಕ್ಯಾಲಿಬ್ರೆಷನ್ </value>
+  </data>
+  <data name="cam" xml:space="preserve">
+    <value>ಕ್ಯಾಮ್ </value>
+  </data>
+  <data name="camfault" xml:space="preserve">
+    <value>ಕ್ಯಾಮ್ ಫಾಲ್ಟ್ </value>
+  </data>
+  <data name="camshaft" xml:space="preserve">
+    <value>ಕ್ಯಾಮ್ ಶಾಫ್ಟ್ </value>
+  </data>
+  <data name="can" xml:space="preserve">
+    <value>ಕ್ಯಾನ್ </value>
+  </data>
+  <data name="cancelling" xml:space="preserve">
+    <value>ಕ್ಯಾನ್ಸೆಲ್ಲಿಂಗ್ </value>
+  </data>
+  <data name="cap" xml:space="preserve">
+    <value>ಕ್ಯಾಪ್ </value>
+  </data>
+  <data name="capacitor" xml:space="preserve">
+    <value>ಕಪಾಸಿಟರ್ </value>
+  </data>
+  <data name="carefully" xml:space="preserve">
+    <value>ಕೇರ್ಫುಲ್ಯ್ </value>
+  </data>
+  <data name="case" xml:space="preserve">
+    <value>ಕೇಸ್ </value>
+  </data>
+  <data name="catalyst" xml:space="preserve">
+    <value>ಕ್ಯಾಟಲಿಸ್ಟ್ </value>
+  </data>
+  <data name="Cause" xml:space="preserve">
+    <value>ಕಾಸ್ </value>
+  </data>
+  <data name="change" xml:space="preserve">
+    <value>ಛಂಜ್  </value>
+  </data>
+  <data name="changed" xml:space="preserve">
+    <value>ಛಂಜೆಡ್ </value>
+  </data>
+  <data name="charge" xml:space="preserve">
+    <value>ಚಾರ್ಜ್ </value>
+  </data>
+  <data name="charged" xml:space="preserve">
+    <value>ಚಾರ್ಜ್ಡ್ </value>
+  </data>
+  <data name="charger" xml:space="preserve">
+    <value>ಚಾರ್ಜರ್ </value>
+  </data>
+  <data name="check" xml:space="preserve">
+    <value>ಚೆಕ್ </value>
+  </data>
+  <data name="checked" xml:space="preserve">
+    <value>ಚೆಕ್ಕ್ದ್ </value>
+  </data>
+  <data name="checking" xml:space="preserve">
+    <value>ಚೆಕಿಂಗ್ </value>
+  </data>
+  <data name="Checkpoints" xml:space="preserve">
+    <value>ಚೆಕ್ ಪಾಯಿಂಟ್ಸ್ </value>
+  </data>
+  <data name="checksum" xml:space="preserve">
+    <value>ಚೆಕ್ ಸಂ </value>
+  </data>
+  <data name="Chocked" xml:space="preserve">
+    <value>ಚೋಕ್ಕ್ದ್ </value>
+  </data>
+  <data name="Choked" xml:space="preserve">
+    <value>ಚೋಕ್ಕ್ದ್ </value>
+  </data>
+  <data name="circuit" xml:space="preserve">
+    <value>ಸರ್ಕ್ಯೂಟ್ </value>
+  </data>
+  <data name="circuit more" xml:space="preserve">
+    <value>ಸರ್ಕ್ಯೂಟ್ ಮೋರ್ </value>
+  </data>
+  <data name="ckt" xml:space="preserve">
+    <value>ಸರ್ಕ್ಯೂಟ್ </value>
+  </data>
+  <data name="claim" xml:space="preserve">
+    <value>ಕ್ಲೇಮ್ </value>
+  </data>
+  <data name="classified" xml:space="preserve">
+    <value>ಕ್ಲಾಸ್ಸಿಫಿಎಡ್ </value>
+  </data>
+  <data name="clear" xml:space="preserve">
+    <value>ಕ್ಲಿಯರ್ </value>
+  </data>
+  <data name="cleared" xml:space="preserve">
+    <value>ಕ್ವೀರೆಡ್ </value>
+  </data>
+  <data name="clock" xml:space="preserve">
+    <value>ಕ್ಲಾಕ್ </value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>ಕ್ಲೋಸ್ </value>
+  </data>
+  <data name="closed" xml:space="preserve">
+    <value>ಕ್ಲೋಸ್ಡ್ </value>
+  </data>
+  <data name="cluster" xml:space="preserve">
+    <value>ಕ್ಲಸ್ಟರ್ </value>
+  </data>
+  <data name="clutch" xml:space="preserve">
+    <value>ಕ್ಲಚ್ </value>
+  </data>
+  <data name="coast" xml:space="preserve">
+    <value>ಕೋಸ್ಟ್ </value>
+  </data>
+  <data name="code" xml:space="preserve">
+    <value>ಕೋಡ್ </value>
+  </data>
+  <data name="codes" xml:space="preserve">
+    <value>ಕೋಡ್ಸ  </value>
+  </data>
+  <data name="cogwheels" xml:space="preserve">
+    <value>ಕಾಗ್ ವಿಹೀಲ್ಸ್ </value>
+  </data>
+  <data name="coil" xml:space="preserve">
+    <value>ಕಾಯಿಲ್ </value>
+  </data>
+  <data name="cold" xml:space="preserve">
+    <value>ಕೋಲ್ಡ್ </value>
+  </data>
+  <data name="come" xml:space="preserve">
+    <value>ಕಮ್ </value>
+  </data>
+  <data name="coming" xml:space="preserve">
+    <value>ಕಮಿಂಗ್ </value>
+  </data>
+  <data name="command" xml:space="preserve">
+    <value>ಕಮಾಂಡ್ </value>
+  </data>
+  <data name="commanded" xml:space="preserve">
+    <value>ಕಮಾಂಡೇಡ್ </value>
+  </data>
+  <data name="common" xml:space="preserve">
+    <value>ಕಾಮನ್ </value>
+  </data>
+  <data name="communication" xml:space="preserve">
+    <value>ಕಮ್ಯುನಿಕೇಷನ್</value>
+  </data>
+  <data name="compare" xml:space="preserve">
+    <value>ಕಂಪೇರ್ </value>
+  </data>
+  <data name="comparison" xml:space="preserve">
+    <value>ಕಂಪ್ಯಾರಿಸನ್ </value>
+  </data>
+  <data name="complete" xml:space="preserve">
+    <value>ಕಂಪ್ಲೀಟ್ </value>
+  </data>
+  <data name="completed" xml:space="preserve">
+    <value>ಕಂಪ್ಲೀಟೆಡ್ </value>
+  </data>
+  <data name="completely" xml:space="preserve">
+    <value>ಕಂಪ್ಲೇಟೇಲಿ </value>
+  </data>
+  <data name="completion" xml:space="preserve">
+    <value>ಕಂಪ್ಲೀಷನ್ </value>
+  </data>
+  <data name="component" xml:space="preserve">
+    <value>ಕಂಪೋನೆಂಟ್ </value>
+  </data>
+  <data name="composition" xml:space="preserve">
+    <value>ಕಂಪೋಸಿಷನ್ </value>
+  </data>
+  <data name="compressor" xml:space="preserve">
+    <value>ಕಂಪ್ರೆಸರ್  </value>
+  </data>
+  <data name="concerning" xml:space="preserve">
+    <value>ಕಾನ್ಸರ್ನಿಂಗ್ </value>
+  </data>
+  <data name="condition" xml:space="preserve">
+    <value>ಕಂಡೀಶನ್ </value>
+  </data>
+  <data name="conditioner" xml:space="preserve">
+    <value>ಕಂಡೀಷನರ್ </value>
+  </data>
+  <data name="conditions" xml:space="preserve">
+    <value>ಕಂಡಿಷನ್ಸ್ </value>
+  </data>
+  <data name="configuration" xml:space="preserve">
+    <value>ಕಾಂಫಿಗುರೇಶನ್ </value>
+  </data>
+  <data name="confirm" xml:space="preserve">
+    <value>ಕನ್ಫರ್ಮ್ </value>
+  </data>
+  <data name="confirmation" xml:space="preserve">
+    <value>ಕನ್ಫರ್ಮ್ಯಾಟ್ನ್ </value>
+  </data>
+  <data name="conforms" xml:space="preserve">
+    <value>ಕಂಫಾರ್ಮ್ಸ್ </value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>ಕನೆಕ್ಟ್ </value>
+  </data>
+  <data name="connected" xml:space="preserve">
+    <value>ಕನೆಕ್ಟೆಡ್ </value>
+  </data>
+  <data name="Connecting" xml:space="preserve">
+    <value>ಕನೆಕ್ಟಿಂಗ್ </value>
+  </data>
+  <data name="connection" xml:space="preserve">
+    <value>ಕನೆಕ್ಷನ್ </value>
+  </data>
+  <data name="connections" xml:space="preserve">
+    <value>ಕಾಂನೆಕ್ಟರ್ಸ್ </value>
+  </data>
+  <data name="connector" xml:space="preserve">
+    <value>ಕನೆಕ್ಟರ್ </value>
+  </data>
+  <data name="connectors" xml:space="preserve">
+    <value>ಕಣ್ಣೇಕ್ಟರ್ಸ್ </value>
+  </data>
+  <data name="consent" xml:space="preserve">
+    <value>ಕನ್ಸೆಂಟ್ </value>
+  </data>
+  <data name="consistant" xml:space="preserve">
+    <value>ಕಾನ್ಸಿಸ್ಟನ್ಟ್ </value>
+  </data>
+  <data name="consumption" xml:space="preserve">
+    <value>ಕಾಣ್ಸುಮ್ಪ್ಟ್ನ್ </value>
+  </data>
+  <data name="CONTENTS" xml:space="preserve">
+    <value>ಕಂಟೆಂಟ್ಸ </value>
+  </data>
+  <data name="continuity" xml:space="preserve">
+    <value>ಕಂಟಿನ್ಯೂಇಟಿ </value>
+  </data>
+  <data name="continuously" xml:space="preserve">
+    <value>ಕಂಟಿನ್ಯೂಔಸಲಿ </value>
+  </data>
+  <data name="contribution" xml:space="preserve">
+    <value>ಕಾಂಟ್ರಿಬ್ಯುಶನ್ </value>
+  </data>
+  <data name="control" xml:space="preserve">
+    <value>ಕಂಟ್ರೋಲ್  </value>
+  </data>
+  <data name="controlled" xml:space="preserve">
+    <value>ಕಂಟ್ರೋಲ್ಡ್ </value>
+  </data>
+  <data name="controller" xml:space="preserve">
+    <value>ಕಾಂಟ್ರೋಲ್ಲೆರ್ </value>
+  </data>
+  <data name="converging" xml:space="preserve">
+    <value>ಕಾನ್ವೆರ್ಜಿಂಗ್ </value>
+  </data>
+  <data name="conversion" xml:space="preserve">
+    <value>ಕನ್ವರ್ಷನ್ </value>
+  </data>
+  <data name="converter" xml:space="preserve">
+    <value>ಕನ್ವರ್ಟರ್ </value>
+  </data>
+  <data name="cool" xml:space="preserve">
+    <value>ಕೂಲ್ </value>
+  </data>
+  <data name="coolant" xml:space="preserve">
+    <value>ಕೂಲಂಟ್ </value>
+  </data>
+  <data name="COOLED" xml:space="preserve">
+    <value>ಕೋಲ್ಡ್ </value>
+  </data>
+  <data name="cooler" xml:space="preserve">
+    <value>ಕೂಲರ್ </value>
+  </data>
+  <data name="cooling" xml:space="preserve">
+    <value>ಕೂಲಿಂಗ್ </value>
+  </data>
+  <data name="coordinator" xml:space="preserve">
+    <value>ಕೋ ಆರ್ಡ್ನಟ್ </value>
+  </data>
+  <data name="copying" xml:space="preserve">
+    <value>ಕಾಪಿರೈಟ್ </value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>ಕಾಪಿರೈಟ್ </value>
+  </data>
+  <data name="correct" xml:space="preserve">
+    <value>ಕರೆಕ್ಟ್ </value>
+  </data>
+  <data name="corrected" xml:space="preserve">
+    <value>ಕರೆಕ್ಟ್ದ್ </value>
+  </data>
+  <data name="correction" xml:space="preserve">
+    <value>ಕರೆಕ್ಷನ್ </value>
+  </data>
+  <data name="corrections" xml:space="preserve">
+    <value>ಕರೆಕ್ಷನ್ಸ್ </value>
+  </data>
+  <data name="correlation" xml:space="preserve">
+    <value>ಕೋರಿಲೆಷನ್ </value>
+  </data>
+  <data name="correleation" xml:space="preserve">
+    <value>ಕೋರಿಲೆಷನ್ </value>
+  </data>
+  <data name="COTTON" xml:space="preserve">
+    <value>ಕಾಟನ್ </value>
+  </data>
+  <data name="could" xml:space="preserve">
+    <value>ಕುಡ್ </value>
+  </data>
+  <data name="count" xml:space="preserve">
+    <value>ಕೌಂಟ್ </value>
+  </data>
+  <data name="counter" xml:space="preserve">
+    <value>ಕೌಂಟರ್ </value>
+  </data>
+  <data name="counters" xml:space="preserve">
+    <value>ಕೌಂಟರ್ಸ್ </value>
+  </data>
+  <data name="Coupled" xml:space="preserve">
+    <value>ಕಪಲ್ಡ್ </value>
+  </data>
+  <data name="coupler" xml:space="preserve">
+    <value>ಕಪ್ಲೆರ್ </value>
+  </data>
+  <data name="crank" xml:space="preserve">
+    <value>ಕ್ರಾಂಕ್  </value>
+  </data>
+  <data name="crankcase" xml:space="preserve">
+    <value>ಕ್ರಾಂಕ್ ಕೇಸ್ </value>
+  </data>
+  <data name="cranking" xml:space="preserve">
+    <value>ಕ್ರ್ಯಾಂಕಿಂಗ್ </value>
+  </data>
+  <data name="crankshaft" xml:space="preserve">
+    <value>ಕ್ರಾಂಕ್ ಶಾಫ್ಟ್ </value>
+  </data>
+  <data name="critical" xml:space="preserve">
+    <value>ಕ್ರಿಟಿಕಲ್ </value>
+  </data>
+  <data name="critically" xml:space="preserve">
+    <value>ಕ್ರಿಟಿಕಲಿ </value>
+  </data>
+  <data name="Cross" xml:space="preserve">
+    <value>ಕ್ರಾಸ್ </value>
+  </data>
+  <data name="crossed" xml:space="preserve">
+    <value>ಕ್ರಾಜ್ಡ್ </value>
+  </data>
+  <data name="cruise" xml:space="preserve">
+    <value>ಕ್ರುಇಸೆ </value>
+  </data>
+  <data name="current" xml:space="preserve">
+    <value>ಕರೆಂಟ್ </value>
+  </data>
+  <data name="cut" xml:space="preserve">
+    <value>ಕಟ್ </value>
+  </data>
+  <data name="cycle" xml:space="preserve">
+    <value>ಸೈಕಲ್ </value>
+  </data>
+  <data name="cycling" xml:space="preserve">
+    <value>ಸೈಕ್ಲಿಂಗ್ </value>
+  </data>
+  <data name="cylinder" xml:space="preserve">
+    <value>ಸಿಲಿಂಡರ್  </value>
+  </data>
+  <data name="damage" xml:space="preserve">
+    <value>ಡ್ಯಾಮೇಜ್ </value>
+  </data>
+  <data name="damaged" xml:space="preserve">
+    <value>ಡಮಜೆಡ್ </value>
+  </data>
+  <data name="data" xml:space="preserve">
+    <value>ಡೇಟಾ </value>
+  </data>
+  <data name="dataset" xml:space="preserve">
+    <value>ಡಾಟಾಸೆಟ್ </value>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>ಡೇಟ್ </value>
+  </data>
+  <data name="dcu" xml:space="preserve">
+    <value>ಡಿ ಸಿ ಯು </value>
+  </data>
+  <data name="deactivated" xml:space="preserve">
+    <value>ಡಿಆಕ್ಟಿವಟೆಡ್ </value>
+  </data>
+  <data name="deactivation" xml:space="preserve">
+    <value>ಡಿಆಕ್ಟಿವಷನ್ </value>
+  </data>
+  <data name="dealer" xml:space="preserve">
+    <value>ಡೀಲರ್ </value>
+  </data>
+  <data name="debounced" xml:space="preserve">
+    <value>ಡೇಬೌನ್ಸಡ್ </value>
+  </data>
+  <data name="default" xml:space="preserve">
+    <value>ಡೀಫಾಲ್ಟ್ </value>
+  </data>
+  <data name="defect" xml:space="preserve">
+    <value>ಡಿಫೆಕ್ಟ್ </value>
+  </data>
+  <data name="defective" xml:space="preserve">
+    <value>ಡಿಫೆಕ್ಟಿವ್ </value>
+  </data>
+  <data name="defined" xml:space="preserve">
+    <value>ಡಿಫೈನ್ಡ </value>
+  </data>
+  <data name="deliver" xml:space="preserve">
+    <value>ಡೆಲಿವರ್ </value>
+  </data>
+  <data name="delivery" xml:space="preserve">
+    <value>ಡೆಲಿವರಿ </value>
+  </data>
+  <data name="Delta" xml:space="preserve">
+    <value>ಡೆಲ್ಟಾ </value>
+  </data>
+  <data name="demand" xml:space="preserve">
+    <value>ಡಿಮ್ಯಾಂಡ್</value>
+  </data>
+  <data name="density" xml:space="preserve">
+    <value>ಡೆನ್ಸಿಟಿ </value>
+  </data>
+  <data name="dent" xml:space="preserve">
+    <value>ಡೆಂಟ್ </value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>ಡಿಸ್ಕ್ರಿಪ್ಟಿನ್ </value>
+  </data>
+  <data name="designed" xml:space="preserve">
+    <value>ಡೆಸೈನೆಡ್ </value>
+  </data>
+  <data name="desired" xml:space="preserve">
+    <value>ಡೆಸೈರ್ಡ್ </value>
+  </data>
+  <data name="details" xml:space="preserve">
+    <value>ಡೀಟೇಲ್ಸ್ </value>
+  </data>
+  <data name="detected" xml:space="preserve">
+    <value>ಡಿಟೆಕ್ಟೆಡ್ </value>
+  </data>
+  <data name="detection" xml:space="preserve">
+    <value>ಡಿಟೆಕ್ಷನ್ </value>
+  </data>
+  <data name="detects" xml:space="preserve">
+    <value>ಡಿಟೆಕ್ಟ್ಸ್ </value>
+  </data>
+  <data name="deteriorated" xml:space="preserve">
+    <value>ಡೇಟರಿಯೋರೇಟೆಡ್ </value>
+  </data>
+  <data name="determines" xml:space="preserve">
+    <value>ಡೆಟೆರ್ಮಿನ್ಸ್ </value>
+  </data>
+  <data name="deviation" xml:space="preserve">
+    <value>ದೇವಿಯೇಷನ್  </value>
+  </data>
+  <data name="device" xml:space="preserve">
+    <value>ಡಿವೈಸ್ </value>
+  </data>
+  <data name="Diagnosis" xml:space="preserve">
+    <value>ಡೈಜಿನೊಸಿಸ್ </value>
+  </data>
+  <data name="diagnostic" xml:space="preserve">
+    <value>ಡಯಗ್ನೊಸ್ಟಿಕ್ </value>
+  </data>
+  <data name="diagnostics" xml:space="preserve">
+    <value>ಡಯಗ್ನೊಸ್ಟಿಕ್ </value>
+  </data>
+  <data name="diagram" xml:space="preserve">
+    <value>ಡೈಗ್ರಾಮ್ </value>
+  </data>
+  <data name="diameter" xml:space="preserve">
+    <value>ಡಯಾಮೀಟರ್ </value>
+  </data>
+  <data name="diesel" xml:space="preserve">
+    <value>ಡೀಸೆಲ್ </value>
+  </data>
+  <data name="diff" xml:space="preserve">
+    <value>ಡಿಫ್ </value>
+  </data>
+  <data name="difference" xml:space="preserve">
+    <value>ಡಿಫರೆನ್ಸ್ </value>
+  </data>
+  <data name="different" xml:space="preserve">
+    <value>ಡಿಫರೆಂಟ್ </value>
+  </data>
+  <data name="differential" xml:space="preserve">
+    <value>ಡಿಫ್ರ್ಎಂಟ್ರಿಯಾಲ್ </value>
+  </data>
+  <data name="digital" xml:space="preserve">
+    <value>ಡಿಜಿಟಲ್ </value>
+  </data>
+  <data name="direction" xml:space="preserve">
+    <value>ಡೈರೆಕ್ಷನ್ </value>
+  </data>
+  <data name="disable" xml:space="preserve">
+    <value>ಡಿಸೇಬಲ್ </value>
+  </data>
+  <data name="disabled" xml:space="preserve">
+    <value>ಡಿಸೇಬಲ್ಡ </value>
+  </data>
+  <data name="disagrees" xml:space="preserve">
+    <value>ಡಿಸಾಗ್ರಿಸ್ </value>
+  </data>
+  <data name="disc" xml:space="preserve">
+    <value>ಡಿಸ್ಕ್ </value>
+  </data>
+  <data name="disconnect" xml:space="preserve">
+    <value>ಡಿಸ್ಕನೆಕ್ಟ್ </value>
+  </data>
+  <data name="disconnected" xml:space="preserve">
+    <value>ಡಿಸ್ಕೋನ್ನೆಸಿಟೆಡ್ </value>
+  </data>
+  <data name="Disconnecting" xml:space="preserve">
+    <value>ಡಿಸ್ಕೋಣ್ಣೆಕ್ಟಿಂಗ್ </value>
+  </data>
+  <data name="disconnection" xml:space="preserve">
+    <value>ಡಿಸ್ಕೋನ್ನೆಕ್ಷನ್ </value>
+  </data>
+  <data name="discontinuity" xml:space="preserve">
+    <value>ಡಿಸ್ಕಾಣ್ತಿನುಇಟಿ </value>
+  </data>
+  <data name="display" xml:space="preserve">
+    <value>ಡಿಸ್ಪ್ಲೇ </value>
+  </data>
+  <data name="distance" xml:space="preserve">
+    <value>ಡಿಸ್ಟೆನ್ಸ್ </value>
+  </data>
+  <data name="distribution" xml:space="preserve">
+    <value>ಡಿಸ್ಟ್ರಿಬ್ಯುಶನ್ </value>
+  </data>
+  <data name="disturbance" xml:space="preserve">
+    <value>ಡಿಸ್ಟರ್ಬೆನ್ಸ್ </value>
+  </data>
+  <data name="do" xml:space="preserve">
+    <value>ಡೊ </value>
+  </data>
+  <data name="document" xml:space="preserve">
+    <value>ಡಾಕ್ಯುಮೆಂಟ್ </value>
+  </data>
+  <data name="done" xml:space="preserve">
+    <value>ಡನ್ </value>
+  </data>
+  <data name="dosing" xml:space="preserve">
+    <value>ಡೋಸಿಂಗ್</value>
+  </data>
+  <data name="down" xml:space="preserve">
+    <value>ಡೌನ್ </value>
+  </data>
+  <data name="downshift" xml:space="preserve">
+    <value>ಡೌನ್ಶಿಫ್ಟ್ </value>
+  </data>
+  <data name="downstream" xml:space="preserve">
+    <value>ಡೌನ್ಸ್ಟ್ರೆಮ್ </value>
+  </data>
+  <data name="Drain" xml:space="preserve">
+    <value>ಡ್ರೈನ್ </value>
+  </data>
+  <data name="drift" xml:space="preserve">
+    <value>ಡ್ರಿಫ್ಟ್ </value>
+  </data>
+  <data name="drifted" xml:space="preserve">
+    <value>ಡ್ರಿಫ್ಟ್ದ್ </value>
+  </data>
+  <data name="drive" xml:space="preserve">
+    <value>ಡ್ರೈವ್ </value>
+  </data>
+  <data name="driveline" xml:space="preserve">
+    <value>ಡ್ರೈವೆಲಿನ್ </value>
+  </data>
+  <data name="driver" xml:space="preserve">
+    <value>ಡ್ರೈವರ್ </value>
+  </data>
+  <data name="drop" xml:space="preserve">
+    <value>ಡ್ರಾಪ್ </value>
+  </data>
+  <data name="drops" xml:space="preserve">
+    <value>ಡ್ರಾಪ್ಸ್ </value>
+  </data>
+  <data name="dtc" xml:space="preserve">
+    <value>ಡಿಟಿಸೀ </value>
+  </data>
+  <data name="dual" xml:space="preserve">
+    <value>ಡುಯಲ್ </value>
+  </data>
+  <data name="due" xml:space="preserve">
+    <value>ಡ್ಯೂ </value>
+  </data>
+  <data name="duration" xml:space="preserve">
+    <value>ದೂರೇಷನ್ </value>
+  </data>
+  <data name="during" xml:space="preserve">
+    <value>ಡ್ಯೂರಿಂಗ್ </value>
+  </data>
+  <data name="duty" xml:space="preserve">
+    <value>ಡ್ಯೂಟಿ </value>
+  </data>
+  <data name="early" xml:space="preserve">
+    <value>ಅರ್ಲಿ </value>
+  </data>
+  <data name="earth" xml:space="preserve">
+    <value>ಅರ್ಥ್ </value>
+  </data>
+  <data name="economy" xml:space="preserve">
+    <value>ಎಕಾನಮಿ </value>
+  </data>
+  <data name="ecu" xml:space="preserve">
+    <value>ಈ ಸಿ ಯು </value>
+  </data>
+  <data name="edge" xml:space="preserve">
+    <value>ಎಡ್ಜ್ </value>
+  </data>
+  <data name="EEPROM" xml:space="preserve">
+    <value>ಈಪ್ರಾಮ್ </value>
+  </data>
+  <data name="Effect" xml:space="preserve">
+    <value>ಎಫೆಕ್ಟ್ </value>
+  </data>
+  <data name="efficiency" xml:space="preserve">
+    <value>ಎಫಿಸೈನ್ಸಿ </value>
+  </data>
+  <data name="electric" xml:space="preserve">
+    <value>ಎಲೆಕ್ಟ್ರಿಕ್ </value>
+  </data>
+  <data name="electrical" xml:space="preserve">
+    <value>ಎಲೆಕ್ಟ್ರಿಕಲ್ </value>
+  </data>
+  <data name="electronic" xml:space="preserve">
+    <value>ಇಲೆಕ್ಟ್ರಾನಿಕ್ </value>
+  </data>
+  <data name="emission" xml:space="preserve">
+    <value>ಎಮಿಶನ್ </value>
+  </data>
+  <data name="emissions" xml:space="preserve">
+    <value>ಎಮಿಷನ್ಸ್ </value>
+  </data>
+  <data name="ems" xml:space="preserve">
+    <value>ಈ ಎಂ ಎಸ್ </value>
+  </data>
+  <data name="Emulation" xml:space="preserve">
+    <value>ಎಮ್ಯುಲೇಶನ್ </value>
+  </data>
+  <data name="end" xml:space="preserve">
+    <value>ಎಂಡ್ </value>
+  </data>
+  <data name="energising" xml:space="preserve">
+    <value>ಎನೆರ್ಜಿಝಿನ್ಗ್ </value>
+  </data>
+  <data name="energizing" xml:space="preserve">
+    <value>ಎನರ್ಜಿಸಿಂಗ್ </value>
+  </data>
+  <data name="engaged" xml:space="preserve">
+    <value>ಎಂಗೇಜ್ಡ್ </value>
+  </data>
+  <data name="engine" xml:space="preserve">
+    <value>ಎಂಜಿನ್ </value>
+  </data>
+  <data name="Ensure" xml:space="preserve">
+    <value>ಎಣ್ಸುರ್ </value>
+  </data>
+  <data name="entry" xml:space="preserve">
+    <value>ಎಂಟರ್ </value>
+  </data>
+  <data name="environment" xml:space="preserve">
+    <value>ಎಂವ್ಯರೋಮೆಂಟ್ </value>
+  </data>
+  <data name="Environmental" xml:space="preserve">
+    <value>ಎನ್ವಿರೋನ್ಯೂಮೆಂಟಲ್ </value>
+  </data>
+  <data name="equal" xml:space="preserve">
+    <value>ಈಕ್ವಲ್   </value>
+  </data>
+  <data name="equivalence" xml:space="preserve">
+    <value>ಎಕ್ಸ್ಇವಳೆನ್ಸ್ </value>
+  </data>
+  <data name="equivalent" xml:space="preserve">
+    <value>ಎಕ್ವಳೆಂತ್ </value>
+  </data>
+  <data name="Erase" xml:space="preserve">
+    <value>ಇರೇಜ್ </value>
+  </data>
+  <data name="erasing" xml:space="preserve">
+    <value>ಇರಸಿಂಗ್ </value>
+  </data>
+  <data name="erratic" xml:space="preserve">
+    <value>ಇರಾಟಿಕ್ </value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>ಎರರ್ </value>
+  </data>
+  <data name="errors" xml:space="preserve">
+    <value>ಎರ್ರೋರ್ಸ್ </value>
+  </data>
+  <data name="esm" xml:space="preserve">
+    <value>ಈ ಎಸ್ ಎಂ </value>
+  </data>
+  <data name="estimation" xml:space="preserve">
+    <value>ಎಸ್ಟಿಮೇಶನ್ </value>
+  </data>
+  <data name="ethanol" xml:space="preserve">
+    <value>ಎಥನಾಲ್</value>
+  </data>
+  <data name="evaporative" xml:space="preserve">
+    <value>ಏವಾಪೂರಟಿವ್ </value>
+  </data>
+  <data name="evaporator" xml:space="preserve">
+    <value>ಎವಪೊರ್ಟೆರ್ </value>
+  </data>
+  <data name="even" xml:space="preserve">
+    <value>ಈವನ್ </value>
+  </data>
+  <data name="event" xml:space="preserve">
+    <value>ಇವೆಂಟ್ </value>
+  </data>
+  <data name="events" xml:space="preserve">
+    <value>ಇವೆಂಟ್ಸ್ </value>
+  </data>
+  <data name="exceed" xml:space="preserve">
+    <value>ಎಕ್ಸೀಡ್ </value>
+  </data>
+  <data name="exceeded" xml:space="preserve">
+    <value>ಎಸ್ಸ್ಗ್ಡೆಡ್ </value>
+  </data>
+  <data name="Excess" xml:space="preserve">
+    <value>ಎಸ್ಸ್ಸ್ಸ್ </value>
+  </data>
+  <data name="excessive" xml:space="preserve">
+    <value>ಎಸ್ಚೆಸ್ಸಿವ್ </value>
+  </data>
+  <data name="execution" xml:space="preserve">
+    <value>ಎಕ್ಸಿಕ್ಯುಷನ್ </value>
+  </data>
+  <data name="exhaust" xml:space="preserve">
+    <value>ಎಸ್ಹೌಸ್ಟ್ </value>
+  </data>
+  <data name="exists" xml:space="preserve">
+    <value>ಏಕ್ಸಿಸ್ಟ್ಸ್ </value>
+  </data>
+  <data name="expected" xml:space="preserve">
+    <value>ಎಕ್ಸ್ಪೆಕ್ಟೆಡ್ </value>
+  </data>
+  <data name="external" xml:space="preserve">
+    <value>ಎಕ್ಸ್ಟರ್ನಲ್ </value>
+  </data>
+  <data name="factor" xml:space="preserve">
+    <value>ಫ್ಯಾಕ್ಟರ್ </value>
+  </data>
+  <data name="factory" xml:space="preserve">
+    <value>ಫ್ಯಾಕ್ಟರಿ </value>
+  </data>
+  <data name="fail" xml:space="preserve">
+    <value>ಫೇಲ್ </value>
+  </data>
+  <data name="failed" xml:space="preserve">
+    <value>ಫೇಲ್ಡ್ </value>
+  </data>
+  <data name="fails" xml:space="preserve">
+    <value>ಫೈಲ್ಸ್ </value>
+  </data>
+  <data name="failure" xml:space="preserve">
+    <value>ಫೇಲ್ಯೂರ್ </value>
+  </data>
+  <data name="failures" xml:space="preserve">
+    <value>ಫೈಲ್ಯೂರ್ಸ್ </value>
+  </data>
+  <data name="fan" xml:space="preserve">
+    <value>ಫ್ಯಾನ್ </value>
+  </data>
+  <data name="fault" xml:space="preserve">
+    <value>ಫಾಲ್ಟ್ </value>
+  </data>
+  <data name="faulty" xml:space="preserve">
+    <value>ಫ್ಯಾಲ್ಟಿ </value>
+  </data>
+  <data name="fc" xml:space="preserve">
+    <value>ಫ್ ಸಿ </value>
+  </data>
+  <data name="feed" xml:space="preserve">
+    <value>ಫೀಡ್ </value>
+  </data>
+  <data name="feedback" xml:space="preserve">
+    <value>ಫೀಡ್ಬ್ಯಾಕ್ </value>
+  </data>
+  <data name="few" xml:space="preserve">
+    <value>ಫ್ಯೂ </value>
+  </data>
+  <data name="field" xml:space="preserve">
+    <value>ಫೀಲ್ಡ್ </value>
+  </data>
+  <data name="file" xml:space="preserve">
+    <value>ಫೈಲ್ </value>
+  </data>
+  <data name="filter" xml:space="preserve">
+    <value>ಫಿಲ್ಟರ್ </value>
+  </data>
+  <data name="filtered" xml:space="preserve">
+    <value>ಫಿಲ್ಟರ್ಡ್ </value>
+  </data>
+  <data name="finished" xml:space="preserve">
+    <value>ಫಿನಿಶ್ಡ್ </value>
+  </data>
+  <data name="first" xml:space="preserve">
+    <value>ಫಸ್ಟ್ </value>
+  </data>
+  <data name="fitted" xml:space="preserve">
+    <value>ಫಿಟ್ಟೆಡ್ </value>
+  </data>
+  <data name="flow" xml:space="preserve">
+    <value>ಫ್ಲೋ </value>
+  </data>
+  <data name="fluid" xml:space="preserve">
+    <value>ಫ್ಲೂಯಿಡ್ </value>
+  </data>
+  <data name="flywheel" xml:space="preserve">
+    <value>ಫ್ಲೈ ವೀಲ್ </value>
+  </data>
+  <data name="fog" xml:space="preserve">
+    <value>ಫಾಗ್ </value>
+  </data>
+  <data name="follow" xml:space="preserve">
+    <value>ಫಾಲೋ </value>
+  </data>
+  <data name="followed" xml:space="preserve">
+    <value>ಫಾಲ್ಲೋಡ್ </value>
+  </data>
+  <data name="for" xml:space="preserve">
+    <value>ಫಾರ್ </value>
+  </data>
+  <data name="force" xml:space="preserve">
+    <value>ಫೋರ್ಸ್ </value>
+  </data>
+  <data name="forced" xml:space="preserve">
+    <value>ಫೊರ್ಸ್ಡ್  </value>
+  </data>
+  <data name="forward" xml:space="preserve">
+    <value>ಫಾರ್ವರ್ಡ್ </value>
+  </data>
+  <data name="found" xml:space="preserve">
+    <value>ಫೌಂಡ್ </value>
+  </data>
+  <data name="four" xml:space="preserve">
+    <value>ಫೋರ್ </value>
+  </data>
+  <data name="free" xml:space="preserve">
+    <value>ಫ್ರೀ </value>
+  </data>
+  <data name="frequency" xml:space="preserve">
+    <value>ಫ್ರೀಕ್ವೆನ್ಸಿ </value>
+  </data>
+  <data name="fresh" xml:space="preserve">
+    <value>ಫ್ರೆಶ್ </value>
+  </data>
+  <data name="friction" xml:space="preserve">
+    <value>ಫ್ರಿಕ್ಷನ್ </value>
+  </data>
+  <data name="from" xml:space="preserve">
+    <value>ಫ್ರಮ್ </value>
+  </data>
+  <data name="front" xml:space="preserve">
+    <value>ಫ್ರಂಟ್ </value>
+  </data>
+  <data name="fuel" xml:space="preserve">
+    <value>ಫ್ಯುಯೆಲ್ </value>
+  </data>
+  <data name="fueling" xml:space="preserve">
+    <value>ಫುಎಲಿಂಗ್ </value>
+  </data>
+  <data name="function" xml:space="preserve">
+    <value>ಫಂಕ್ಷನ್ </value>
+  </data>
+  <data name="Fuse" xml:space="preserve">
+    <value>ಫ್ಯೂಸ್ </value>
+  </data>
+  <data name="gap" xml:space="preserve">
+    <value>ಗ್ಯಾಪ್ </value>
+  </data>
+  <data name="gas" xml:space="preserve">
+    <value>ಗ್ಯಾಸ್ </value>
+  </data>
+  <data name="gate" xml:space="preserve">
+    <value>ಗೇಟ್ </value>
+  </data>
+  <data name="gear" xml:space="preserve">
+    <value>ಗೇರ್ </value>
+  </data>
+  <data name="gears" xml:space="preserve">
+    <value>ಗೆರ್ಸ್ </value>
+  </data>
+  <data name="general" xml:space="preserve">
+    <value>ಜನರಲ್ </value>
+  </data>
+  <data name="generating" xml:space="preserve">
+    <value>ಜೆನೆರೇಟಿಂಗ್ </value>
+  </data>
+  <data name="generator" xml:space="preserve">
+    <value>ಜನರೇಟರ್ </value>
+  </data>
+  <data name="get" xml:space="preserve">
+    <value>ಗೆಟ್ </value>
+  </data>
+  <data name="give" xml:space="preserve">
+    <value>ಗಿವ್ </value>
+  </data>
+  <data name="given" xml:space="preserve">
+    <value>ಗಿವನ್ </value>
+  </data>
+  <data name="glow" xml:space="preserve">
+    <value>ಗ್ಲೋ </value>
+  </data>
+  <data name="go" xml:space="preserve">
+    <value>ಗೋ </value>
+  </data>
+  <data name="good" xml:space="preserve">
+    <value>ಗುಡ್ </value>
+  </data>
+  <data name="governer" xml:space="preserve">
+    <value>ಗೋವರ್ನರ್ </value>
+  </data>
+  <data name="governor" xml:space="preserve">
+    <value>ಗೋವರ್ನರ್ </value>
+  </data>
+  <data name="gradient" xml:space="preserve">
+    <value>ಗ್ರಾಡಿಯೆಂತ್ </value>
+  </data>
+  <data name="greater" xml:space="preserve">
+    <value>ಗ್ರೇಟರ್ </value>
+  </data>
+  <data name="GREAVES" xml:space="preserve">
+    <value>ಗ್ರೀವ್ಸ್ </value>
+  </data>
+  <data name="ground" xml:space="preserve">
+    <value>ಗ್ರೌಂಡ್ </value>
+  </data>
+  <data name="guage" xml:space="preserve">
+    <value>ಗೇಜ್ </value>
+  </data>
+  <data name="h-bridge" xml:space="preserve">
+    <value>ಹ್ಚ್ ಬ್ರಿಜ್ </value>
+  </data>
+  <data name="hardware" xml:space="preserve">
+    <value>ಹಾರ್ಡ್ ವೆರ್ </value>
+  </data>
+  <data name="harness" xml:space="preserve">
+    <value>ಹಾರ್ನೆಸ್ </value>
+  </data>
+  <data name="has" xml:space="preserve">
+    <value>ಹ್ಯಾಸ್ </value>
+  </data>
+  <data name="having" xml:space="preserve">
+    <value>ಹ್ಯಾವಿಂಗ್ </value>
+  </data>
+  <data name="headlights" xml:space="preserve">
+    <value>ಹೆಡ್ ಲೈಟ್ಸ್ </value>
+  </data>
+  <data name="health" xml:space="preserve">
+    <value>ಹೆಲ್ತ್ </value>
+  </data>
+  <data name="heated" xml:space="preserve">
+    <value>ಹೀಟಡ್ </value>
+  </data>
+  <data name="heater" xml:space="preserve">
+    <value>ಹೀಟರ್ </value>
+  </data>
+  <data name="heating" xml:space="preserve">
+    <value>ಸ್ಟೋರ್ಡ್ </value>
+  </data>
+  <data name="high" xml:space="preserve">
+    <value>ಹೈ </value>
+  </data>
+  <data name="higher" xml:space="preserve">
+    <value>ಹೈಯರ್ </value>
+  </data>
+  <data name="highside" xml:space="preserve">
+    <value>ಹೈ ಸೈಡ್ </value>
+  </data>
+  <data name="hose" xml:space="preserve">
+    <value>ಹೊಸ್ </value>
+  </data>
+  <data name="hot" xml:space="preserve">
+    <value>ಹಾಟ್ </value>
+  </data>
+  <data name="hour" xml:space="preserve">
+    <value>ಹೌರ್ </value>
+  </data>
+  <data name="hybrid" xml:space="preserve">
+    <value>ಹೈಬ್ರಿಡ್ </value>
+  </data>
+  <data name="hydraulic" xml:space="preserve">
+    <value>ಹೈಡ್ರಾಲಿಕ್ </value>
+  </data>
+  <data name="iaf" xml:space="preserve">
+    <value>ಐ ಎ ಫ್ </value>
+  </data>
+  <data name="identification" xml:space="preserve">
+    <value>ಐಡೆಂಟಿಫಿಕೇಷನ್ </value>
+  </data>
+  <data name="idle" xml:space="preserve">
+    <value>ಐಡಲ್ </value>
+  </data>
+  <data name="idling" xml:space="preserve">
+    <value>ಇಡ್ಲಿನ್ಗ್ </value>
+  </data>
+  <data name="if" xml:space="preserve">
+    <value>ಇಫ್ </value>
+  </data>
+  <data name="ignition" xml:space="preserve">
+    <value>ಇಗ್ನಿಷನ್ </value>
+  </data>
+  <data name="image" xml:space="preserve">
+    <value>ಇಮೇಜ್ </value>
+  </data>
+  <data name="immobilizer" xml:space="preserve">
+    <value>ಇಂಮೊಬಿಲೈಝೇರ್ </value>
+  </data>
+  <data name="immobolizer" xml:space="preserve">
+    <value>ಇಂಮೊಬಿಲೈಝೇರ್ </value>
+  </data>
+  <data name="Impermissible" xml:space="preserve">
+    <value>ಇಂಪೇರ್ಮಿಸ್ಸಿಬ್ಲ್ </value>
+  </data>
+  <data name="in" xml:space="preserve">
+    <value>ಇನ್  </value>
+  </data>
+  <data name="inactivity" xml:space="preserve">
+    <value>ಇಂಆಕ್ಟಿವಿಟಿ </value>
+  </data>
+  <data name="includes" xml:space="preserve">
+    <value>ಇನ್ಕ್ಲ್ಯೂಡ್ಸ್ </value>
+  </data>
+  <data name="incompatible" xml:space="preserve">
+    <value>ಇನ್ ಕಂಪ್ಯಾಟಿಬಿಲ್ </value>
+  </data>
+  <data name="incorrect" xml:space="preserve">
+    <value>ಇಂಕರೆಕ್ಟ್</value>
+  </data>
+  <data name="increase" xml:space="preserve">
+    <value>ಇನ್ಕ್ರೀಜ್ </value>
+  </data>
+  <data name="index" xml:space="preserve">
+    <value>ಇಂಡೆಕ್ಸ್ </value>
+  </data>
+  <data name="indicated" xml:space="preserve">
+    <value>ಇಂಡಿಕೇಟೆಡ್ </value>
+  </data>
+  <data name="indication" xml:space="preserve">
+    <value>ಇಂಡಿಕೇಷನ್ </value>
+  </data>
+  <data name="indicator" xml:space="preserve">
+    <value>ಇಂಡಿಕೇಟರ್ </value>
+  </data>
+  <data name="induce" xml:space="preserve">
+    <value>ಇಂಡ್ಯೂಸ್ </value>
+  </data>
+  <data name="inducement" xml:space="preserve">
+    <value>ಇಂಡ್ಯೂಸಿಮೆಂಟ್ </value>
+  </data>
+  <data name="information" xml:space="preserve">
+    <value>ಇನ್ಫ್ರಮೇಷನ್ </value>
+  </data>
+  <data name="inhibit" xml:space="preserve">
+    <value>ಇಂಹಿಬಿಟ್ </value>
+  </data>
+  <data name="injection" xml:space="preserve">
+    <value>ಇಂಜೆಕ್ಷನ್ </value>
+  </data>
+  <data name="injector" xml:space="preserve">
+    <value>ಇಂಜೆಕ್ಟರ್ </value>
+  </data>
+  <data name="injectors" xml:space="preserve">
+    <value>ಇಂಜೆಕ್ಟರ್ಸ್ </value>
+  </data>
+  <data name="inlet" xml:space="preserve">
+    <value>ಇನ್ಲೆಟ್ </value>
+  </data>
+  <data name="input" xml:space="preserve">
+    <value>ಇನ್ಪುಟ್ </value>
+  </data>
+  <data name="inside" xml:space="preserve">
+    <value>ಇನ್ಸೈಡ್ </value>
+  </data>
+  <data name="inspection" xml:space="preserve">
+    <value>ಇನ್ಸ್ಪೆಕ್ಷನ್ </value>
+  </data>
+  <data name="installation" xml:space="preserve">
+    <value>ಇನ್ಸ್ಟಾಲೇಷನ್ </value>
+  </data>
+  <data name="installed" xml:space="preserve">
+    <value>ಇನ್ಸ್ಟಾಲ್ಲ್ಡ್ </value>
+  </data>
+  <data name="instrument" xml:space="preserve">
+    <value>ಇನ್ಸ್ಟ್ರುಮೆಂಟ್ </value>
+  </data>
+  <data name="insufficient" xml:space="preserve">
+    <value>ಇನ್ಸೂಫಿಸೈನ್ಟ್ </value>
+  </data>
+  <data name="intake" xml:space="preserve">
+    <value>ಇಂಟೆಕ್ </value>
+  </data>
+  <data name="integrity" xml:space="preserve">
+    <value>ಇಂಟೆಗ್ರಿಟಿ </value>
+  </data>
+  <data name="intercooler" xml:space="preserve">
+    <value>ಇಂಟೆರ್ಕೋಲೆರ್ </value>
+  </data>
+  <data name="interface" xml:space="preserve">
+    <value>ಇಂಟರ್ಫೇಸ್ </value>
+  </data>
+  <data name="interlocking" xml:space="preserve">
+    <value>ಇಂಟೆರ್ ಲೊಕ್ಕಿನ್ಗ್ </value>
+  </data>
+  <data name="intermediate" xml:space="preserve">
+    <value>ಇಂಟರ್ಮೀಡಿಯೇಟ್ </value>
+  </data>
+  <data name="intermittent" xml:space="preserve">
+    <value>ಇಂಟರ್ಮಿತ್ತೆಂತ್ </value>
+  </data>
+  <data name="internal" xml:space="preserve">
+    <value>ಇಂಟರ್ನಲ್</value>
+  </data>
+  <data name="internally" xml:space="preserve">
+    <value>ಇಂಟರ್ನ್ಲಲಿ </value>
+  </data>
+  <data name="interruption" xml:space="preserve">
+    <value>ಇಂಟರಪ್ಷನ್ </value>
+  </data>
+  <data name="into" xml:space="preserve">
+    <value>ಇಂಟು </value>
+  </data>
+  <data name="invalid" xml:space="preserve">
+    <value>ಇಂವಾಲಿದ್ </value>
+  </data>
+  <data name="ip" xml:space="preserve">
+    <value>ಐಪಿ </value>
+  </data>
+  <data name="is" xml:space="preserve">
+    <value>ಇಸ್ </value>
+  </data>
+  <data name="issue" xml:space="preserve">
+    <value>ಇಶ್ಯೂ </value>
+  </data>
+  <data name="it" xml:space="preserve">
+    <value>ಇಟ್ </value>
+  </data>
+  <data name="jammed" xml:space="preserve">
+    <value>ಜಮ್ಮ್ಡ್ </value>
+  </data>
+  <data name="keep" xml:space="preserve">
+    <value>ಕೀಪ್ </value>
+  </data>
+  <data name="key" xml:space="preserve">
+    <value>ಕೀ </value>
+  </data>
+  <data name="keywith" xml:space="preserve">
+    <value>ಕೀವಿಡ್ತ್ </value>
+  </data>
+  <data name="Knob" xml:space="preserve">
+    <value>ಕ್ನೋಬ್ </value>
+  </data>
+  <data name="knock" xml:space="preserve">
+    <value>ನಾಕ್ </value>
+  </data>
+  <data name="known" xml:space="preserve">
+    <value>ನೊನ್ </value>
+  </data>
+  <data name="lamp" xml:space="preserve">
+    <value>ಲ್ಯಾಂಪ್ </value>
+  </data>
+  <data name="large" xml:space="preserve">
+    <value>ಲಾರ್ಜ್ </value>
+  </data>
+  <data name="last" xml:space="preserve">
+    <value>ಲಾಸ್ಟ </value>
+  </data>
+  <data name="latch" xml:space="preserve">
+    <value>ಲಟ್ಚ್ </value>
+  </data>
+  <data name="lead" xml:space="preserve">
+    <value>ಲೀಡ್ </value>
+  </data>
+  <data name="leak" xml:space="preserve">
+    <value>ಲೀಕ್ </value>
+  </data>
+  <data name="leakage" xml:space="preserve">
+    <value>ಲೇಕಜೆ</value>
+  </data>
+  <data name="lean" xml:space="preserve">
+    <value>ಲೀನ್ </value>
+  </data>
+  <data name="learned" xml:space="preserve">
+    <value>ಲೇಅರ್ನೆಡ್ </value>
+  </data>
+  <data name="learning" xml:space="preserve">
+    <value>ಲರ್ನಿಂಗ್ </value>
+  </data>
+  <data name="least" xml:space="preserve">
+    <value>ಲೀಸ್ಟ್ </value>
+  </data>
+  <data name="left" xml:space="preserve">
+    <value>ಲೆಫ್ಟ್ </value>
+  </data>
+  <data name="less" xml:space="preserve">
+    <value>ಲೆಸ್  </value>
+  </data>
+  <data name="level" xml:space="preserve">
+    <value>ಲೆವೆಲ್ </value>
+  </data>
+  <data name="lever" xml:space="preserve">
+    <value>ಲೀವರ್ </value>
+  </data>
+  <data name="life" xml:space="preserve">
+    <value>ಲೈಫ್</value>
+  </data>
+  <data name="light" xml:space="preserve">
+    <value>ಲೈಟ್ </value>
+  </data>
+  <data name="limit" xml:space="preserve">
+    <value>ಲಿಮಿಟ್ </value>
+  </data>
+  <data name="limitation" xml:space="preserve">
+    <value>ಲಿಮಿಟೇಷನ್ </value>
+  </data>
+  <data name="limited" xml:space="preserve">
+    <value>ಲಿಮಿಟೆಡ್ </value>
+  </data>
+  <data name="limits" xml:space="preserve">
+    <value>ಲಿಮಿಟ್ಸ್ </value>
+  </data>
+  <data name="line" xml:space="preserve">
+    <value>ಲೈನ್ </value>
+  </data>
+  <data name="lines" xml:space="preserve">
+    <value>ಲೈನ್ಸ್ </value>
+  </data>
+  <data name="link" xml:space="preserve">
+    <value>ಲಿಂಕ್ </value>
+  </data>
+  <data name="load" xml:space="preserve">
+    <value>ಲೋಡ್  </value>
+  </data>
+  <data name="lock" xml:space="preserve">
+    <value>ಲಾಕ್ </value>
+  </data>
+  <data name="locked" xml:space="preserve">
+    <value>ಲಾಕ್ಡ್  </value>
+  </data>
+  <data name="logging" xml:space="preserve">
+    <value>ಲಾಗಿಂಗ್ </value>
+  </data>
+  <data name="long" xml:space="preserve">
+    <value>ಲಾಂಗ್ </value>
+  </data>
+  <data name="longer" xml:space="preserve">
+    <value>ಲಾಂಗರ್ </value>
+  </data>
+  <data name="loop" xml:space="preserve">
+    <value>ಲೂಪ್ </value>
+  </data>
+  <data name="Loose" xml:space="preserve">
+    <value>ಲೂಸ್ </value>
+  </data>
+  <data name="Loosely" xml:space="preserve">
+    <value>ಲೂಜ್ಲ್ಯ್ </value>
+  </data>
+  <data name="loosened" xml:space="preserve">
+    <value>ಲೂಜ್ನೆಡ್ </value>
+  </data>
+  <data name="loss" xml:space="preserve">
+    <value>ಲೂಸ್ </value>
+  </data>
+  <data name="lost" xml:space="preserve">
+    <value>ಲಾಸ್ಟ್ </value>
+  </data>
+  <data name="low" xml:space="preserve">
+    <value>ಲೊ </value>
+  </data>
+  <data name="lower" xml:space="preserve">
+    <value>ಲೋಯರ್</value>
+  </data>
+  <data name="lowside" xml:space="preserve">
+    <value>ಲೊ ಸೈಡ್ </value>
+  </data>
+  <data name="lump" xml:space="preserve">
+    <value>ಲಂಪ್ </value>
+  </data>
+  <data name="main" xml:space="preserve">
+    <value>ಮೇನ್ </value>
+  </data>
+  <data name="malfunction" xml:space="preserve">
+    <value>ಮಲಫುನ್ಕ್ಷನ್ </value>
+  </data>
+  <data name="manage" xml:space="preserve">
+    <value>ಮ್ಯಾನೇಜ್ </value>
+  </data>
+  <data name="management" xml:space="preserve">
+    <value>ಮ್ಯಾನೇಜ್ಮೆಂಟ್ </value>
+  </data>
+  <data name="manifold" xml:space="preserve">
+    <value>ಮ್ಯಾನಿಫೋಲ್ಡ್</value>
+  </data>
+  <data name="MANUAL" xml:space="preserve">
+    <value>ಮಾನ್ಯುಯಲ್ </value>
+  </data>
+  <data name="manufacturer" xml:space="preserve">
+    <value>ಮ್ಯಾನುಫ್ಯಾಕ್ಟುರೆರ್ </value>
+  </data>
+  <data name="many" xml:space="preserve">
+    <value>ಮೆನಿ </value>
+  </data>
+  <data name="map" xml:space="preserve">
+    <value>ಮ್ಯಾಪ್ </value>
+  </data>
+  <data name="mass" xml:space="preserve">
+    <value>ಮಾಸ್ </value>
+  </data>
+  <data name="massflow" xml:space="preserve">
+    <value>ಮಾಸ್ಫ್ಲೌ</value>
+  </data>
+  <data name="matter" xml:space="preserve">
+    <value>ಮ್ಯಾಟರ್ </value>
+  </data>
+  <data name="max" xml:space="preserve">
+    <value>ಮ್ಯಾಕ್ಸ್ </value>
+  </data>
+  <data name="maximal" xml:space="preserve">
+    <value>ಮ್ಯಾಕ್ಸಿಮಲ್ </value>
+  </data>
+  <data name="maximum" xml:space="preserve">
+    <value>ಮ್ಯಾಕ್ಸಿಮಮ್</value>
+  </data>
+  <data name="may" xml:space="preserve">
+    <value>ಮೇ </value>
+  </data>
+  <data name="Measure" xml:space="preserve">
+    <value>ಮೇಸುರ್ </value>
+  </data>
+  <data name="measurement" xml:space="preserve">
+    <value>ಮೆಸ್ಸುರ್ಮೆಂಟ್ </value>
+  </data>
+  <data name="mechanical" xml:space="preserve">
+    <value>ಮೆಕ್ಯಾನಿಕಲ್ </value>
+  </data>
+  <data name="mechanism" xml:space="preserve">
+    <value>ಮೆಕ್ಯಾನಿಸ್ಮ್ </value>
+  </data>
+  <data name="media" xml:space="preserve">
+    <value>ಮೀಡಿಯಾ </value>
+  </data>
+  <data name="memory" xml:space="preserve">
+    <value>ಮೆಮೊರಿ </value>
+  </data>
+  <data name="message" xml:space="preserve">
+    <value>ಮೆಸೇಜ್ </value>
+  </data>
+  <data name="met" xml:space="preserve">
+    <value>ಮೆಟ್ </value>
+  </data>
+  <data name="meter" xml:space="preserve">
+    <value>ಮೀಟರ್ </value>
+  </data>
+  <data name="metering" xml:space="preserve">
+    <value>ಮೀಟರಿಂಗ್ </value>
+  </data>
+  <data name="middle" xml:space="preserve">
+    <value>ಮಿಡ್ಲ್ </value>
+  </data>
+  <data name="midrange" xml:space="preserve">
+    <value>ಮಿಡ್ ರೇಂಜ್ </value>
+  </data>
+  <data name="mil" xml:space="preserve">
+    <value>ಮಿಲ್ </value>
+  </data>
+  <data name="min" xml:space="preserve">
+    <value>ಮಿನ್ </value>
+  </data>
+  <data name="minimum" xml:space="preserve">
+    <value>ಮಿನಿಮಂ </value>
+  </data>
+  <data name="misfire" xml:space="preserve">
+    <value>ಮೀಸಫೈರ್ </value>
+  </data>
+  <data name="mismatch" xml:space="preserve">
+    <value>ಮಿಸ್ ಮ್ಯಾಚ್ </value>
+  </data>
+  <data name="missing" xml:space="preserve">
+    <value>ಮಿಸ್ಸಿಂಗ್ </value>
+  </data>
+  <data name="mocsop" xml:space="preserve">
+    <value>ಮೊಚ್ಸೋಪ್ </value>
+  </data>
+  <data name="mode" xml:space="preserve">
+    <value>ಮೋಡ್ </value>
+  </data>
+  <data name="model" xml:space="preserve">
+    <value>ಮಾಡೆಲ್ </value>
+  </data>
+  <data name="moderate" xml:space="preserve">
+    <value>ಮಾಡರೇಟ್ </value>
+  </data>
+  <data name="moderately" xml:space="preserve">
+    <value>ಮೊಡೆರಾಟೆಲಿ </value>
+  </data>
+  <data name="modulation" xml:space="preserve">
+    <value>ಮೊಡ್ಯೂಲಶನ್ </value>
+  </data>
+  <data name="module" xml:space="preserve">
+    <value>ಮೊಡ್ಯೂಲ್ </value>
+  </data>
+  <data name="monitor" xml:space="preserve">
+    <value>ಮಾನಿಟರ್ </value>
+  </data>
+  <data name="monitoring" xml:space="preserve">
+    <value>ಮಾನಿಟರಿಂಗ್ </value>
+  </data>
+  <data name="monitors" xml:space="preserve">
+    <value>ಮಾನಿಟರ್ಸ್ </value>
+  </data>
+  <data name="more" xml:space="preserve">
+    <value>ಮೊರೆ </value>
+  </data>
+  <data name="motion" xml:space="preserve">
+    <value>ಮೋಶನ್ </value>
+  </data>
+  <data name="motor" xml:space="preserve">
+    <value>ಮೋಟಾರ್ </value>
+  </data>
+  <data name="mounting" xml:space="preserve">
+    <value>ಪಿ ಟಿ ಓ </value>
+  </data>
+  <data name="multi" xml:space="preserve">
+    <value>ಮಲ್ಟಿ </value>
+  </data>
+  <data name="multi-function" xml:space="preserve">
+    <value>ಮಲ್ಟಿ ಫ್ಯಾಂಕ್ಷನ್ </value>
+  </data>
+  <data name="multiple" xml:space="preserve">
+    <value>ಮಲ್ಟಿಪಲ್ </value>
+  </data>
+  <data name="must" xml:space="preserve">
+    <value>ಮಸ್ಟ್ </value>
+  </data>
+  <data name="native" xml:space="preserve">
+    <value>ನೇಟಿವ್ </value>
+  </data>
+  <data name="natural" xml:space="preserve">
+    <value>ನ್ಯಾಚುರಲ್ </value>
+  </data>
+  <data name="negative" xml:space="preserve">
+    <value>ನೆಗೆಟಿವ್ </value>
+  </data>
+  <data name="net" xml:space="preserve">
+    <value>ನೆಟ್ </value>
+  </data>
+  <data name="neutral" xml:space="preserve">
+    <value>ನ್ಯೂಟ್ರಲ್ </value>
+  </data>
+  <data name="new" xml:space="preserve">
+    <value>ನ್ಯೂ </value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>ನೋ </value>
+  </data>
+  <data name="noisy" xml:space="preserve">
+    <value>ನೋಯಿಸಿ </value>
+  </data>
+  <data name="nominal" xml:space="preserve">
+    <value>ನಾಮಿನಲ್ </value>
+  </data>
+  <data name="non" xml:space="preserve">
+    <value>ನೋನ್ </value>
+  </data>
+  <data name="normal" xml:space="preserve">
+    <value>ನಾರ್ಮಲ್ </value>
+  </data>
+  <data name="not" xml:space="preserve">
+    <value>ನಾಟ್ </value>
+  </data>
+  <data name="nox" xml:space="preserve">
+    <value>ನೋಸ್ </value>
+  </data>
+  <data name="nozzle" xml:space="preserve">
+    <value>ನೊಝ್ಲ್ </value>
+  </data>
+  <data name="number" xml:space="preserve">
+    <value>ನಂಬರ್ </value>
+  </data>
+  <data name="observed" xml:space="preserve">
+    <value>ಒಬ್ಸರ್ವ್ಡ್ </value>
+  </data>
+  <data name="obstacles" xml:space="preserve">
+    <value>ಒಬ್ಸ್ಟ್ಯಾಕ್ಲ್ಸ್ </value>
+  </data>
+  <data name="occur" xml:space="preserve">
+    <value>ಓಕ್ಕ್ಯುರ್ </value>
+  </data>
+  <data name="occurred" xml:space="preserve">
+    <value>ಒಕುರ್ದ್ </value>
+  </data>
+  <data name="occurrence" xml:space="preserve">
+    <value>ಒಕುರಾನ್ಸ್ನ </value>
+  </data>
+  <data name="odd" xml:space="preserve">
+    <value>ಒಡ್ದ್ </value>
+  </data>
+  <data name="odometer" xml:space="preserve">
+    <value>ಓಡೋಮೀಟರ್ </value>
+  </data>
+  <data name="of" xml:space="preserve">
+    <value>ಒಫ್ </value>
+  </data>
+  <data name="off" xml:space="preserve">
+    <value>ಆಫ್ </value>
+  </data>
+  <data name="offset" xml:space="preserve">
+    <value>ಆಫ್ಸೆಟ್ </value>
+  </data>
+  <data name="oil" xml:space="preserve">
+    <value>ಆಯಿಲ್ </value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>ಓಕೆ </value>
+  </data>
+  <data name="on" xml:space="preserve">
+    <value>ಆನ್ </value>
+  </data>
+  <data name="ONBlink" xml:space="preserve">
+    <value>ಆನ್ ಬ್ಲಿಂಕ್ </value>
+  </data>
+  <data name="once" xml:space="preserve">
+    <value>ವನ್ಸ್ </value>
+  </data>
+  <data name="one" xml:space="preserve">
+    <value>ಒನ್ </value>
+  </data>
+  <data name="ones" xml:space="preserve">
+    <value>ಒನ್ಸ್ </value>
+  </data>
+  <data name="only" xml:space="preserve">
+    <value>ಓನ್ಲಿ </value>
+  </data>
+  <data name="open" xml:space="preserve">
+    <value>ಓಪನ್ </value>
+  </data>
+  <data name="opened" xml:space="preserve">
+    <value>ಓಪೆನ್ಡ್ </value>
+  </data>
+  <data name="opening" xml:space="preserve">
+    <value>ಓಪನಿಂಗ್ </value>
+  </data>
+  <data name="operation" xml:space="preserve">
+    <value>ಆಪರೇಷನ್  </value>
+  </data>
+  <data name="operations" xml:space="preserve">
+    <value>ಅಪೆರೇಷನ್ </value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value>ಓರ್ </value>
+  </data>
+  <data name="orifice" xml:space="preserve">
+    <value>ಒರಿಫಾಸ್ </value>
+  </data>
+  <data name="other" xml:space="preserve">
+    <value>ಓಥೆರ್ </value>
+  </data>
+  <data name="our" xml:space="preserve">
+    <value>ಅವರ್ </value>
+  </data>
+  <data name="out" xml:space="preserve">
+    <value>ಔಟ್ </value>
+  </data>
+  <data name="outlet" xml:space="preserve">
+    <value>ಔಟ್ಲೆಟ್ </value>
+  </data>
+  <data name="output" xml:space="preserve">
+    <value>ಔಟ್ಪುಟ್ </value>
+  </data>
+  <data name="over" xml:space="preserve">
+    <value>ಓವರ್ </value>
+  </data>
+  <data name="overboost" xml:space="preserve">
+    <value>ಓವೆರ್ಬೂಸ್ಟ್ </value>
+  </data>
+  <data name="overrun" xml:space="preserve">
+    <value>ಓವರ್ ರನ್ </value>
+  </data>
+  <data name="overspeed" xml:space="preserve">
+    <value>ಓವೆರ್ಸ್ಪೀಡ್ </value>
+  </data>
+  <data name="overtemp" xml:space="preserve">
+    <value>ಓವೆರ್ಟೆಂಪ್ </value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>ಓವೆರ್ವಿಯೂ </value>
+  </data>
+  <data name="overvoltage" xml:space="preserve">
+    <value>ಓವೆರ್ವೊಳ್ತಾಜ</value>
+  </data>
+  <data name="oxidation" xml:space="preserve">
+    <value>ಒಕ್ಸಿಡೇಷನ್ </value>
+  </data>
+  <data name="oxygen" xml:space="preserve">
+    <value>ಆಕ್ಸಿಜನ್ </value>
+  </data>
+  <data name="pack" xml:space="preserve">
+    <value>ಪ್ಯಾಕ್ </value>
+  </data>
+  <data name="pad" xml:space="preserve">
+    <value>ಪ್ಯಾಡ್ </value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>ಪೇಜ್ </value>
+  </data>
+  <data name="panel" xml:space="preserve">
+    <value>ಪ್ಯಾನೆಲ್ </value>
+  </data>
+  <data name="parameter" xml:space="preserve">
+    <value>ಪ್ಯಾರಾಮೀಟರ್ </value>
+  </data>
+  <data name="parameters" xml:space="preserve">
+    <value>ಪ್ಯಾರಮೀಟರ್ಸ್ </value>
+  </data>
+  <data name="park" xml:space="preserve">
+    <value>ಪಾರ್ಕ್ </value>
+  </data>
+  <data name="parking" xml:space="preserve">
+    <value>ಪಾರ್ಕಿಂಗ್ </value>
+  </data>
+  <data name="part" xml:space="preserve">
+    <value>ಪಾರ್ಟ್  </value>
+  </data>
+  <data name="particles" xml:space="preserve">
+    <value>ಪಾರ್ಟಿಕಲ್ಸ </value>
+  </data>
+  <data name="particulate" xml:space="preserve">
+    <value>ಪರ್ಟಿಕ್ಯುಲೇಟ್ </value>
+  </data>
+  <data name="parties" xml:space="preserve">
+    <value>ಪಾರ್ಟೀಸ್ </value>
+  </data>
+  <data name="parts" xml:space="preserve">
+    <value>ಪಾರ್ಟ್ಸ್ </value>
+  </data>
+  <data name="path" xml:space="preserve">
+    <value>ಪಾತ್ </value>
+  </data>
+  <data name="paths" xml:space="preserve">
+    <value>ಪಾಥ್ಸ್ </value>
+  </data>
+  <data name="pcm" xml:space="preserve">
+    <value>ಪಿ ಸಿ ಎಂ </value>
+  </data>
+  <data name="Pcode" xml:space="preserve">
+    <value>ಪಿ ಕೋಡ್ </value>
+  </data>
+  <data name="pedal" xml:space="preserve">
+    <value>ಪೆಡಲ್ </value>
+  </data>
+  <data name="per" xml:space="preserve">
+    <value>ಪರ್ </value>
+  </data>
+  <data name="percent" xml:space="preserve">
+    <value>ಪರ್ಸೆಂಟ್ </value>
+  </data>
+  <data name="percentage" xml:space="preserve">
+    <value>ಪರ್ಸಂಟೇಜ್ </value>
+  </data>
+  <data name="Perform" xml:space="preserve">
+    <value>ಪರ್ ಫಾರಂ </value>
+  </data>
+  <data name="performance" xml:space="preserve">
+    <value>ಪರ್ಫಾರ್ಮೆನ್ಸ್</value>
+  </data>
+  <data name="perfrom" xml:space="preserve">
+    <value>ಪರ್ ಫಾರ್ಮ್ </value>
+  </data>
+  <data name="period" xml:space="preserve">
+    <value>ಪಿರಿಯಡ್ </value>
+  </data>
+  <data name="peripheral" xml:space="preserve">
+    <value>ಪೆರಿಫೆರಲ್ </value>
+  </data>
+  <data name="permanent" xml:space="preserve">
+    <value>ಪರ್ಮನೆಂಟ್ </value>
+  </data>
+  <data name="permissible" xml:space="preserve">
+    <value>ಪೇರ್ಮಿಸ್ಸಿಬ್ಲ್ </value>
+  </data>
+  <data name="permitted" xml:space="preserve">
+    <value>ಪೇರ್ಮಿಟ್ಟ್ದ </value>
+  </data>
+  <data name="persists" xml:space="preserve">
+    <value>ಪರ್ಸಿಸ್ಟ್ಸ್ </value>
+  </data>
+  <data name="Physical" xml:space="preserve">
+    <value>ಫಿಸಿಕಲ್ </value>
+  </data>
+  <data name="pid" xml:space="preserve">
+    <value>ಪಿಐಡಿ </value>
+  </data>
+  <data name="pin" xml:space="preserve">
+    <value>ಪಿನ್ </value>
+  </data>
+  <data name="Pinion" xml:space="preserve">
+    <value>ಪಿನಿಯೋನ್ </value>
+  </data>
+  <data name="pinscheck" xml:space="preserve">
+    <value>ಪಿನ್ ಚೆಕ್ </value>
+  </data>
+  <data name="pipes" xml:space="preserve">
+    <value>ಪೈಪ್ </value>
+  </data>
+  <data name="plausibility" xml:space="preserve">
+    <value>ಪ್ಲಾಸ್ಸಿಬಿಲಿಟಿ </value>
+  </data>
+  <data name="plausible" xml:space="preserve">
+    <value>ಪ್ಲಾಸಿಬಲ್ </value>
+  </data>
+  <data name="plug" xml:space="preserve">
+    <value>ಪ್ಲಗ್ </value>
+  </data>
+  <data name="plunger" xml:space="preserve">
+    <value>ಪ್ಲುನ್ಜರ್ </value>
+  </data>
+  <data name="point" xml:space="preserve">
+    <value>ಪಾಇಂಟ್ </value>
+  </data>
+  <data name="polarity" xml:space="preserve">
+    <value>ಪೋಲಾರಿಟಿ </value>
+  </data>
+  <data name="popup" xml:space="preserve">
+    <value>ಪಾಪ್ ಅಪ್ </value>
+  </data>
+  <data name="port" xml:space="preserve">
+    <value>ಪೋರ್ಟ್ </value>
+  </data>
+  <data name="position" xml:space="preserve">
+    <value>ಪೊಸಿಷನ್</value>
+  </data>
+  <data name="positive" xml:space="preserve">
+    <value>ಪಾಸಿಟಿವ್ </value>
+  </data>
+  <data name="possible" xml:space="preserve">
+    <value>ಪಾಸಿಬಲ್ </value>
+  </data>
+  <data name="post" xml:space="preserve">
+    <value>ಪೋಸ್ಟ್ </value>
+  </data>
+  <data name="potential" xml:space="preserve">
+    <value>ಪೊಟೆಂಟಿಎಲ್ </value>
+  </data>
+  <data name="power" xml:space="preserve">
+    <value>ಪವರ್ </value>
+  </data>
+  <data name="powerstage" xml:space="preserve">
+    <value>ಪವರ್ ಸ್ಟೇಜ್ </value>
+  </data>
+  <data name="Pre" xml:space="preserve">
+    <value>ಪ್ರಿ </value>
+  </data>
+  <data name="pre-catalyst" xml:space="preserve">
+    <value>ಪ್ರಿ ಕ್ಯಾಟಲಿಸ್ಟ್ </value>
+  </data>
+  <data name="preceeded" xml:space="preserve">
+    <value>ಪ್ರಿ ಸೀಡೆಡ್ </value>
+  </data>
+  <data name="presence" xml:space="preserve">
+    <value>ಪ್ರೆಸೆನ್ಸ್ </value>
+  </data>
+  <data name="present" xml:space="preserve">
+    <value>ಪ್ರೆಸೆಂಟ್ </value>
+  </data>
+  <data name="pressed" xml:space="preserve">
+    <value>ಪ್ರೆಸ್ಸ್ಡ್ </value>
+  </data>
+  <data name="pressure" xml:space="preserve">
+    <value>ಪ್ರೆಷರ್   </value>
+  </data>
+  <data name="previous" xml:space="preserve">
+    <value>ಪ್ರೆವಿಎಸ್ </value>
+  </data>
+  <data name="primary" xml:space="preserve">
+    <value>ಪ್ರೈಮರಿ </value>
+  </data>
+  <data name="problem" xml:space="preserve">
+    <value>ಪ್ರಾಬ್ಲಮ್ </value>
+  </data>
+  <data name="procedure" xml:space="preserve">
+    <value>ಪ್ರೊಸೀಜರ್ </value>
+  </data>
+  <data name="processor" xml:space="preserve">
+    <value>ಪ್ರೊಸೆಸರ್ </value>
+  </data>
+  <data name="program" xml:space="preserve">
+    <value>ಪ್ರೋಗ್ರಾಮ್ </value>
+  </data>
+  <data name="programmed" xml:space="preserve">
+    <value>ಪ್ರೋಗ್ರಾಮ್ಡ್ </value>
+  </data>
+  <data name="programming" xml:space="preserve">
+    <value>ಪ್ರೋಗ್ರಾಮಿಂಗ್ </value>
+  </data>
+  <data name="prohibited" xml:space="preserve">
+    <value>ಪ್ರೋಹಿಬೀಟೆಡ್ </value>
+  </data>
+  <data name="proper" xml:space="preserve">
+    <value>ಪ್ರಾಪರ್ </value>
+  </data>
+  <data name="properly" xml:space="preserve">
+    <value>ಪ್ರಾಪರ್ಟಿ </value>
+  </data>
+  <data name="protection" xml:space="preserve">
+    <value>ಪ್ರೊಟೆಕ್ಷನ್ </value>
+  </data>
+  <data name="pull" xml:space="preserve">
+    <value>ಪುಲ್ </value>
+  </data>
+  <data name="Pulse" xml:space="preserve">
+    <value>ಪಲ್ಸ್ </value>
+  </data>
+  <data name="pulses" xml:space="preserve">
+    <value>ಪುಲಸ್ಸ್ </value>
+  </data>
+  <data name="pump" xml:space="preserve">
+    <value>ಪಂಪ್ </value>
+  </data>
+  <data name="purge" xml:space="preserve">
+    <value>ಪರ್ಜ </value>
+  </data>
+  <data name="push" xml:space="preserve">
+    <value>ಪುಶ್ </value>
+  </data>
+  <data name="put" xml:space="preserve">
+    <value>ಪುಟ್ </value>
+  </data>
+  <data name="putting" xml:space="preserve">
+    <value>ಪುಟ್ಟಿಂಗ್ </value>
+  </data>
+  <data name="quality" xml:space="preserve">
+    <value>ಕ್ವಾಲಿಟಿ </value>
+  </data>
+  <data name="quantity" xml:space="preserve">
+    <value>ಕ್ವಾಂಟಿಟಿ </value>
+  </data>
+  <data name="query" xml:space="preserve">
+    <value>ಕ್ವೆರಿ </value>
+  </data>
+  <data name="rail" xml:space="preserve">
+    <value>ರೈಲ್ </value>
+  </data>
+  <data name="ram" xml:space="preserve">
+    <value>ರಾಮ್ </value>
+  </data>
+  <data name="random" xml:space="preserve">
+    <value>ರಂಡೋಮ್ </value>
+  </data>
+  <data name="range" xml:space="preserve">
+    <value>ರೇಂಜ್ </value>
+  </data>
+  <data name="rate" xml:space="preserve">
+    <value>ರೇಟ್ </value>
+  </data>
+  <data name="rated" xml:space="preserve">
+    <value>ರೇಟೆಡ್ </value>
+  </data>
+  <data name="ratio" xml:space="preserve">
+    <value>ರೇಶಿಯೋ </value>
+  </data>
+  <data name="rationality" xml:space="preserve">
+    <value>ರಷನಾಲಿಟಿ </value>
+  </data>
+  <data name="raw" xml:space="preserve">
+    <value>ರಾ </value>
+  </data>
+  <data name="re" xml:space="preserve">
+    <value>ರಿ </value>
+  </data>
+  <data name="reached" xml:space="preserve">
+    <value>ರಿಚೇಡ್ </value>
+  </data>
+  <data name="reaction" xml:space="preserve">
+    <value>ರಿಯಾಕ್ಷನ್ </value>
+  </data>
+  <data name="read" xml:space="preserve">
+    <value>ರೀಡ್ </value>
+  </data>
+  <data name="reading" xml:space="preserve">
+    <value>ರೀಡಿಂಗ್ </value>
+  </data>
+  <data name="reagent" xml:space="preserve">
+    <value>ರೆಜೇಂಟ್ </value>
+  </data>
+  <data name="rear" xml:space="preserve">
+    <value>ರೇರ್ </value>
+  </data>
+  <data name="rearward" xml:space="preserve">
+    <value>ರಿವಾರ್ಡ್ </value>
+  </data>
+  <data name="reason" xml:space="preserve">
+    <value>ರೀಸನ್ </value>
+  </data>
+  <data name="receive" xml:space="preserve">
+    <value>ರಿಸೀವ್ </value>
+  </data>
+  <data name="received" xml:space="preserve">
+    <value>ರೀಸಿವ್ಡ್ </value>
+  </data>
+  <data name="recheck" xml:space="preserve">
+    <value>ರಿಚೆಕ್ಕ್ </value>
+  </data>
+  <data name="recirculation" xml:space="preserve">
+    <value>ರೀಸರ್ಕ್ಯುಲೇಷನ್ </value>
+  </data>
+  <data name="RecirculationEGR" xml:space="preserve">
+    <value>ರೇಸರ್ಕ್ಯುಲೇಷನ್ ಈ ಜಿ ರ್ </value>
+  </data>
+  <data name="reconnecting" xml:space="preserve">
+    <value>ರೆಕನ್ನೆಕ್ಟಿನ್ಗ್ </value>
+  </data>
+  <data name="recoveries" xml:space="preserve">
+    <value>ರೆಕಾವೇರಿಸ್ </value>
+  </data>
+  <data name="rectification" xml:space="preserve">
+    <value>ರೆಕ್ಟ್ರಿಫಿಕೇಷನ್ </value>
+  </data>
+  <data name="Rectify" xml:space="preserve">
+    <value>ರೆಕ್ಟಿಫ್ಯ್ </value>
+  </data>
+  <data name="redistributing" xml:space="preserve">
+    <value>ರೆಡಿಸ್ಟ್ರಿಬೂಟಿಂಗ್ </value>
+  </data>
+  <data name="reduced" xml:space="preserve">
+    <value>ರೆಡ್ಯೂಸ್ಡ್ </value>
+  </data>
+  <data name="reductant" xml:space="preserve">
+    <value>ರಿಡಕ್ಟಾನ್ಟ್ </value>
+  </data>
+  <data name="redundant" xml:space="preserve">
+    <value>ರಿಡಕ್ಟಾನ್ಟ್ </value>
+  </data>
+  <data name="Refer" xml:space="preserve">
+    <value>ರೆಫರ್ </value>
+  </data>
+  <data name="reference" xml:space="preserve">
+    <value>ರೆಫರೆನ್ಸ್</value>
+  </data>
+  <data name="reflash" xml:space="preserve">
+    <value>ರೇಫ್ಲ್ಯಾಶ್ </value>
+  </data>
+  <data name="refrigerant" xml:space="preserve">
+    <value>ರೆಫ್ರಿಜ್ರ್ಯಾಂಟ್ </value>
+  </data>
+  <data name="regeneration" xml:space="preserve">
+    <value>ರೆಜೆನೆರೇಷನ್ </value>
+  </data>
+  <data name="regulating" xml:space="preserve">
+    <value>ರೇಗುಲೇಟಿಂಗ್ </value>
+  </data>
+  <data name="regulator" xml:space="preserve">
+    <value>ರೆಗ್ಯುಲೇಟರ್ </value>
+  </data>
+  <data name="related" xml:space="preserve">
+    <value>ರಿಲೇಟೆಡ್ </value>
+  </data>
+  <data name="relative" xml:space="preserve">
+    <value>ರಿಲೇಟಿವ್</value>
+  </data>
+  <data name="relay" xml:space="preserve">
+    <value>ರಿಲೇ </value>
+  </data>
+  <data name="relief" xml:space="preserve">
+    <value>ರಿಲೀಫ್ </value>
+  </data>
+  <data name="rem" xml:space="preserve">
+    <value>ರೆಂ </value>
+  </data>
+  <data name="remaining" xml:space="preserve">
+    <value>ರೇಮೈನಿಂಗ್  </value>
+  </data>
+  <data name="Remedy" xml:space="preserve">
+    <value>ರೆಮೆಡಿ </value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>ರಿಮೋವ್ </value>
+  </data>
+  <data name="removed" xml:space="preserve">
+    <value>ರೆಮೊವ್ಡ್ </value>
+  </data>
+  <data name="repair" xml:space="preserve">
+    <value>ರಿಪೇರ್ </value>
+  </data>
+  <data name="repeating" xml:space="preserve">
+    <value>ರೆಪೇಟಿಂಗ್ </value>
+  </data>
+  <data name="replace" xml:space="preserve">
+    <value>ರಿಪ್ಲೇಸ್ </value>
+  </data>
+  <data name="replacement" xml:space="preserve">
+    <value>ರಿಪ್ಲೇಸ್ ಮೆಂಟ್ </value>
+  </data>
+  <data name="report" xml:space="preserve">
+    <value>ರಿಪೋರ್ಟ್ </value>
+  </data>
+  <data name="reported" xml:space="preserve">
+    <value>ರೆಪೋರ್ಟೆಡ್  </value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>ರಿಪೋರ್ಟ್ಸ </value>
+  </data>
+  <data name="request" xml:space="preserve">
+    <value>ರಿಕ್ವೆಸ್ಟ್  </value>
+  </data>
+  <data name="required" xml:space="preserve">
+    <value>ರಿಕುಇರ್ಡ್ </value>
+  </data>
+  <data name="requirement" xml:space="preserve">
+    <value>ರೆಕ್ಸ್ನ್ರೆಮೆಂಟ್ </value>
+  </data>
+  <data name="requirements" xml:space="preserve">
+    <value>ರೆಕ್ಸ್ನ್ರೆಮೆಂಟ್ಸ್ </value>
+  </data>
+  <data name="reset" xml:space="preserve">
+    <value>ರಿಸೆಟ್ </value>
+  </data>
+  <data name="resets" xml:space="preserve">
+    <value>ರೆಸೆಟ್ಸ್ </value>
+  </data>
+  <data name="resistance" xml:space="preserve">
+    <value>ರೆಸಿಸ್ಟನ್ಸ </value>
+  </data>
+  <data name="resister" xml:space="preserve">
+    <value>ರೆಸಿಸ್ಟರ್ </value>
+  </data>
+  <data name="resolution" xml:space="preserve">
+    <value>ರೆಸೊಲ್ಯೂಷನ್ </value>
+  </data>
+  <data name="respectively" xml:space="preserve">
+    <value>ರೆಸ್ಪೆಕ್ಟಿವ್ಲಿ </value>
+  </data>
+  <data name="respond" xml:space="preserve">
+    <value>ರೆಸ್ಪೋನ್ಡ್ </value>
+  </data>
+  <data name="response" xml:space="preserve">
+    <value>ರೆಸ್ಪಾನ್ಸ್ </value>
+  </data>
+  <data name="restriction" xml:space="preserve">
+    <value>ರೆಸ್ಟ್ರಿಕ್ಷನ್ </value>
+  </data>
+  <data name="resume" xml:space="preserve">
+    <value>ರಿಸುಮ್ </value>
+  </data>
+  <data name="retarded" xml:space="preserve">
+    <value>ರೆಟಾರ್ಡೆಡ್ </value>
+  </data>
+  <data name="return" xml:space="preserve">
+    <value>ರಿಟರ್ನ್ </value>
+  </data>
+  <data name="returns" xml:space="preserve">
+    <value>ರಿಟರ್ನ್ಸ್ </value>
+  </data>
+  <data name="reverse" xml:space="preserve">
+    <value>ರಿವೆರ್ಸೆ </value>
+  </data>
+  <data name="Revision" xml:space="preserve">
+    <value>ರಿವಿಶನ್ </value>
+  </data>
+  <data name="revolutions" xml:space="preserve">
+    <value>ರೆವೊಲ್ಯೂಷನ್ಸ್ </value>
+  </data>
+  <data name="reward" xml:space="preserve">
+    <value>ರಿವಾರ್ಡ್ </value>
+  </data>
+  <data name="rich" xml:space="preserve">
+    <value>ರಿಚ್ </value>
+  </data>
+  <data name="right" xml:space="preserve">
+    <value>ರೈಟ್ </value>
+  </data>
+  <data name="road" xml:space="preserve">
+    <value>ರೋಡ್ </value>
+  </data>
+  <data name="rom" xml:space="preserve">
+    <value>ರೊಂ </value>
+  </data>
+  <data name="rough" xml:space="preserve">
+    <value>ರಫ್ </value>
+  </data>
+  <data name="rubbing" xml:space="preserve">
+    <value>ರುಬ್ಬಿನ್ಗ್ </value>
+  </data>
+  <data name="run" xml:space="preserve">
+    <value>ರನ್ </value>
+  </data>
+  <data name="running" xml:space="preserve">
+    <value>ರನ್ನಿಂಗ್ </value>
+  </data>
+  <data name="runtime" xml:space="preserve">
+    <value>ರನ್ಟೈಮ್ </value>
+  </data>
+  <data name="same" xml:space="preserve">
+    <value>ಸೇಮ್ </value>
+  </data>
+  <data name="screw" xml:space="preserve">
+    <value>ಸ್ಕ್ರೂ </value>
+  </data>
+  <data name="second" xml:space="preserve">
+    <value>ಸೆಕೆಂಡ್ </value>
+  </data>
+  <data name="secondary" xml:space="preserve">
+    <value>ಸೆಕೆಂಡರಿ </value>
+  </data>
+  <data name="sector" xml:space="preserve">
+    <value>ಸೆಕ್ಟರ್ </value>
+  </data>
+  <data name="secure" xml:space="preserve">
+    <value>ಸೆಕ್ಯೂರ್ </value>
+  </data>
+  <data name="secured" xml:space="preserve">
+    <value>ಸೆಕ್ಯೂರ್ಡ್ </value>
+  </data>
+  <data name="select" xml:space="preserve">
+    <value>ಸೆಲೆಕ್ಟ್ </value>
+  </data>
+  <data name="selection" xml:space="preserve">
+    <value>ಸೆಲೆಕ್ಷನ್  </value>
+  </data>
+  <data name="self" xml:space="preserve">
+    <value>ಸೆಲ್ಫ್ </value>
+  </data>
+  <data name="sending" xml:space="preserve">
+    <value>ಸೇಂಡಿಂಗ್ </value>
+  </data>
+  <data name="sense" xml:space="preserve">
+    <value>ಸೆನ್ಸ್ </value>
+  </data>
+  <data name="senses" xml:space="preserve">
+    <value>ಸೆನ್ಸೆಸ್ </value>
+  </data>
+  <data name="sensitivity" xml:space="preserve">
+    <value>ಸೆನ್ಸಿಟಿವಿಟಿ </value>
+  </data>
+  <data name="sensor" xml:space="preserve">
+    <value>ಸೆನ್ಸರ್ </value>
+  </data>
+  <data name="sensors" xml:space="preserve">
+    <value>ಸೆನ್ಸೋರ್ಸ್ </value>
+  </data>
+  <data name="sequence" xml:space="preserve">
+    <value>ಸೀಕ್ವೆನ್ಸ್ </value>
+  </data>
+  <data name="serial" xml:space="preserve">
+    <value>ಸೀರಿಯಲ್ </value>
+  </data>
+  <data name="servo" xml:space="preserve">
+    <value>ಸರ್ವೋ </value>
+  </data>
+  <data name="set" xml:space="preserve">
+    <value>ಸೆಟ್ </value>
+  </data>
+  <data name="setpoint" xml:space="preserve">
+    <value>ಸೆಟ್ ಪಾಯಿಂಟ್ </value>
+  </data>
+  <data name="setting" xml:space="preserve">
+    <value>ಸೆಟ್ಟಿಂಗ್ </value>
+  </data>
+  <data name="shaft" xml:space="preserve">
+    <value>ಷಾಫ್ಟ್ </value>
+  </data>
+  <data name="shape" xml:space="preserve">
+    <value>ಶೇಪ್ </value>
+  </data>
+  <data name="shift" xml:space="preserve">
+    <value>ಶಿಫ್ಟ್ </value>
+  </data>
+  <data name="shifted" xml:space="preserve">
+    <value>ಶಿಫ್ಟ್ದ್ </value>
+  </data>
+  <data name="short" xml:space="preserve">
+    <value>ಶಾರ್ಟ್ </value>
+  </data>
+  <data name="shorted" xml:space="preserve">
+    <value>ಶಾರ್ಟಡ್ </value>
+  </data>
+  <data name="shorthigh" xml:space="preserve">
+    <value>ಶಾರ್ಟ್ ಹೈ </value>
+  </data>
+  <data name="shortlow" xml:space="preserve">
+    <value>ಶಾರ್ಟ್ ಫ್ಲೋ </value>
+  </data>
+  <data name="should" xml:space="preserve">
+    <value>ಶುಡ್ </value>
+  </data>
+  <data name="show" xml:space="preserve">
+    <value>ಶೋ </value>
+  </data>
+  <data name="shows" xml:space="preserve">
+    <value>ಷೋಸ್ </value>
+  </data>
+  <data name="shut" xml:space="preserve">
+    <value>ಶಟ್ </value>
+  </data>
+  <data name="shutdown" xml:space="preserve">
+    <value>ಶಟ್ಡೌನ್ </value>
+  </data>
+  <data name="shutoff" xml:space="preserve">
+    <value>ಶಟ್ ಆಫ್ </value>
+  </data>
+  <data name="side" xml:space="preserve">
+    <value>ಸೈಡ್ </value>
+  </data>
+  <data name="signal" xml:space="preserve">
+    <value>ಸಿಗ್ನಲ್ </value>
+  </data>
+  <data name="signals" xml:space="preserve">
+    <value>ಸಿಗ್ನಲ್ಸ್ </value>
+  </data>
+  <data name="since" xml:space="preserve">
+    <value>ಸಿನ್ಸ್ </value>
+  </data>
+  <data name="single" xml:space="preserve">
+    <value>ಸಿಂಗಲ್ </value>
+  </data>
+  <data name="skewed" xml:space="preserve">
+    <value>ಸ್ಕುವೆಡ್ </value>
+  </data>
+  <data name="skip" xml:space="preserve">
+    <value>ಸ್ಕಿಪ್ </value>
+  </data>
+  <data name="slippage" xml:space="preserve">
+    <value>ಸ್ಲಿಪ್ಪಜ್ </value>
+  </data>
+  <data name="slipping" xml:space="preserve">
+    <value>ಸ್ಲೀಪ್ಪಿಂಗ್ </value>
+  </data>
+  <data name="slow" xml:space="preserve">
+    <value>ಸ್ಲೋ </value>
+  </data>
+  <data name="small" xml:space="preserve">
+    <value>ಸ್ಮಾಲ್ </value>
+  </data>
+  <data name="smaller" xml:space="preserve">
+    <value>ಸ್ಮಾಲರ್ </value>
+  </data>
+  <data name="smell" xml:space="preserve">
+    <value>ಸ್ಮೆಲ್ </value>
+  </data>
+  <data name="so" xml:space="preserve">
+    <value>ಸೊ </value>
+  </data>
+  <data name="software" xml:space="preserve">
+    <value>ಸಾಫ್ಟ್ವೇರ್ </value>
+  </data>
+  <data name="solenoid" xml:space="preserve">
+    <value>ಸೋಲಿನೊಯಿಡ್ </value>
+  </data>
+  <data name="some" xml:space="preserve">
+    <value>ಸಮ್</value>
+  </data>
+  <data name="Sound" xml:space="preserve">
+    <value>ಸೌಂಡ್ </value>
+  </data>
+  <data name="source" xml:space="preserve">
+    <value>ಸೊರ್ಸ್ </value>
+  </data>
+  <data name="spec" xml:space="preserve">
+    <value>ಸ್ಪೆಕ್ </value>
+  </data>
+  <data name="Specification" xml:space="preserve">
+    <value>ಸ್ಪೆಸಿಫಿಕೇಷನ್ </value>
+  </data>
+  <data name="Specifications" xml:space="preserve">
+    <value>ಸ್ಪೆಸಿಫಿಕೇಷನ್ಸ್ </value>
+  </data>
+  <data name="specified" xml:space="preserve">
+    <value>ಸ್ಪೆಸಿಫೈಡ್ </value>
+  </data>
+  <data name="Specs" xml:space="preserve">
+    <value>ಸ್ಪೆಕ್ಸ್ </value>
+  </data>
+  <data name="speed" xml:space="preserve">
+    <value>ಸ್ಪೀಡ್ </value>
+  </data>
+  <data name="spent" xml:space="preserve">
+    <value>ಸ್ಪೇನ್ಟ್ </value>
+  </data>
+  <data name="split" xml:space="preserve">
+    <value>ಸ್ಪ್ಲಿಟ್ </value>
+  </data>
+  <data name="sporadically" xml:space="preserve">
+    <value>ಸ್ಪೊರಾಡಿಕಲ್ಯ್ </value>
+  </data>
+  <data name="sport" xml:space="preserve">
+    <value>ಸ್ಪೋರ್ಟ್ </value>
+  </data>
+  <data name="spot" xml:space="preserve">
+    <value>ಸ್ಪಾಟ್ </value>
+  </data>
+  <data name="stable" xml:space="preserve">
+    <value>ಸ್ಟೇಬಲ್ </value>
+  </data>
+  <data name="stack" xml:space="preserve">
+    <value>ಸ್ಟ್ಯಾಕ್ </value>
+  </data>
+  <data name="stage" xml:space="preserve">
+    <value>ಸ್ಟೇಜ್ </value>
+  </data>
+  <data name="standards" xml:space="preserve">
+    <value>ಸ್ಟ್ಯಾಂಡರ್ಡ್ಸ್  </value>
+  </data>
+  <data name="start" xml:space="preserve">
+    <value>ಸ್ಟಾರ್ಟ್ </value>
+  </data>
+  <data name="starter" xml:space="preserve">
+    <value>ಸ್ಟಾರ್ಟರ್ </value>
+  </data>
+  <data name="startup" xml:space="preserve">
+    <value>ಸ್ಟಾರ್ಟ್ ಅಪ್ </value>
+  </data>
+  <data name="state" xml:space="preserve">
+    <value>ಸ್ಟೇಟ್ </value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>ಸ್ಟೇಟಸ್ </value>
+  </data>
+  <data name="steady" xml:space="preserve">
+    <value>ಸ್ಟೆಡಿ </value>
+  </data>
+  <data name="steering" xml:space="preserve">
+    <value>ಸ್ಟಿಯರಿಂಗ್ </value>
+  </data>
+  <data name="Step" xml:space="preserve">
+    <value>ಸ್ಟೆಪ್ </value>
+  </data>
+  <data name="steps" xml:space="preserve">
+    <value>ಸ್ಟೆಪ್ಸ್ </value>
+  </data>
+  <data name="still" xml:space="preserve">
+    <value>ಸ್ಟಿಲ್ </value>
+  </data>
+  <data name="storage" xml:space="preserve">
+    <value>ಸ್ಟೋರೇಜ್ </value>
+  </data>
+  <data name="stored" xml:space="preserve">
+    <value>ಸ್ಟೋರ್ಡ್ </value>
+  </data>
+  <data name="storing" xml:space="preserve">
+    <value>ಸ್ಟಾರಿಂಗ್ </value>
+  </data>
+  <data name="strategy" xml:space="preserve">
+    <value>ಸ್ಟ್ರಾಟೆಜಿ </value>
+  </data>
+  <data name="stuck" xml:space="preserve">
+    <value>ಸ್ಟಕ್ </value>
+  </data>
+  <data name="sub" xml:space="preserve">
+    <value>ಸಬ್ </value>
+  </data>
+  <data name="subnet" xml:space="preserve">
+    <value>ಸಬ್ ನೆಟ್ </value>
+  </data>
+  <data name="such" xml:space="preserve">
+    <value>ಸಚ್ </value>
+  </data>
+  <data name="suction" xml:space="preserve">
+    <value>ಸುಕ್ಷನ್ </value>
+  </data>
+  <data name="sum" xml:space="preserve">
+    <value>ಸಂ </value>
+  </data>
+  <data name="super" xml:space="preserve">
+    <value>ಸೂಪರ್ </value>
+  </data>
+  <data name="supplies" xml:space="preserve">
+    <value>ಸುಪ್ಪ್ಲಿಸ್ </value>
+  </data>
+  <data name="supply" xml:space="preserve">
+    <value>ಸಪ್ಲೈ </value>
+  </data>
+  <data name="support" xml:space="preserve">
+    <value>ಸಪೋರ್ಟ್ </value>
+  </data>
+  <data name="supported" xml:space="preserve">
+    <value>ಸಪೋರ್ಟೆಡ್ </value>
+  </data>
+  <data name="surface" xml:space="preserve">
+    <value>ಸರ್ಫೇಸ್ </value>
+  </data>
+  <data name="svs" xml:space="preserve">
+    <value>ಎಸ್ ವಿ ಎಸ್</value>
+  </data>
+  <data name="swapped" xml:space="preserve">
+    <value>ಸ್ವಾಪ್ಪ್ಡ್ </value>
+  </data>
+  <data name="sweet" xml:space="preserve">
+    <value>ಸ್ವೀಟ್ </value>
+  </data>
+  <data name="switch" xml:space="preserve">
+    <value>ಸ್ವಿಚ್ </value>
+  </data>
+  <data name="switched" xml:space="preserve">
+    <value>ಸ್ವಿಚ್ </value>
+  </data>
+  <data name="switches" xml:space="preserve">
+    <value>ಸ್ವಿಚ್ಸ್ </value>
+  </data>
+  <data name="switching" xml:space="preserve">
+    <value>ಸ್ವಿಚಿಂಗ್ </value>
+  </data>
+  <data name="synchronisation" xml:space="preserve">
+    <value>ಸಿನ್ಛ್ರೋನಿಜಶನ್ </value>
+  </data>
+  <data name="synchronization" xml:space="preserve">
+    <value>ಸಿನ್ಛ್ರೋನಿಶಾಶನ್ </value>
+  </data>
+  <data name="system" xml:space="preserve">
+    <value>ಸಿಸ್ಟಮ್ </value>
+  </data>
+  <data name="tank" xml:space="preserve">
+    <value>ಟ್ಯಾಂಕ್ </value>
+  </data>
+  <data name="task" xml:space="preserve">
+    <value>ಟಾಸ್ಕ್ </value>
+  </data>
+  <data name="techograph" xml:space="preserve">
+    <value>ತೆಕೋ ಗ್ರಾಫ್ </value>
+  </data>
+  <data name="temp" xml:space="preserve">
+    <value>ಟೆಂಪ್ </value>
+  </data>
+  <data name="temperature" xml:space="preserve">
+    <value>ಟೆಂಪರೇಚರ್ </value>
+  </data>
+  <data name="term" xml:space="preserve">
+    <value>ಟರ್ಮ್ </value>
+  </data>
+  <data name="terminal" xml:space="preserve">
+    <value>ಟರ್ಮಿನಲ್ </value>
+  </data>
+  <data name="terminals" xml:space="preserve">
+    <value>ಟರ್ಮಿನಲ್ಸ್ </value>
+  </data>
+  <data name="test" xml:space="preserve">
+    <value>ಟೆಸ್ಟ್ </value>
+  </data>
+  <data name="tester" xml:space="preserve">
+    <value>ಟೆಸ್ಟರ್ </value>
+  </data>
+  <data name="than" xml:space="preserve">
+    <value>ಥಾನ್ </value>
+  </data>
+  <data name="that" xml:space="preserve">
+    <value>ಥಟ್ </value>
+  </data>
+  <data name="the" xml:space="preserve">
+    <value>ದಿ </value>
+  </data>
+  <data name="then" xml:space="preserve">
+    <value>ಥೇನ್ </value>
+  </data>
+  <data name="There" xml:space="preserve">
+    <value>ಥೇರ್ </value>
+  </data>
+  <data name="therefore" xml:space="preserve">
+    <value>ಥೇರ್ಫೋರ್ </value>
+  </data>
+  <data name="thermostat" xml:space="preserve">
+    <value>ಥೆರ್ಮೋಸ್ಟಾಟ್ </value>
+  </data>
+  <data name="These" xml:space="preserve">
+    <value>ಥಿಸ್ </value>
+  </data>
+  <data name="third" xml:space="preserve">
+    <value>ಥರ್ಡ್ </value>
+  </data>
+  <data name="this" xml:space="preserve">
+    <value>ದಿಸ್ </value>
+  </data>
+  <data name="thread" xml:space="preserve">
+    <value>ಥ್ರೆಡ್ </value>
+  </data>
+  <data name="threshold" xml:space="preserve">
+    <value>ತ್ರೆಶೋಲ್ದ್  </value>
+  </data>
+  <data name="throttle" xml:space="preserve">
+    <value>ಥರೋಟ್ಟ್ಲ್ </value>
+  </data>
+  <data name="through" xml:space="preserve">
+    <value>ಥ್ರೂ </value>
+  </data>
+  <data name="tightness" xml:space="preserve">
+    <value>ಟಿಘಟ್ನೆಸ್ </value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>ಟೈಮ್</value>
+  </data>
+  <data name="timeout" xml:space="preserve">
+    <value>ಟೈಂಔಟ್ </value>
+  </data>
+  <data name="timer" xml:space="preserve">
+    <value>ಟೈಮರ್ </value>
+  </data>
+  <data name="times" xml:space="preserve">
+    <value>ಟೈಮ್ಸ್ </value>
+  </data>
+  <data name="timing" xml:space="preserve">
+    <value>ಟೈಮಿಂಗ್ </value>
+  </data>
+  <data name="tmap" xml:space="preserve">
+    <value>ಟಿ ಮ್ಯಾಪ್ </value>
+  </data>
+  <data name="to" xml:space="preserve">
+    <value>ಟು </value>
+  </data>
+  <data name="too" xml:space="preserve">
+    <value>ಟೂ </value>
+  </data>
+  <data name="tool" xml:space="preserve">
+    <value>ಟೂಲ್ </value>
+  </data>
+  <data name="tootherrorcorrection" xml:space="preserve">
+    <value>ಟೂತ್ ಎರರ್ ಕರೆಕ್ಷನ್ </value>
+  </data>
+  <data name="torque" xml:space="preserve">
+    <value>ಟಾರ್ಕ್   </value>
+  </data>
+  <data name="total" xml:space="preserve">
+    <value>ಟೋಟಲ್ </value>
+  </data>
+  <data name="track" xml:space="preserve">
+    <value>ಟ್ರ್ಯಾಕ್ </value>
+  </data>
+  <data name="traction" xml:space="preserve">
+    <value>ಟ್ರಾಕ್ಷನ್ </value>
+  </data>
+  <data name="train" xml:space="preserve">
+    <value>ಟ್ರೈನ್ </value>
+  </data>
+  <data name="transmission" xml:space="preserve">
+    <value>ಟ್ರಾನ್ಸ್ಮಿಷನ್ </value>
+  </data>
+  <data name="travelled" xml:space="preserve">
+    <value>ಟ್ರಾವೆಲ್ಲ್ಡ್ </value>
+  </data>
+  <data name="treatment" xml:space="preserve">
+    <value>ಟ್ರೀಟ್ಮೆಂಟ್ </value>
+  </data>
+  <data name="trim" xml:space="preserve">
+    <value>ಟ್ರಿಮ್ </value>
+  </data>
+  <data name="trip" xml:space="preserve">
+    <value>ಟ್ರಿಪ್ </value>
+  </data>
+  <data name="trouble" xml:space="preserve">
+    <value>ಟ್ರಬಲ್ </value>
+  </data>
+  <data name="Troubleshoot" xml:space="preserve">
+    <value>ಟ್ರಾಬ್ಲ್ಶೂಟ್ </value>
+  </data>
+  <data name="TROUBLESHOOTING" xml:space="preserve">
+    <value>ಟ್ರಾಬ್ಲ್ ಶೂಟಿಂಗ್ </value>
+  </data>
+  <data name="Try" xml:space="preserve">
+    <value>ಟ್ರೈ </value>
+  </data>
+  <data name="trying" xml:space="preserve">
+    <value>ಟ್ರೈಯಿಂಗ್ </value>
+  </data>
+  <data name="tuning" xml:space="preserve">
+    <value>ಟ್ಯೂನಿಂಗ್ </value>
+  </data>
+  <data name="turbine" xml:space="preserve">
+    <value>ತುರ್ಬ್ಯ್ನೆ </value>
+  </data>
+  <data name="turbo" xml:space="preserve">
+    <value>ಟರ್ಬೊ</value>
+  </data>
+  <data name="turbocharger" xml:space="preserve">
+    <value>ಟರ್ಬೋಚಾರ್ಜರ್ </value>
+  </data>
+  <data name="Turn" xml:space="preserve">
+    <value>ಟರ್ನ್ </value>
+  </data>
+  <data name="two" xml:space="preserve">
+    <value>ಟೂ </value>
+  </data>
+  <data name="type" xml:space="preserve">
+    <value>ಟೈಪ್ </value>
+  </data>
+  <data name="unable" xml:space="preserve">
+    <value>ಅನಾಬ್ಲ್ </value>
+  </data>
+  <data name="uncertain" xml:space="preserve">
+    <value>ಅನ್ಸರ್ಟೈನ್ </value>
+  </data>
+  <data name="undefaulted" xml:space="preserve">
+    <value>ಉಂಡೆಫ್ಆಲ್ಟ್ದ್ </value>
+  </data>
+  <data name="under" xml:space="preserve">
+    <value>ಅಂಡರ್</value>
+  </data>
+  <data name="underboost" xml:space="preserve">
+    <value>ಅಂಡರ್ಬೂಸ್ಟ್ </value>
+  </data>
+  <data name="undervoltage" xml:space="preserve">
+    <value>ಅಂದೆರವೋಲ್ಟ್ಜ್ </value>
+  </data>
+  <data name="unexpected" xml:space="preserve">
+    <value>ಆನ್ ಎಕ್ಸ್ಪೆಕ್ಟೆಡ್ </value>
+  </data>
+  <data name="Unhealthy" xml:space="preserve">
+    <value>ಎನ್ಹೇಳತಿ </value>
+  </data>
+  <data name="unit" xml:space="preserve">
+    <value>ಯೂನಿಟ್ </value>
+  </data>
+  <data name="unpowered" xml:space="preserve">
+    <value>ಎನ್ ಪೋವೆರೆಡ್ </value>
+  </data>
+  <data name="unstable" xml:space="preserve">
+    <value>ಉನ್ಸ್ಟೇಬಲ್ </value>
+  </data>
+  <data name="until" xml:space="preserve">
+    <value>ಅಂಟಿಲ್ </value>
+  </data>
+  <data name="up" xml:space="preserve">
+    <value>ಅಪ್ </value>
+  </data>
+  <data name="upper" xml:space="preserve">
+    <value>ಅಪ್ಪರ್ </value>
+  </data>
+  <data name="upshift" xml:space="preserve">
+    <value>ಉಪಶಿಫ್ಟ್ </value>
+  </data>
+  <data name="upstream" xml:space="preserve">
+    <value>ಅಪ್ಸ್ಟ್ರೀಮ್ </value>
+  </data>
+  <data name="urea" xml:space="preserve">
+    <value>ಯೂರಿಯ </value>
+  </data>
+  <data name="usage" xml:space="preserve">
+    <value>ಯೂಸೇಜ್ </value>
+  </data>
+  <data name="use" xml:space="preserve">
+    <value>ಉಸ್ </value>
+  </data>
+  <data name="used" xml:space="preserve">
+    <value>ಯುಜ್ಡ್ </value>
+  </data>
+  <data name="uses" xml:space="preserve">
+    <value>ಉಸ್ಸ್ </value>
+  </data>
+  <data name="using" xml:space="preserve">
+    <value>ಯೂಸಿಂಗ್ </value>
+  </data>
+  <data name="vacuum" xml:space="preserve">
+    <value>ವ್ಯಾಕ್ಯುಮ್</value>
+  </data>
+  <data name="validation" xml:space="preserve">
+    <value>ವ್ಯಾಲಿಡೇಷನ್ </value>
+  </data>
+  <data name="value" xml:space="preserve">
+    <value>ವ್ಯಾಲ್ಯೂ</value>
+  </data>
+  <data name="values" xml:space="preserve">
+    <value>ವ್ಯಾಲ್ಯೂಸ್ </value>
+  </data>
+  <data name="valve" xml:space="preserve">
+    <value>ವಾಲ್ವ್ </value>
+  </data>
+  <data name="vapour" xml:space="preserve">
+    <value>ವೈಪರ್ </value>
+  </data>
+  <data name="variation" xml:space="preserve">
+    <value>ವೈರಿಯೇಷನ್ </value>
+  </data>
+  <data name="vehicle" xml:space="preserve">
+    <value>ವೆಹಿಕಲ್</value>
+  </data>
+  <data name="vehicles" xml:space="preserve">
+    <value>ವೆಹಿಕಲ್ಸ್ </value>
+  </data>
+  <data name="vent" xml:space="preserve">
+    <value>ವೆಂಟ್ </value>
+  </data>
+  <data name="venting" xml:space="preserve">
+    <value>ವೆಂಟಿನ್ಗ್ </value>
+  </data>
+  <data name="versions" xml:space="preserve">
+    <value>ವೇರ್ಶ್ನ್ಸ್ </value>
+  </data>
+  <data name="vext" xml:space="preserve">
+    <value>ವೇಕ್ಸ್ಟ್ </value>
+  </data>
+  <data name="vin" xml:space="preserve">
+    <value>ವಿನ್ </value>
+  </data>
+  <data name="visibility" xml:space="preserve">
+    <value>ವಿಸಿಬಿಲಿಟಿ </value>
+  </data>
+  <data name="volt" xml:space="preserve">
+    <value>ವೋಲ್ಟ್ </value>
+  </data>
+  <data name="voltage" xml:space="preserve">
+    <value>ವೋಲ್ಟೇಜ್ </value>
+  </data>
+  <data name="volume" xml:space="preserve">
+    <value>ವಾಲ್ಯೂಮ್ </value>
+  </data>
+  <data name="vpu" xml:space="preserve">
+    <value>ವಿ ಪಿ ಯು </value>
+  </data>
+  <data name="Wait" xml:space="preserve">
+    <value>ವೇಟ್ </value>
+  </data>
+  <data name="warm" xml:space="preserve">
+    <value>ವಾರ್ಮ್ </value>
+  </data>
+  <data name="warmup" xml:space="preserve">
+    <value>ವಾರ್ಮ್ ಅಪ್ </value>
+  </data>
+  <data name="warning" xml:space="preserve">
+    <value>ವಾರ್ನಿಂಗ್ </value>
+  </data>
+  <data name="waste" xml:space="preserve">
+    <value>ವೇಸ್ಟ್ </value>
+  </data>
+  <data name="wastegate" xml:space="preserve">
+    <value>ವೇಸ್ಟ್ ಗೇಟ್ </value>
+  </data>
+  <data name="WATER" xml:space="preserve">
+    <value>ವಾಟರ್ </value>
+  </data>
+  <data name="wave" xml:space="preserve">
+    <value>ವೇವ </value>
+  </data>
+  <data name="waveform" xml:space="preserve">
+    <value>ವೇವ ಫಾರಂ </value>
+  </data>
+  <data name="way" xml:space="preserve">
+    <value>ವೆ </value>
+  </data>
+  <data name="wear" xml:space="preserve">
+    <value>ವೆರ್ </value>
+  </data>
+  <data name="wheel" xml:space="preserve">
+    <value>ವೀಲ್ </value>
+  </data>
+  <data name="WHEELER" xml:space="preserve">
+    <value>ವೀಲರ್ </value>
+  </data>
+  <data name="when" xml:space="preserve">
+    <value>ವೆನ್ </value>
+  </data>
+  <data name="whether" xml:space="preserve">
+    <value>ವೆತೆರ್ </value>
+  </data>
+  <data name="which" xml:space="preserve">
+    <value>ವಿಚ್ </value>
+  </data>
+  <data name="while" xml:space="preserve">
+    <value>ವೈಲ್ </value>
+  </data>
+  <data name="wide" xml:space="preserve">
+    <value>ವೈಡ್ </value>
+  </data>
+  <data name="width" xml:space="preserve">
+    <value>ವಿಡ್ತ್ </value>
+  </data>
+  <data name="will" xml:space="preserve">
+    <value>ವಿಲ್ </value>
+  </data>
+  <data name="winter" xml:space="preserve">
+    <value>ವಿಂಟರ್ </value>
+  </data>
+  <data name="wiper" xml:space="preserve">
+    <value>ವೈಪರ್ </value>
+  </data>
+  <data name="wire" xml:space="preserve">
+    <value>ವೈರ್ </value>
+  </data>
+  <data name="wires" xml:space="preserve">
+    <value>ವೈರ್ಸ್ </value>
+  </data>
+  <data name="Wiring" xml:space="preserve">
+    <value>ವೈರಿಂಗ್ </value>
+  </data>
+  <data name="with" xml:space="preserve">
+    <value>ವಿತ್ </value>
+  </data>
+  <data name="without" xml:space="preserve">
+    <value>ವಿಥೌಟ್ </value>
+  </data>
+  <data name="words" xml:space="preserve">
+    <value>ವರ್ಡ್ಸ್ </value>
+  </data>
+  <data name="work" xml:space="preserve">
+    <value>ವರ್ಕ್ </value>
+  </data>
+  <data name="working" xml:space="preserve">
+    <value>ವರ್ಕಿಂಗ್ </value>
+  </data>
+  <data name="Write" xml:space="preserve">
+    <value>ರೈಟ್ </value>
+  </data>
+  <data name="writing" xml:space="preserve">
+    <value>ರೈಟಿಂಗ್ </value>
+  </data>
+  <data name="wrong" xml:space="preserve">
+    <value>ರಾಂಗ್ </value>
+  </data>
+  <data name="zero" xml:space="preserve">
+    <value>ಜೀರೋ </value>
+  </data>
+</root>

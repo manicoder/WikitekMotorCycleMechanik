@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.MarketPlace.PartsFilterPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             BackgroundColor="{StaticResource page_bg_color}"
+             Title="FILTERS">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Clear Filters"
+                     Order="Primary"
+                     Priority="0"
+                     Command="{Binding ClearFilterCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ScrollView>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Frame Grid.Row="0" Margin="10,10,10,0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <ImageButton Grid.Column="0"
+                                                 Source="{Binding priceUpDownImage}"
+                                                 BackgroundColor="White"
+                                                 HeightRequest="20"
+                                                 />
+                            <Label Grid.Row="0"
+                               Grid.Column="1"
+                           Text="Price :"
+                           Style="{StaticResource lbl}"
+                           FontAttributes="Bold"
+                                   FontSize="17"
+                           VerticalTextAlignment="Center">
+                                <!--<Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding priceListCommand}"/>
+                                </Label.GestureRecognizers>-->
+                            </Label>
+
+                            <!--<StackLayout Grid.Row="1" Grid.Column="1" BindableLayout.ItemsSource="{Binding priceList}"
+                                 Orientation="Vertical" Margin="10,0,0,0" IsVisible="{Binding isPriceListVisible}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Column="0"
+                                                Text="{Binding min_price, StringFormat='Rs.{0} - '}"
+                                                Style="{StaticResource lbl}"
+                                                VerticalTextAlignment="Center"/>
+                                            <Label Grid.Column="1"
+                                                Text="{Binding max_price, StringFormat='Rs.{0}'}"
+                                                Style="{StaticResource lbl}"
+                                                VerticalTextAlignment="Center"/>
+                                            <CheckBox Grid.Column="2"
+                                                IsChecked="{Binding isSelected}"
+                                                Style="{StaticResource CheckBoxStyle}"/>
+
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>-->
+
+                            <xct:RangeSlider
+                                Grid.Row="1"
+                                Grid.ColumnSpan="3"
+                                x:Name="RangeSlider"
+                                ThumbSize="25"
+                                MaximumValue="{Binding maxPrice,Mode=TwoWay}"
+                                MinimumValue="{Binding minPrice,Mode=TwoWay}"
+                                StepValue="100"
+                                LowerValue="{Binding lowerPrice,Mode=TwoWay}"
+                                UpperValue="{Binding upperPrice,Mode=TwoWay}" 
+                                ValueLabelStringFormat="₹{0}"
+                                UpperValueLabelStyle="{StaticResource lbl}"
+                                LowerValueLabelStyle="{StaticResource lbl}"
+                                LowerThumbColor="{StaticResource theme_color}"
+                                UpperThumbColor="{StaticResource theme_color}"
+                                TrackHighlightColor="{StaticResource theme_color}"
+                                HorizontalOptions="FillAndExpand"/>
+                        </Grid>
+                    </Frame>
+
+                    <Frame Grid.Row="1" Margin="10,10,10,0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <ImageButton Grid.Column="0"
+                                                 Source="{Binding metaTagUpDownImage}"
+                                                 BackgroundColor="White"
+                                                 HeightRequest="20"
+                                                 Command="{Binding metaTagCommand}"/>
+                            <Label Grid.Row="0" 
+                               Grid.Column="1"
+                           Text="Metatags :"
+                                   FontSize="17"
+                           Style="{StaticResource lbl}"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding metaTagCommand}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <StackLayout Grid.Row="1" Grid.Column="1" BindableLayout.ItemsSource="{Binding metaTagList}"
+                                 Orientation="Vertical" Margin="10,0,0,0" IsVisible="{Binding isMetaTagVisible}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <CheckBox Grid.Column="1"
+                                              IsChecked="{Binding isSelected}"
+                                              Style="{StaticResource CheckBoxStyle}"/>
+                                            <Label Grid.Column="0"
+                                        Text="{Binding name}"
+                                       Style="{StaticResource lbl}"
+                                           VerticalTextAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+
+                    <Frame Grid.Row="2" Margin="10,10,10,0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <ImageButton Grid.Column="0"
+                                                 Source="{Binding partTypeUpDownImage}"
+                                                 BackgroundColor="White"
+                                                 HeightRequest="20"
+                                                 Command="{Binding partTypeListCommand}"/>
+                            <Label Grid.Row="0" 
+                               Grid.Column="1"
+                           Text="Type :"
+                           Style="{StaticResource lbl}"
+                           FontAttributes="Bold"
+                                   FontSize="17"
+                           VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding partTypeListCommand}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <StackLayout Grid.Row="1" Grid.Column="1" BindableLayout.ItemsSource="{Binding partTypeList}"
+                                 Orientation="Vertical" Margin="10,0,0,0" IsVisible="{Binding isPartTypeVisible}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <CheckBox Grid.Column="1"
+                                              IsChecked="{Binding isSelected}"
+                                              Style="{StaticResource CheckBoxStyle}"/>
+                                            <Label Grid.Column="0"
+                                        Text="{Binding name}"
+                                       Style="{StaticResource lbl}"
+                                           VerticalTextAlignment="Center"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+
+                    <Frame Grid.Row="3" Margin="10,10,10,10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <ImageButton Grid.Column="0"
+                                                 Source="{Binding categoryUpDownImage}"
+                                                 BackgroundColor="White"
+                                                 HeightRequest="20"
+                                                 Command="{Binding CategoryListCommand}"/>
+                            <Label Grid.Row="0"
+                               Grid.Column="1"
+                           Text="Category :"
+                           Style="{StaticResource lbl}"
+                           FontAttributes="Bold"
+                                   FontSize="17"
+                           VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding CategoryListCommand}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <CollectionView Grid.Row="1" Grid.Column="1" x:Name="PartsCategoryList" 
+                                        ItemsSource="{Binding partsCategoryList}" Margin="10,0,0,0"
+                                        IsVisible="{Binding isCategoryVisible}">
+                                <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid Grid.Row="0" HorizontalOptions="FillAndExpand">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <ImageButton Grid.Column="0"
+                                                    Source="{Binding part_category.ic_updown}"
+                                                    BackgroundColor="White"
+                                                    HeightRequest="20"
+                                                    Command="{Binding Source={x:Reference PartsCategoryList}, Path=BindingContext.DropDownSelectionCommand}"
+                                                          CommandParameter="{Binding .}"/>
+                                                <Label Grid.Column="1"
+                                                    Text="{Binding part_category.name}"
+                                                    Style="{StaticResource lbl}"
+                                                    VerticalTextAlignment="Center"/>
+                                                <CheckBox Grid.Column="2"
+                                                    IsChecked="{Binding part_category.isSelected}"
+                                                    Style="{StaticResource CheckBoxStyle}"/>
+                                                <ImageButton Grid.Column="2"
+                                                     BackgroundColor="Transparent"
+                                                     Command="{Binding Source={x:Reference PartsCategoryList}, Path=BindingContext.CheckChangedCommand}"
+                                                     CommandParameter="{Binding .}"/>
+
+                                            </Grid>
+                                            <StackLayout Grid.Row="1" BindableLayout.ItemsSource="{Binding part_category.subs}"
+                                                 Orientation="Vertical" Margin="40,0,0,0" IsVisible="{Binding part_category.isExpanded}">
+
+                                                <BindableLayout.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="*"/>
+                                                                <ColumnDefinition Width="Auto"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <CheckBox Grid.Column="1"
+                                                              IsChecked="{Binding Selected}"
+                                                              Style="{StaticResource CheckBoxStyle}"/>
+                                                            <Label Grid.Column="0"
+                                                            Text="{Binding name}"
+                                                           Style="{StaticResource lbl}"
+                                                           VerticalTextAlignment="Center"/>
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </BindableLayout.ItemTemplate>
+                                            </StackLayout>
+                                        </Grid>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </Grid>
+                    </Frame>
+
+                </Grid>
+            </ScrollView>
+            <Button Grid.Row="1"
+                Text="Submit"
+                Style="{StaticResource btn}"
+                VerticalOptions="End"
+                Margin="10"
+                Command="{Binding SubmitCommand}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

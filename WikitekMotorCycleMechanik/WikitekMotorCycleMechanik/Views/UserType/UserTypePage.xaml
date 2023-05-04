@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.UserType.UserTypePage"
+             Title="Switch User Type"
+             BackgroundColor="{StaticResource page_bg_color}">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="0"
+                   CornerRadius="10"
+                   BorderColor="{StaticResource theme_color}"
+                   BackgroundColor="#dbdbf0">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="0">
+                    <Image Grid.Column="0"
+                           Source="ic_wikitek1"/>
+                    <Image Grid.Column="1"
+                           Source="ic_wikitek1_title"/>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding wikitekCommand}"/>
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </Frame>
+            <Label Grid.Row="1"
+                   Text="Coming Soon :"
+                   Style="{StaticResource lbl}"
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   Margin="10,0,0,0"/>
+            <Frame Grid.Row="2"
+                   CornerRadius="10"
+                   BorderColor="#009900"
+                   BackgroundColor="#d6f5d6">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="0">
+                    <Image Grid.Column="0"
+                           Source="ic_rsangel"/>
+                    <Image Grid.Column="1"
+                           Source="ic_rsangel_title"/>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding rsangelCommand}"/>
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </Frame>
+            <Frame Grid.Row="3"
+                   CornerRadius="10"
+                   BorderColor="#cc3300"
+                   BackgroundColor="#ffd9cc">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="0">
+                    <Image Grid.Column="0"
+                           Source="ic_mobitek"/>
+                    <Image Grid.Column="1"
+                           Source="ic_mobitek_title"/>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding mobitekCommand}"/>
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

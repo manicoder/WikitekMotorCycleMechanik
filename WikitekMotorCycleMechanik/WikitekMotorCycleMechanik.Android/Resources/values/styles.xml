@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+  <style name="WikitekTheme" parent="MainTheme.Base">
+    <item name="windowNoTitle">true</item>
+    <!--We will be using the toolbar so no need to show ActionBar-->
+    <item name="windowActionBar">false</item>
+    <!-- Set theme colors from https://aka.ms/material-colors -->
+    <!-- colorPrimary is used for the default action bar background -->
+    <item name="colorPrimary">@color/wikitekColorAccent</item>
+    <!-- colorPrimaryDark is used for the status bar -->
+    <item name="colorPrimaryDark">@color/wikitekColorPrimaryDark</item>
+    <!-- colorAccent is used as the default value for colorControlActivated
+         which is used to tint widgets -->
+    <item name="colorAccent">@color/wikitekColorAccent</item>
+    <!-- You can also set colorControlNormal, colorControlActivated
+         colorControlHighlight and colorSwitchThumbNormal. -->
+    <item name="windowActionModeOverlay">true</item>
+
+    <item name="android:datePickerDialogTheme">@style/WikitekAppCompatDialogStyle</item>
+
+    <item name="android:actionBarSize">45dp</item>
+  </style>
+
+  <style name="RsangleTheme" parent="MainTheme.Base">
+    <item name="windowNoTitle">true</item>
+    <!--We will be using the toolbar so no need to show ActionBar-->
+    <item name="windowActionBar">false</item>
+    <!-- Set theme colors from https://aka.ms/material-colors -->
+    <!-- colorPrimary is used for the default action bar background -->
+    <item name="colorPrimary">@color/rsangleColorAccent</item>
+    <!-- colorPrimaryDark is used for the status bar -->
+    <item name="colorPrimaryDark">@color/rsangleColorPrimaryDark</item>
+    <!-- colorAccent is used as the default value for colorControlActivated
+         which is used to tint widgets -->
+    <item name="colorAccent">@color/rsangleColorAccent</item>
+    <!-- You can also set colorControlNormal, colorControlActivated
+         colorControlHighlight and colorSwitchThumbNormal. -->
+    <item name="windowActionModeOverlay">true</item>
+
+    <item name="android:datePickerDialogTheme">@style/RsangleAppCompatDialogStyle</item>
+
+    <item name="android:actionBarSize">45dp</item>
+  </style>
+
+  <style name="MobitekTheme" parent="MainTheme.Base">
+    <item name="windowNoTitle">true</item>
+    <!--We will be using the toolbar so no need to show ActionBar-->
+    <item name="windowActionBar">false</item>
+    <!-- Set theme colors from https://aka.ms/material-colors -->
+    <!-- colorPrimary is used for the default action bar background -->
+    <item name="colorPrimary">@color/mobitekColorAccent</item>
+    <!-- colorPrimaryDark is used for the status bar -->
+    <item name="colorPrimaryDark">@color/mobitekColorPrimaryDark</item>
+    <!-- colorAccent is used as the default value for colorControlActivated
+         which is used to tint widgets -->
+    <item name="colorAccent">@color/mobitekColorAccent</item>
+    <!-- You can also set colorControlNormal, colorControlActivated
+         colorControlHighlight and colorSwitchThumbNormal. -->
+    <item name="windowActionModeOverlay">true</item>
+
+    <item name="android:datePickerDialogTheme">@style/MobitekAppCompatDialogStyle</item>
+
+    <item name="android:actionBarSize">45dp</item>
+  </style>
+
+  <style name="WikitekAppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+    <item name="colorAccent">@color/wikitekColorAccent</item>
+  </style>
+
+  <style name="RsangleAppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+    <item name="colorAccent">@color/rsangleColorAccent</item>
+  </style>
+
+  <style name="MobitekAppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+    <item name="colorAccent">@color/mobitekColorAccent</item>
+  </style>
+
+  <!-- Base theme applied no matter what API --><!--
+  <style name="MainTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+    --><!--If you are using revision 22.1 please use just windowNoTitle. Without android:--><!--
+    <item name="windowNoTitle">true</item>
+    --><!--We will be using the toolbar so no need to show ActionBar--><!--
+    <item name="windowActionBar">false</item>
+    --><!-- Set theme colors from https://aka.ms/material-colors --><!--
+    --><!-- colorPrimary is used for the default action bar background --><!--
+    <item name="colorPrimary">@color/MyColor</item>
+    --><!-- colorPrimaryDark is used for the status bar --><!--
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    --><!-- colorAccent is used as the default value for colorControlActivated
+         which is used to tint widgets --><!--
+    <item name="colorAccent">@color/MyColor</item>
+    --><!-- You can also set colorControlNormal, colorControlActivated
+         colorControlHighlight and colorSwitchThumbNormal. --><!--
+    <item name="windowActionModeOverlay">true</item>
+
+    <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
+
+    <item name="android:actionBarSize">45dp</item>
+  </style>-->
+
+
+
+  <!--Splash Screen code-->
+  <!--<style name="Theme.Splash" parent="android:Theme">-->
+  <style name="splashTheme" parent="android:Theme">
+    <item name="android:windowBackground">@drawable/splashscreen</item>
+    <item name="android:windowNoTitle">true</item>
+  </style>
+</resources>

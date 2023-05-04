@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.VehicleDiagnostics.VehicleDiagnosticsPage"
+             xmlns:converter="clr-namespace:WikitekMotorCycleMechanik.Converters"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             Title="SELECT OEM"
+             BackgroundColor="{StaticResource page_bg_color}">
+    <NavigationPage.TitleView>
+        <Grid ColumnDefinitions="*,45,5">
+            <Label Grid.Column="0"
+                   Text="SELECT OEM"
+                   FontSize="16" 
+                   TextColor="#FFF" 
+                   FontAttributes="Bold"
+                   VerticalTextAlignment="Center"/>
+            <ImageButton Grid.Column="1" 
+                         Source="{Binding change_gui_button}"
+                         BackgroundColor="{StaticResource theme_color}" 
+                         CornerRadius="5" 
+                         Padding="5"
+                         Margin="3"
+                         Command="{Binding ChangeGuiCommand}"
+                         CommandParameter="{Binding .}"/>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:ByteToImageFieldConverter x:Key="ByteToImage" />
+        </ResourceDictionary>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="#f9f9f9" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+    <!--<ContentPage.Content>
+        <Grid BackgroundColor="#f9f9f9" >
+            <CollectionView x:Name="model_collection"
+                            ItemsSource="{Binding oem_list,Mode=TwoWay}" 
+                            SelectionMode="Single"
+                            SelectedItem="{Binding selected_oem, Mode=TwoWay}"
+                            IsVisible="{Binding bulleted_list_visible}"
+                            Margin="10,10,10,10">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="5" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HeightRequest="50">
+                            <Frame HasShadow="True" Margin="1" Padding="3,3,10,3">
+                                <Grid RowSpacing="0" ColumnSpacing="15">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="55"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0"
+                                           Source="{Binding oem.oem_file_local,Converter={StaticResource ByteToImage}}"
+                                           Aspect="Fill"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="FillAndExpand"/>
+                                    <Label Grid.Column="1" Text="{Binding oem.name}"
+                                           Style="{StaticResource lbl}"
+                                           VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference model_collection}, Path=BindingContext.ItemSelectionCommand}"
+                                                      CommandParameter="{Binding .}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <ContentView>
+                        <StackLayout VerticalOptions="CenterAndExpand" 
+                                     HorizontalOptions="CenterAndExpand">
+                            <ActivityIndicator IsVisible="{Binding empty_view_detail.is_visible}"
+                                               IsRunning="{Binding empty_view_detail.is_runing}"
+                                               Color="{StaticResource theme_color}"/>
+                            <Label Text="{Binding empty_view_detail.error_message}"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="18"
+                                   TextColor="#000"
+                                   FontAttributes="Bold"/>
+                        </StackLayout>
+                    </ContentView>
+                </CollectionView.EmptyView>
+            </CollectionView>
+
+            <CollectionView x:Name="model_collection1"
+                            ItemsSource="{Binding oem_list,Mode=TwoWay}" 
+                            SelectionMode="Single"
+                            SelectedItem="{Binding selected_oem, Mode=TwoWay}"
+                            IsVisible="{Binding grid_list_visible}"
+                            Margin="10,10,0,10">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                    Span="3"
+                                    VerticalItemSpacing="10"
+                                    HorizontalItemSpacing="0" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="0,0,10,0">
+                            <Frame HasShadow="True" Margin="1" Padding="2">
+                                <Grid RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Image Grid.Row="0"
+                                           Source="{Binding oem.oem_file_local,Converter={StaticResource ByteToImage}}"
+                                           Aspect="Fill"
+                                           HorizontalOptions="CenterAndExpand"
+                                           VerticalOptions="CenterAndExpand"/>
+                                    <Label Grid.Row="1" 
+                                           Text="{Binding oem.name}"
+                                           Style="{StaticResource lbl}"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference model_collection1}, Path=BindingContext.ItemSelectionCommand}"
+                                                      CommandParameter="{Binding .}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <ContentView>
+                        <StackLayout VerticalOptions="CenterAndExpand" 
+                                     HorizontalOptions="CenterAndExpand">
+                            <ActivityIndicator IsVisible="{Binding empty_view_detail.is_visible}"
+                                               IsRunning="{Binding empty_view_detail.is_runing}"
+                                               Color="{StaticResource theme_color}"/>
+                            <Label Text="{Binding empty_view_detail.error_message}"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="18"
+                                   TextColor="#000"
+                                   FontAttributes="Bold"/>
+                        </StackLayout>
+                    </ContentView>
+                </CollectionView.EmptyView>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>-->
+    <ContentPage.Content>
+        <Grid BackgroundColor="#f9f9f9" >
+            <CollectionView x:Name="model_collection"
+                            ItemsSource="{Binding oem_list,Mode=TwoWay}" 
+                            SelectionMode="Single"
+                            SelectedItem="{Binding selected_oem, Mode=TwoWay}"
+                            IsVisible="{Binding bulleted_list_visible}"
+                            Margin="10,10,10,10">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="5" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HeightRequest="65">
+                            <Frame HasShadow="True" Margin="1" Padding="3,3,10,3" BorderColor="LightSteelBlue" CornerRadius="10">
+                                <Grid RowSpacing="0" ColumnSpacing="15">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="63"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <ffimageloading:CachedImage HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="FillAndExpand"
+                                           DownsampleToViewSize="true"
+			                               Source = "{Binding oem.attachment.attachment}"
+                                           Aspect="AspectFit"
+                                           ErrorPlaceholder="ic_demo_image.png">
+                                        
+                                    </ffimageloading:CachedImage>
+                                    <!--<Image Grid.Column="0"
+                                           x:Name="oemImage"
+                                           Aspect="Fill"
+                                           Source="{Binding oem.attachment.attachment,Converter={StaticResource ByteToImage}}"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="FillAndExpand"
+                                           >
+                                        
+                                    </Image>-->   
+                                    <Label Grid.Column="1" Text="{Binding oem.name}"
+                                           Style="{StaticResource lbl}"
+                                           VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference model_collection}, Path=BindingContext.ItemSelectionCommand}"
+                                                      CommandParameter="{Binding .}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <ContentView>
+                        <StackLayout VerticalOptions="CenterAndExpand" 
+                                     HorizontalOptions="CenterAndExpand">
+                            <ActivityIndicator IsVisible="{Binding empty_view_detail.is_visible}"
+                                               IsRunning="{Binding empty_view_detail.is_runing}"
+                                               Color="{StaticResource theme_color}"/>
+                            <Label Text="{Binding empty_view_detail.error_message}"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="18"
+                                   TextColor="#000"
+                                   FontAttributes="Bold"/>
+                        </StackLayout>
+                    </ContentView>
+                </CollectionView.EmptyView>
+            </CollectionView>
+
+            <CollectionView x:Name="model_collection1"
+                            ItemsSource="{Binding oem_list,Mode=TwoWay}" 
+                            SelectionMode="Single"
+                            SelectedItem="{Binding selected_oem, Mode=TwoWay}"
+                            IsVisible="{Binding grid_list_visible}"
+                            Margin="10,10,0,10">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                    Span="3"
+                                    VerticalItemSpacing="10"
+                                    HorizontalItemSpacing="0" />
+                </CollectionView.ItemsLayout>
+                <!--<CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="5" />
+                </CollectionView.ItemsLayout>-->
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="0,0,10,0">
+                            <Frame HasShadow="True" Margin="1" Padding="2" BorderColor="LightSteelBlue" CornerRadius="10">
+                                <Grid RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="100"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <!--<Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="55"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>-->
+                                    <ffimageloading:CachedImage HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="FillAndExpand"
+                                           DownsampleToViewSize="true"
+			                               Source = "{Binding oem.attachment.attachment}"
+                                           
+                                           ErrorPlaceholder="ic_demo_image.png">
+
+                                    </ffimageloading:CachedImage>
+                                    <!--<Image Grid.Column="0"
+                                           x:Name="oemImage"
+                                           Aspect="Fill"
+                                           Source="{Binding oem.attachment.attachment,Converter={StaticResource ByteToImage}}"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="FillAndExpand"
+                                           >
+                                        --><!--<Image.Source>
+                                            <UriImageSource Uri="{Binding oem.attachment.attachment}" />
+                                        </Image.Source>--><!--
+                                    </Image>-->
+
+
+
+                                    <BoxView Grid.Row="1" BackgroundColor="#f5f5f0"/>
+                                    <Label Grid.Row="1" 
+                                           Text="{Binding oem.name}"
+                                           Style="{StaticResource lbl}"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference model_collection1}, Path=BindingContext.ItemSelectionCommand}"
+                                                      CommandParameter="{Binding .}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <ContentView>
+                        <StackLayout VerticalOptions="CenterAndExpand" 
+                                     HorizontalOptions="CenterAndExpand">
+                            <ActivityIndicator IsVisible="{Binding empty_view_detail.is_visible}"
+                                               IsRunning="{Binding empty_view_detail.is_runing}"
+                                               Color="{StaticResource theme_color}"/>
+                            <Label Text="{Binding empty_view_detail.error_message}"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="18"
+                                   TextColor="#000"
+                                   FontAttributes="Bold"/>
+                        </StackLayout>
+                    </ContentView>
+                </CollectionView.EmptyView>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
