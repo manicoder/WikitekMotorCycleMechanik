@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WikitekMotorCycleMechanik.Views.LiveParameter.LiveParameterPage"
+             xmlns:local="clr-namespace:WikitekMotorCycleMechanik.CustomControls"
+             BackgroundColor="{StaticResource page_bg_color}"
+             Title="Live Parameters"
+             x:Name="page">
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="txt_tab" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource btn_text_color}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="frame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="BorderColor" Value="{StaticResource theme_color}" />
+                <Setter Property="Padding" Value="10,0,10,0" />
+            </Style>
+            <Style x:Key="ent" TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="{StaticResource placeholder_color}" />
+                <Setter Property="TextColor" Value="{StaticResource text_color}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="{StaticResource font_size}" />
+            </Style>
+            <Style x:Key="lbl" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource text_color}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="{StaticResource font_size}" />
+                <Setter Property="VerticalTextAlignment" Value="Start" />
+            </Style>
+            <Style x:Key="btn" TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource btn_text_color}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="BackgroundColor" Value="{StaticResource theme_color}" />
+                <Setter Property="FontSize" Value="{StaticResource font_size}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition >
+                    <RowDefinition.Height>
+                        <OnIdiom x:TypeArguments="GridLength" Tablet="64" Phone="40" Desktop="60"/>
+                    </RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition >
+                    <RowDefinition.Height>
+                        <OnIdiom x:TypeArguments="GridLength" Tablet="64" Phone="40" Desktop="60"/>
+                    </RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid ColumnSpacing="2" Margin="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Frame Grid.Row="0" CornerRadius="2" Padding="10,-4,10,-4" BorderColor="{StaticResource theme_color}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <local:CustomEntry x:Name="txtSearch" Grid.Column="0" Placeholder="Search"
+                                           Text="{Binding search_key}" Style="{StaticResource ent}"
+                                           TextChanged="txtSearch_TextChanged"/>
+                        <Image x:Name="imgClose" Grid.Column="1" Source="ic_close.png" Margin="9" IsVisible="False">
+                        </Image>
+                    </Grid>
+                </Frame>
+                <Button Grid.Column="1" Text="{Binding txt_select_button}" BackgroundColor="{StaticResource theme_color}" 
+                        CornerRadius="3" TextColor="{StaticResource btn_text_color}" FontSize="12" 
+                        Command="{Binding SelectPidCommand}"/>
+            </Grid>
+            <StackLayout Grid.Row="1" BindableLayout.ItemsSource="{Binding ecus_list}"  
+                                     HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="2">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HorizontalOptions="FillAndExpand">
+                            <Button BackgroundColor="{StaticResource theme_color}" Text="{Binding ecu_name}"
+                                    Opacity="{Binding opacity}" HorizontalOptions="FillAndExpand" CornerRadius="0"
+                                    TextColor="#FFF"
+                                    Command="{Binding Source={x:Reference page}, Path=BindingContext.EcuTabCommand}"
+                                    CommandParameter="{Binding .}"/>
+                        </Grid>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+            <CollectionView Grid.Row="2" ItemsSource="{Binding pid_list,Mode=TwoWay}" Margin="10,5,10,5">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="8" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Frame HasShadow="True" Margin="5,1,5,1" Padding="5">
+                                <Grid RowSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding short_name}" Style="{StaticResource lbl}"/>
+                                    <CheckBox Grid.Column="1" IsChecked="{Binding Selected}" Style="{StaticResource check_box}"
+                                              Color="{StaticResource theme_color}" IsVisible="True"/>
+                                    <ImageButton Grid.Column="1" 
+                                                 BackgroundColor="Transparent"
+                                                 Command="{Binding Source={x:Reference page}, Path=BindingContext.CheckPressedCommand}"
+                                                 CommandParameter="{Binding .}"/>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <ContentView>
+                        <StackLayout VerticalOptions="CenterAndExpand" 
+                                     HorizontalOptions="CenterAndExpand">
+                            <ActivityIndicator IsVisible="{Binding loader_visible}"
+                                               IsRunning="{Binding loader_visible}"
+                                               Color="{StaticResource theme_color}"/>
+                            <Label Text="{Binding msg}"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="18"
+                                   TextColor="#000"
+                                   FontAttributes="Bold"/>
+                        </StackLayout>
+                    </ContentView>
+                </CollectionView.EmptyView>
+            </CollectionView>
+            <Button Grid.Row="3" Text="Continue" Style="{StaticResource btn}" 
+                    Command="{Binding ContinueCommand}"
+                    Margin="10,0,10,5"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

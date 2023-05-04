@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.Jobcard.JobcardPage"
+             xmlns:converter="clr-namespace:WikitekMotorCycleMechanik.Converters"
+             Padding="10,10,10,0"
+             BackgroundColor="{StaticResource page_bg_color}"
+             Title="Jobcards">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:ByteToImageFieldConverter x:Key="ByteToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <ListView x:Name="jobcard_list" ItemsSource="{Binding jobcard_list}"
+                      SelectedItem="{Binding selected_jobcard}"
+                      HasUnevenRows="True" 
+                      SeparatorVisibility="None" 
+                      VerticalScrollBarVisibility="Never" 
+                      VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Frame HasShadow="True" Margin="0,1,0,1" Padding="5">
+                                <Grid ColumnSpacing="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Frame HasShadow="True" 
+                                           Padding="0"
+                                           Grid.Row="0"
+                                           Grid.Column="0"
+                                           Grid.RowSpan="2"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"
+                                           CornerRadius="30">
+                                        <Image Source ="{Binding registration_no.picture,Converter={StaticResource ByteToImage}}"
+                                               HeightRequest="60"
+                                               WidthRequest="60"
+                                               Aspect="Fill"/>
+                                    </Frame>
+
+                                    <Label Grid.Row="0" 
+                                       Grid.Column="1"
+                                       Text="{Binding job_card_name}" 
+                                       Style="{StaticResource lbl}"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"/>
+
+                                    <Label Grid.Row="0" 
+                                           Grid.Column="2"
+                                           Text="{Binding status}" 
+                                           Style="{StaticResource lbl}"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="End"/>
+
+                                    <Label Grid.Row="1" 
+                                           Grid.Column="1"
+                                           Style="{StaticResource lbl}"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Start">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding created_by.first_name}"/>
+                                                <Span Text="{Binding created_by.last_name,StringFormat=' {0}'}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Label Grid.Row="1" 
+                                       Grid.Column="2"
+                                       Text="{Binding registration_no.registration_id}" 
+                                       Style="{StaticResource lbl}"
+                                       ClassId="{Binding id}"
+                                       VerticalTextAlignment="Center"/>
+
+                                    <ImageButton Grid.Row="0"
+                                                 Grid.Column="3"
+                                                 Grid.RowSpan="2"
+                                                 HeightRequest="45"
+                                                 VerticalOptions="Center"
+                                                 WidthRequest="45"
+                                                 HorizontalOptions="EndAndExpand"
+                                                 BackgroundColor="Transparent"
+                                                 Command="{Binding Source={x:Reference jobcard_list}, Path=BindingContext.GoToJobcardDetailCommand}"
+                                                 CommandParameter="{Binding .}">
+                                        <ImageButton.Source>
+                                            <FontImageSource FontFamily="{DynamicResource Material}" 
+                                                     Glyph="&#xF0142;" 
+                                                     Color="{StaticResource theme_color}" />
+                                        </ImageButton.Source>
+                                    </ImageButton>
+
+                                </Grid>
+                            </Frame>
+
+
+                            <!--<Frame HasShadow="True" Margin="0,5,0,5" Padding="5">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="7*"/>
+                                        <ColumnDefinition Width="40*"/>
+                                        <ColumnDefinition Width="7*"/>
+                                        <ColumnDefinition Width="46*"/>
+                                    </Grid.ColumnDefinitions>-->
+                            <!--<Label Grid.Row="0" 
+                                       Grid.Column="0"
+                                       Grid.ColumnSpan="4"
+                                       Text="{Binding job_card_name}" 
+                                       Style="{StaticResource lbl}"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Center"/>-->
+                            <!--<Label Grid.Row="0" 
+                                       Grid.Column="1"
+                                       Text="{Binding job_card_name}" 
+                                       Style="{StaticResource lbl}"
+                                       VerticalTextAlignment="Center"/>
+
+                                    <ImageButton Grid.Row="0" 
+                                             Grid.Column="0"
+                                             BackgroundColor="Transparent">
+                                        <ImageButton.Source>
+                                            <FontImageSource FontFamily="{DynamicResource Material}" 
+                                                         Glyph="&#xF0B73;" 
+                                                         Color="{StaticResource theme_color}"/>
+                                        </ImageButton.Source>
+                                    </ImageButton>
+                                    <ImageButton Grid.Row="0" 
+                                             Grid.Column="2"
+                                             BackgroundColor="Transparent">
+                                        <ImageButton.Source>
+                                            <FontImageSource FontFamily="{DynamicResource Material}" 
+                                                         Glyph="&#xF0765;" 
+                                                         Color="{StaticResource theme_color}"/>
+                                        </ImageButton.Source>
+                                    </ImageButton>
+                                    <Label Grid.Row="0" 
+                                       Grid.Column="3"
+                                       Text="{Binding status}" 
+                                       Style="{StaticResource lbl}"
+                                       VerticalTextAlignment="Center"/>
+
+                                    <ImageButton Grid.Row="1" 
+                                             Grid.Column="0"
+                                             BackgroundColor="Transparent">
+                                        <ImageButton.Source>
+                                            <FontImageSource FontFamily="{DynamicResource Material}" 
+                                                         Glyph="&#xF0A67;" 
+                                                         Color="{StaticResource theme_color}"/>
+                                        </ImageButton.Source>
+                                    </ImageButton>
+                                    <Label Grid.Row="1" 
+                                       Grid.Column="1"
+                                       Text="{Binding registration_no.registration_id}" 
+                                       Style="{StaticResource lbl}"
+                                       ClassId="{Binding id}"
+                                       VerticalTextAlignment="Center"/>
+
+                                    <ImageButton Grid.Row="1" 
+                                             Grid.Column="2"
+                                             BackgroundColor="Transparent">
+                                        <ImageButton.Source>
+                                            <FontImageSource FontFamily="{DynamicResource Material}" 
+                                                         Glyph="&#xF09AD;" 
+                                                         Color="{StaticResource theme_color}"/>
+                                        </ImageButton.Source>
+                                    </ImageButton>
+                                    <Label Grid.Row="1" 
+                                       Grid.Column="3"
+                                       Text="{Binding service_type}" 
+                                       Style="{StaticResource lbl}"
+                                       VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>-->
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <ImageButton HeightRequest="55" 
+                         WidthRequest="55"
+                         VerticalOptions="End"
+                         HorizontalOptions="End"
+                         CornerRadius="27"
+                         BackgroundColor="{StaticResource theme_color}"
+                         Margin="0,0,10,10"
+                         Command="{Binding CreateJobcardCommand}">
+                <ImageButton.Source>
+                    <FontImageSource FontFamily="{DynamicResource Material}" 
+                                                         Glyph="&#xF0415;" 
+                                                         Color="#fff"/>
+                </ImageButton.Source>
+            </ImageButton>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.MarketPlace.AddToCartPage"
+             Title="CART"
+             BackgroundColor="{StaticResource page_bg_color}"
+             x:Name="page">
+    <ContentPage.Content>
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <CollectionView ItemsSource="{Binding cart_list,Mode=TwoWay}"
+                            EmptyView="{Binding emptyView}" >
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate >
+                        <Grid>
+                            <Frame Padding="5" Margin="1" HasShadow="True">
+                                <Grid ColumnSpacing="10" VerticalOptions="FillAndExpand">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <!--<RowDefinition Height="Auto"/>-->
+                                        <RowDefinition Height="30"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0"
+                                               Grid.ColumnSpan="4"
+                                               Text="{Binding parts_id.short_description}" 
+                                               Style="{StaticResource lbl}"
+                                               FontSize="18"
+                                               FontAttributes="Bold"
+                                               VerticalTextAlignment="Center"/>
+                                    <!--<Label Grid.Row="1" 
+                                           Grid.ColumnSpan="2"
+                                               Text="{Binding parts_id.part_number}" 
+                                               Style="{StaticResource lbl}"
+                                               VerticalTextAlignment="Center"/>-->
+
+                                    <!--<Label
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            Text="{Binding total_price,StringFormat='₹{0:F2}'}"
+                                            Style="{StaticResource lbl}"
+                                            FontSize="14"
+                                            VerticalTextAlignment="Center"
+                                            HorizontalTextAlignment="Start"
+                                            HorizontalOptions="Start"
+                                            TextDecorations="Strikethrough"
+                                            IsVisible="{Binding isVisible}"/>-->
+                                    <Label
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            Text="{Binding extended_price,StringFormat='₹{0:F2}'}" 
+                                           FontSize="14"
+                                           FontAttributes="Bold"
+                                           Style="{StaticResource lbl}"
+                                           VerticalTextAlignment="Center"
+                                            HorizontalTextAlignment="Start"
+                                            HorizontalOptions="Start"/>
+                                    <!--<Label
+                                            Grid.Row="1"
+                                            Grid.Column="2"
+                                            Text="{Binding discount,StringFormat='{0:F2}% off'}" 
+                                           FontSize="14"
+                                           Style="{StaticResource lbl}"
+                                            TextColor="{Binding discountColor}"
+                                           VerticalTextAlignment="Center"
+                                            HorizontalTextAlignment="Start"
+                                            HorizontalOptions="Start"/>-->
+                                    <Grid Grid.Row="1" 
+                                          Grid.Column="3"
+                                          HorizontalOptions="End" 
+                                          BackgroundColor="{StaticResource theme_color}">
+                                        <Grid ColumnSpacing="0" BackgroundColor="#FFF" Margin="0,1,0,1">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="27" />
+                                                <ColumnDefinition Width="30" />
+                                                <ColumnDefinition Width="27" />
+                                            </Grid.ColumnDefinitions>
+                                            <!--<Button Grid.Column="0"
+                                                        Text="+"
+                                                        FontSize="15"
+                                                        CornerRadius="2"
+                                                        Style="{StaticResource btn}"
+                                                        Command="{Binding Source={x:Reference page}, Path=BindingContext.AddProductQuantityCommand}"
+                                                        CommandParameter="{Binding .}"/>-->
+                                            <Grid Grid.Column="0" BackgroundColor="{StaticResource theme_color}"/>
+                                            <Grid Grid.Column="0" >
+                                                <!--<Label Grid.Column="0"
+                                                   Text="&#xF0415;"
+                                                   TextColor="#FFF"
+                                                   FontSize="26"
+                                                   HorizontalOptions="CenterAndExpand">
+                                                        <Label.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding Source={x:Reference page}, Path=BindingContext.AddProductQuantityCommand}"
+                                                                              CommandParameter="{Binding .}"/>
+                                                        </Label.GestureRecognizers>
+                                                    </Label>-->
+                                                <Image Grid.Column="0"
+                                                           Source="ic_plus.png"
+                                                            Margin="2"
+                                                   HorizontalOptions="CenterAndExpand">
+                                                    <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Source={x:Reference page}, Path=BindingContext.AddProductQuantityCommand}"
+                                                                              CommandParameter="{Binding .}"/>
+                                                    </Image.GestureRecognizers>
+                                                </Image>
+                                            </Grid>
+                                            <Label Grid.Column="1" 
+                                                       Text="{Binding quantity}"
+                                                       Style="{StaticResource lbl}"
+                                                       FontSize="24"
+                                                       FontAttributes="Bold"
+                                                       TextColor="{StaticResource theme_color}"
+                                                       HorizontalTextAlignment="Center"
+                                                       VerticalTextAlignment="Center"/>
+                                            <Grid Grid.Column="2" BackgroundColor="{StaticResource theme_color}"/>
+                                            <Grid Grid.Column="2" >
+                                                <!--<Label Grid.Column="0"
+                                                           Text="&#xF0374;"
+                                                           TextColor="#FFF"
+                                                           FontSize="26"
+                                                           HorizontalOptions="CenterAndExpand">
+                                                        <Label.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding Source={x:Reference page}, Path=BindingContext.RemoveProductQuantityCommand}"
+                                                                              CommandParameter="{Binding .}"/>
+                                                        </Label.GestureRecognizers>
+                                                    </Label>-->
+                                                <Image Grid.Column="0"
+                                                           Source="ic_minus.png"
+                                                            Margin="2"
+                                                           HorizontalOptions="CenterAndExpand">
+                                                    <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Source={x:Reference page}, Path=BindingContext.RemoveProductQuantityCommand}"
+                                                                              CommandParameter="{Binding .}"/>
+                                                    </Image.GestureRecognizers>
+                                                </Image>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Frame Grid.Row="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        Text="Price Details"
+                        Style="{StaticResource lbl}"
+                        FontAttributes="Bold"
+                        Margin="0,0,0,10"/>
+                    <Label
+                        Grid.Row="1"
+                        Text="Price"
+                        Style="{StaticResource lbl}"
+                        Margin="0"/>
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Text="{Binding price, StringFormat='₹{0:F2}'}"
+                        Style="{StaticResource lbl}"
+                        Margin="0"
+                        HorizontalOptions="End"/>
+                    <Label
+                        Grid.Row="2"
+                        Text="Discount"
+                        Style="{StaticResource lbl}"
+                        Margin="0"/>
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Text="{Binding discount, StringFormat='₹{0:F2}'}"
+                        Style="{StaticResource lbl}"
+                        Margin="0"
+                        HorizontalOptions="End"/>
+                    <Frame
+                        Grid.Row="3"
+                        Grid.ColumnSpan="2"
+                        HeightRequest="0"
+                        Padding="1"/>
+                    <Label
+                        Grid.Row="4"
+                        Text="Total Amount"
+                        Style="{StaticResource lbl}"
+                        FontAttributes="Bold"
+                        Margin="0"/>
+                    <Label
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Text="{Binding totalAmount, StringFormat='₹{0:F2}'}"
+                        Style="{StaticResource lbl}"
+                        FontAttributes="Bold"
+                        Margin="0"
+                        HorizontalOptions="End"/>
+                </Grid>
+            </Frame>
+
+            <Button Grid.Row="2"
+                    Text="Checkout"
+                    Style="{StaticResource btn}"
+                    Command="{Binding CheckoutCommand}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

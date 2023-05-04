@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.MarketPlace.MyOrderDetailPage"
+             BackgroundColor="{StaticResource page_bg_color}"
+             Title="ORDER DETAILS"
+             x:Name="page">
+    <ContentPage.Content>
+        <Grid>
+            <!--<ScrollView>-->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <!--<RowDefinition Height="Auto"/>-->
+                    </Grid.RowDefinitions>
+
+                    <Frame CornerRadius="10" HasShadow="True" Margin="10">
+                        <StackLayout>
+                            <Label
+                        Text="{Binding orderDetail.long_description}"
+                        Style="{StaticResource lbl}"
+                        FontAttributes="Bold"
+                        FontSize="19"/>
+                            <Label
+                        Text="{Binding orderDetail.orderId,StringFormat='Order Id : {0}'}"
+                        Style="{StaticResource lbl}"/>
+                            <Frame
+                        Padding="1"
+                        Margin="0,10,0,10"
+                        BorderColor="LightGray"/>
+
+                            <Label
+                        Text="{Binding orderDetail.part_number}"
+                        Style="{StaticResource lbl}"
+                        FontSize="16"/>
+                            <Label
+                        Text="{Binding orderDetail.price,StringFormat='₹{0}'}"
+                        Style="{StaticResource lbl}"
+                        FontAttributes="Bold"
+                        FontSize="17"/>
+
+                        </StackLayout>
+                    </Frame>
+
+                <ScrollView Grid.Row="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Frame Grid.Row="0" CornerRadius="10" HasShadow="True" Margin="10">
+                            <StackLayout>
+                                <Label
+                        Text="Shipping Details :"
+                        Style="{StaticResource lbl}"
+                        FontAttributes="Bold"/>
+                                <Frame
+                        Padding="1"
+                        Margin="0,5,0,5"
+                        BorderColor="LightGray"/>
+                                <Label
+                        Text="{Binding orderDetail.shipping_address}"
+                        Style="{StaticResource lbl}"
+                        FontSize="16"/>
+                                <Label
+                        Text="{Binding orderDetail.mobile,StringFormat='Mobile No : {0}'}"
+                        Style="{StaticResource lbl}"
+                        FontSize="16"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <Frame Grid.Row="1" CornerRadius="10" HasShadow="True" Margin="10">
+                            <StackLayout>
+                                <Label
+                        Text="Serial Parts :"
+                        Style="{StaticResource lbl}"
+                        FontAttributes="Bold"/>
+                                <Frame
+                        Padding="1"
+                        Margin="0,5,0,5"
+                        BorderColor="LightGray"/>
+
+
+
+                                <StackLayout
+                                x:Name="SerialNoList"
+                                BindableLayout.ItemsSource="{Binding serialPartList}"
+                                Orientation="Vertical">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackLayout>
+                                                <Grid ColumnDefinitions="*,Auto">
+                                                    <Label
+                                                Text="{Binding serial_number}"
+                                                Style="{StaticResource lbl}"
+                                                FontSize="16"/>
+                                                    <Image
+                                                Grid.Column="1"
+                                                Source="{Binding ic_updown}"
+                                                HeightRequest="30"
+                                                BackgroundColor="White"/>
+                                                    <Grid.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Source={x:Reference SerialNoList}, Path=BindingContext.DropDownSelectionCommand}"
+                                                          CommandParameter="{Binding .}"/>
+                                                    </Grid.GestureRecognizers>
+                                                </Grid>
+                                                <ImageButton
+                                            Source="{Binding imageUrl}"
+                                            IsVisible="{Binding isExpanded}"
+                                            HeightRequest="150"
+                                            BackgroundColor="White"
+                                            Command="{Binding Source={x:Reference page}, Path=BindingContext.QRImageCommand}"
+                                                          CommandParameter="{Binding .}"/>
+                                            </StackLayout>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </ScrollView>
+            </Grid>
+            <!--</ScrollView>-->
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

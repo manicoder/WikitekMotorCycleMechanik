@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.AppFeature.AppFeaturePage"
+             BackgroundColor="{StaticResource page_bg_color}"
+              xmlns:converter="clr-namespace:WikitekMotorCycleMechanik.Converters"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             Title="Features">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:ByteToImageFieldConverter x:Key="ByteToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Grid Padding="10,5,10,5" VerticalOptions="FillAndExpand" RowSpacing="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35*" />
+                    <RowDefinition Height="15*" />
+                    <RowDefinition Height="50*" />
+                </Grid.RowDefinitions>
+                <Frame  Grid.Row="0" 
+                    HasShadow="True" 
+                    Margin="1" 
+                    Padding="5">
+                    <ffimageloading:CachedImage HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="FillAndExpand"
+                                           DownsampleToViewSize="true"
+			                               Source = "{Binding selected_sub_model.attachment.attachment}"
+                                           
+                                           ErrorPlaceholder="ic_demo_image.png">
+
+                    </ffimageloading:CachedImage>
+                    <!--<Image Source="{Binding selected_sub_model.attachment.attachment,Converter={StaticResource ByteToImage}}"/>-->
+                </Frame>
+
+                <Frame  Grid.Row="1" HasShadow="True" Margin="1" Padding="5" 
+                        BackgroundColor="#e0ebf3">
+                    <Grid RowSpacing="10" VerticalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <StackLayout Spacing="0" Orientation="Horizontal">
+                            <Label Text="{Binding selected_model.name,StringFormat='{0}'}" 
+                               Style="{StaticResource lbl}" 
+                               HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Center"/>
+                            <Label Text="{Binding selected_sub_model.name,StringFormat=' - {0}'}" 
+                               Style="{StaticResource lbl}" 
+                               HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Center"/>
+                            <Label Text="{Binding selected_sub_model.model_year,StringFormat=' - {0}'}" 
+                               Style="{StaticResource lbl}" 
+                               HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                        <Label Grid.Row="1" 
+                           Text="{Binding selected_oem.name}" 
+                           Style="{StaticResource lbl}" 
+                           HorizontalTextAlignment="Start"
+                           VerticalTextAlignment="Center"/>
+                    </Grid>
+                </Frame>
+
+
+                <Grid Grid.Row="2" RowSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="37"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="27"/>
+                        <!--<RowDefinition Height="*"/>-->
+                        <RowDefinition Height="120"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Text="Dongle Connected Via" Style="{StaticResource lbl}"
+                               VerticalTextAlignment="End" HorizontalTextAlignment="Center"/>
+
+                    <ImageButton Grid.Row="1" BackgroundColor="{StaticResource theme_color}" HorizontalOptions="CenterAndExpand" 
+                                 Command="{Binding BluetoothDisconnectCommand}" CornerRadius="35" 
+                                 BorderWidth="2" BorderColor="#FFF"
+                                 Padding="9">
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource Material}" Glyph="&#xF00AF;" 
+                                             Color="#FFF" Size="70" />
+                        </ImageButton.Source>
+                    </ImageButton>
+
+                    <Label Grid.Row="2" Text="{Binding firmware_version}" Style="{StaticResource lbl}"
+                           VerticalTextAlignment="Start" HorizontalTextAlignment="Center"/>
+
+                    <Grid Grid.Row="3" Grid.Column="0" VerticalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <ImageButton Grid.Row="0" 
+                                     Grid.Column="0" 
+                                     BackgroundColor="#FFF" 
+                                     HorizontalOptions="CenterAndExpand" 
+                                     Command="{Binding DtcCommand}" 
+                                     CornerRadius="5" 
+                                     BorderWidth="1.1"
+                                     Padding="9"
+                                     BorderColor="{StaticResource theme_color}"
+                                     IsVisible="{Binding pid_visible}">
+                            <ImageButton.Source>
+                                <FontImageSource FontFamily="{DynamicResource Material}" 
+                                                 Glyph="&#xF0026;" 
+                                                 Color="{StaticResource theme_color}" 
+                                                 Size="70" />
+                            </ImageButton.Source>
+                        </ImageButton>
+                        <Label Grid.Row="1" 
+                               Grid.Column="0" 
+                               Text="DTC Read And Clear" 
+                               Style="{StaticResource lbl}" 
+                               HorizontalTextAlignment="Center" 
+                               VerticalTextAlignment="Start"
+                               IsVisible="{Binding pid_visible}"/>
+
+                        <ImageButton Grid.Row="0" 
+                                     Grid.Column="1" 
+                                     BackgroundColor="#FFF" 
+                                     HorizontalOptions="CenterAndExpand" 
+                                     Command="{Binding LiveParameterCommand}" 
+                                     CornerRadius="5" 
+                                     BorderWidth="1.1"
+                                     Padding="9"
+                                     BorderColor="{StaticResource theme_color}"
+                                     IsVisible="{Binding pid_visible}">
+                            <ImageButton.Source>
+                                <FontImageSource FontFamily="{DynamicResource Material}" 
+                                                 Glyph="&#xF0127;" 
+                                                 Color="{StaticResource theme_color}" 
+                                                 Size="70" />
+                            </ImageButton.Source>
+                        </ImageButton>
+                        <Label Grid.Row="1" 
+                               Grid.Column="1" 
+                               Text="Live Parameter" 
+                               Style="{StaticResource lbl}" 
+                               HorizontalTextAlignment="Center" 
+                               VerticalTextAlignment="Start"
+                               IsVisible="{Binding pid_visible}"/>
+
+                        <ImageButton Grid.Row="0" 
+                                     Grid.Column="2"
+                                     Source="ic_remote.png"
+                                     BackgroundColor="#FFF" 
+                                     HorizontalOptions="CenterAndExpand" 
+                                     Command="{Binding RemoteDiagnosticCommand}" 
+                                     CornerRadius="5" 
+                                     BorderWidth="1.1"
+                                     Padding="9"
+                                     BorderColor="{StaticResource theme_color}"
+                                     IsVisible="{Binding pid_visible}">
+                        </ImageButton>
+                        <Label Grid.Row="1" 
+                               Grid.Column="2" 
+                               Text="Remote Diagnostic&#x0a;(Coming Soon)" 
+                               Style="{StaticResource lbl}" 
+                               HorizontalTextAlignment="Center" 
+                               VerticalTextAlignment="Start"
+                               IsVisible="{Binding pid_visible}"/>
+                    </Grid>
+
+                </Grid>
+
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WikitekMotorCycleMechanik.Views.Otp.OtpPage"
+             xmlns:local="clr-namespace:WikitekMotorCycleMechanik.CustomControls"
+             NavigationPage.HasNavigationBar="False"             
+             BackgroundColor="#00A5F2">
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="frame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="BorderColor" Value="{StaticResource theme_color}" />
+                <Setter Property="Padding" Value="10,0,10,0" />
+            </Style>
+            <Style x:Key="ent" TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="{StaticResource placeholder_color}" />
+                <Setter Property="TextColor" Value="{StaticResource text_color}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="{StaticResource font_size}" />
+            </Style>
+            <Style x:Key="editor" TargetType="Editor">
+                <Setter Property="PlaceholderColor" Value="{StaticResource placeholder_color}" />
+                <Setter Property="TextColor" Value="{StaticResource text_color}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="{StaticResource font_size}" />
+            </Style>
+            <Style x:Key="lbl" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource btn_text_color}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="{StaticResource font_size}" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="btn" TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource theme_color}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="CornerRadius" Value="27" />
+                <Setter Property="BackgroundColor" Value="{StaticResource btn_text_color}" />
+                <Setter Property="FontSize" Value="{StaticResource font_size}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+    <ContentPage.Content>
+        <Grid RowSpacing="10" Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" RowSpacing="25">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="35*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" 
+                      Text="{Binding title}" 
+                       Style="{StaticResource lbl}" 
+                       TextColor="{StaticResource page_bg_color}"
+                           FontAttributes="Bold"
+                       FontSize="35"
+                       HorizontalTextAlignment="Center"/>
+                <Label Grid.Row="1" 
+                      Text="{Binding description}" 
+                       Style="{StaticResource lbl}" 
+                       TextColor="{StaticResource page_bg_color}"
+                       HorizontalTextAlignment="Center"/>
+                <Grid Grid.Row="2" VerticalOptions="Center" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" 
+                           Text="Enter 6 digit OTP" 
+                           Style="{StaticResource lbl}" 
+                           TextColor="{StaticResource page_bg_color}"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"/>
+                    <Frame Grid.Row="1" Style="{StaticResource frame}" 
+                           VerticalOptions="Center" 
+                           HorizontalOptions="Center"
+                           HeightRequest="65" 
+                           WidthRequest="200"
+                           BorderColor="#FFF">
+                        <local:CustomEntry x:Name="txt_new_pass" 
+                                           Text="{Binding OTP}" 
+                                           HorizontalTextAlignment="Center"
+                                           Keyboard="Telephone"
+                                           FontSize="30"
+                                           TextColor="#FFF"
+                                           CharacterSpacing="5"
+                                           FontAttributes="Bold"
+                                           MaxLength="6"
+                                           Style="{StaticResource ent}"/>
+                    </Frame>
+                </Grid>
+                <!--<Grid Grid.Row="2" ColumnSpacing="15" VerticalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition>
+                        <ColumnDefinition.Width>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="70" Phone="50"/>
+                        </ColumnDefinition.Width>
+                        </ColumnDefinition>
+                        <ColumnDefinition>
+                            <ColumnDefinition.Width>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="70" Phone="50"/>
+                            </ColumnDefinition.Width>
+                        </ColumnDefinition>
+                        <ColumnDefinition>
+                            <ColumnDefinition.Width>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="70" Phone="50"/>
+                            </ColumnDefinition.Width>
+                        </ColumnDefinition>
+                        <ColumnDefinition>
+                            <ColumnDefinition.Width>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="70" Phone="50"/>
+                            </ColumnDefinition.Width>
+                        </ColumnDefinition>
+                        <ColumnDefinition>
+                            <ColumnDefinition.Width>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="70" Phone="50"/>
+                            </ColumnDefinition.Width>
+                        </ColumnDefinition>
+                        <ColumnDefinition>
+                            <ColumnDefinition.Width>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="70" Phone="50"/>
+                            </ColumnDefinition.Width>
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1" 
+                          BackgroundColor="{StaticResource page_bg_color}">
+                        <local:CustomEntry Text="{Binding first_digit}"
+                                           HorizontalTextAlignment="Center" 
+                                           MaxLength="1" 
+                                           Keyboard="Numeric"/>
+                    </Grid>
+                    <Grid Grid.Column="2"
+                          BackgroundColor="{StaticResource page_bg_color}">
+                        <local:CustomEntry Text="{Binding second_digit}"
+                                           HorizontalTextAlignment="Center" 
+                                           MaxLength="1" 
+                                           Keyboard="Numeric"/>
+                    </Grid>
+                    <Grid Grid.Column="3" 
+                          BackgroundColor="{StaticResource page_bg_color}">
+                        <local:CustomEntry Text="{Binding third_digit}"
+                                           HorizontalTextAlignment="Center" 
+                                           MaxLength="1" 
+                                           Keyboard="Numeric"/>
+                    </Grid>
+                    <Grid Grid.Column="4" 
+                          BackgroundColor="{StaticResource page_bg_color}">
+                        <local:CustomEntry Text="{Binding fourth_digit}"
+                                           HorizontalTextAlignment="Center" 
+                                           MaxLength="1" 
+                                           Keyboard="Numeric"/>
+                    </Grid>
+                    <Grid Grid.Column="5" 
+                          BackgroundColor="{StaticResource page_bg_color}">
+                        <local:CustomEntry Text="{Binding fifth_digit}"
+                                           HorizontalTextAlignment="Center" 
+                                           MaxLength="1" 
+                                           Keyboard="Numeric"/>
+                    </Grid>
+                    <Grid Grid.Column="6" 
+                          BackgroundColor="{StaticResource page_bg_color}">
+                        <local:CustomEntry Text="{Binding six_digit}"
+                                           HorizontalTextAlignment="Center" 
+                                           MaxLength="1" 
+                                           Keyboard="Numeric"/>
+                    </Grid>
+                </Grid>-->
+            </Grid>
+            <Grid Grid.Row="1" IsVisible="{Binding term_condition_visible}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox Color="{StaticResource btn_text_color}" Scale="1.3"/>
+                <Label Grid.Column="1" LineBreakMode="WordWrap" Style="{StaticResource lbl}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="I agree with the "/>
+                            <Span Text="Terms and conditions" FontAttributes="Bold" TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TermConditionCommand} "/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" and " />
+                            <Span Text="Privacy policy" FontAttributes="Bold" TextDecorations="Underline">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding PrivacyPolicyCommand} "/>
+                                </Span.GestureRecognizers>
+                            </Span>
+                            <Span Text=" of wikitek mechanik" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Grid>
+            <Button Grid.Row="2" 
+                    Text="Submit" 
+                    Style="{StaticResource btn}"
+                    Command="{Binding SubmitCommand}"
+                    TextColor="{StaticResource theme_color}"
+                    BackgroundColor="{StaticResource page_bg_color}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

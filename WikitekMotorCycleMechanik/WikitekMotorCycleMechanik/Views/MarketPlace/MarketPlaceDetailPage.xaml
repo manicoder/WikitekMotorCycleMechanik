@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.MarketPlace.MarketPlaceDetailPage"
+             BackgroundColor="{StaticResource page_bg_color}"
+             Title="{Binding title}">
+
+    <NavigationPage.TitleView>
+        <Grid VerticalOptions="FillAndExpand"
+              HeightRequest="40"
+              ColumnSpacing="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="0"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="{Binding title}"
+                   FontSize="16" 
+                   TextColor="#FFF" 
+                   FontAttributes="Bold"
+                   VerticalTextAlignment="Center"/>
+
+            <Grid Grid.Column="1" >
+                <!--<Label Text="&#xF0111;" 
+                       FontSize="35" 
+                       TextColor="#FFF"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalTextAlignment="Center">
+
+                </Label>-->
+                <Image Source="ic_cart_white.png"/>
+                <Frame CornerRadius="13" 
+                       HeightRequest="21" 
+                       WidthRequest="21"
+                       Padding="0"
+                       BackgroundColor="Red"
+                       HorizontalOptions="EndAndExpand"
+                       VerticalOptions="StartAndExpand"
+                       IsVisible="{Binding badge_count_visible,Mode=TwoWay}">
+                    <Label Text="{Binding badge_count,Mode=TwoWay}"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           TextColor="#FFF"
+                           FontSize="12"/>
+                </Frame>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoToCartCommand}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Example Item"
+                     Order="Primary"
+                     Priority="0"
+                     Command="{Binding GoToCartCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource 
+                    FontFamily="{StaticResource Material}"
+                    Glyph="&#xF0111;" 
+                    Color="{StaticResource page_bg_color}"
+                    Size="40"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>-->
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="0">
+                <Grid>
+                    
+                    <Grid Grid.Row="0" ColumnSpacing="0" Padding="10" VerticalOptions="Start">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <AbsoluteLayout Grid.Row="1" Margin="0,0,0,10">
+                            <CarouselView  HeightRequest="200"
+                              ItemsSource="{Binding selected_market_place.documents}"
+                              PeekAreaInsets="0"
+                              x:Name="TheCarousel"
+                              AbsoluteLayout.LayoutBounds="0,0,1,1"
+                              AbsoluteLayout.LayoutFlags="All"
+                              IndicatorView="indicatorview"
+                                       VerticalOptions="FillAndExpand"
+                                       HorizontalOptions="FillAndExpand">
+                                <CarouselView.ItemsLayout>
+                                    <LinearItemsLayout Orientation="Horizontal"
+                                           ItemSpacing="0"
+                                           SnapPointsType="MandatorySingle"/>
+                                </CarouselView.ItemsLayout>
+
+                                <CarouselView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout>
+                                            <Frame HasShadow="True" 
+                                       Padding="0"
+                                        Margin="0,0,0,0" CornerRadius="20"
+                                        HeightRequest="200"
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="StartAndExpand">
+                                                <StackLayout>
+                                                    <Image Source="{Binding attachment.attachment}"
+                                               Aspect="AspectFit"
+                                               HeightRequest="200"
+                                               VerticalOptions="StartAndExpand"/>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </CarouselView.ItemTemplate>
+                            </CarouselView>
+
+                            <IndicatorView
+                            x:Name="indicatorview"
+                            AbsoluteLayout.LayoutBounds="0.5,0.95,100,100"
+                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                            IndicatorColor="LightGray"
+                            IndicatorSize="10"
+                                VerticalOptions="End"
+                            SelectedIndicatorColor="{StaticResource theme_color}" />
+                        </AbsoluteLayout>
+
+
+                        <Frame Grid.Row="0" CornerRadius="20">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0"
+                                Text="{Binding selected_market_place.short_description}"
+                                Style="{StaticResource lbl}"
+                                FontSize="24"
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="Start"
+                               HorizontalOptions="EndAndExpand"
+                               VerticalOptions="StartAndExpand"/>
+                                <Grid Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Frame Grid.Column="1"
+                                Padding="0" CornerRadius="70" IsClippedToBounds="True"
+                                BorderColor="{StaticResource theme_color}" Margin="0"
+                                VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"
+                                HeightRequest="130" WidthRequest="130">
+                                        <Image Grid.Column="0" Source="{Binding selected_market_place.default.attachment}"
+                                    Aspect="AspectFill"/>
+                                    </Frame>
+                                    <StackLayout Grid.Column="0">
+                                        <Label
+                                    Text="{Binding selected_market_place.part_number}"
+                                    Style="{StaticResource lbl}"
+                                    HorizontalTextAlignment="Start"
+                                    FontSize="24"/>
+                                        <Label Margin="0,20,0,0"
+                                    Text="{Binding selected_market_place.mrp,StringFormat='List Unit Price : ₹{0:F2}'}"
+                                    Style="{StaticResource lbl}"
+                                    HorizontalTextAlignment="Start"/>
+                                        <Label
+                                    Text="{Binding discounted_price,StringFormat='Discounted Unit Price : ₹{0:F2}'}"
+                                    Style="{StaticResource lbl}"
+                                    HorizontalTextAlignment="Start"/>
+                                        <Label
+                                    Text="{Binding total_price, StringFormat='Total Price: ₹{0}'}"
+                                    Style="{StaticResource lbl}"
+                                    FontAttributes="Bold"
+                                    Margin="0"/>
+                                    </StackLayout>
+                                </Grid>
+                                <Grid Grid.Row="2" Margin="0,20,0,0"
+                                VerticalOptions="StartAndExpand"
+                                HorizontalOptions="StartAndExpand" 
+                                BackgroundColor="{StaticResource theme_color}">
+                                    <Grid ColumnSpacing="0" BackgroundColor="#FFF" Margin="0,1,0,1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="35" />
+                                            <ColumnDefinition Width="32" />
+                                            <ColumnDefinition Width="35" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0" BackgroundColor="{StaticResource theme_color}"/>
+                                        <Grid Grid.Column="0" >
+                                            <!--<Label Grid.Column="0"
+                                   Text="&#xF0415;"
+                                   TextColor="#FFF"
+                                   FontSize="26"
+                                   HorizontalOptions="CenterAndExpand">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding AddProductQuantityCommand}"
+                                                          CommandParameter="{Binding .}"/>
+                                </Label.GestureRecognizers>
+                            </Label>-->
+                                            <Image Grid.Column="0"
+                                   Source="ic_plus.png"
+                                   Margin="2"
+                                   HorizontalOptions="CenterAndExpand">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding AddProductQuantityCommand}"
+                                                          CommandParameter="{Binding .}"/>
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                        </Grid>
+                                        <Label Grid.Column="1" 
+                               Text="{Binding quantities}"
+                               Style="{StaticResource lbl}"
+                               FontSize="24"
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource theme_color}"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"/>
+                                        <Grid Grid.Column="2" BackgroundColor="{StaticResource theme_color}"/>
+                                        <Grid Grid.Column="2" >
+                                            <!--<Label Grid.Column="0"
+                                   Text="&#xF0374;"
+                                   TextColor="#FFF"
+                                   FontSize="26"
+                                   HorizontalOptions="CenterAndExpand">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding RemoveProductQuantityCommand}"
+                                                          CommandParameter="{Binding .}"/>
+                                </Label.GestureRecognizers>
+                            </Label>-->
+                                            <Image Grid.Column="0"
+                                   Source="ic_minus.png"
+                                   Margin="2"
+                                   HorizontalOptions="CenterAndExpand">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding RemoveProductQuantityCommand}"
+                                                          CommandParameter="{Binding .}"/>
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Frame>
+
+                        <!--<Frame Grid.Row="2">
+                    <StackLayout Orientation="Vertical" Spacing="-1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Label Text="Pricing Brackets :"
+                               Style="{StaticResource lbl}"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               Margin="0,0,0,10"/>
+                        <StackLayout Orientation="Horizontal" Spacing="-1">
+                            <Frame Grid.Column="0" WidthRequest="100" HasShadow="False" BorderColor="LightGray" Padding="0,4,0,4">
+                                <Label 
+                                       Text="Min Qty."
+                                   FontAttributes="Bold"
+                                   Style="{StaticResource lbl}"
+                                    HorizontalTextAlignment="Center"/>
+                            </Frame>
+                            <Frame Grid.Column="1" WidthRequest="100" HasShadow="False" BorderColor="LightGray" Padding="0,4,0,4">
+                                <Label 
+                                       Text="Max Qty."
+                                   FontAttributes="Bold"
+                                   Style="{StaticResource lbl}"
+                                    HorizontalTextAlignment="Center"/>
+                            </Frame>
+                            <Frame Grid.Column="2" WidthRequest="100" HasShadow="False" BorderColor="LightGray" Padding="0,4,0,4">
+                                <Label 
+                                       Text="Price"
+                                        FontAttributes="Bold"
+                                        Style="{StaticResource lbl}"
+                                        HorizontalTextAlignment="Center"/>
+                            </Frame>
+                            -->
+                        <!--<Frame Grid.Column="2" WidthRequest="80" HasShadow="False" BorderColor="LightGray" Padding="0,4,0,4">
+                                    <Label 
+                                       Text="Discount"
+                                        FontAttributes="Bold"
+                                        Style="{StaticResource lbl}"
+                                        HorizontalTextAlignment="Center"/>
+                                </Frame>-->
+                        <!--
+                        </StackLayout>
+                        <StackLayout Spacing="-1" BindableLayout.ItemsSource="{Binding selected_market_place.prices,Mode=TwoWay}">
+
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid ColumnSpacing="-1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="100"/>
+                                            -->
+                        <!--<ColumnDefinition Width="80"/>-->
+                        <!--
+                                        </Grid.ColumnDefinitions>
+
+                                        <Frame Grid.Column="0" HasShadow="False" BorderColor="LightGray" Padding="0,2,0,2">
+                                            <Label 
+                                       Text="{Binding min_quantity}"
+                                        HorizontalTextAlignment="Center"
+                                       Style="{StaticResource lbl}"/>
+                                        </Frame>
+                                        <Frame Grid.Column="1" HasShadow="False" BorderColor="LightGray" Padding="0,2,0,2">
+                                            <Label 
+                                       Text="{Binding max_quantity}"
+                                       Style="{StaticResource lbl}"
+                                        HorizontalTextAlignment="Center"/>
+                                        </Frame>
+                                        <Frame Grid.Column="2" HasShadow="False" BorderColor="LightGray" Padding="0,2,0,2">
+                                            <Label
+                                       Text="{Binding price, StringFormat='₹{0}'}"
+                                       Style="{StaticResource lbl}"
+                                        HorizontalTextAlignment="Center"/>
+                                        </Frame>
+                                        -->
+                        <!--<Frame Grid.Column="3" HasShadow="False" BorderColor="LightGray" Padding="0,2,0,2">
+                                            <Label
+                                                Text="{Binding discount, StringFormat='{0}%off'}"
+                                                Style="{StaticResource lbl}"
+                                                HorizontalTextAlignment="Center"
+                                                TextColor="Green"/>
+                                        </Frame>-->
+                        <!--
+
+                                    </Grid>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+
+                        </StackLayout>
+                    </StackLayout>
+
+                    -->
+                        <!--<StackLayout VerticalOptions="Fill" Orientation="Vertical">
+                        <CollectionView VerticalOptions="Start" x:Name="price_List" ItemsSource="{Binding selected_market_place.prices,Mode=TwoWay}">
+                            <CollectionView.Header>
+                                <Grid ColumnSpacing="-1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Frame Grid.Column="0" HasShadow="False" BorderColor="LightGray" Padding="2,2,2,2">
+                                        <Label 
+                                       Text="Min Qty."
+                                   FontAttributes="Bold"
+                                   Style="{StaticResource lbl}"
+                                    HorizontalTextAlignment="Center"/>
+                                    </Frame>
+                                    <Frame Grid.Column="1" HasShadow="False" BorderColor="LightGray" Padding="2,2,2,2">
+                                        <Label 
+                                       Text="Max Qty."
+                                   FontAttributes="Bold"
+                                   Style="{StaticResource lbl}"
+                                    HorizontalTextAlignment="Center"/>
+                                    </Frame>
+                                    <Frame Grid.Column="2" HasShadow="False" BorderColor="LightGray" Padding="2,2,2,2">
+                                        <Label 
+                                       Text="Price"
+                                   FontAttributes="Bold"
+                                   Style="{StaticResource lbl}"
+                                    HorizontalTextAlignment="Center"/>
+                                    </Frame>
+                                </Grid>
+                            </CollectionView.Header>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid ColumnSpacing="-1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="100"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Frame Grid.Column="0" HasShadow="False" BorderColor="LightGray" Padding="2,2,2,2">
+                                            <Label 
+                                       Text="{Binding min_quantity}"
+                                        HorizontalTextAlignment="Center"
+                                       Style="{StaticResource lbl}"/>
+                                        </Frame>
+                                        <Frame Grid.Column="1" HasShadow="False" BorderColor="LightGray" Padding="2,2,2,2">
+                                            <Label 
+                                       Text="{Binding max_quantity}"
+                                       Style="{StaticResource lbl}"
+                                        HorizontalTextAlignment="Center"/>
+                                        </Frame>
+                                        <Frame Grid.Column="2" HasShadow="False" BorderColor="LightGray" Padding="2,2,2,2">
+                                            <Label
+                                       Text="{Binding price}"
+                                       Style="{StaticResource lbl}"
+                                        HorizontalTextAlignment="Center"/>
+                                        </Frame>
+
+                                    </Grid>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>-->
+                        <!--
+
+                </Frame>-->
+
+                        <Frame Grid.Row="2" CornerRadius="20">
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Row="0" 
+                               Text="Specifications :"
+                               Style="{StaticResource lbl}"
+                               FontAttributes="Bold"
+                               FontSize="16"/>
+                                <Label Grid.Row="1" 
+                       Text="{Binding selected_market_place.long_description,StringFormat='Description : {0}'}"
+                       Style="{StaticResource lbl}"/>
+                                <Label Grid.Row="2" 
+                       Text="{Binding selected_market_place.part_type.name,StringFormat='Type : {0}'}"
+                       Style="{StaticResource lbl}"/>
+                                <Label Grid.Row="3" 
+                       Text="{Binding selected_market_place.part_category.name,StringFormat='Category : {0}'}"
+                       Style="{StaticResource lbl}"/>
+                                <Label Grid.Row="4" 
+                       Text="{Binding selected_market_place.sub_category.name,StringFormat='SubCategory : {0}'}"
+                       Style="{StaticResource lbl}"/>
+                                <Label Grid.Row="5" 
+                       Text="{Binding selected_market_place.weight,StringFormat='Weight : {0}'}"
+                       Style="{StaticResource lbl}"/>
+                                <Label Grid.Row="6" 
+                       Text="{Binding selected_market_place.length,StringFormat='Length : {0}'}"
+                       Style="{StaticResource lbl}"/>
+                                <Label Grid.Row="7" 
+                       Text="{Binding selected_market_place.breadth,StringFormat='Breadth : {0}'}"
+                       Style="{StaticResource lbl}"/>
+                                <Label Grid.Row="8" 
+                       Text="{Binding selected_market_place.height,StringFormat='Height : {0}'}"
+                       Style="{StaticResource lbl}"/>
+
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                    
+                </Grid>
+            </ScrollView>
+            <Button Grid.Row="1"
+                        Text="Add To Cart"
+                        VerticalOptions="End"
+                        Margin="10"
+                        Style="{StaticResource btn}"
+                        Command="{Binding AddToCartCommand}"/>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

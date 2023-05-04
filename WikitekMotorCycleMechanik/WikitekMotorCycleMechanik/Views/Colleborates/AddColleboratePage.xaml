@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+               xmlns:local="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
+             x:Class="WikitekMotorCycleMechanik.Views.Colleborates.AddColleboratePage"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250"/>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="{Binding description_height}"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Editor Grid.Row="0"
+                        Text="{Binding description}"
+                        Placeholder="Add description"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid IsVisible="{Binding hide_delete_img}">
+                    <Image Grid.Column="0" Aspect="Fill" 
+                       HeightRequest="100"
+                       WidthRequest="130"
+                       HorizontalOptions="Fill"
+                       VerticalOptions="Fill">
+                        <Image.Source>
+                            <FileImageSource File="{Binding user_profile_pic,Mode=TwoWay}" />
+                        </Image.Source>
+                    </Image>
+                    <ImageButton Source="ic_add.png"
+                                 HorizontalOptions="End"
+                                 VerticalOptions="Start"
+                                 HeightRequest="34"
+                                 WidthRequest="34"
+                                 CornerRadius="17"
+                                 IsVisible="{Binding hide_delete_img}"
+                                 BackgroundColor="{StaticResource theme_color}"
+                                 Command="{Binding DeleteImgCommand}"/>
+                </Grid>
+
+                <Grid Grid.Column="1" IsVisible="{Binding hide_delete_vid}" >
+                    <Grid BackgroundColor="#f2f2f2"/>
+                    <xct:MediaElement x:Name="mediaElement"
+                                      Source="{Binding vid_path}"
+                                      AutoPlay="True"
+                                      BackgroundColor="Green"
+                                      ShowsPlaybackControls="False"
+                                      VerticalOptions="FillAndExpand"
+                                      HorizontalOptions="CenterAndExpand"
+                                      Aspect="Fill">
+                    </xct:MediaElement>
+                    <ImageButton Source="ic_add.png"
+                                 HorizontalOptions="End"
+                                 VerticalOptions="Start"
+                                 HeightRequest="34"
+                                 WidthRequest="34"
+                                 CornerRadius="17"
+                                 IsVisible="{Binding hide_delete_vid}"
+                                 BackgroundColor="{StaticResource theme_color}"
+                                 Command="{Binding DeleteVidCommand}"/>
+                </Grid>
+            </Grid>
+            <StackLayout Grid.Row="3" Orientation="Horizontal">
+                <ImageButton Source="ic_add_image.png"
+                             Padding="5"
+                             HeightRequest="60"
+                             WidthRequest="60"
+                             HorizontalOptions="Fill"
+                             VerticalOptions="Fill"
+                             BackgroundColor="{StaticResource theme_color}"
+                             Command="{Binding AddImageCommand}"/>
+                
+                <Grid>
+                    <ImageButton Source="ic_add_video.png"
+                                 Padding="5"
+                                 HeightRequest="60"
+                                 WidthRequest="60"
+                                 HorizontalOptions="Fill"
+                                 VerticalOptions="Fill"
+                                 BackgroundColor="{StaticResource theme_color}"
+                                 Command="{Binding AddVideoCommand}"/>
+                    <ImageButton HeightRequest="28"
+                                 WidthRequest="28"
+                                 CornerRadius="14"
+                                 VerticalOptions="End"
+                                 HorizontalOptions="End"
+                                 Padding="4"
+                                 BorderColor="{StaticResource theme_color}"
+                                 BorderWidth="3"
+                                 Margin="0,0,2,2"
+                                 BackgroundColor="#FFF"
+                                 IsTabStop="True"
+                                 InputTransparent="True"/>
+                    <ImageButton Source="ic_add_wiki" 
+                                 HeightRequest="28"
+                                 WidthRequest="28"
+                                 CornerRadius="14"
+                                 VerticalOptions="End"
+                                 HorizontalOptions="End"
+                                 Padding="2"
+                                 BorderColor="{StaticResource theme_color}"
+                                 BorderWidth="3"
+                                 Margin="0,0,2,2"
+                                 BackgroundColor="#FFF"
+                                 IsTabStop="True"
+                                 InputTransparent="True"/>
+                </Grid>
+                <Button Text="Post" 
+                        FontSize="18"
+                        TextColor="#FFF"
+                        FontAttributes="Bold"
+                        BackgroundColor="{StaticResource theme_color}"
+                        HorizontalOptions="EndAndExpand"
+                        Command="{Binding PostCollCommand}"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

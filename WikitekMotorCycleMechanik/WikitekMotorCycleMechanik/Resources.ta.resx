@@ -1,0 +1,3252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ABBREVIATIONS" xml:space="preserve">
+    <value>சுருக்கங்கள்</value>
+  </data>
+  <data name="abnormal" xml:space="preserve">
+    <value>அசாதாரண</value>
+  </data>
+  <data name="abnormally" xml:space="preserve">
+    <value>அசாதாரணமாக</value>
+  </data>
+  <data name="above" xml:space="preserve">
+    <value>மேலே</value>
+  </data>
+  <data name="abs" xml:space="preserve">
+    <value>வயிற்று</value>
+  </data>
+  <data name="absolute" xml:space="preserve">
+    <value>முழுமையான</value>
+  </data>
+  <data name="accelarter" xml:space="preserve">
+    <value>குறுக்குவழி</value>
+  </data>
+  <data name="accelerator" xml:space="preserve">
+    <value>துரிதப்படுத்தி</value>
+  </data>
+  <data name="accept" xml:space="preserve">
+    <value>ஏற்றுக்கொள்</value>
+  </data>
+  <data name="access" xml:space="preserve">
+    <value>அணுகல்</value>
+  </data>
+  <data name="achieved" xml:space="preserve">
+    <value>அடையப்பட்டது</value>
+  </data>
+  <data name="act" xml:space="preserve">
+    <value>செயல்பட</value>
+  </data>
+  <data name="activated" xml:space="preserve">
+    <value>செயல்படுத்தப்பட்டது</value>
+  </data>
+  <data name="active" xml:space="preserve">
+    <value>செயலில்</value>
+  </data>
+  <data name="activity" xml:space="preserve">
+    <value>நடவடிக்கை</value>
+  </data>
+  <data name="actual" xml:space="preserve">
+    <value>உண்மையான</value>
+  </data>
+  <data name="actuation" xml:space="preserve">
+    <value>செயல்</value>
+  </data>
+  <data name="actuator" xml:space="preserve">
+    <value>முனைப்பிகளில்</value>
+  </data>
+  <data name="adaptive" xml:space="preserve">
+    <value>தகவமைப்பு</value>
+  </data>
+  <data name="Additional" xml:space="preserve">
+    <value>கூடுதல்</value>
+  </data>
+  <data name="adjustment" xml:space="preserve">
+    <value>சரிசெய்தல்</value>
+  </data>
+  <data name="admissible" xml:space="preserve">
+    <value>ஏற்றுக்கொள்ளத்தக்கது</value>
+  </data>
+  <data name="advance" xml:space="preserve">
+    <value>முன்கூட்டியே</value>
+  </data>
+  <data name="adverse" xml:space="preserve">
+    <value>பாதகமான</value>
+  </data>
+  <data name="after" xml:space="preserve">
+    <value>பிறகு</value>
+  </data>
+  <data name="aftertreatment" xml:space="preserve">
+    <value>பின் சிகிச்சை</value>
+  </data>
+  <data name="again" xml:space="preserve">
+    <value>மீண்டும்</value>
+  </data>
+  <data name="air" xml:space="preserve">
+    <value>காற்று</value>
+  </data>
+  <data name="airflow" xml:space="preserve">
+    <value>காற்றோட்டம்</value>
+  </data>
+  <data name="alarm" xml:space="preserve">
+    <value>எச்சரிக்கை</value>
+  </data>
+  <data name="alive" xml:space="preserve">
+    <value>உயிருடன்</value>
+  </data>
+  <data name="allowable" xml:space="preserve">
+    <value>அனுமதிக்கக்கூடியது</value>
+  </data>
+  <data name="allowed" xml:space="preserve">
+    <value>அனுமதி</value>
+  </data>
+  <data name="also" xml:space="preserve">
+    <value>மேலும்</value>
+  </data>
+  <data name="alternative" xml:space="preserve">
+    <value>மாற்று</value>
+  </data>
+  <data name="ambient" xml:space="preserve">
+    <value>சுற்றுப்புற</value>
+  </data>
+  <data name="amplitude" xml:space="preserve">
+    <value>வீச்சு</value>
+  </data>
+  <data name="an" xml:space="preserve">
+    <value>ஒரு</value>
+  </data>
+  <data name="analog" xml:space="preserve">
+    <value>அனலாக்</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>மற்றும்</value>
+  </data>
+  <data name="angles" xml:space="preserve">
+    <value>கோணங்கள்</value>
+  </data>
+  <data name="anticipate" xml:space="preserve">
+    <value>எதிர்பார்க்கலாம்</value>
+  </data>
+  <data name="any" xml:space="preserve">
+    <value>ஏதேனும்</value>
+  </data>
+  <data name="appearance" xml:space="preserve">
+    <value>தோற்றம்</value>
+  </data>
+  <data name="APPLICATION" xml:space="preserve">
+    <value>விண்ணப்பம்</value>
+  </data>
+  <data name="approximate" xml:space="preserve">
+    <value>தோராயமான</value>
+  </data>
+  <data name="are" xml:space="preserve">
+    <value>உள்ளன</value>
+  </data>
+  <data name="area" xml:space="preserve">
+    <value>பரப்பளவு</value>
+  </data>
+  <data name="as" xml:space="preserve">
+    <value>போன்ற</value>
+  </data>
+  <data name="assembly" xml:space="preserve">
+    <value>சட்டசபை</value>
+  </data>
+  <data name="assisted" xml:space="preserve">
+    <value>உதவி</value>
+  </data>
+  <data name="at" xml:space="preserve">
+    <value>மணிக்கு</value>
+  </data>
+  <data name="atlow" xml:space="preserve">
+    <value>அட்லோ</value>
+  </data>
+  <data name="atmospheric" xml:space="preserve">
+    <value>வளிமண்டல</value>
+  </data>
+  <data name="attempted" xml:space="preserve">
+    <value>முயற்சி</value>
+  </data>
+  <data name="authorised" xml:space="preserve">
+    <value>அங்கீகாரம் பெற்றது</value>
+  </data>
+  <data name="authorization" xml:space="preserve">
+    <value>அங்கீகாரம்</value>
+  </data>
+  <data name="auto" xml:space="preserve">
+    <value>ஆட்டோ</value>
+  </data>
+  <data name="automatic" xml:space="preserve">
+    <value>தானியங்கி</value>
+  </data>
+  <data name="auxiliary" xml:space="preserve">
+    <value>துணை</value>
+  </data>
+  <data name="average" xml:space="preserve">
+    <value>சராசரி</value>
+  </data>
+  <data name="back" xml:space="preserve">
+    <value>மீண்டும்</value>
+  </data>
+  <data name="backbone" xml:space="preserve">
+    <value>முதுகெலும்பு</value>
+  </data>
+  <data name="background" xml:space="preserve">
+    <value>பின்னணி</value>
+  </data>
+  <data name="bad" xml:space="preserve">
+    <value>கெட்ட</value>
+  </data>
+  <data name="balance" xml:space="preserve">
+    <value>சமநிலை</value>
+  </data>
+  <data name="bank" xml:space="preserve">
+    <value>வங்கி</value>
+  </data>
+  <data name="banks" xml:space="preserve">
+    <value>வங்கிகள்</value>
+  </data>
+  <data name="barometer" xml:space="preserve">
+    <value>காற்றழுத்தமானியில்</value>
+  </data>
+  <data name="barometric" xml:space="preserve">
+    <value>பாரோமெட்ரிக்</value>
+  </data>
+  <data name="based" xml:space="preserve">
+    <value>சார்ந்த</value>
+  </data>
+  <data name="basic" xml:space="preserve">
+    <value>அடிப்படை</value>
+  </data>
+  <data name="Batter" xml:space="preserve">
+    <value>இடி</value>
+  </data>
+  <data name="battery" xml:space="preserve">
+    <value>பேட்டரி</value>
+  </data>
+  <data name="be" xml:space="preserve">
+    <value>மீது</value>
+  </data>
+  <data name="because" xml:space="preserve">
+    <value>ஏனெனில்</value>
+  </data>
+  <data name="been" xml:space="preserve">
+    <value>இருந்திருக்கும்</value>
+  </data>
+  <data name="Beep" xml:space="preserve">
+    <value>எச்சரிக்கை குழல் ஒலி</value>
+  </data>
+  <data name="before" xml:space="preserve">
+    <value>முன்</value>
+  </data>
+  <data name="begin" xml:space="preserve">
+    <value>தொடங்கு</value>
+  </data>
+  <data name="below" xml:space="preserve">
+    <value>கீழே</value>
+  </data>
+  <data name="bends" xml:space="preserve">
+    <value>வளைவுகள்</value>
+  </data>
+  <data name="better" xml:space="preserve">
+    <value>சிறந்தது</value>
+  </data>
+  <data name="between" xml:space="preserve">
+    <value>பெருமூச்சுகளை</value>
+  </data>
+  <data name="Blockage" xml:space="preserve">
+    <value>அடைப்பு</value>
+  </data>
+  <data name="blocked" xml:space="preserve">
+    <value>தடுக்கப்பட்டது</value>
+  </data>
+  <data name="blocks" xml:space="preserve">
+    <value>முடக்கு</value>
+  </data>
+  <data name="blown" xml:space="preserve">
+    <value>ஊதி</value>
+  </data>
+  <data name="blue" xml:space="preserve">
+    <value>நீலம்</value>
+  </data>
+  <data name="body" xml:space="preserve">
+    <value>உடலின்</value>
+  </data>
+  <data name="boost" xml:space="preserve">
+    <value>பூஸ்ட்</value>
+  </data>
+  <data name="booster" xml:space="preserve">
+    <value>அதிகரிப்பதாக</value>
+  </data>
+  <data name="both" xml:space="preserve">
+    <value>இரண்டும்</value>
+  </data>
+  <data name="box" xml:space="preserve">
+    <value>பெட்டி</value>
+  </data>
+  <data name="brake" xml:space="preserve">
+    <value>பிரேக்</value>
+  </data>
+  <data name="braking" xml:space="preserve">
+    <value>நிறுத்த</value>
+  </data>
+  <data name="broken" xml:space="preserve">
+    <value>உடைந்த</value>
+  </data>
+  <data name="buffered" xml:space="preserve">
+    <value>இடையக</value>
+  </data>
+  <data name="build" xml:space="preserve">
+    <value>உருவாக்க</value>
+  </data>
+  <data name="burning" xml:space="preserve">
+    <value>எரியும்</value>
+  </data>
+  <data name="bus" xml:space="preserve">
+    <value>பேருந்து</value>
+  </data>
+  <data name="but" xml:space="preserve">
+    <value>ஆனாலும்</value>
+  </data>
+  <data name="button" xml:space="preserve">
+    <value>பொத்தானை</value>
+  </data>
+  <data name="by" xml:space="preserve">
+    <value>மூலம்</value>
+  </data>
+  <data name="bypass" xml:space="preserve">
+    <value>பைபாஸ்</value>
+  </data>
+  <data name="byte" xml:space="preserve">
+    <value>பைட்</value>
+  </data>
+  <data name="bytes" xml:space="preserve">
+    <value>பைட்டுகள்</value>
+  </data>
+  <data name="calculated" xml:space="preserve">
+    <value>கணக்கிடப்படுகிறது</value>
+  </data>
+  <data name="calculation" xml:space="preserve">
+    <value>கணக்கீடு</value>
+  </data>
+  <data name="calibration" xml:space="preserve">
+    <value>அளவுத்திருத்தம்</value>
+  </data>
+  <data name="cam" xml:space="preserve">
+    <value>கேம்</value>
+  </data>
+  <data name="camfault" xml:space="preserve">
+    <value>ஆறுதல்</value>
+  </data>
+  <data name="camshaft" xml:space="preserve">
+    <value>கேம்ஷாஃப்ட்</value>
+  </data>
+  <data name="can" xml:space="preserve">
+    <value>முடியும்</value>
+  </data>
+  <data name="cancelling" xml:space="preserve">
+    <value>ரத்துசெய்கிறது</value>
+  </data>
+  <data name="cap" xml:space="preserve">
+    <value>தொப்பி</value>
+  </data>
+  <data name="capacitor" xml:space="preserve">
+    <value>மின்தேக்கி</value>
+  </data>
+  <data name="carefully" xml:space="preserve">
+    <value>கவனமாக</value>
+  </data>
+  <data name="case" xml:space="preserve">
+    <value>வழக்கு</value>
+  </data>
+  <data name="catalyst" xml:space="preserve">
+    <value>வினையூக்கி</value>
+  </data>
+  <data name="Cause" xml:space="preserve">
+    <value>காரணம்</value>
+  </data>
+  <data name="change" xml:space="preserve">
+    <value>மாற்றம்</value>
+  </data>
+  <data name="changed" xml:space="preserve">
+    <value>மாற்றப்பட்டது</value>
+  </data>
+  <data name="charge" xml:space="preserve">
+    <value>கட்டணம்</value>
+  </data>
+  <data name="charged" xml:space="preserve">
+    <value>விதிக்கப்படும்</value>
+  </data>
+  <data name="charger" xml:space="preserve">
+    <value>சார்ஜர்</value>
+  </data>
+  <data name="check" xml:space="preserve">
+    <value>பார்க்கலாம்</value>
+  </data>
+  <data name="checked" xml:space="preserve">
+    <value>சரிபார்க்கப்பட</value>
+  </data>
+  <data name="checking" xml:space="preserve">
+    <value>சோதனையிடல்</value>
+  </data>
+  <data name="Checkpoints" xml:space="preserve">
+    <value>சோதனைச் சாவடிகள்</value>
+  </data>
+  <data name="checksum" xml:space="preserve">
+    <value>செக்சம்</value>
+  </data>
+  <data name="Chocked" xml:space="preserve">
+    <value>சாக்</value>
+  </data>
+  <data name="Choked" xml:space="preserve">
+    <value>மூச்சுத் திணறியது</value>
+  </data>
+  <data name="circuit" xml:space="preserve">
+    <value>சுற்று</value>
+  </data>
+  <data name="circuit more" xml:space="preserve">
+    <value>சுற்று மேலும்</value>
+  </data>
+  <data name="ckt" xml:space="preserve">
+    <value>சுற்று</value>
+  </data>
+  <data name="claim" xml:space="preserve">
+    <value>உரிமைகோரல்</value>
+  </data>
+  <data name="classified" xml:space="preserve">
+    <value>வகைப்படுத்தப்பட்டுள்ளது</value>
+  </data>
+  <data name="clear" xml:space="preserve">
+    <value>தெளிவான</value>
+  </data>
+  <data name="cleared" xml:space="preserve">
+    <value>அழிக்கப்படும்</value>
+  </data>
+  <data name="clock" xml:space="preserve">
+    <value>கடிகாரம்</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>நெருக்கமான</value>
+  </data>
+  <data name="closed" xml:space="preserve">
+    <value>மூடிய</value>
+  </data>
+  <data name="cluster" xml:space="preserve">
+    <value>கொத்து</value>
+  </data>
+  <data name="clutch" xml:space="preserve">
+    <value>கிளட்ச்</value>
+  </data>
+  <data name="coast" xml:space="preserve">
+    <value>கடற்கரை</value>
+  </data>
+  <data name="code" xml:space="preserve">
+    <value>குறியீடு</value>
+  </data>
+  <data name="codes" xml:space="preserve">
+    <value>குறியீடுகள்</value>
+  </data>
+  <data name="cogwheels" xml:space="preserve">
+    <value>கோக்வீல்ஸ்</value>
+  </data>
+  <data name="coil" xml:space="preserve">
+    <value>சுருள்</value>
+  </data>
+  <data name="cold" xml:space="preserve">
+    <value>குளிர்</value>
+  </data>
+  <data name="come" xml:space="preserve">
+    <value>வாருங்கள்</value>
+  </data>
+  <data name="coming" xml:space="preserve">
+    <value>வரும்</value>
+  </data>
+  <data name="command" xml:space="preserve">
+    <value>கட்டளை</value>
+  </data>
+  <data name="commanded" xml:space="preserve">
+    <value>கமாண்டோ</value>
+  </data>
+  <data name="common" xml:space="preserve">
+    <value>பொதுவானது</value>
+  </data>
+  <data name="communication" xml:space="preserve">
+    <value>தொடர்பு</value>
+  </data>
+  <data name="compare" xml:space="preserve">
+    <value>ஒப்பிட்டு</value>
+  </data>
+  <data name="comparison" xml:space="preserve">
+    <value>ஒப்பீடு</value>
+  </data>
+  <data name="complete" xml:space="preserve">
+    <value>முழுமை</value>
+  </data>
+  <data name="completed" xml:space="preserve">
+    <value>நிறைவு</value>
+  </data>
+  <data name="completely" xml:space="preserve">
+    <value>முற்றிலும்</value>
+  </data>
+  <data name="completion" xml:space="preserve">
+    <value>நிறைவு</value>
+  </data>
+  <data name="component" xml:space="preserve">
+    <value>கூறு</value>
+  </data>
+  <data name="composition" xml:space="preserve">
+    <value>கலவை</value>
+  </data>
+  <data name="compressor" xml:space="preserve">
+    <value>அமுக்கி</value>
+  </data>
+  <data name="concerning" xml:space="preserve">
+    <value>பற்றி</value>
+  </data>
+  <data name="condition" xml:space="preserve">
+    <value>நிபந்தனை</value>
+  </data>
+  <data name="conditioner" xml:space="preserve">
+    <value>கண்டிஷனர்</value>
+  </data>
+  <data name="conditions" xml:space="preserve">
+    <value>நிபந்தனைகள்</value>
+  </data>
+  <data name="configuration" xml:space="preserve">
+    <value>உள்ளமைவு</value>
+  </data>
+  <data name="confirm" xml:space="preserve">
+    <value>உறுதிப்படுத்தவும்</value>
+  </data>
+  <data name="confirmation" xml:space="preserve">
+    <value>உறுதிப்படுத்தல்</value>
+  </data>
+  <data name="conforms" xml:space="preserve">
+    <value>இணங்கிச் செல்கிறது</value>
+  </data>
+  <data name="Connect" xml:space="preserve">
+    <value>இணைக்கவும்</value>
+  </data>
+  <data name="connected" xml:space="preserve">
+    <value>இணைக்கப்பட்டுள்ளது</value>
+  </data>
+  <data name="Connecting" xml:space="preserve">
+    <value>இணைக்கிறது</value>
+  </data>
+  <data name="connection" xml:space="preserve">
+    <value>இணைப்பு</value>
+  </data>
+  <data name="connections" xml:space="preserve">
+    <value>இணைப்புகள்</value>
+  </data>
+  <data name="connector" xml:space="preserve">
+    <value>இணைப்பு</value>
+  </data>
+  <data name="connectors" xml:space="preserve">
+    <value>இணைப்பிகள்</value>
+  </data>
+  <data name="consent" xml:space="preserve">
+    <value>ஒப்புதல்</value>
+  </data>
+  <data name="consistant" xml:space="preserve">
+    <value>சீரானது</value>
+  </data>
+  <data name="consumption" xml:space="preserve">
+    <value>நுகர்வு</value>
+  </data>
+  <data name="CONTENTS" xml:space="preserve">
+    <value>உள்ளடக்கங்கள்</value>
+  </data>
+  <data name="continuity" xml:space="preserve">
+    <value>தொடர்ச்சி</value>
+  </data>
+  <data name="continuously" xml:space="preserve">
+    <value>தொடர்ந்து</value>
+  </data>
+  <data name="contribution" xml:space="preserve">
+    <value>பங்களிப்பு</value>
+  </data>
+  <data name="control" xml:space="preserve">
+    <value>கட்டுப்பாடு</value>
+  </data>
+  <data name="controlled" xml:space="preserve">
+    <value>கட்டுப்படுத்தப்படுகிறது</value>
+  </data>
+  <data name="controller" xml:space="preserve">
+    <value>கட்டுப்படுத்தி</value>
+  </data>
+  <data name="converging" xml:space="preserve">
+    <value>குவிதல்</value>
+  </data>
+  <data name="conversion" xml:space="preserve">
+    <value>மாற்றம்</value>
+  </data>
+  <data name="converter" xml:space="preserve">
+    <value>மாற்றி</value>
+  </data>
+  <data name="cool" xml:space="preserve">
+    <value>குளிர்</value>
+  </data>
+  <data name="coolant" xml:space="preserve">
+    <value>குளிர்</value>
+  </data>
+  <data name="COOLED" xml:space="preserve">
+    <value>குளிரூட்டப்பட்டது</value>
+  </data>
+  <data name="cooler" xml:space="preserve">
+    <value>குளிரான</value>
+  </data>
+  <data name="cooling" xml:space="preserve">
+    <value>குளிரூட்டல்</value>
+  </data>
+  <data name="coordinator" xml:space="preserve">
+    <value>ஒருங்கிணைப்பாளர்</value>
+  </data>
+  <data name="copying" xml:space="preserve">
+    <value>நகலெடுக்கிறது</value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>பதிப்புரிமை</value>
+  </data>
+  <data name="correct" xml:space="preserve">
+    <value>சரியான</value>
+  </data>
+  <data name="corrected" xml:space="preserve">
+    <value>சரி</value>
+  </data>
+  <data name="correction" xml:space="preserve">
+    <value>திருத்தம்</value>
+  </data>
+  <data name="corrections" xml:space="preserve">
+    <value>திருத்தங்களை</value>
+  </data>
+  <data name="correlation" xml:space="preserve">
+    <value>தொடர்பு</value>
+  </data>
+  <data name="correleation" xml:space="preserve">
+    <value>தொடர்பு</value>
+  </data>
+  <data name="COTTON" xml:space="preserve">
+    <value>காட்டன்</value>
+  </data>
+  <data name="could" xml:space="preserve">
+    <value>முடியும்</value>
+  </data>
+  <data name="count" xml:space="preserve">
+    <value>எண்ண</value>
+  </data>
+  <data name="counter" xml:space="preserve">
+    <value>எதிர்</value>
+  </data>
+  <data name="counters" xml:space="preserve">
+    <value>கவுண்டர்கள்</value>
+  </data>
+  <data name="Coupled" xml:space="preserve">
+    <value>இணைந்த</value>
+  </data>
+  <data name="coupler" xml:space="preserve">
+    <value>இணையி</value>
+  </data>
+  <data name="crank" xml:space="preserve">
+    <value>பொய்</value>
+  </data>
+  <data name="crankcase" xml:space="preserve">
+    <value>சுழலுறை</value>
+  </data>
+  <data name="cranking" xml:space="preserve">
+    <value>விரிசல்</value>
+  </data>
+  <data name="crankshaft" xml:space="preserve">
+    <value>மாற்றித்தண்டு</value>
+  </data>
+  <data name="critical" xml:space="preserve">
+    <value>நெருக்கடியான</value>
+  </data>
+  <data name="critically" xml:space="preserve">
+    <value>விமர்சன ரீதியாக</value>
+  </data>
+  <data name="Cross" xml:space="preserve">
+    <value>குறுக்கு</value>
+  </data>
+  <data name="crossed" xml:space="preserve">
+    <value>தாண்டியது</value>
+  </data>
+  <data name="cruise" xml:space="preserve">
+    <value>கப்பல்</value>
+  </data>
+  <data name="current" xml:space="preserve">
+    <value>தற்போதைய</value>
+  </data>
+  <data name="cut" xml:space="preserve">
+    <value>வெட்டு</value>
+  </data>
+  <data name="cycle" xml:space="preserve">
+    <value>சுழற்சி</value>
+  </data>
+  <data name="cycling" xml:space="preserve">
+    <value>சுழல்வு</value>
+  </data>
+  <data name="cylinder" xml:space="preserve">
+    <value>சிலிண்டர்</value>
+  </data>
+  <data name="damage" xml:space="preserve">
+    <value>சேதம்</value>
+  </data>
+  <data name="damaged" xml:space="preserve">
+    <value>சேதமடைந்தது</value>
+  </data>
+  <data name="data" xml:space="preserve">
+    <value>தரவு</value>
+  </data>
+  <data name="dataset" xml:space="preserve">
+    <value>தரவுத்தொகுப்பு</value>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>தேதி</value>
+  </data>
+  <data name="dcu" xml:space="preserve">
+    <value>டி.சி.யு.</value>
+  </data>
+  <data name="deactivated" xml:space="preserve">
+    <value>செயலிழக்க</value>
+  </data>
+  <data name="deactivation" xml:space="preserve">
+    <value>செயலிழக்க</value>
+  </data>
+  <data name="dealer" xml:space="preserve">
+    <value>வியாபாரி</value>
+  </data>
+  <data name="debounced" xml:space="preserve">
+    <value>குறைந்தது</value>
+  </data>
+  <data name="default" xml:space="preserve">
+    <value>இயல்புநிலை</value>
+  </data>
+  <data name="defect" xml:space="preserve">
+    <value>குறைபாடு</value>
+  </data>
+  <data name="defective" xml:space="preserve">
+    <value>குறைபாடு</value>
+  </data>
+  <data name="defined" xml:space="preserve">
+    <value>வரையறுக்கப்பட்டுள்ளது</value>
+  </data>
+  <data name="deliver" xml:space="preserve">
+    <value>வழங்க</value>
+  </data>
+  <data name="delivery" xml:space="preserve">
+    <value>கொடுத்தல்</value>
+  </data>
+  <data name="Delta" xml:space="preserve">
+    <value>டெல்டா</value>
+  </data>
+  <data name="demand" xml:space="preserve">
+    <value>தேவை</value>
+  </data>
+  <data name="density" xml:space="preserve">
+    <value>அடர்த்தி</value>
+  </data>
+  <data name="dent" xml:space="preserve">
+    <value>பள்ளம்</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>விளக்கம்</value>
+  </data>
+  <data name="designed" xml:space="preserve">
+    <value>வடிவமைக்கப்பட்டுள்ளது</value>
+  </data>
+  <data name="desired" xml:space="preserve">
+    <value>விரும்பிய</value>
+  </data>
+  <data name="details" xml:space="preserve">
+    <value>விவரங்கள்</value>
+  </data>
+  <data name="detected" xml:space="preserve">
+    <value>கண்டறியப்பட்டது</value>
+  </data>
+  <data name="detection" xml:space="preserve">
+    <value>கண்டறிதல்</value>
+  </data>
+  <data name="detects" xml:space="preserve">
+    <value>கண்டறிகிறது</value>
+  </data>
+  <data name="deteriorated" xml:space="preserve">
+    <value>மோசமடைந்தது</value>
+  </data>
+  <data name="determines" xml:space="preserve">
+    <value>தீர்மானிக்கிறது</value>
+  </data>
+  <data name="deviation" xml:space="preserve">
+    <value>விலகல்</value>
+  </data>
+  <data name="device" xml:space="preserve">
+    <value>சாதனம்</value>
+  </data>
+  <data name="Diagnosis" xml:space="preserve">
+    <value>நோய் கண்டறிதல்</value>
+  </data>
+  <data name="diagnostic" xml:space="preserve">
+    <value>கண்டறியும்</value>
+  </data>
+  <data name="diagnostics" xml:space="preserve">
+    <value>பரிசோதனை</value>
+  </data>
+  <data name="diagram" xml:space="preserve">
+    <value>வரைபடம்</value>
+  </data>
+  <data name="diameter" xml:space="preserve">
+    <value>விட்டம்</value>
+  </data>
+  <data name="diesel" xml:space="preserve">
+    <value>டீசல்</value>
+  </data>
+  <data name="diff" xml:space="preserve">
+    <value>வேறுபாடு</value>
+  </data>
+  <data name="difference" xml:space="preserve">
+    <value>வித்தியாசம்</value>
+  </data>
+  <data name="different" xml:space="preserve">
+    <value>வெவ்வேறு</value>
+  </data>
+  <data name="differential" xml:space="preserve">
+    <value>வேறுபாடு</value>
+  </data>
+  <data name="digital" xml:space="preserve">
+    <value>டிஜிட்டல்</value>
+  </data>
+  <data name="direction" xml:space="preserve">
+    <value>திசையில்</value>
+  </data>
+  <data name="disable" xml:space="preserve">
+    <value>முடக்கு</value>
+  </data>
+  <data name="disabled" xml:space="preserve">
+    <value>ஊனமுற்றோர்</value>
+  </data>
+  <data name="disagrees" xml:space="preserve">
+    <value>ஏற்கவில்லை</value>
+  </data>
+  <data name="disc" xml:space="preserve">
+    <value>வட்டு</value>
+  </data>
+  <data name="disconnect" xml:space="preserve">
+    <value>துண்டிக்க</value>
+  </data>
+  <data name="disconnected" xml:space="preserve">
+    <value>துண்டிக்கப்பட்டது</value>
+  </data>
+  <data name="Disconnecting" xml:space="preserve">
+    <value>துண்டிக்கப்படுகிறது</value>
+  </data>
+  <data name="disconnection" xml:space="preserve">
+    <value>துண்டித்தல்</value>
+  </data>
+  <data name="discontinuity" xml:space="preserve">
+    <value>இடைநிறுத்தம்</value>
+  </data>
+  <data name="display" xml:space="preserve">
+    <value>காட்சி</value>
+  </data>
+  <data name="distance" xml:space="preserve">
+    <value>தூரம்</value>
+  </data>
+  <data name="distribution" xml:space="preserve">
+    <value>விநியோகம்</value>
+  </data>
+  <data name="disturbance" xml:space="preserve">
+    <value>இடையூறு</value>
+  </data>
+  <data name="do" xml:space="preserve">
+    <value>செய்</value>
+  </data>
+  <data name="document" xml:space="preserve">
+    <value>ஆவணம்</value>
+  </data>
+  <data name="done" xml:space="preserve">
+    <value>முடிந்தது</value>
+  </data>
+  <data name="dosing" xml:space="preserve">
+    <value>வீரியத்தை</value>
+  </data>
+  <data name="down" xml:space="preserve">
+    <value>கீழே</value>
+  </data>
+  <data name="downshift" xml:space="preserve">
+    <value>கீழ்நோக்கி</value>
+  </data>
+  <data name="downstream" xml:space="preserve">
+    <value>கீழ்நிலை</value>
+  </data>
+  <data name="Drain" xml:space="preserve">
+    <value>வடிகால்</value>
+  </data>
+  <data name="drift" xml:space="preserve">
+    <value>சறுக்கல்</value>
+  </data>
+  <data name="drifted" xml:space="preserve">
+    <value>சறுக்கப்பட்டது</value>
+  </data>
+  <data name="drive" xml:space="preserve">
+    <value>இயக்கி</value>
+  </data>
+  <data name="driveline" xml:space="preserve">
+    <value>டிரைவ்லைன்</value>
+  </data>
+  <data name="driver" xml:space="preserve">
+    <value>இயக்கி</value>
+  </data>
+  <data name="drop" xml:space="preserve">
+    <value>கைவிட</value>
+  </data>
+  <data name="drops" xml:space="preserve">
+    <value>சொட்டுகள்</value>
+  </data>
+  <data name="dtc" xml:space="preserve">
+    <value>DTC</value>
+  </data>
+  <data name="dual" xml:space="preserve">
+    <value>இரட்டை</value>
+  </data>
+  <data name="due" xml:space="preserve">
+    <value>காரணமாக</value>
+  </data>
+  <data name="duration" xml:space="preserve">
+    <value>கால</value>
+  </data>
+  <data name="during" xml:space="preserve">
+    <value>காலத்தில்</value>
+  </data>
+  <data name="duty" xml:space="preserve">
+    <value>கடமை</value>
+  </data>
+  <data name="early" xml:space="preserve">
+    <value>ஆரம்ப</value>
+  </data>
+  <data name="earth" xml:space="preserve">
+    <value>பூமி</value>
+  </data>
+  <data name="economy" xml:space="preserve">
+    <value>பொருளாதாரம்</value>
+  </data>
+  <data name="ecu" xml:space="preserve">
+    <value>இசியு</value>
+  </data>
+  <data name="edge" xml:space="preserve">
+    <value>விளிம்பில்</value>
+  </data>
+  <data name="EEPROM" xml:space="preserve">
+    <value>எப்ரோம்</value>
+  </data>
+  <data name="Effect" xml:space="preserve">
+    <value>விளைவு</value>
+  </data>
+  <data name="efficiency" xml:space="preserve">
+    <value>திறன்</value>
+  </data>
+  <data name="electric" xml:space="preserve">
+    <value>மின்சார</value>
+  </data>
+  <data name="electrical" xml:space="preserve">
+    <value>மின்</value>
+  </data>
+  <data name="electronic" xml:space="preserve">
+    <value>மின்னணு</value>
+  </data>
+  <data name="emission" xml:space="preserve">
+    <value>மாசு</value>
+  </data>
+  <data name="emissions" xml:space="preserve">
+    <value>உமிழ்வு</value>
+  </data>
+  <data name="ems" xml:space="preserve">
+    <value>ஈ.எம்.எஸ்</value>
+  </data>
+  <data name="Emulation" xml:space="preserve">
+    <value>போலச்செய்தல்</value>
+  </data>
+  <data name="end" xml:space="preserve">
+    <value>முடிவு</value>
+  </data>
+  <data name="energising" xml:space="preserve">
+    <value>ஆற்றல்</value>
+  </data>
+  <data name="energizing" xml:space="preserve">
+    <value>ஆற்றல்</value>
+  </data>
+  <data name="engaged" xml:space="preserve">
+    <value>நிச்சயதார்த்தம்</value>
+  </data>
+  <data name="engine" xml:space="preserve">
+    <value>இயந்திரம்</value>
+  </data>
+  <data name="Ensure" xml:space="preserve">
+    <value>உறுதி செய்யுங்கள்</value>
+  </data>
+  <data name="entry" xml:space="preserve">
+    <value>நுழைவு</value>
+  </data>
+  <data name="environment" xml:space="preserve">
+    <value>சுற்றுப்பற சூழல்</value>
+  </data>
+  <data name="Environmental" xml:space="preserve">
+    <value>சுற்றுச்சூழல்</value>
+  </data>
+  <data name="equal" xml:space="preserve">
+    <value>சம</value>
+  </data>
+  <data name="equivalence" xml:space="preserve">
+    <value>சமான</value>
+  </data>
+  <data name="equivalent" xml:space="preserve">
+    <value>சமமான</value>
+  </data>
+  <data name="Erase" xml:space="preserve">
+    <value>அழிக்க</value>
+  </data>
+  <data name="erasing" xml:space="preserve">
+    <value>அழிக்கிறது</value>
+  </data>
+  <data name="erratic" xml:space="preserve">
+    <value>ஒழுங்கற்ற</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>பிழை</value>
+  </data>
+  <data name="errors" xml:space="preserve">
+    <value>பிழைகள்</value>
+  </data>
+  <data name="esm" xml:space="preserve">
+    <value>ESM</value>
+  </data>
+  <data name="estimation" xml:space="preserve">
+    <value>மதிப்பீடு</value>
+  </data>
+  <data name="ethanol" xml:space="preserve">
+    <value>எத்தனால்</value>
+  </data>
+  <data name="evaporative" xml:space="preserve">
+    <value>நீராவி</value>
+  </data>
+  <data name="evaporator" xml:space="preserve">
+    <value>ஆவியாக்கி</value>
+  </data>
+  <data name="even" xml:space="preserve">
+    <value>கூட</value>
+  </data>
+  <data name="event" xml:space="preserve">
+    <value>நிகழ்வு</value>
+  </data>
+  <data name="events" xml:space="preserve">
+    <value>நிகழ்வுகள்</value>
+  </data>
+  <data name="exceed" xml:space="preserve">
+    <value>மீறவும்</value>
+  </data>
+  <data name="exceeded" xml:space="preserve">
+    <value>தாண்டியது</value>
+  </data>
+  <data name="Excess" xml:space="preserve">
+    <value>அதிகப்படியான</value>
+  </data>
+  <data name="excessive" xml:space="preserve">
+    <value>அதிகப்படியான</value>
+  </data>
+  <data name="execution" xml:space="preserve">
+    <value>மரணதண்டனை</value>
+  </data>
+  <data name="exhaust" xml:space="preserve">
+    <value>வெளியேற்ற</value>
+  </data>
+  <data name="exists" xml:space="preserve">
+    <value>உள்ளது</value>
+  </data>
+  <data name="expected" xml:space="preserve">
+    <value>எதிர்பார்க்கப்படுகிறது</value>
+  </data>
+  <data name="external" xml:space="preserve">
+    <value>வெளிப்புற</value>
+  </data>
+  <data name="factor" xml:space="preserve">
+    <value>காரணி</value>
+  </data>
+  <data name="factory" xml:space="preserve">
+    <value>தொழிற்சாலை</value>
+  </data>
+  <data name="fail" xml:space="preserve">
+    <value>தோல்வி</value>
+  </data>
+  <data name="failed" xml:space="preserve">
+    <value>தோல்வி</value>
+  </data>
+  <data name="fails" xml:space="preserve">
+    <value>தோல்வியுற்றது</value>
+  </data>
+  <data name="failure" xml:space="preserve">
+    <value>தோல்வி</value>
+  </data>
+  <data name="failures" xml:space="preserve">
+    <value>தோல்விகள்</value>
+  </data>
+  <data name="fan" xml:space="preserve">
+    <value>ரசிகர்</value>
+  </data>
+  <data name="fault" xml:space="preserve">
+    <value>தவறு</value>
+  </data>
+  <data name="faulty" xml:space="preserve">
+    <value>தவறான</value>
+  </data>
+  <data name="fc" xml:space="preserve">
+    <value>எஃப்.சி.</value>
+  </data>
+  <data name="feed" xml:space="preserve">
+    <value>ஊட்டம்</value>
+  </data>
+  <data name="feedback" xml:space="preserve">
+    <value>கருத்து</value>
+  </data>
+  <data name="few" xml:space="preserve">
+    <value>சில</value>
+  </data>
+  <data name="field" xml:space="preserve">
+    <value>புலம்</value>
+  </data>
+  <data name="file" xml:space="preserve">
+    <value>கோப்பு</value>
+  </data>
+  <data name="filter" xml:space="preserve">
+    <value>வடிகட்டி</value>
+  </data>
+  <data name="filtered" xml:space="preserve">
+    <value>வடிகட்டிய</value>
+  </data>
+  <data name="finished" xml:space="preserve">
+    <value>முடிந்தது</value>
+  </data>
+  <data name="first" xml:space="preserve">
+    <value>முதல்</value>
+  </data>
+  <data name="fitted" xml:space="preserve">
+    <value>பொருத்தப்பட்ட</value>
+  </data>
+  <data name="flow" xml:space="preserve">
+    <value>ஓட்டம்</value>
+  </data>
+  <data name="fluid" xml:space="preserve">
+    <value>திரவம்</value>
+  </data>
+  <data name="flywheel" xml:space="preserve">
+    <value>ஃப்ளைவீல்</value>
+  </data>
+  <data name="fog" xml:space="preserve">
+    <value>மூடுபனி</value>
+  </data>
+  <data name="follow" xml:space="preserve">
+    <value>பின்தொடரவும்</value>
+  </data>
+  <data name="followed" xml:space="preserve">
+    <value>தொடர்ந்து</value>
+  </data>
+  <data name="for" xml:space="preserve">
+    <value>ஐந்து</value>
+  </data>
+  <data name="force" xml:space="preserve">
+    <value>படை</value>
+  </data>
+  <data name="forced" xml:space="preserve">
+    <value>கட்டாயம்</value>
+  </data>
+  <data name="forward" xml:space="preserve">
+    <value>முன்னோக்கி</value>
+  </data>
+  <data name="found" xml:space="preserve">
+    <value>கண்டறியப்பட்டது</value>
+  </data>
+  <data name="four" xml:space="preserve">
+    <value>நான்கு</value>
+  </data>
+  <data name="free" xml:space="preserve">
+    <value>இலவசம்</value>
+  </data>
+  <data name="frequency" xml:space="preserve">
+    <value>அதிர்வெண்</value>
+  </data>
+  <data name="fresh" xml:space="preserve">
+    <value>புதியது</value>
+  </data>
+  <data name="friction" xml:space="preserve">
+    <value>உராய்வு</value>
+  </data>
+  <data name="from" xml:space="preserve">
+    <value>இருந்து</value>
+  </data>
+  <data name="front" xml:space="preserve">
+    <value>முன்</value>
+  </data>
+  <data name="fuel" xml:space="preserve">
+    <value>எரிபொருள்</value>
+  </data>
+  <data name="fueling" xml:space="preserve">
+    <value>எரிபொருள்</value>
+  </data>
+  <data name="function" xml:space="preserve">
+    <value>செயல்பாடு</value>
+  </data>
+  <data name="Fuse" xml:space="preserve">
+    <value>மின்காப்ப இழை</value>
+  </data>
+  <data name="gap" xml:space="preserve">
+    <value>இடைவெளி</value>
+  </data>
+  <data name="gas" xml:space="preserve">
+    <value>எரிவாயு</value>
+  </data>
+  <data name="gate" xml:space="preserve">
+    <value>வாயில்</value>
+  </data>
+  <data name="gear" xml:space="preserve">
+    <value>கியர்</value>
+  </data>
+  <data name="gears" xml:space="preserve">
+    <value>கியர்கள்</value>
+  </data>
+  <data name="general" xml:space="preserve">
+    <value>பொது</value>
+  </data>
+  <data name="generating" xml:space="preserve">
+    <value>உருவாக்குகிறது</value>
+  </data>
+  <data name="generator" xml:space="preserve">
+    <value>ஜெனரேட்டர்</value>
+  </data>
+  <data name="get" xml:space="preserve">
+    <value>பெறு</value>
+  </data>
+  <data name="give" xml:space="preserve">
+    <value>கொடுங்கள்</value>
+  </data>
+  <data name="given" xml:space="preserve">
+    <value>கொடுக்கப்பட்டது</value>
+  </data>
+  <data name="glow" xml:space="preserve">
+    <value>எரியாது</value>
+  </data>
+  <data name="go" xml:space="preserve">
+    <value>போ</value>
+  </data>
+  <data name="good" xml:space="preserve">
+    <value>நல்ல</value>
+  </data>
+  <data name="governer" xml:space="preserve">
+    <value>ஆளுநர்</value>
+  </data>
+  <data name="governor" xml:space="preserve">
+    <value>கவர்னர்</value>
+  </data>
+  <data name="gradient" xml:space="preserve">
+    <value>சாய்வு</value>
+  </data>
+  <data name="greater" xml:space="preserve">
+    <value>கிரேட்டர்</value>
+  </data>
+  <data name="GREAVES" xml:space="preserve">
+    <value>க்ரீவ்ஸ்</value>
+  </data>
+  <data name="ground" xml:space="preserve">
+    <value>தரையில்</value>
+  </data>
+  <data name="guage" xml:space="preserve">
+    <value>கடிகை</value>
+  </data>
+  <data name="h-bridge" xml:space="preserve">
+    <value>h- பாலம்</value>
+  </data>
+  <data name="hardware" xml:space="preserve">
+    <value>வன்பொருள்</value>
+  </data>
+  <data name="harness" xml:space="preserve">
+    <value>சேணம்</value>
+  </data>
+  <data name="has" xml:space="preserve">
+    <value>வயத்தை</value>
+  </data>
+  <data name="having" xml:space="preserve">
+    <value>கொண்டிருத்தல்</value>
+  </data>
+  <data name="headlights" xml:space="preserve">
+    <value>ஹெட்லைட்கள்</value>
+  </data>
+  <data name="health" xml:space="preserve">
+    <value>ஆரோக்கியம்</value>
+  </data>
+  <data name="heated" xml:space="preserve">
+    <value>சூடான</value>
+  </data>
+  <data name="heater" xml:space="preserve">
+    <value>ஹீட்டர்</value>
+  </data>
+  <data name="heating" xml:space="preserve">
+    <value>வெப்பமாக்கல்</value>
+  </data>
+  <data name="high" xml:space="preserve">
+    <value>உயர்</value>
+  </data>
+  <data name="higher" xml:space="preserve">
+    <value>உயர்</value>
+  </data>
+  <data name="highside" xml:space="preserve">
+    <value>உயர்பக்கம்</value>
+  </data>
+  <data name="hose" xml:space="preserve">
+    <value>குழாய்</value>
+  </data>
+  <data name="hot" xml:space="preserve">
+    <value>சூடான</value>
+  </data>
+  <data name="hour" xml:space="preserve">
+    <value>மணி</value>
+  </data>
+  <data name="hybrid" xml:space="preserve">
+    <value>கலப்பு</value>
+  </data>
+  <data name="hydraulic" xml:space="preserve">
+    <value>ஹைட்ராலிக்</value>
+  </data>
+  <data name="iaf" xml:space="preserve">
+    <value>IAF</value>
+  </data>
+  <data name="identification" xml:space="preserve">
+    <value>அடையாள</value>
+  </data>
+  <data name="idle" xml:space="preserve">
+    <value>சும்மா</value>
+  </data>
+  <data name="idling" xml:space="preserve">
+    <value>சும்மா</value>
+  </data>
+  <data name="if" xml:space="preserve">
+    <value>என்றால்</value>
+  </data>
+  <data name="ignition" xml:space="preserve">
+    <value>பற்றவைப்பு</value>
+  </data>
+  <data name="image" xml:space="preserve">
+    <value>படம்</value>
+  </data>
+  <data name="immobilizer" xml:space="preserve">
+    <value>அசையாமை</value>
+  </data>
+  <data name="immobolizer" xml:space="preserve">
+    <value>அசையாமை</value>
+  </data>
+  <data name="Impermissible" xml:space="preserve">
+    <value>அனுமதிக்க முடியாதது</value>
+  </data>
+  <data name="in" xml:space="preserve">
+    <value>உள்ளே</value>
+  </data>
+  <data name="inactivity" xml:space="preserve">
+    <value>சுறுசுறுப்பின்மை</value>
+  </data>
+  <data name="includes" xml:space="preserve">
+    <value>அடங்கும்</value>
+  </data>
+  <data name="incompatible" xml:space="preserve">
+    <value>பொருந்தாது</value>
+  </data>
+  <data name="incorrect" xml:space="preserve">
+    <value>தவறான</value>
+  </data>
+  <data name="increase" xml:space="preserve">
+    <value>அதிகரி</value>
+  </data>
+  <data name="index" xml:space="preserve">
+    <value>குறியீட்டு</value>
+  </data>
+  <data name="indicated" xml:space="preserve">
+    <value>சுட்டிக்காட்டப்பட்டது</value>
+  </data>
+  <data name="indication" xml:space="preserve">
+    <value>அறிகுறி</value>
+  </data>
+  <data name="indicator" xml:space="preserve">
+    <value>காட்டி</value>
+  </data>
+  <data name="induce" xml:space="preserve">
+    <value>தூண்ட</value>
+  </data>
+  <data name="inducement" xml:space="preserve">
+    <value>தூண்டல்</value>
+  </data>
+  <data name="information" xml:space="preserve">
+    <value>தகவல்</value>
+  </data>
+  <data name="inhibit" xml:space="preserve">
+    <value>தடுக்கும்</value>
+  </data>
+  <data name="injection" xml:space="preserve">
+    <value>ஊசி</value>
+  </data>
+  <data name="injector" xml:space="preserve">
+    <value>இன்ஜெக்டர்</value>
+  </data>
+  <data name="injectors" xml:space="preserve">
+    <value>உட்செலுத்திகள்</value>
+  </data>
+  <data name="inlet" xml:space="preserve">
+    <value>நுழைவாயில்</value>
+  </data>
+  <data name="input" xml:space="preserve">
+    <value>உள்ளீடு</value>
+  </data>
+  <data name="inside" xml:space="preserve">
+    <value>உள்ளே</value>
+  </data>
+  <data name="inspection" xml:space="preserve">
+    <value>ஆய்வு</value>
+  </data>
+  <data name="installation" xml:space="preserve">
+    <value>நிறுவல்</value>
+  </data>
+  <data name="installed" xml:space="preserve">
+    <value>நிறுவப்பட்ட</value>
+  </data>
+  <data name="instrument" xml:space="preserve">
+    <value>கருவி</value>
+  </data>
+  <data name="insufficient" xml:space="preserve">
+    <value>போதாத</value>
+  </data>
+  <data name="intake" xml:space="preserve">
+    <value>உட்கொள்ளும்</value>
+  </data>
+  <data name="integrity" xml:space="preserve">
+    <value>ஒருமைப்பாடு</value>
+  </data>
+  <data name="intercooler" xml:space="preserve">
+    <value>ரின்</value>
+  </data>
+  <data name="interface" xml:space="preserve">
+    <value>இடைமுகம்</value>
+  </data>
+  <data name="interlocking" xml:space="preserve">
+    <value>இன்டர்லாக்</value>
+  </data>
+  <data name="intermediate" xml:space="preserve">
+    <value>இடைநிலை</value>
+  </data>
+  <data name="intermittent" xml:space="preserve">
+    <value>இடைப்பட்ட</value>
+  </data>
+  <data name="internal" xml:space="preserve">
+    <value>உள்</value>
+  </data>
+  <data name="internally" xml:space="preserve">
+    <value>உள்நாட்டில்</value>
+  </data>
+  <data name="interruption" xml:space="preserve">
+    <value>குறுக்கீடு</value>
+  </data>
+  <data name="into" xml:space="preserve">
+    <value>க்குள்</value>
+  </data>
+  <data name="invalid" xml:space="preserve">
+    <value>தவறானது</value>
+  </data>
+  <data name="ip" xml:space="preserve">
+    <value>ஐபி</value>
+  </data>
+  <data name="is" xml:space="preserve">
+    <value>மேலும்</value>
+  </data>
+  <data name="issue" xml:space="preserve">
+    <value>பிரச்சினை</value>
+  </data>
+  <data name="it" xml:space="preserve">
+    <value>அது</value>
+  </data>
+  <data name="jammed" xml:space="preserve">
+    <value>நெரிசல்</value>
+  </data>
+  <data name="keep" xml:space="preserve">
+    <value>வைத்திரு</value>
+  </data>
+  <data name="key" xml:space="preserve">
+    <value>முக்கிய</value>
+  </data>
+  <data name="keywith" xml:space="preserve">
+    <value>முக்கிய</value>
+  </data>
+  <data name="Knob" xml:space="preserve">
+    <value>குமிழ்</value>
+  </data>
+  <data name="knock" xml:space="preserve">
+    <value>தட்டுங்கள்</value>
+  </data>
+  <data name="known" xml:space="preserve">
+    <value>அறியப்படுகிறது</value>
+  </data>
+  <data name="lamp" xml:space="preserve">
+    <value>விளக்கு</value>
+  </data>
+  <data name="large" xml:space="preserve">
+    <value>பெரியது</value>
+  </data>
+  <data name="last" xml:space="preserve">
+    <value>கடந்த</value>
+  </data>
+  <data name="latch" xml:space="preserve">
+    <value>தாழ்ப்பாளை</value>
+  </data>
+  <data name="lead" xml:space="preserve">
+    <value>வழி நடத்து</value>
+  </data>
+  <data name="leak" xml:space="preserve">
+    <value>கசிவு</value>
+  </data>
+  <data name="leakage" xml:space="preserve">
+    <value>கசிவு</value>
+  </data>
+  <data name="lean" xml:space="preserve">
+    <value>ஒல்லியான</value>
+  </data>
+  <data name="learned" xml:space="preserve">
+    <value>கற்று</value>
+  </data>
+  <data name="learning" xml:space="preserve">
+    <value>கற்றல்</value>
+  </data>
+  <data name="least" xml:space="preserve">
+    <value>குறைந்தது</value>
+  </data>
+  <data name="left" xml:space="preserve">
+    <value>இடது</value>
+  </data>
+  <data name="less" xml:space="preserve">
+    <value>குறைவான</value>
+  </data>
+  <data name="level" xml:space="preserve">
+    <value>இலைகள்</value>
+  </data>
+  <data name="lever" xml:space="preserve">
+    <value>கீழே வேலைநிறுத்தம்</value>
+  </data>
+  <data name="life" xml:space="preserve">
+    <value>வாழ்க்கை</value>
+  </data>
+  <data name="light" xml:space="preserve">
+    <value>ஒளி</value>
+  </data>
+  <data name="limit" xml:space="preserve">
+    <value>எல்லை</value>
+  </data>
+  <data name="limitation" xml:space="preserve">
+    <value>வரம்பு</value>
+  </data>
+  <data name="limited" xml:space="preserve">
+    <value>வரையறுக்கப்பட்டவை</value>
+  </data>
+  <data name="limits" xml:space="preserve">
+    <value>வரம்புகள்</value>
+  </data>
+  <data name="line" xml:space="preserve">
+    <value>வரிசை</value>
+  </data>
+  <data name="lines" xml:space="preserve">
+    <value>கோடுகள்</value>
+  </data>
+  <data name="link" xml:space="preserve">
+    <value>இணைப்பு</value>
+  </data>
+  <data name="load" xml:space="preserve">
+    <value>சுமை</value>
+  </data>
+  <data name="lock" xml:space="preserve">
+    <value>பூட்டு</value>
+  </data>
+  <data name="locked" xml:space="preserve">
+    <value>பூட்டிய</value>
+  </data>
+  <data name="logging" xml:space="preserve">
+    <value>பதிவு செய்தல்</value>
+  </data>
+  <data name="long" xml:space="preserve">
+    <value>நீண்டது</value>
+  </data>
+  <data name="longer" xml:space="preserve">
+    <value>நீண்டது</value>
+  </data>
+  <data name="loop" xml:space="preserve">
+    <value>வளைய</value>
+  </data>
+  <data name="Loose" xml:space="preserve">
+    <value>தளர்வானது</value>
+  </data>
+  <data name="Loosely" xml:space="preserve">
+    <value>தளர்வாக</value>
+  </data>
+  <data name="loosened" xml:space="preserve">
+    <value>தளர்த்தப்பட்டது</value>
+  </data>
+  <data name="loss" xml:space="preserve">
+    <value>இழப்பு</value>
+  </data>
+  <data name="lost" xml:space="preserve">
+    <value>இழந்தது</value>
+  </data>
+  <data name="low" xml:space="preserve">
+    <value>குறைந்த</value>
+  </data>
+  <data name="lower" xml:space="preserve">
+    <value>குறைந்த</value>
+  </data>
+  <data name="lowside" xml:space="preserve">
+    <value>தாழ்வான</value>
+  </data>
+  <data name="lump" xml:space="preserve">
+    <value>கட்டை</value>
+  </data>
+  <data name="main" xml:space="preserve">
+    <value>இன்று</value>
+  </data>
+  <data name="malfunction" xml:space="preserve">
+    <value>செயலிழப்பு</value>
+  </data>
+  <data name="manage" xml:space="preserve">
+    <value>நிர்வகிக்கவும்</value>
+  </data>
+  <data name="management" xml:space="preserve">
+    <value>மேலாண்மை</value>
+  </data>
+  <data name="manifold" xml:space="preserve">
+    <value>பன்மடங்கு</value>
+  </data>
+  <data name="MANUAL" xml:space="preserve">
+    <value>கையேடு</value>
+  </data>
+  <data name="manufacturer" xml:space="preserve">
+    <value>உற்பத்தியாளர்</value>
+  </data>
+  <data name="many" xml:space="preserve">
+    <value>நிறைய</value>
+  </data>
+  <data name="map" xml:space="preserve">
+    <value>கண்டறிவதில்</value>
+  </data>
+  <data name="mass" xml:space="preserve">
+    <value>வெகுஜன</value>
+  </data>
+  <data name="massflow" xml:space="preserve">
+    <value>வெகுஜன ஓட்டம்</value>
+  </data>
+  <data name="matter" xml:space="preserve">
+    <value>விஷயம்</value>
+  </data>
+  <data name="max" xml:space="preserve">
+    <value>அதிகபட்சம்</value>
+  </data>
+  <data name="maximal" xml:space="preserve">
+    <value>முழுமையாக்கத்தினால்</value>
+  </data>
+  <data name="maximum" xml:space="preserve">
+    <value>அதிகபட்ச</value>
+  </data>
+  <data name="may" xml:space="preserve">
+    <value>இருக்கலாம்</value>
+  </data>
+  <data name="Measure" xml:space="preserve">
+    <value>அளவீட்டு</value>
+  </data>
+  <data name="measurement" xml:space="preserve">
+    <value>அளவை</value>
+  </data>
+  <data name="mechanical" xml:space="preserve">
+    <value>இயந்திர</value>
+  </data>
+  <data name="mechanism" xml:space="preserve">
+    <value>இயந்திரநுட்பம்</value>
+  </data>
+  <data name="media" xml:space="preserve">
+    <value>ஊடகங்கள்</value>
+  </data>
+  <data name="memory" xml:space="preserve">
+    <value>நினைவக</value>
+  </data>
+  <data name="message" xml:space="preserve">
+    <value>செய்தி</value>
+  </data>
+  <data name="met" xml:space="preserve">
+    <value>மெத்</value>
+  </data>
+  <data name="meter" xml:space="preserve">
+    <value>மீட்டர்</value>
+  </data>
+  <data name="metering" xml:space="preserve">
+    <value>அளவீட்டு</value>
+  </data>
+  <data name="middle" xml:space="preserve">
+    <value>நடுத்தர</value>
+  </data>
+  <data name="midrange" xml:space="preserve">
+    <value>மிட்ரேஞ்ச்</value>
+  </data>
+  <data name="mil" xml:space="preserve">
+    <value>மில்</value>
+  </data>
+  <data name="min" xml:space="preserve">
+    <value>நிமிடம்</value>
+  </data>
+  <data name="minimum" xml:space="preserve">
+    <value>குறைந்தபட்ச</value>
+  </data>
+  <data name="misfire" xml:space="preserve">
+    <value>தவறான</value>
+  </data>
+  <data name="mismatch" xml:space="preserve">
+    <value>பொருந்தவில்லை</value>
+  </data>
+  <data name="missing" xml:space="preserve">
+    <value>வகைப்படுத்தப்பட்டுள்ளன</value>
+  </data>
+  <data name="mocsop" xml:space="preserve">
+    <value>மாஸ்கோப்</value>
+  </data>
+  <data name="mode" xml:space="preserve">
+    <value>முறையில்</value>
+  </data>
+  <data name="model" xml:space="preserve">
+    <value>மாதிரி</value>
+  </data>
+  <data name="moderate" xml:space="preserve">
+    <value>மிதமான</value>
+  </data>
+  <data name="moderately" xml:space="preserve">
+    <value>மிதமாக</value>
+  </data>
+  <data name="modulation" xml:space="preserve">
+    <value>பண்பேற்றம்</value>
+  </data>
+  <data name="module" xml:space="preserve">
+    <value>தொகுதி</value>
+  </data>
+  <data name="monitor" xml:space="preserve">
+    <value>மானிட்டர்</value>
+  </data>
+  <data name="monitoring" xml:space="preserve">
+    <value>கண்காணிப்பு</value>
+  </data>
+  <data name="monitors" xml:space="preserve">
+    <value>மானிட்டர்கள்</value>
+  </data>
+  <data name="more" xml:space="preserve">
+    <value>மேலும்</value>
+  </data>
+  <data name="motion" xml:space="preserve">
+    <value>இயக்கம்</value>
+  </data>
+  <data name="motor" xml:space="preserve">
+    <value>இயக்கும் இயந்திரம்</value>
+  </data>
+  <data name="mounting" xml:space="preserve">
+    <value>பெருகிவரும்</value>
+  </data>
+  <data name="multi" xml:space="preserve">
+    <value>பல</value>
+  </data>
+  <data name="multi-function" xml:space="preserve">
+    <value>பல செயல்பாடு</value>
+  </data>
+  <data name="multiple" xml:space="preserve">
+    <value>பல</value>
+  </data>
+  <data name="must" xml:space="preserve">
+    <value>வேண்டும்</value>
+  </data>
+  <data name="native" xml:space="preserve">
+    <value>பூர்வீகம்</value>
+  </data>
+  <data name="natural" xml:space="preserve">
+    <value>இயற்கை</value>
+  </data>
+  <data name="negative" xml:space="preserve">
+    <value>எதிர்மறை</value>
+  </data>
+  <data name="net" xml:space="preserve">
+    <value>நிகர</value>
+  </data>
+  <data name="neutral" xml:space="preserve">
+    <value>நடுநிலை</value>
+  </data>
+  <data name="new" xml:space="preserve">
+    <value>புதியது</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>இல்லை</value>
+  </data>
+  <data name="noisy" xml:space="preserve">
+    <value>சத்தம்</value>
+  </data>
+  <data name="nominal" xml:space="preserve">
+    <value>பெயரளவு</value>
+  </data>
+  <data name="non" xml:space="preserve">
+    <value>அல்லாத</value>
+  </data>
+  <data name="normal" xml:space="preserve">
+    <value>சாதாரண</value>
+  </data>
+  <data name="not" xml:space="preserve">
+    <value>இல்லை</value>
+  </data>
+  <data name="nox" xml:space="preserve">
+    <value>நாக்ஸ்</value>
+  </data>
+  <data name="nozzle" xml:space="preserve">
+    <value>முனை</value>
+  </data>
+  <data name="number" xml:space="preserve">
+    <value>எண்</value>
+  </data>
+  <data name="observed" xml:space="preserve">
+    <value>அனுசரிக்கப்பட்டது</value>
+  </data>
+  <data name="obstacles" xml:space="preserve">
+    <value>தடைகள்</value>
+  </data>
+  <data name="occur" xml:space="preserve">
+    <value>ஏற்படும்</value>
+  </data>
+  <data name="occurred" xml:space="preserve">
+    <value>ஏற்பட்டது</value>
+  </data>
+  <data name="occurrence" xml:space="preserve">
+    <value>நிகழ்வு</value>
+  </data>
+  <data name="odd" xml:space="preserve">
+    <value>ஒற்றைப்படை</value>
+  </data>
+  <data name="odometer" xml:space="preserve">
+    <value>ஓடோமீட்டர்</value>
+  </data>
+  <data name="of" xml:space="preserve">
+    <value>இருந்த</value>
+  </data>
+  <data name="off" xml:space="preserve">
+    <value>முடக்கு</value>
+  </data>
+  <data name="offset" xml:space="preserve">
+    <value>ஆப்செட்</value>
+  </data>
+  <data name="oil" xml:space="preserve">
+    <value>எண்ணெய்</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>சரி</value>
+  </data>
+  <data name="on" xml:space="preserve">
+    <value>மீது</value>
+  </data>
+  <data name="ONBlink" xml:space="preserve">
+    <value>சிமிட்டலில்</value>
+  </data>
+  <data name="once" xml:space="preserve">
+    <value>ஒரு முறை</value>
+  </data>
+  <data name="one" xml:space="preserve">
+    <value>ஒரு</value>
+  </data>
+  <data name="ones" xml:space="preserve">
+    <value>ஒன்று</value>
+  </data>
+  <data name="only" xml:space="preserve">
+    <value>மட்டுமே</value>
+  </data>
+  <data name="open" xml:space="preserve">
+    <value>திறந்த</value>
+  </data>
+  <data name="opened" xml:space="preserve">
+    <value>திறக்கப்பட்டது</value>
+  </data>
+  <data name="opening" xml:space="preserve">
+    <value>திறப்பு</value>
+  </data>
+  <data name="operation" xml:space="preserve">
+    <value>அறுவை சிகிச்சை</value>
+  </data>
+  <data name="operations" xml:space="preserve">
+    <value>செயல்பாடுகள்</value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value>அல்லது</value>
+  </data>
+  <data name="orifice" xml:space="preserve">
+    <value>சுழற்சி</value>
+  </data>
+  <data name="other" xml:space="preserve">
+    <value>மற்றவை</value>
+  </data>
+  <data name="our" xml:space="preserve">
+    <value>நமது</value>
+  </data>
+  <data name="out" xml:space="preserve">
+    <value>வெளியே</value>
+  </data>
+  <data name="outlet" xml:space="preserve">
+    <value>வெளிச் செல்லும் வழி</value>
+  </data>
+  <data name="output" xml:space="preserve">
+    <value>வெளியீடு</value>
+  </data>
+  <data name="over" xml:space="preserve">
+    <value>மீது</value>
+  </data>
+  <data name="overboost" xml:space="preserve">
+    <value>ஓவர் பூஸ்ட்</value>
+  </data>
+  <data name="overrun" xml:space="preserve">
+    <value>மீறியது</value>
+  </data>
+  <data name="overspeed" xml:space="preserve">
+    <value>அதிக வேகம்</value>
+  </data>
+  <data name="overtemp" xml:space="preserve">
+    <value>ஓவர் டெம்ப்</value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>கண்ணோட்டம்</value>
+  </data>
+  <data name="overvoltage" xml:space="preserve">
+    <value>அதிகமின்னழுத்தம்</value>
+  </data>
+  <data name="oxidation" xml:space="preserve">
+    <value>விஷத்தன்மை</value>
+  </data>
+  <data name="oxygen" xml:space="preserve">
+    <value>ஆக்சிஜன்</value>
+  </data>
+  <data name="pack" xml:space="preserve">
+    <value>எடுத்துவைக்க</value>
+  </data>
+  <data name="pad" xml:space="preserve">
+    <value>திண்டு</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>பக்கம்</value>
+  </data>
+  <data name="panel" xml:space="preserve">
+    <value>குழு</value>
+  </data>
+  <data name="parameter" xml:space="preserve">
+    <value>அளவுரு</value>
+  </data>
+  <data name="parameters" xml:space="preserve">
+    <value>அளவுருக்கள்</value>
+  </data>
+  <data name="park" xml:space="preserve">
+    <value>பூங்கா</value>
+  </data>
+  <data name="parking" xml:space="preserve">
+    <value>வாகன நிறுத்துமிடம்</value>
+  </data>
+  <data name="part" xml:space="preserve">
+    <value>கரையில்</value>
+  </data>
+  <data name="particles" xml:space="preserve">
+    <value>துகள்கள்</value>
+  </data>
+  <data name="particulate" xml:space="preserve">
+    <value>துகள்</value>
+  </data>
+  <data name="parties" xml:space="preserve">
+    <value>கட்சிகள்</value>
+  </data>
+  <data name="parts" xml:space="preserve">
+    <value>பாகங்கள்</value>
+  </data>
+  <data name="path" xml:space="preserve">
+    <value>பாதை</value>
+  </data>
+  <data name="paths" xml:space="preserve">
+    <value>பாதைகள்</value>
+  </data>
+  <data name="pcm" xml:space="preserve">
+    <value>pcm</value>
+  </data>
+  <data name="Pcode" xml:space="preserve">
+    <value>பி குறியீடு</value>
+  </data>
+  <data name="pedal" xml:space="preserve">
+    <value>மிதி</value>
+  </data>
+  <data name="per" xml:space="preserve">
+    <value>ஒன்றுக்கு</value>
+  </data>
+  <data name="percent" xml:space="preserve">
+    <value>சதவீதம்</value>
+  </data>
+  <data name="percentage" xml:space="preserve">
+    <value>சதவீதம்</value>
+  </data>
+  <data name="Perform" xml:space="preserve">
+    <value>செய்யுங்கள்</value>
+  </data>
+  <data name="performance" xml:space="preserve">
+    <value>செயல்திறன்</value>
+  </data>
+  <data name="perfrom" xml:space="preserve">
+    <value>செய்ய</value>
+  </data>
+  <data name="period" xml:space="preserve">
+    <value>காலம்</value>
+  </data>
+  <data name="peripheral" xml:space="preserve">
+    <value>புற</value>
+  </data>
+  <data name="permanent" xml:space="preserve">
+    <value>நிரந்தர</value>
+  </data>
+  <data name="permissible" xml:space="preserve">
+    <value>அனுமதிக்கப்படுகிறது</value>
+  </data>
+  <data name="permitted" xml:space="preserve">
+    <value>அனுமதிக்கப்படுகிறது</value>
+  </data>
+  <data name="persists" xml:space="preserve">
+    <value>தொடர்கிறது</value>
+  </data>
+  <data name="Physical" xml:space="preserve">
+    <value>உடல்</value>
+  </data>
+  <data name="pid" xml:space="preserve">
+    <value>PID</value>
+  </data>
+  <data name="pin" xml:space="preserve">
+    <value>முள்</value>
+  </data>
+  <data name="Pinion" xml:space="preserve">
+    <value>பறவையின் சிறகு</value>
+  </data>
+  <data name="pinscheck" xml:space="preserve">
+    <value>ஊசிகளைசரிபார்க்கவும்</value>
+  </data>
+  <data name="pipes" xml:space="preserve">
+    <value>குழாய்கள்</value>
+  </data>
+  <data name="plausibility" xml:space="preserve">
+    <value>சாத்தியமான</value>
+  </data>
+  <data name="plausible" xml:space="preserve">
+    <value>நம்பத்தகுந்த</value>
+  </data>
+  <data name="plug" xml:space="preserve">
+    <value>பிளக்</value>
+  </data>
+  <data name="plunger" xml:space="preserve">
+    <value>உலக்கை</value>
+  </data>
+  <data name="point" xml:space="preserve">
+    <value>புள்ளி</value>
+  </data>
+  <data name="polarity" xml:space="preserve">
+    <value>துருவமுனைப்பு</value>
+  </data>
+  <data name="popup" xml:space="preserve">
+    <value>பாப்அப்</value>
+  </data>
+  <data name="port" xml:space="preserve">
+    <value>துறைமுகம்</value>
+  </data>
+  <data name="position" xml:space="preserve">
+    <value>நிலையை</value>
+  </data>
+  <data name="positive" xml:space="preserve">
+    <value>நேர்மறை</value>
+  </data>
+  <data name="possible" xml:space="preserve">
+    <value>சாத்தியம்</value>
+  </data>
+  <data name="post" xml:space="preserve">
+    <value>பதவியை</value>
+  </data>
+  <data name="potential" xml:space="preserve">
+    <value>ஆற்றல் வளம்</value>
+  </data>
+  <data name="power" xml:space="preserve">
+    <value>சக்தி</value>
+  </data>
+  <data name="powerstage" xml:space="preserve">
+    <value>பவர்ஸ்டேஜ்</value>
+  </data>
+  <data name="Pre" xml:space="preserve">
+    <value>முன்</value>
+  </data>
+  <data name="pre-catalyst" xml:space="preserve">
+    <value>முன் வினையூக்கி</value>
+  </data>
+  <data name="preceeded" xml:space="preserve">
+    <value>முந்தையது</value>
+  </data>
+  <data name="presence" xml:space="preserve">
+    <value>இருப்பு</value>
+  </data>
+  <data name="present" xml:space="preserve">
+    <value>தற்போது</value>
+  </data>
+  <data name="pressed" xml:space="preserve">
+    <value>அழுத்தும்</value>
+  </data>
+  <data name="pressure" xml:space="preserve">
+    <value>அழுத்தம்</value>
+  </data>
+  <data name="previous" xml:space="preserve">
+    <value>முந்தையது</value>
+  </data>
+  <data name="primary" xml:space="preserve">
+    <value>முதன்மை</value>
+  </data>
+  <data name="problem" xml:space="preserve">
+    <value>பிரச்சனை</value>
+  </data>
+  <data name="procedure" xml:space="preserve">
+    <value>செயல்முறை</value>
+  </data>
+  <data name="processor" xml:space="preserve">
+    <value>செயலி</value>
+  </data>
+  <data name="program" xml:space="preserve">
+    <value>நிரல்</value>
+  </data>
+  <data name="programmed" xml:space="preserve">
+    <value>திட்டமிடப்பட்டது</value>
+  </data>
+  <data name="programming" xml:space="preserve">
+    <value>நிரலாக்க</value>
+  </data>
+  <data name="prohibited" xml:space="preserve">
+    <value>தடைசெய்யப்பட்டுள்ளது</value>
+  </data>
+  <data name="proper" xml:space="preserve">
+    <value>முறையானது</value>
+  </data>
+  <data name="properly" xml:space="preserve">
+    <value>ஒழுங்காக</value>
+  </data>
+  <data name="protection" xml:space="preserve">
+    <value>பாதுகாப்பு</value>
+  </data>
+  <data name="pull" xml:space="preserve">
+    <value>மிகுதி</value>
+  </data>
+  <data name="Pulse" xml:space="preserve">
+    <value>துடிப்பு</value>
+  </data>
+  <data name="pulses" xml:space="preserve">
+    <value>பருப்பு வகைகள்</value>
+  </data>
+  <data name="pump" xml:space="preserve">
+    <value>பம்ப்</value>
+  </data>
+  <data name="purge" xml:space="preserve">
+    <value>பர்ஜ்</value>
+  </data>
+  <data name="push" xml:space="preserve">
+    <value>தள்ளு</value>
+  </data>
+  <data name="put" xml:space="preserve">
+    <value>போடு</value>
+  </data>
+  <data name="putting" xml:space="preserve">
+    <value>போடுவது</value>
+  </data>
+  <data name="quality" xml:space="preserve">
+    <value>தரமான</value>
+  </data>
+  <data name="quantity" xml:space="preserve">
+    <value>அளவு</value>
+  </data>
+  <data name="query" xml:space="preserve">
+    <value>வினா</value>
+  </data>
+  <data name="rail" xml:space="preserve">
+    <value>ரயில்</value>
+  </data>
+  <data name="ram" xml:space="preserve">
+    <value>ராம்</value>
+  </data>
+  <data name="random" xml:space="preserve">
+    <value>சீரற்ற</value>
+  </data>
+  <data name="range" xml:space="preserve">
+    <value>வரம்பில்</value>
+  </data>
+  <data name="rate" xml:space="preserve">
+    <value>விகிதம்</value>
+  </data>
+  <data name="rated" xml:space="preserve">
+    <value>மதிப்பிடப்பட்டது</value>
+  </data>
+  <data name="ratio" xml:space="preserve">
+    <value>விகிதம்</value>
+  </data>
+  <data name="rationality" xml:space="preserve">
+    <value>பகுத்தறிவு</value>
+  </data>
+  <data name="raw" xml:space="preserve">
+    <value>பச்சையாக</value>
+  </data>
+  <data name="re" xml:space="preserve">
+    <value>மறு</value>
+  </data>
+  <data name="reached" xml:space="preserve">
+    <value>அடைந்தது</value>
+  </data>
+  <data name="reaction" xml:space="preserve">
+    <value>எதிர்வினை</value>
+  </data>
+  <data name="read" xml:space="preserve">
+    <value>படிக்க</value>
+  </data>
+  <data name="reading" xml:space="preserve">
+    <value>வாசிப்பு</value>
+  </data>
+  <data name="reagent" xml:space="preserve">
+    <value>வினைப்பொருள்</value>
+  </data>
+  <data name="rear" xml:space="preserve">
+    <value>பின்புறம்</value>
+  </data>
+  <data name="rearward" xml:space="preserve">
+    <value>பின்புறம்</value>
+  </data>
+  <data name="reason" xml:space="preserve">
+    <value>காரணம்</value>
+  </data>
+  <data name="receive" xml:space="preserve">
+    <value>பெறு</value>
+  </data>
+  <data name="received" xml:space="preserve">
+    <value>பெறப்பட்டது</value>
+  </data>
+  <data name="recheck" xml:space="preserve">
+    <value>மறுபரிசீலனை செய்யுங்கள்</value>
+  </data>
+  <data name="recirculation" xml:space="preserve">
+    <value>மறு சுழற்சி</value>
+  </data>
+  <data name="RecirculationEGR" xml:space="preserve">
+    <value>மறு சுழற்சி EGR</value>
+  </data>
+  <data name="reconnecting" xml:space="preserve">
+    <value>மீண்டும் இணைக்கிறது</value>
+  </data>
+  <data name="recoveries" xml:space="preserve">
+    <value>மீட்டெடுப்புகள்</value>
+  </data>
+  <data name="rectification" xml:space="preserve">
+    <value>திருத்தம்</value>
+  </data>
+  <data name="Rectify" xml:space="preserve">
+    <value>சரிப்படுத்து</value>
+  </data>
+  <data name="redistributing" xml:space="preserve">
+    <value>மறுபகிர்வு</value>
+  </data>
+  <data name="reduced" xml:space="preserve">
+    <value>குறைக்கப்பட்டது</value>
+  </data>
+  <data name="reductant" xml:space="preserve">
+    <value>குறைத்தல்</value>
+  </data>
+  <data name="redundant" xml:space="preserve">
+    <value>தேவைக்கதிகமான</value>
+  </data>
+  <data name="Refer" xml:space="preserve">
+    <value>பார்க்கவும்</value>
+  </data>
+  <data name="reference" xml:space="preserve">
+    <value>குறிப்பு</value>
+  </data>
+  <data name="reflash" xml:space="preserve">
+    <value>மறுவடிவம்</value>
+  </data>
+  <data name="refrigerant" xml:space="preserve">
+    <value>குளிரூட்டல்</value>
+  </data>
+  <data name="regeneration" xml:space="preserve">
+    <value>மீளுருவாக்கம்</value>
+  </data>
+  <data name="regulating" xml:space="preserve">
+    <value>ஒழுங்குபடுத்துதல்</value>
+  </data>
+  <data name="regulator" xml:space="preserve">
+    <value>சீராக்கி</value>
+  </data>
+  <data name="related" xml:space="preserve">
+    <value>தொடர்புடையது</value>
+  </data>
+  <data name="relative" xml:space="preserve">
+    <value>உறவினர்</value>
+  </data>
+  <data name="relay" xml:space="preserve">
+    <value>மட்டங்களின்</value>
+  </data>
+  <data name="relief" xml:space="preserve">
+    <value>நிவாரண</value>
+  </data>
+  <data name="rem" xml:space="preserve">
+    <value>REM</value>
+  </data>
+  <data name="remaining" xml:space="preserve">
+    <value>மீதமுள்ள</value>
+  </data>
+  <data name="Remedy" xml:space="preserve">
+    <value>பரிகாரம்</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>அகற்று</value>
+  </data>
+  <data name="removed" xml:space="preserve">
+    <value>அகற்றப்பட்டது</value>
+  </data>
+  <data name="repair" xml:space="preserve">
+    <value>பழுது</value>
+  </data>
+  <data name="repeating" xml:space="preserve">
+    <value>மீண்டும் மீண்டும்</value>
+  </data>
+  <data name="replace" xml:space="preserve">
+    <value>மாற்றவும்</value>
+  </data>
+  <data name="replacement" xml:space="preserve">
+    <value>மாற்று</value>
+  </data>
+  <data name="report" xml:space="preserve">
+    <value>அறிக்கை</value>
+  </data>
+  <data name="reported" xml:space="preserve">
+    <value>பதிவாகும்</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>அறிக்கைகள்</value>
+  </data>
+  <data name="request" xml:space="preserve">
+    <value>கோரிக்கை</value>
+  </data>
+  <data name="required" xml:space="preserve">
+    <value>தேவை</value>
+  </data>
+  <data name="requirement" xml:space="preserve">
+    <value>தேவை</value>
+  </data>
+  <data name="requirements" xml:space="preserve">
+    <value>தேவைகள்</value>
+  </data>
+  <data name="reset" xml:space="preserve">
+    <value>மீட்டமைக்க</value>
+  </data>
+  <data name="resets" xml:space="preserve">
+    <value>மீட்டமைக்கும்</value>
+  </data>
+  <data name="resistance" xml:space="preserve">
+    <value>எதிர்ப்பு</value>
+  </data>
+  <data name="resister" xml:space="preserve">
+    <value>எதிர்க்க</value>
+  </data>
+  <data name="resolution" xml:space="preserve">
+    <value>தீர்மானம்</value>
+  </data>
+  <data name="respectively" xml:space="preserve">
+    <value>முறையே</value>
+  </data>
+  <data name="respond" xml:space="preserve">
+    <value>பதிலளிக்கவும்</value>
+  </data>
+  <data name="response" xml:space="preserve">
+    <value>பதில்</value>
+  </data>
+  <data name="restriction" xml:space="preserve">
+    <value>கட்டுப்பாடு</value>
+  </data>
+  <data name="resume" xml:space="preserve">
+    <value>தற்குறிப்பு</value>
+  </data>
+  <data name="retarded" xml:space="preserve">
+    <value>சரியில்லாத</value>
+  </data>
+  <data name="return" xml:space="preserve">
+    <value>திரும்ப</value>
+  </data>
+  <data name="returns" xml:space="preserve">
+    <value>வருமானம்</value>
+  </data>
+  <data name="reverse" xml:space="preserve">
+    <value>தலைகீழ்</value>
+  </data>
+  <data name="Revision" xml:space="preserve">
+    <value>திருத்தம்</value>
+  </data>
+  <data name="revolutions" xml:space="preserve">
+    <value>புரட்சிகள்</value>
+  </data>
+  <data name="reward" xml:space="preserve">
+    <value>வெகுமதி</value>
+  </data>
+  <data name="rich" xml:space="preserve">
+    <value>பணக்கார</value>
+  </data>
+  <data name="right" xml:space="preserve">
+    <value>சரி</value>
+  </data>
+  <data name="road" xml:space="preserve">
+    <value>சாலை</value>
+  </data>
+  <data name="rom" xml:space="preserve">
+    <value>அழிவை</value>
+  </data>
+  <data name="rough" xml:space="preserve">
+    <value>தோராயமாக</value>
+  </data>
+  <data name="rubbing" xml:space="preserve">
+    <value>தேய்த்தல்</value>
+  </data>
+  <data name="run" xml:space="preserve">
+    <value>இயக்கவும்</value>
+  </data>
+  <data name="running" xml:space="preserve">
+    <value>இயங்கும்</value>
+  </data>
+  <data name="runtime" xml:space="preserve">
+    <value>இயக்க</value>
+  </data>
+  <data name="same" xml:space="preserve">
+    <value>அதே</value>
+  </data>
+  <data name="screw" xml:space="preserve">
+    <value>திருகு</value>
+  </data>
+  <data name="second" xml:space="preserve">
+    <value>இரண்டாவது</value>
+  </data>
+  <data name="secondary" xml:space="preserve">
+    <value>இரண்டாம்</value>
+  </data>
+  <data name="sector" xml:space="preserve">
+    <value>துறை</value>
+  </data>
+  <data name="secure" xml:space="preserve">
+    <value>பாதுகாப்பானது</value>
+  </data>
+  <data name="secured" xml:space="preserve">
+    <value>பாதுகாக்கப்பட்டது</value>
+  </data>
+  <data name="select" xml:space="preserve">
+    <value>தேர்ந்தெடுக்கவும்</value>
+  </data>
+  <data name="selection" xml:space="preserve">
+    <value>தேர்வை</value>
+  </data>
+  <data name="self" xml:space="preserve">
+    <value>சுய</value>
+  </data>
+  <data name="sending" xml:space="preserve">
+    <value>அனுப்புகிறது</value>
+  </data>
+  <data name="sense" xml:space="preserve">
+    <value>உணர்வு</value>
+  </data>
+  <data name="senses" xml:space="preserve">
+    <value>புலன்கள்</value>
+  </data>
+  <data name="sensitivity" xml:space="preserve">
+    <value>உணர்திறன்</value>
+  </data>
+  <data name="sensor" xml:space="preserve">
+    <value>சென்சார்</value>
+  </data>
+  <data name="sensors" xml:space="preserve">
+    <value>சென்சார்கள்</value>
+  </data>
+  <data name="sequence" xml:space="preserve">
+    <value>வரிசை</value>
+  </data>
+  <data name="serial" xml:space="preserve">
+    <value>தொடர்</value>
+  </data>
+  <data name="servo" xml:space="preserve">
+    <value>சர்வோ</value>
+  </data>
+  <data name="set" xml:space="preserve">
+    <value>அமை</value>
+  </data>
+  <data name="setpoint" xml:space="preserve">
+    <value>செட் பாயிண்ட்</value>
+  </data>
+  <data name="setting" xml:space="preserve">
+    <value>அமைப்பு</value>
+  </data>
+  <data name="shaft" xml:space="preserve">
+    <value>தண்டு</value>
+  </data>
+  <data name="shape" xml:space="preserve">
+    <value>வடிவம்</value>
+  </data>
+  <data name="shift" xml:space="preserve">
+    <value>மாற்றம்</value>
+  </data>
+  <data name="shifted" xml:space="preserve">
+    <value>மாற்றப்படும்</value>
+  </data>
+  <data name="short" xml:space="preserve">
+    <value>குறுகிய</value>
+  </data>
+  <data name="shorted" xml:space="preserve">
+    <value>குறுகியது</value>
+  </data>
+  <data name="shorthigh" xml:space="preserve">
+    <value>ஷார்த்</value>
+  </data>
+  <data name="shortlow" xml:space="preserve">
+    <value>குறுகிய</value>
+  </data>
+  <data name="should" xml:space="preserve">
+    <value>வேண்டுமா</value>
+  </data>
+  <data name="show" xml:space="preserve">
+    <value>காட்டு</value>
+  </data>
+  <data name="shows" xml:space="preserve">
+    <value>நிகழ்ச்சிகள்</value>
+  </data>
+  <data name="shut" xml:space="preserve">
+    <value>நிறுத்தல்களுக்குப்</value>
+  </data>
+  <data name="shutdown" xml:space="preserve">
+    <value>பணிநிறுத்தம்</value>
+  </data>
+  <data name="shutoff" xml:space="preserve">
+    <value>நிறுத்தம்</value>
+  </data>
+  <data name="side" xml:space="preserve">
+    <value>பக்க</value>
+  </data>
+  <data name="signal" xml:space="preserve">
+    <value>சிக்னல்</value>
+  </data>
+  <data name="signals" xml:space="preserve">
+    <value>சமிக்ஞைகள்</value>
+  </data>
+  <data name="since" xml:space="preserve">
+    <value>முதல்</value>
+  </data>
+  <data name="single" xml:space="preserve">
+    <value>ஒற்றை</value>
+  </data>
+  <data name="skewed" xml:space="preserve">
+    <value>வளைந்த</value>
+  </data>
+  <data name="skip" xml:space="preserve">
+    <value>தவிர்</value>
+  </data>
+  <data name="slippage" xml:space="preserve">
+    <value>நழுவுதல்</value>
+  </data>
+  <data name="slipping" xml:space="preserve">
+    <value>நழுவுதல்</value>
+  </data>
+  <data name="slow" xml:space="preserve">
+    <value>மெதுவாக</value>
+  </data>
+  <data name="small" xml:space="preserve">
+    <value>சிறிய</value>
+  </data>
+  <data name="smaller" xml:space="preserve">
+    <value>சிறியது</value>
+  </data>
+  <data name="smell" xml:space="preserve">
+    <value>வாசனை</value>
+  </data>
+  <data name="so" xml:space="preserve">
+    <value>அதனால்</value>
+  </data>
+  <data name="software" xml:space="preserve">
+    <value>மென்பொருள்</value>
+  </data>
+  <data name="solenoid" xml:space="preserve">
+    <value>வரிச்சுருள்</value>
+  </data>
+  <data name="some" xml:space="preserve">
+    <value>சில</value>
+  </data>
+  <data name="Sound" xml:space="preserve">
+    <value>ஒலி</value>
+  </data>
+  <data name="source" xml:space="preserve">
+    <value>மூல</value>
+  </data>
+  <data name="spec" xml:space="preserve">
+    <value>விவரக்குறிப்பு</value>
+  </data>
+  <data name="Specification" xml:space="preserve">
+    <value>விவரக்குறிப்பு</value>
+  </data>
+  <data name="Specifications" xml:space="preserve">
+    <value>விவரக்குறிப்புகள்</value>
+  </data>
+  <data name="specified" xml:space="preserve">
+    <value>குறிப்பிடப்பட்டுள்ளது</value>
+  </data>
+  <data name="Specs" xml:space="preserve">
+    <value>விவரக்குறிப்புகள்</value>
+  </data>
+  <data name="speed" xml:space="preserve">
+    <value>வேகம்</value>
+  </data>
+  <data name="spent" xml:space="preserve">
+    <value>செலவிட்டார்</value>
+  </data>
+  <data name="split" xml:space="preserve">
+    <value>பிளவு</value>
+  </data>
+  <data name="sporadically" xml:space="preserve">
+    <value>அவ்வப்போது</value>
+  </data>
+  <data name="sport" xml:space="preserve">
+    <value>விளையாட்டு</value>
+  </data>
+  <data name="spot" xml:space="preserve">
+    <value>புள்ளி</value>
+  </data>
+  <data name="stable" xml:space="preserve">
+    <value>நிலையான</value>
+  </data>
+  <data name="stack" xml:space="preserve">
+    <value>அடுக்கு</value>
+  </data>
+  <data name="stage" xml:space="preserve">
+    <value>மேடை</value>
+  </data>
+  <data name="standards" xml:space="preserve">
+    <value>நிர்ணயங்களுக்கு</value>
+  </data>
+  <data name="start" xml:space="preserve">
+    <value>தொடக்கத்தில்</value>
+  </data>
+  <data name="starter" xml:space="preserve">
+    <value>ஸ்டார்டர்</value>
+  </data>
+  <data name="startup" xml:space="preserve">
+    <value>தொடக்க</value>
+  </data>
+  <data name="state" xml:space="preserve">
+    <value>மாநில</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>நிலையை</value>
+  </data>
+  <data name="steady" xml:space="preserve">
+    <value>நிலையான</value>
+  </data>
+  <data name="steering" xml:space="preserve">
+    <value>திசைமாற்றி</value>
+  </data>
+  <data name="Step" xml:space="preserve">
+    <value>படி</value>
+  </data>
+  <data name="steps" xml:space="preserve">
+    <value>படிகள்</value>
+  </data>
+  <data name="still" xml:space="preserve">
+    <value>இன்னும்</value>
+  </data>
+  <data name="storage" xml:space="preserve">
+    <value>சேமிப்பு</value>
+  </data>
+  <data name="stored" xml:space="preserve">
+    <value>சேமிக்கப்பட்டது</value>
+  </data>
+  <data name="storing" xml:space="preserve">
+    <value>சேமித்தல்</value>
+  </data>
+  <data name="strategy" xml:space="preserve">
+    <value>மூலோபாயம்</value>
+  </data>
+  <data name="stuck" xml:space="preserve">
+    <value>மாட்டிக்கொள்ளும்</value>
+  </data>
+  <data name="sub" xml:space="preserve">
+    <value>துணை</value>
+  </data>
+  <data name="subnet" xml:space="preserve">
+    <value>சப்நெட்</value>
+  </data>
+  <data name="such" xml:space="preserve">
+    <value>போன்ற</value>
+  </data>
+  <data name="suction" xml:space="preserve">
+    <value>உறிஞ்சும்</value>
+  </data>
+  <data name="sum" xml:space="preserve">
+    <value>தொகை</value>
+  </data>
+  <data name="super" xml:space="preserve">
+    <value>அருமை</value>
+  </data>
+  <data name="supplies" xml:space="preserve">
+    <value>விநியோகம்</value>
+  </data>
+  <data name="supply" xml:space="preserve">
+    <value>வழங்கல்</value>
+  </data>
+  <data name="support" xml:space="preserve">
+    <value>ஆதரவு</value>
+  </data>
+  <data name="supported" xml:space="preserve">
+    <value>ஆதரவு</value>
+  </data>
+  <data name="surface" xml:space="preserve">
+    <value>மேற்பரப்பு</value>
+  </data>
+  <data name="svs" xml:space="preserve">
+    <value>எஸ்.வி.எஸ்</value>
+  </data>
+  <data name="swapped" xml:space="preserve">
+    <value>மாற்றப்பட்டது</value>
+  </data>
+  <data name="sweet" xml:space="preserve">
+    <value>இனிப்பு</value>
+  </data>
+  <data name="switch" xml:space="preserve">
+    <value>சொடுக்கி</value>
+  </data>
+  <data name="switched" xml:space="preserve">
+    <value>மாறியது</value>
+  </data>
+  <data name="switches" xml:space="preserve">
+    <value>சுவிட்சுகள்</value>
+  </data>
+  <data name="switching" xml:space="preserve">
+    <value>மாற்றம்</value>
+  </data>
+  <data name="synchronisation" xml:space="preserve">
+    <value>ஒத்திசைவு</value>
+  </data>
+  <data name="synchronization" xml:space="preserve">
+    <value>ஒத்திசைவு</value>
+  </data>
+  <data name="system" xml:space="preserve">
+    <value>அமைப்பு</value>
+  </data>
+  <data name="tank" xml:space="preserve">
+    <value>தொட்டி</value>
+  </data>
+  <data name="task" xml:space="preserve">
+    <value>பணி</value>
+  </data>
+  <data name="techograph" xml:space="preserve">
+    <value>டெக்கோவரைபடம்</value>
+  </data>
+  <data name="temp" xml:space="preserve">
+    <value>தற்காலிக</value>
+  </data>
+  <data name="temperature" xml:space="preserve">
+    <value>வெப்ப நிலை</value>
+  </data>
+  <data name="term" xml:space="preserve">
+    <value>விளைபொருட்களை</value>
+  </data>
+  <data name="terminal" xml:space="preserve">
+    <value>முனையத்தில்</value>
+  </data>
+  <data name="terminals" xml:space="preserve">
+    <value>முனையங்கள்</value>
+  </data>
+  <data name="test" xml:space="preserve">
+    <value>உடல்</value>
+  </data>
+  <data name="tester" xml:space="preserve">
+    <value>சோதனையாளர்</value>
+  </data>
+  <data name="than" xml:space="preserve">
+    <value>விட</value>
+  </data>
+  <data name="that" xml:space="preserve">
+    <value>காயம்</value>
+  </data>
+  <data name="the" xml:space="preserve">
+    <value>உருக்கு</value>
+  </data>
+  <data name="then" xml:space="preserve">
+    <value>பிறகு</value>
+  </data>
+  <data name="There" xml:space="preserve">
+    <value>அங்கே</value>
+  </data>
+  <data name="therefore" xml:space="preserve">
+    <value>எனவே</value>
+  </data>
+  <data name="thermostat" xml:space="preserve">
+    <value>தெர்மோஸ்டாட்</value>
+  </data>
+  <data name="These" xml:space="preserve">
+    <value>இவை</value>
+  </data>
+  <data name="third" xml:space="preserve">
+    <value>மூன்றாவது</value>
+  </data>
+  <data name="this" xml:space="preserve">
+    <value>இந்த</value>
+  </data>
+  <data name="thread" xml:space="preserve">
+    <value>நூல்</value>
+  </data>
+  <data name="threshold" xml:space="preserve">
+    <value>தொடக்கநிலை</value>
+  </data>
+  <data name="throttle" xml:space="preserve">
+    <value>கழுத்துப்பகுதி</value>
+  </data>
+  <data name="through" xml:space="preserve">
+    <value>மூலம்</value>
+  </data>
+  <data name="tightness" xml:space="preserve">
+    <value>இறுக்கம்</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>நேரம்</value>
+  </data>
+  <data name="timeout" xml:space="preserve">
+    <value>நேரமுடிவின்</value>
+  </data>
+  <data name="timer" xml:space="preserve">
+    <value>டைமர்</value>
+  </data>
+  <data name="times" xml:space="preserve">
+    <value>முறை</value>
+  </data>
+  <data name="timing" xml:space="preserve">
+    <value>நேரம்</value>
+  </data>
+  <data name="tmap" xml:space="preserve">
+    <value>TMAP</value>
+  </data>
+  <data name="to" xml:space="preserve">
+    <value>இரண்டு</value>
+  </data>
+  <data name="too" xml:space="preserve">
+    <value>அதிகமாய்</value>
+  </data>
+  <data name="tool" xml:space="preserve">
+    <value>கருவி</value>
+  </data>
+  <data name="tootherrorcorrection" xml:space="preserve">
+    <value>பல்பிழைதிருத்தம்</value>
+  </data>
+  <data name="torque" xml:space="preserve">
+    <value>முறுக்கு</value>
+  </data>
+  <data name="total" xml:space="preserve">
+    <value>மொத்த</value>
+  </data>
+  <data name="track" xml:space="preserve">
+    <value>கண்காணிக்க</value>
+  </data>
+  <data name="traction" xml:space="preserve">
+    <value>இழுவை</value>
+  </data>
+  <data name="train" xml:space="preserve">
+    <value>பயிற்றுவி</value>
+  </data>
+  <data name="transmission" xml:space="preserve">
+    <value>பரிமாற்றம்</value>
+  </data>
+  <data name="travelled" xml:space="preserve">
+    <value>பயணம்</value>
+  </data>
+  <data name="treatment" xml:space="preserve">
+    <value>சிகிச்சை</value>
+  </data>
+  <data name="trim" xml:space="preserve">
+    <value>ஒழுங்கமைக்க</value>
+  </data>
+  <data name="trip" xml:space="preserve">
+    <value>பயணம்</value>
+  </data>
+  <data name="trouble" xml:space="preserve">
+    <value>பிரச்சனையில்</value>
+  </data>
+  <data name="Troubleshoot" xml:space="preserve">
+    <value>சரிசெய்தல்</value>
+  </data>
+  <data name="TROUBLESHOOTING" xml:space="preserve">
+    <value>பழுது நீக்கும்</value>
+  </data>
+  <data name="Try" xml:space="preserve">
+    <value>முயற்சி</value>
+  </data>
+  <data name="trying" xml:space="preserve">
+    <value>முயற்சிக்கிறது</value>
+  </data>
+  <data name="tuning" xml:space="preserve">
+    <value>சரிப்படுத்தும்</value>
+  </data>
+  <data name="turbine" xml:space="preserve">
+    <value>விசையாழி</value>
+  </data>
+  <data name="turbo" xml:space="preserve">
+    <value>டர்போ</value>
+  </data>
+  <data name="turbocharger" xml:space="preserve">
+    <value>டர்போசார்ஜர்</value>
+  </data>
+  <data name="Turn" xml:space="preserve">
+    <value>திரும்பவும்</value>
+  </data>
+  <data name="two" xml:space="preserve">
+    <value>இரண்டு</value>
+  </data>
+  <data name="type" xml:space="preserve">
+    <value>வகை</value>
+  </data>
+  <data name="unable" xml:space="preserve">
+    <value>முடியவில்லை</value>
+  </data>
+  <data name="uncertain" xml:space="preserve">
+    <value>நிச்சயமற்றது</value>
+  </data>
+  <data name="undefaulted" xml:space="preserve">
+    <value>தவறானது</value>
+  </data>
+  <data name="under" xml:space="preserve">
+    <value>கீழ்</value>
+  </data>
+  <data name="underboost" xml:space="preserve">
+    <value>ஊக்கத்தின் கீழ்</value>
+  </data>
+  <data name="undervoltage" xml:space="preserve">
+    <value>குறைமின்னழுத்த</value>
+  </data>
+  <data name="unexpected" xml:space="preserve">
+    <value>எதிர்பாராத</value>
+  </data>
+  <data name="Unhealthy" xml:space="preserve">
+    <value>ஆரோக்கியமற்றது</value>
+  </data>
+  <data name="unit" xml:space="preserve">
+    <value>அலகு</value>
+  </data>
+  <data name="unpowered" xml:space="preserve">
+    <value>சக்தியற்றது</value>
+  </data>
+  <data name="unstable" xml:space="preserve">
+    <value>நிலையற்றது</value>
+  </data>
+  <data name="until" xml:space="preserve">
+    <value>வரை</value>
+  </data>
+  <data name="up" xml:space="preserve">
+    <value>வரை</value>
+  </data>
+  <data name="upper" xml:space="preserve">
+    <value>மேல்</value>
+  </data>
+  <data name="upshift" xml:space="preserve">
+    <value>மேம்பாடு</value>
+  </data>
+  <data name="upstream" xml:space="preserve">
+    <value>அப்ஸ்ட்ரீம்</value>
+  </data>
+  <data name="urea" xml:space="preserve">
+    <value>யூரியா</value>
+  </data>
+  <data name="usage" xml:space="preserve">
+    <value>பயன்பாடு</value>
+  </data>
+  <data name="use" xml:space="preserve">
+    <value>பயன்பாடு</value>
+  </data>
+  <data name="used" xml:space="preserve">
+    <value>பயன்படுத்தப்பட்டது</value>
+  </data>
+  <data name="uses" xml:space="preserve">
+    <value>பயன்கள்</value>
+  </data>
+  <data name="using" xml:space="preserve">
+    <value>பயன்படுத்தி</value>
+  </data>
+  <data name="vacuum" xml:space="preserve">
+    <value>வெற்றிடம்</value>
+  </data>
+  <data name="validation" xml:space="preserve">
+    <value>சரிபார்த்தல்</value>
+  </data>
+  <data name="value" xml:space="preserve">
+    <value>மதிப்பு</value>
+  </data>
+  <data name="values" xml:space="preserve">
+    <value>மதிப்புகள்</value>
+  </data>
+  <data name="valve" xml:space="preserve">
+    <value>வால்வு</value>
+  </data>
+  <data name="vapour" xml:space="preserve">
+    <value>நீராவி</value>
+  </data>
+  <data name="variation" xml:space="preserve">
+    <value>மாறுபாடு</value>
+  </data>
+  <data name="vehicle" xml:space="preserve">
+    <value>வாகனம்</value>
+  </data>
+  <data name="vehicles" xml:space="preserve">
+    <value>வாகனங்கள்</value>
+  </data>
+  <data name="vent" xml:space="preserve">
+    <value>வெளிச்செல்லவிடும்</value>
+  </data>
+  <data name="venting" xml:space="preserve">
+    <value>வென்டிங்</value>
+  </data>
+  <data name="versions" xml:space="preserve">
+    <value>பதிப்புகள்</value>
+  </data>
+  <data name="vext" xml:space="preserve">
+    <value>VEXT</value>
+  </data>
+  <data name="vin" xml:space="preserve">
+    <value>வின்</value>
+  </data>
+  <data name="visibility" xml:space="preserve">
+    <value>தன்மை</value>
+  </data>
+  <data name="volt" xml:space="preserve">
+    <value>அது</value>
+  </data>
+  <data name="voltage" xml:space="preserve">
+    <value>மின்னழுத்த</value>
+  </data>
+  <data name="volume" xml:space="preserve">
+    <value>தொகுதி</value>
+  </data>
+  <data name="vpu" xml:space="preserve">
+    <value>வி.பீ.யூ.</value>
+  </data>
+  <data name="Wait" xml:space="preserve">
+    <value>காத்திரு</value>
+  </data>
+  <data name="warm" xml:space="preserve">
+    <value>சூடான</value>
+  </data>
+  <data name="warmup" xml:space="preserve">
+    <value>சூடாக</value>
+  </data>
+  <data name="warning" xml:space="preserve">
+    <value>எச்சரிக்கை</value>
+  </data>
+  <data name="waste" xml:space="preserve">
+    <value>கழிவு</value>
+  </data>
+  <data name="wastegate" xml:space="preserve">
+    <value>கழிவுப்பொருள்</value>
+  </data>
+  <data name="WATER" xml:space="preserve">
+    <value>தண்ணீர்</value>
+  </data>
+  <data name="wave" xml:space="preserve">
+    <value>அலை</value>
+  </data>
+  <data name="waveform" xml:space="preserve">
+    <value>அலைவடிவம்</value>
+  </data>
+  <data name="way" xml:space="preserve">
+    <value>வழி</value>
+  </data>
+  <data name="wear" xml:space="preserve">
+    <value>உடைகள்</value>
+  </data>
+  <data name="wheel" xml:space="preserve">
+    <value>சக்கரம்</value>
+  </data>
+  <data name="WHEELER" xml:space="preserve">
+    <value>வீலர்</value>
+  </data>
+  <data name="when" xml:space="preserve">
+    <value>போது</value>
+  </data>
+  <data name="whether" xml:space="preserve">
+    <value>என்பதை</value>
+  </data>
+  <data name="which" xml:space="preserve">
+    <value>எந்த</value>
+  </data>
+  <data name="while" xml:space="preserve">
+    <value>போது</value>
+  </data>
+  <data name="wide" xml:space="preserve">
+    <value>பரந்த</value>
+  </data>
+  <data name="width" xml:space="preserve">
+    <value>அகலம்</value>
+  </data>
+  <data name="will" xml:space="preserve">
+    <value>விருப்பம்</value>
+  </data>
+  <data name="winter" xml:space="preserve">
+    <value>குளிர்காலம்</value>
+  </data>
+  <data name="wiper" xml:space="preserve">
+    <value>துடைப்பான்</value>
+  </data>
+  <data name="wire" xml:space="preserve">
+    <value>கம்பி</value>
+  </data>
+  <data name="wires" xml:space="preserve">
+    <value>கம்பிகள்</value>
+  </data>
+  <data name="Wiring" xml:space="preserve">
+    <value>வயரிங்</value>
+  </data>
+  <data name="with" xml:space="preserve">
+    <value>உடன்</value>
+  </data>
+  <data name="without" xml:space="preserve">
+    <value>இல்லாமல்</value>
+  </data>
+  <data name="words" xml:space="preserve">
+    <value>சொற்கள்</value>
+  </data>
+  <data name="work" xml:space="preserve">
+    <value>வேலை</value>
+  </data>
+  <data name="working" xml:space="preserve">
+    <value>தொழிலாளர்</value>
+  </data>
+  <data name="Write" xml:space="preserve">
+    <value>எழுதுங்கள்</value>
+  </data>
+  <data name="writing" xml:space="preserve">
+    <value>எழுதுதல்</value>
+  </data>
+  <data name="wrong" xml:space="preserve">
+    <value>தவறு</value>
+  </data>
+  <data name="zero" xml:space="preserve">
+    <value>பூஜ்யம்</value>
+  </data>
+</root>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.MarketPlace.MyOrdersPage"
+             xmlns:converter="clr-namespace:WikitekMotorCycleMechanik.Converters"
+             BackgroundColor="{StaticResource page_bg_color}"
+             Title="MY ORDERS">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:InitialsConverter x:Key="PrefixValueConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <CollectionView 
+            x:Name="list"
+            ItemsSource="{Binding myOrderList}"
+            EmptyView="{Binding emptyView}" 
+            Margin="10">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" HasShadow="True" CornerRadius="10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding short_description}"
+                                   Style="{StaticResource lbl}"
+                                   FontSize="16"
+                                   FontAttributes="Bold"/>
+                            <Label Grid.Row="1"
+                                   Text="{Binding part_number}"
+                                   Style="{StaticResource lbl}"
+                                   FontSize="16"
+                                   VerticalOptions="Start"/>
+                            <Image 
+                                Grid.Column="1"
+                                Source="ic_next"
+                                HeightRequest="25"/>
+                            <!--<Label
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Text="{Binding pruductType, Converter={StaticResource PrefixValueConverter}}"
+                                FontSize="16"
+                                FontAttributes="Bold"
+                                TextColor="White"
+                                BackgroundColor="{StaticResource theme_color}"
+                                Style="{StaticResource lbl}"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Center"/>-->
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference list}, Path=BindingContext.OrderSelectCommand}"
+                                                      CommandParameter="{Binding .}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>

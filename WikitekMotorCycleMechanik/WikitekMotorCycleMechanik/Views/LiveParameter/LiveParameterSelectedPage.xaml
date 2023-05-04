@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WikitekMotorCycleMechanik.Views.LiveParameter.LiveParameterSelectedPage"
+             xmlns:local="clr-namespace:WikitekMotorCycleMechanik.CustomControls"
+             BackgroundColor="{StaticResource page_bg_color}"
+             Title="Selected Parameters">
+   <ContentPage.Content>
+        <Grid Padding="10,10,10,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ListView Grid.Row="0" 
+                      x:Name="ems_List"  
+                      ItemsSource="{Binding selected_pid_list}" 
+                      HasUnevenRows="True" 
+                      SeparatorVisibility="None" 
+                      VerticalScrollBarVisibility="Never" 
+                      VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame HasShadow="True" Margin="5,1,5,1" Padding="5">
+                                <Grid ColumnSpacing="5" Margin="0,8,0,8" HorizontalOptions="FillAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding short_name,Mode=TwoWay}" Style="{StaticResource lbl}" HorizontalTextAlignment="Start"/>
+                                    <Label Grid.Column="1" Text="{Binding show_resolution,Mode=TwoWay}" Style="{StaticResource lbl}" HorizontalTextAlignment="End"/>
+                                    <Label Grid.Column="2" Text="{Binding unit,Mode=TwoWay}" Style="{StaticResource lbl}" HorizontalTextAlignment="End"/>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Grid.Row="1" Text="{Binding btnText}" Style="{StaticResource btn}" Command="{Binding PlayCommand}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

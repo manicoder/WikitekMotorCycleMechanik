@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.Jobcard.CreateJobPage"
+             xmlns:local="clr-namespace:WikitekMotorCycleMechanik.CustomControls"
+             BackgroundColor="{StaticResource page_bg_color}"
+             Title="Add New Jobcard">
+    <ContentPage.Content>
+        <Grid>
+            <Grid Padding="10,20,10,0" RowSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+           
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"
+                           Text="Select User" 
+                           VerticalTextAlignment="Center"
+                           Style="{StaticResource lbl}"
+                           FontAttributes="Bold"
+                           FontSize="16"/>
+                    <Frame Grid.Row="1" Style="{StaticResource frame}" Padding="2">
+                        <Grid ColumnSpacing="0" Padding="10,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1"/>
+                                <ColumnDefinition Width="50"/>
+                            </Grid.ColumnDefinitions>
+                            <local:CustomEntry Text="{Binding selected_user.email}" 
+                                               Placeholder="Select a user..."
+                                               Style="{StaticResource ent}"
+                                               IsReadOnly="True"
+                                               InputTransparent="True"/>
+                            <BoxView Grid.Column="1" 
+                                     BackgroundColor="{StaticResource theme_color}"
+                                     Margin="0,-2,0,-2"/>
+                            <ImageButton Grid.Column="2" 
+                                         InputTransparent="True"
+                                         BackgroundColor="Transparent" 
+                                         Padding="0"
+                                         HorizontalOptions="FillAndExpand">
+                                <ImageButton.Source>
+                                    <FontImageSource FontFamily="{DynamicResource Material}" 
+                                                     Glyph="&#xF035D;" 
+                                                     Color="{StaticResource theme_color}" />
+                                </ImageButton.Source>
+                            </ImageButton>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ShowUserViewCommand}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"
+                           Text="Select Vehicle" 
+                           VerticalTextAlignment="Center"
+                           Style="{StaticResource lbl}"
+                           FontAttributes="Bold"
+                           FontSize="16"/>
+                    <Frame Grid.Row="1" Style="{StaticResource frame}" Padding="2">
+                        <Grid ColumnSpacing="0" Padding="10,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1"/>
+                                <ColumnDefinition Width="50"/>
+                            </Grid.ColumnDefinitions>
+                            <local:CustomEntry Text="{Binding selected_vehicle.registration_id}" 
+                                               Placeholder="Select a vehicle..."
+                                               Style="{StaticResource ent}"
+                                               IsReadOnly="True"
+                                               InputTransparent="True"/>
+                            <BoxView Grid.Column="1" 
+                                     BackgroundColor="{StaticResource theme_color}"
+                                     Margin="0,-2,0,-2"/>
+                            <ImageButton Grid.Column="2" 
+                                         InputTransparent="True"
+                                         BackgroundColor="Transparent" 
+                                         Padding="0"
+                                         HorizontalOptions="FillAndExpand">
+                                <ImageButton.Source>
+                                    <FontImageSource FontFamily="{DynamicResource Material}" 
+                                                     Glyph="&#xF035D;" 
+                                                     Color="{StaticResource theme_color}" />
+                                </ImageButton.Source>
+                            </ImageButton>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ShowVehicleViewCommand}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                </Grid>
+                
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"
+                           Text="Select Vehicle" 
+                           VerticalTextAlignment="Center"
+                           Style="{StaticResource lbl}"
+                           FontAttributes="Bold"
+                           FontSize="16"/>
+                    <Frame Grid.Row="1" Style="{StaticResource frame}" Padding="2">
+                        <Grid ColumnSpacing="0" Padding="10,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1"/>
+                                <ColumnDefinition Width="50"/>
+                            </Grid.ColumnDefinitions>
+                            <local:CustomEntry Text="{Binding selected_service}" 
+                                               Placeholder="Select a service..."
+                                               Style="{StaticResource ent}"
+                                               IsReadOnly="True"
+                                               InputTransparent="True"/>
+                            <BoxView Grid.Column="1" 
+                                     BackgroundColor="{StaticResource theme_color}"
+                                     Margin="0,-2,0,-2"/>
+                            <ImageButton Grid.Column="2" 
+                                         InputTransparent="True"
+                                         BackgroundColor="Transparent" 
+                                         Padding="0"
+                                         HorizontalOptions="FillAndExpand">
+                                <ImageButton.Source>
+                                    <FontImageSource FontFamily="{DynamicResource Material}" 
+                                                     Glyph="&#xF035D;" 
+                                                     Color="{StaticResource theme_color}"/>
+                                </ImageButton.Source>
+                            </ImageButton>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ShowServiceViewCommand}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                </Grid>
+
+                <Grid Grid.Row="3"
+                      IsVisible="{Binding show_vehicle_detail}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"
+                           Text="Enter jobcard number" 
+                           VerticalTextAlignment="Center"
+                           Style="{StaticResource lbl}"
+                           FontAttributes="Bold"
+                           FontSize="16"/>
+                    <Frame Grid.Row="1" 
+                           Style="{StaticResource frame}" 
+                           Padding="2">
+                        <local:CustomEntry Text="{Binding jobcard_detail.job_card_name}" 
+                                           Placeholder="Enter jobcard number..."
+                                           Style="{StaticResource ent}"/>
+                    </Frame>
+                </Grid>
+
+                <Button Grid.Row="5" 
+                        Text="Submit"
+                        Style="{StaticResource btn}"
+                        Command="{Binding SubmitCommand}"/>
+                <!--<Grid Grid.Row="2"
+                      IsVisible="{Binding show_vehicle_detail}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"
+                           Text="Selected Model" 
+                           VerticalTextAlignment="Center"
+                           Style="{StaticResource lbl}"
+                           FontAttributes="Bold"
+                           FontSize="16"/>
+                    <Frame Grid.Row="1" 
+                           Style="{StaticResource frame}" 
+                           Padding="2">
+                        <local:CustomEntry Text="Model_Name" 
+                                           Placeholder="Select a user..."
+                                           Style="{StaticResource ent}"
+                                           IsReadOnly="True"/>
+                    </Frame>
+                </Grid>
+
+                <Grid Grid.Row="3"
+                      IsVisible="{Binding show_vehicle_detail}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"
+                           Text="Selected Submodel" 
+                           VerticalTextAlignment="Center"
+                           Style="{StaticResource lbl}"
+                           FontAttributes="Bold"
+                           FontSize="16"/>
+                    <Frame Grid.Row="1" 
+                           Style="{StaticResource frame}" 
+                           Padding="2">
+                        <local:CustomEntry Text="Sub_Model_Name" 
+                                           Placeholder="Select a user..."
+                                           Style="{StaticResource ent}"
+                                           IsReadOnly="True"/>
+                    </Frame>
+                </Grid>
+
+                <Grid Grid.Row="4"
+                      IsVisible="{Binding show_vehicle_detail}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0"
+                           Text="Selected Model Year" 
+                           VerticalTextAlignment="Center"
+                           Style="{StaticResource lbl}"
+                           FontAttributes="Bold"
+                           FontSize="16"/>
+                    <Frame Grid.Row="1" 
+                           Style="{StaticResource frame}" 
+                           Padding="2">
+                        <local:CustomEntry Text="Model_Year" 
+                                           Placeholder="Select a user..."
+                                           Style="{StaticResource ent}"
+                                           IsReadOnly="True"/>
+                    </Frame>
+                </Grid>-->
+            </Grid>
+         
+            <Grid IsVisible="{Binding show_user_view}">
+                <BoxView BackgroundColor="#fff" 
+                         Opacity=".7">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding HideUserViewCommand}"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+                <Frame BackgroundColor="#fff" 
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="CenterAndExpand"
+                       WidthRequest="250"
+                       Padding="0"
+                       HasShadow="True"
+                       BorderColor="#f1f1f1"
+                       IsClippedToBounds="True"
+                       CornerRadius="5">
+                    <Grid BackgroundColor="#fff" 
+                          RowSpacing="0"
+                          VerticalOptions="CenterAndExpand" 
+                          HorizontalOptions="CenterAndExpand"
+                          WidthRequest="250"
+                          HeightRequest="400">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="45"/>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0"
+                              BackgroundColor="{StaticResource theme_color}">
+                            <Label Text="User" Style="{StaticResource lbl}"
+                                   FontAttributes="Bold" FontSize="16" TextColor="#FFF"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"/>
+                        </Grid>
+
+                        <Frame Grid.Row="1" 
+                               Style="{StaticResource frame}" 
+                               Padding="2" 
+                               Margin="5">
+                            <local:CustomEntry Text="{Binding txt_search_user}" 
+                                               Placeholder="Search user..."
+                                               Style="{StaticResource ent}"/>
+                        </Frame>
+
+                        <ListView Grid.Row="2"
+                                  ItemsSource="{Binding user_list}" 
+                                  SelectedItem="{Binding selected_user,Mode=TwoWay}"
+                                  SelectionMode="Single">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Label Text="{Binding email}" 
+                                               VerticalTextAlignment="Center"
+                                               Margin="20,0,0,0"
+                                               Style="{StaticResource lbl}"/>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </Frame>
+            </Grid>
+
+            <Grid IsVisible="{Binding show_vehicle_view}">
+                <BoxView BackgroundColor="#fff" 
+                         Opacity=".7">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding HideUserViewCommand}"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+                <Frame BackgroundColor="#fff" 
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="CenterAndExpand"
+                       WidthRequest="250"
+                       Padding="0"
+                       HasShadow="True"
+                       BorderColor="#f1f1f1"
+                       IsClippedToBounds="True"
+                       CornerRadius="5">
+                    <Grid BackgroundColor="#fff" 
+                          RowSpacing="0"
+                          VerticalOptions="CenterAndExpand" 
+                          HorizontalOptions="CenterAndExpand"
+                          WidthRequest="250"
+                          HeightRequest="400">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="45"/>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0"
+                              BackgroundColor="{StaticResource theme_color}">
+                            <Label Text="Vehicles" Style="{StaticResource lbl}"
+                                   FontAttributes="Bold" FontSize="16" TextColor="#FFF"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"/>
+                        </Grid>
+
+                        <Frame Grid.Row="1" Style="{StaticResource frame}" Padding="2" Margin="5">
+                            <local:CustomEntry Text="{Binding txt_search_vehicle}" 
+                                               Placeholder="Search vehicle..."
+                                               Style="{StaticResource ent}"/>
+                        </Frame>
+
+
+                        <ListView Grid.Row="2"
+                                  ItemsSource="{Binding vehicle_list}" 
+                                  SelectedItem="{Binding selected_vehicle}"
+                                  SelectionMode="Single">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Label Text="{Binding registration_id}" 
+                                               VerticalTextAlignment="Center"
+                                               Margin="20,0,0,0"
+                                               Style="{StaticResource lbl}"/>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </Frame>
+            </Grid>
+
+            <Grid IsVisible="{Binding show_service_view}">
+                <BoxView BackgroundColor="#fff" 
+                         Opacity=".7">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding HideUserViewCommand}"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+                <Frame BackgroundColor="#fff" 
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="CenterAndExpand"
+                       WidthRequest="250"
+                       Padding="0"
+                       HasShadow="True"
+                       BorderColor="#f1f1f1"
+                       IsClippedToBounds="True"
+                       CornerRadius="5">
+                    <Grid BackgroundColor="#fff" 
+                          RowSpacing="0"
+                          VerticalOptions="CenterAndExpand" 
+                          HorizontalOptions="CenterAndExpand"
+                          WidthRequest="250"
+                          HeightRequest="250">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="45"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0"
+                              BackgroundColor="{StaticResource theme_color}">
+                            <Label Text="Vehicles" Style="{StaticResource lbl}"
+                                   FontAttributes="Bold" FontSize="16" TextColor="#FFF"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"/>
+                        </Grid>
+                        <ListView Grid.Row="1"
+                                  ItemsSource="{Binding service_list}" 
+                                  SelectedItem="{Binding selected_service}"
+                                  SelectionMode="Single">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Label Text="{Binding .}" 
+                                               VerticalTextAlignment="Center"
+                                               Margin="20,0,0,0"
+                                               Style="{StaticResource lbl}"/>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
