@@ -136,7 +136,14 @@ namespace WikitekMotorCycleMechanik.Droid
             // is bluetooth enabled?
             if (!bluetoothAdapter.IsEnabled)
             {
-                bluetoothAdapter.Enable();
+                try
+                {
+                    bluetoothAdapter.Enable();
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
         }
         protected override void OnNewIntent(Intent intent)
