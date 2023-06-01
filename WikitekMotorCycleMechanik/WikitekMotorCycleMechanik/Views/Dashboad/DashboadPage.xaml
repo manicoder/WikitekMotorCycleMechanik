@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.Dashboad.DashboadPage"
+             xmlns:converter="clr-namespace:WikitekMotorCycleMechanik.Converters"
+             xmlns:local="clr-namespace:WikitekMotorCycleMechanik.CustomControls"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             Title="DASHBOARD"
+             BackgroundColor="{StaticResource page_bg_color}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="ic_setting_white.png"
+                     Order="Primary"
+                     Command="{Binding SettingCommand}"/>
+        <ToolbarItem IconImageSource="ic_switch_user"
+                     Order="Primary"
+                     Command="{Binding SwitchUserCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+
+                <Grid Padding="0" RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <!--<RowDefinition Height="*"/>
+                    <RowDefinition Height="150"/>-->
+                    </Grid.RowDefinitions>
+
+                    <AbsoluteLayout Grid.Row="0" Margin="0">
+                        <CarouselView 
+                              x:Name="corousalView"
+                              HeightRequest="200"
+                              ItemsSource="{Binding bannerList}"
+                              PeekAreaInsets="0"
+                              AbsoluteLayout.LayoutBounds="0,0,1,1"
+                              AbsoluteLayout.LayoutFlags="All"
+                              IndicatorView="indicatorview"
+                                       VerticalOptions="FillAndExpand"
+                                       HorizontalOptions="FillAndExpand">
+                            <CarouselView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal"
+                                           ItemSpacing="0"
+                                           SnapPointsType="MandatorySingle"/>
+                            </CarouselView.ItemsLayout>
+
+                            <CarouselView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout>
+                                        <Frame HasShadow="True" 
+                                       Padding="5"
+                                        Margin="0,0,0,0"
+                                        HeightRequest="200"
+                                        HorizontalOptions="FillAndExpand"
+                                        VerticalOptions="StartAndExpand">
+                                            <StackLayout>
+                                                <ImageButton Source="{Binding attachment.attachment}"
+                                               Aspect="AspectFit"
+                                               HeightRequest="200"
+                                               VerticalOptions="StartAndExpand"
+                                                Command="{Binding Source={x:Reference corousalView}, Path=BindingContext.BannerImageSelectCommand}"
+                                                      CommandParameter="{Binding .}"/>
+                                            </StackLayout>
+                                        </Frame>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CarouselView.ItemTemplate>
+                        </CarouselView>
+
+                        <IndicatorView
+                            x:Name="indicatorview"
+                            AbsoluteLayout.LayoutBounds="0.5,0.95,100,100"
+                            AbsoluteLayout.LayoutFlags="PositionProportional"
+                            IndicatorColor="LightGray"
+                            VerticalOptions="End"
+                            IndicatorSize="10"
+                            SelectedIndicatorColor="{StaticResource theme_color}" />
+                    </AbsoluteLayout>
+
+                    <Frame Padding="5" Grid.Row="1" Margin="10,10,10,10" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="1" Margin="0,10,0,0" HorizontalOptions="CenterAndExpand" ColumnSpacing="20">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <StackLayout>
+                                        <Frame 
+                                            CornerRadius="25"
+                                            Padding="10"
+                                            HeightRequest="70"
+                                            WidthRequest="70"
+                                            BackgroundColor="{Binding DPColor}">
+                                            <!--<Label Text="DP"
+                                                Style="{StaticResource lbl}"
+                                                TextColor="{StaticResource theme_color}"
+                                                FontAttributes="Bold"
+                                                FontSize="30"
+                                                VerticalTextAlignment="Center"
+                                                HorizontalTextAlignment="Center">
+                                            </Label>-->
+                                            <Image
+                                                Source="ic_CAR_BLUE.png"
+                                                HeightRequest="60"
+                                                WidthRequest="60"/>
+                                        </Frame>
+                                        <Label Text="Diagnostic Pack"
+                                               Style="{StaticResource lbl}"
+                                               HorizontalTextAlignment="Center"/>
+                                    </StackLayout>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding PackCommand}"
+                                                          CommandParameter="DP"/>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <StackLayout>
+                                        <Frame 
+                                            CornerRadius="25"
+                                            Padding="10"
+                                            HeightRequest="70"
+                                            WidthRequest="70"
+                                            BackgroundColor="{Binding ADPColor}">
+                                            <!--<Label Text="DP"
+                                                Style="{StaticResource lbl}"
+                                                TextColor="{StaticResource theme_color}"
+                                                FontAttributes="Bold"
+                                                FontSize="30"
+                                                VerticalTextAlignment="Center"
+                                                HorizontalTextAlignment="Center">
+                                            </Label>-->
+                                            <Image
+                                                Source="ic_CARWIFI_BLUE.png"
+                                                HeightRequest="60"
+                                                WidthRequest="60"/>
+                                        </Frame>
+                                        <Label Text="Advanced Diagnostic Pack"
+                                               Style="{StaticResource lbl}"
+                                               HorizontalTextAlignment="Center"/>
+                                    </StackLayout>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding PackCommand}"
+                                                          CommandParameter="ADP"/>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                                <Grid Grid.Column="2">
+                                    <StackLayout>
+                                        <Frame 
+                                            CornerRadius="25"
+                                            Padding="10"
+                                            HeightRequest="70"
+                                            WidthRequest="70"
+                                            BackgroundColor="{Binding OPColor}">
+                                            <!--<Label Text="DP"
+                                        Style="{StaticResource lbl}"
+                                        TextColor="{StaticResource theme_color}"
+                                        FontAttributes="Bold"
+                                        FontSize="30"
+                                        VerticalTextAlignment="Center"
+                                        HorizontalTextAlignment="Center">
+                                        </Label>-->
+                                            <Image
+                                                Source="ic_setting_blue.png"
+                                                HeightRequest="60"
+                                                WidthRequest="60"/>
+                                        </Frame>
+                                        <Label Text="Operational Pack"
+                                               Style="{StaticResource lbl}"
+                                               HorizontalTextAlignment="Center"/>
+                                    </StackLayout>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding PackCommand}"
+                                                          CommandParameter="OP"/>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </Grid>
+
+                            <Grid Grid.Row="0" HorizontalOptions="CenterAndExpand" ColumnSpacing="10" Margin="0,10,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Frame Grid.Column="0"
+                                    CornerRadius="25"
+                                    Padding="10"
+                                    VerticalOptions="CenterAndExpand"
+                                    BackgroundColor="{Binding bikeColor}">
+                                    <Image Source="ic_bike"
+                                    HeightRequest="70"/>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding VehicleCommand}"
+                                                          CommandParameter="bike"/>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                                <Frame Grid.Column="1"
+                                CornerRadius="25"
+                                Padding="10"
+                                VerticalOptions="CenterAndExpand"
+                                BackgroundColor="{Binding rikshawColor}">
+                                    <Image Source="ic_rikshaw"
+                                    HeightRequest="70"/>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding VehicleCommand}"
+                                                          CommandParameter="rikshaw"/>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                                <Frame Grid.Column="2"
+                                CornerRadius="25"
+                                Padding="10"
+                                VerticalOptions="CenterAndExpand"
+                                BackgroundColor="{Binding carColor}">
+                                    <Image Source="ic_car"
+                                    HeightRequest="70"/>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding VehicleCommand}"
+                                                          CommandParameter="car"/>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                                <Frame x:Name="truckFrame"
+                                Grid.Column="3"
+                                CornerRadius="25"
+                                Padding="10"
+                                VerticalOptions="CenterAndExpand"
+                                BackgroundColor="{Binding truckColor}">
+                                    <Image Source="ic_truck"
+                                    HeightRequest="70"/>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding VehicleCommand}"
+                                                          CommandParameter="truck"/>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                            </Grid>
+
+                            <!--<Button Grid.Row="2"
+                                Text="Submit"
+                                BackgroundColor="{StaticResource theme_color}"
+                                TextColor="White"
+                                CornerRadius="10"
+                                HorizontalOptions="Center"
+                                Margin="10"
+                                Command="{Binding SubmitCommand}"/>-->
+                        </Grid>
+                    </Frame>
+
+                    <Frame Grid.Row="2" CornerRadius="10" Margin="10,0,10,10">
+
+                        <StackLayout>
+                            <Label Text="Hot Products"
+                                   Style="{StaticResource lbl}"
+                                   FontSize="18"
+                                   FontAttributes="Italic"
+                                   HorizontalTextAlignment="Center"
+                                   TextColor="{StaticResource theme_color}"
+                                   />
+                            <CollectionView x:Name="hotPartList"
+                            ItemsSource="{Binding HotPartList}"
+                                    
+                                        HeightRequest="280"
+                                        >
+                                <CollectionView.ItemsLayout>
+                                    <GridItemsLayout Orientation="Vertical"
+                                                     Span="3"
+                                                     VerticalItemSpacing="10"
+                                                     HorizontalItemSpacing="10"/>
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <!--<Label Text="{Binding attachment}"/>-->
+                                        <Frame Margin="1" HasShadow="False"
+                                           Padding="0" CornerRadius="5"
+                                               BorderColor="LightSteelBlue"
+                                               HorizontalOptions="CenterAndExpand"
+                                                   VerticalOptions="CenterAndExpand">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="100"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
+                                                <Image 
+                                                    Source="{Binding part_no.default.attachment}"
+                                                   Aspect="AspectFit"
+                                                   HorizontalOptions="FillAndExpand"
+                                                   VerticalOptions="FillAndExpand"
+                                                    BackgroundColor="White"
+                                                    Margin="2"/>
+                                                <Label Grid.Row="1"
+                                                       Text="{Binding part_no.part_number}"
+                                                       Style="{StaticResource lbl}"
+                                                       FontSize="12"
+                                                       Margin="1"
+                                                       FontAttributes="Bold"
+                                                       VerticalTextAlignment="Center"
+                                                       HorizontalTextAlignment="Center"/>
+                                            </Grid>
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Source={x:Reference hotPartList}, Path=BindingContext.HotPartSelectCommand}"
+                                                      CommandParameter="{Binding .}"/>
+                                            </Frame.GestureRecognizers>
+                                        </Frame>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </StackLayout>
+                    </Frame>
+
+
+
+                    <!--<Grid Grid.Row="4" VerticalOptions="End" RowSpacing="5" ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+
+                    <ImageButton Grid.Row="0"
+                             Grid.Column="0" 
+                             Source="ic_diag"
+                             BackgroundColor="WhiteSmoke" 
+                             Padding="10"
+                             CornerRadius="15" 
+                             HorizontalOptions="Center"
+                             Command="{Binding OperationsCommand}"/>
+                    <Label Grid.Row="1" 
+                       Grid.Column="0"
+                       FontSize="15"
+                       Text="Operations" 
+                       HorizontalTextAlignment="Center"
+                       Style="{StaticResource lbl}"/>
+
+                    <ImageButton Grid.Row="0"
+                             Grid.Column="1" 
+                             Source="ic_sync_data"
+                             BackgroundColor="WhiteSmoke" 
+                             Padding="5"
+                             CornerRadius="15" 
+                             HorizontalOptions="Center"
+                             Command="{Binding DiagnosticCommand}"/>
+                    <Label Grid.Row="1" 
+                       Grid.Column="1"
+                       FontSize="15"
+                       Text="Diagnostics" 
+                       HorizontalTextAlignment="Center"
+                       Style="{StaticResource lbl}"/>
+
+                    -->
+                    <!--<ImageButton Grid.Row="3"
+                             Grid.Column="0" 
+                             Source="ic_logout"
+                             BackgroundColor="WhiteSmoke" 
+                             Padding="5"
+                             CornerRadius="15" 
+                             HorizontalOptions="Center"/>
+                <Label Grid.Row="4" 
+                       Grid.Column="0"
+                       FontSize="15"
+                       Text="Assisted Diagnostics" 
+                       HorizontalTextAlignment="Center"
+                       Style="{StaticResource lbl}"/>-->
+                    <!--
+
+                    <ImageButton Grid.Row="0"
+                             Grid.Column="2" 
+                             Source="ic_setting"
+                             BackgroundColor="WhiteSmoke" 
+                             Padding="10"
+                             CornerRadius="15" 
+                             HorizontalOptions="Center"
+                             Command="{Binding SettingCommand }"/>
+                    <Label Grid.Row="1" 
+                       Grid.Column="2"
+                       FontSize="15"
+                       Text="Settings" 
+                       HorizontalTextAlignment="Center"
+                       Style="{StaticResource lbl}"/>
+                </Grid>-->
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

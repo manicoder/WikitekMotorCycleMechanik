@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.MarketPlace.OrderSummaryPage"
+             BackgroundColor="{StaticResource page_bg_color}"
+             Title="ORDER SUMMERY">
+    <ContentPage.Content>
+       
+            <Grid Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid RowSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Frame Grid.Row="0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0"
+                                   Text="Shipping Address : "
+                                   Style="{StaticResource lbl}"
+                                   FontAttributes="Bold"
+                                   FontSize="16"/>
+                            <Label Grid.Row="1"
+                                   Text="{Binding shipment_address.user_name,StringFormat='User Name : {0}'}"
+                                   Style="{StaticResource lbl}"
+                                   FontSize="16"/>
+                            <Label Grid.Row="2"
+                                   Text="{Binding shipment_address.address,StringFormat='Address: {0}'}"
+                                   Style="{StaticResource lbl}"
+                                   FontSize="16"/>
+                            <Label Grid.Row="3"
+                                   Text="{Binding shipment_address.pin_code,StringFormat='Pin Code: {0}'}"
+                                   Style="{StaticResource lbl}"
+                                   FontSize="16"/>
+                            <Label Grid.Row="4"
+                                   Text="{Binding shipment_address.country,StringFormat='Country : {0}'}"
+                                   Style="{StaticResource lbl}"
+                                   FontSize="16"/>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Column="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0"
+                                   Text="Billing Address : "
+                                   Style="{StaticResource lbl}"
+                                   FontAttributes="Bold"
+                                   FontSize="16"/>
+                            <Label Grid.Row="1"
+                                   Text="{Binding billing_address.user_name,StringFormat='User Name : {0}'}"
+                                   Style="{StaticResource lbl}"
+                                   FontSize="16"/>
+                            <Label Grid.Row="2"
+                                   Text="{Binding billing_address.address,StringFormat='Address: {0}'}"
+                                   Style="{StaticResource lbl}"
+                                   FontSize="16"/>
+                            <Label Grid.Row="3"
+                                   Text="{Binding billing_address.pin_code,StringFormat='Pin Code: {0}'}"
+                                   Style="{StaticResource lbl}"
+                                   FontSize="16"/>
+                            <Label Grid.Row="4"
+                                   Text="{Binding billing_address.country,StringFormat='Country : {0}'}"
+                                   Style="{StaticResource lbl}"
+                                   FontSize="16"/>
+                        </Grid>
+                    </Frame>
+                </Grid>
+
+
+                    <Grid RowSpacing="10" Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <!--<StackLayout Grid.Column="0" 
+                                 BindableLayout.ItemsSource="{Binding cart_list,Mode=TwoWay}">-->
+                            <!--<CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+                        </CollectionView.ItemsLayout>-->
+                    <CollectionView ItemsSource="{Binding cart_list,Mode=TwoWay}"
+                            EmptyView="Cart items not found" >
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate >
+                                <Grid>
+                                    <Frame Padding="5" Margin="1" HasShadow="True">
+                                        <Grid ColumnSpacing="10" VerticalOptions="FillAndExpand">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="84"/>
+                                            </Grid.ColumnDefinitions>
+                                            
+                                            <Grid Grid.Column="0"  RowSpacing="10"
+                                                  VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
+                                                <Label Grid.Row="0" 
+                                               Text="{Binding parts_id.short_description}" 
+                                               Style="{StaticResource lbl}"
+                                               FontSize="18"
+                                               FontAttributes="Bold"
+                                               VerticalTextAlignment="Center"/>
+                                                <Label Grid.Row="1" 
+                                               Text="{Binding parts_id.part_number}" 
+                                               Style="{StaticResource lbl}"
+                                               VerticalTextAlignment="Center"/>
+
+                                            </Grid>
+
+                                            <Label Grid.Column="1" 
+                                                   Text="{Binding extended_price,StringFormat='₹{0:F2}'}" 
+                                                   FontSize="16"
+                                                   FontAttributes="Bold"
+                                                   TextColor="{StaticResource theme_color}"
+                                                   Style="{StaticResource lbl}"
+                                                   VerticalTextAlignment="Start"
+                                                   HorizontalTextAlignment="End"/>
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    </Grid>
+
+                <Frame Grid.Row="2" >
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" 
+                           Text="Amount" 
+                           Style="{StaticResource lbl}"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center"/>
+                        <Label Grid.Row="0" 
+                               Grid.Column="1"
+                           Text="{Binding amount,StringFormat=' :  ₹{0:F2}'}" 
+                           Style="{StaticResource lbl}"
+                           FontSize="16"
+                           VerticalTextAlignment="Center"/>
+                        <Label Grid.Row="1" 
+                           Text="SGST (9%)" 
+                           Style="{StaticResource lbl}"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center"
+                               IsVisible="{Binding isCsgstVisible}"/>
+                        <Label Grid.Row="1" 
+                           Grid.Column="1"
+                           Text="{Binding sgst,StringFormat=' :  ₹{0:F2}'}" 
+                           Style="{StaticResource lbl}"
+                           FontSize="16"
+                           VerticalTextAlignment="Center"
+                               IsVisible="{Binding isCsgstVisible}"/>
+                        <Label Grid.Row="2" 
+                           Text="CGST (9%)" 
+                           Style="{StaticResource lbl}"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center"
+                               IsVisible="{Binding isCsgstVisible}"/>
+                        <Label Grid.Row="2" 
+                           Grid.Column="1"
+                           Text="{Binding cgst,StringFormat=' :  ₹{0:F2}'}" 
+                           Style="{StaticResource lbl}"
+                           FontSize="16"
+                           VerticalTextAlignment="Center"
+                               IsVisible="{Binding isCsgstVisible}"/>
+                        <Label Grid.Row="3" 
+                           Text="IGST (18%)" 
+                           Style="{StaticResource lbl}"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center"
+                               IsVisible="{Binding isIgstVisible}"/>
+                        <Label Grid.Row="3" 
+                           Grid.Column="1"
+                           Text="{Binding igst,StringFormat=' :  ₹{0:F2}'}" 
+                           Style="{StaticResource lbl}"
+                           FontSize="16"
+                           VerticalTextAlignment="Center"
+                               IsVisible="{Binding isIgstVisible}"/>
+                        
+                        <Label Grid.Row="4" 
+                           Text="Total Price" 
+                           Style="{StaticResource lbl}"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center"
+                           Margin="0,10"/>
+                        <Label Grid.Row="4" 
+                           Grid.Column="1"
+                           Text="{Binding total_price,StringFormat=' :  ₹{0:F2}'}" 
+                           Style="{StaticResource lbl}"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center"/>
+                        <Frame
+                            Grid.Row="5"
+                            Grid.ColumnSpan="2"
+                            HeightRequest="0"
+                            Padding="1"/>
+                        <Grid Grid.Row="6" Grid.ColumnSpan="2">
+                            <Label
+                                Text="GST Details (Optional)"
+                                Style="{StaticResource lbl}"
+                                FontSize="16"
+                                VerticalTextAlignment="Center"/>
+                            <ImageButton
+                                Grid.Column="1"
+                                Source="ic_sort_down.png"
+                                BackgroundColor="White"
+                                HeightRequest="25"
+                                HorizontalOptions="End"
+                                Command="{Binding GstTappedCommand}"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GstTappedCommand}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                        <Entry
+                            Grid.Row="7"
+                            Grid.ColumnSpan="2"
+                            Text="{Binding gstin}"
+                            Placeholder="Enter GST Identification Number"
+                            Style="{StaticResource ent}"
+                            IsVisible="{Binding isGstVisible}"
+                            TextChanged="GST_TextChanged"
+                            FontSize="16"
+                            MaxLength="15"/>
+                    </Grid>
+
+                </Frame>
+                </Grid>
+                <Button Grid.Row="1"
+                    Text="Make Payment"
+                    Style="{StaticResource btn}"
+                    Command="{Binding PaymentCommand}"/>
+            </Grid>
+    </ContentPage.Content>
+</ContentPage>

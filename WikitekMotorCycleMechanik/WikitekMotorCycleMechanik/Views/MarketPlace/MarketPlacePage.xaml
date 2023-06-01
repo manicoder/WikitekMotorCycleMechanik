@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.MarketPlace.MarketPlacePage"
+             BackgroundColor="{StaticResource page_bg_color}"
+             xmlns:local="clr-namespace:WikitekMotorCycleMechanik.CustomControls"
+             xmlns:converter="clr-namespace:WikitekMotorCycleMechanik.Converters">
+    <NavigationPage.TitleView>
+        <Grid VerticalOptions="FillAndExpand"
+              HeightRequest="40"
+              ColumnSpacing="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="0"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="MARKETPLACE"
+                   FontSize="16" 
+                   TextColor="#FFF" 
+                   FontAttributes="Bold"
+                   VerticalTextAlignment="Center"/>
+
+            <Grid Grid.Column="1" >
+                <!--<Label Text="&#xF0111;" 
+                       FontSize="35" 
+                       TextColor="#FFF"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalTextAlignment="Center">
+                       
+                </Label>-->
+                <Image Source="ic_cart_white.png"/>
+                <Frame CornerRadius="13" 
+                       HeightRequest="21" 
+                       WidthRequest="21"
+                       Padding="0"
+                       BackgroundColor="Red"
+                       HorizontalOptions="EndAndExpand"
+                       VerticalOptions="StartAndExpand"
+                       IsVisible="{Binding badge_count_visible,Mode=TwoWay}">
+                    <Label Text="{Binding badge_count,Mode=TwoWay}"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           TextColor="#FFF"
+                           FontSize="12"/>
+                </Frame>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoToCartCommand}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:DropDownTextColor x:Key="color" />
+            <converter:InitialsConverter x:Key="PrefixValueConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Example Item"
+                     Order="Primary"
+                     Priority="0"
+                     Command="{Binding GoToCartCommand}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource 
+                    FontFamily="{StaticResource Material}"
+                    Glyph="&#xF0111;" 
+                    Color="{StaticResource page_bg_color}"
+                    Size="40"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>-->
+    <ContentPage.Content>
+        <Grid>
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Frame Grid.Row="0" Padding="5" Margin="10,10,10,0"
+                   Style="{StaticResource frame}">
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!--<Label Grid.Column="0"
+                               Text="&#xF0349;" 
+                               FontSize="35" 
+                               TextColor="{StaticResource theme_color}"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ProfileCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>-->
+                        <Image Source="ic_search.png" 
+                               HorizontalOptions="Center"
+                               VerticalOptions='Center'/>
+                        <local:CustomEntry Grid.Column="1" 
+                                       Placeholder="Search..." 
+                                       Text="{Binding search_key}" 
+                                       Style="{StaticResource ent}" />
+                    </Grid>
+
+                </Frame>
+                <Frame Grid.Row="1" HorizontalOptions="FillAndExpand" Padding="10,10,10,10" Margin="10,0,10,0">
+                    <Grid>
+                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Filters :"
+                           Style="{StaticResource lbl}"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           VerticalTextAlignment="Center"/>
+                            <ImageButton Grid.Column="2"
+                                 Source="ic_sort.png"
+                                 HeightRequest="25"
+                                 BackgroundColor="White"
+                                 Command="{Binding SortListCommand}"/>
+                            <ImageButton Grid.Column="1"
+                                 Source="ic_filter.png"
+                                 HeightRequest="25"
+                                 BackgroundColor="White"
+                                 Command="{Binding PartFilterCommand}"/>
+                        </Grid>
+                        
+
+                        <Grid Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" 
+                              Padding="5,5,5,5" IsVisible="{Binding isFilterListVisible}">
+                            <ScrollView Orientation="Horizontal" HorizontalOptions="FillAndExpand" HorizontalScrollBarVisibility="Never">
+                                <StackLayout BindableLayout.ItemsSource="{Binding filterList}"
+                                            Orientation="Horizontal">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Frame BorderColor="{StaticResource theme_color}"
+                                           CornerRadius="10"
+                                           Padding="10">
+                                                <Label Text="{Binding name}"
+                                               Style="{StaticResource lbl}"/>
+                                            </Frame>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </ScrollView>
+                            
+                        </Grid>
+
+                    </Grid>
+                </Frame>
+                
+                <Grid Grid.Row="2" Padding="10,0,10,0">
+                    <CollectionView x:Name="model_collection"
+                                ItemsSource="{Binding market_place_list,Mode=TwoWay}"
+                                SelectedItem="{Binding selected_market_place, Mode=TwoWay}"
+                                SelectionMode="Single"
+                                EmptyView="Wait for products to be loaded..." 
+                                ItemSizingStrategy="MeasureAllItems"
+                                VerticalOptions="FillAndExpand">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate >
+                                <Grid>
+                                    <Frame Padding="5" Margin="1" HasShadow="True">
+                                        <Grid ColumnSpacing="10" VerticalOptions="Fill">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Frame Padding="0" CornerRadius="40" IsClippedToBounds="True"
+                                                   HorizontalOptions="CenterAndExpand"
+                                                   VerticalOptions="CenterAndExpand"
+                                                   BorderColor="{StaticResource theme_color}">
+                                                <Image Grid.Column="0" 
+                                                   Source="{Binding default.attachment}"
+                                                   Aspect="Fill"
+                                                   HorizontalOptions="CenterAndExpand"
+                                                   VerticalOptions="CenterAndExpand"
+                                                   HeightRequest="60"
+                                                   WidthRequest="60"/>
+                                            </Frame>
+                                            <Grid Grid.Column="1"  RowSpacing="5">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="35"/>
+                                                    <RowDefinition Height="35"/>
+                                                </Grid.RowDefinitions>
+                                                <Label Grid.Row="1"
+                                                   Text="{Binding part_number}" 
+                                                   Style="{StaticResource lbl}"
+                                                   FontSize="14"
+                                                       MaxLines="2"
+                                                       LineBreakMode="TailTruncation"
+                                                   />
+                                                <Label Grid.Row="0"
+                                                   Text="{Binding short_description}" 
+                                                   Style="{StaticResource lbl}"
+                                                       FontAttributes="Bold"
+                                                   VerticalTextAlignment="Center"/>
+                                            </Grid>
+
+                                            <Grid Grid.Column="2">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <Label 
+                                               Text="{Binding mrp,StringFormat='₹{0:F2}'}" 
+                                               FontSize="16"
+                                               FontAttributes="Bold"
+                                               TextColor="{StaticResource theme_color}"
+                                               Style="{StaticResource lbl}"
+                                               VerticalTextAlignment="Start"/>
+                                                <Frame Grid.Row="1" 
+                                                       BackgroundColor="{StaticResource theme_color}"
+                                                       
+                                                       Margin="0"
+                                                       Padding="9,0,9,0"
+                                                       CornerRadius="25"
+                                                       HorizontalOptions="End">
+                                                    <Label 
+                                                            Text="{Binding part_type.name, Converter={StaticResource PrefixValueConverter}}" 
+                                                            FontSize="16"
+                                                            FontAttributes="Bold"
+                                                            TextColor="White"
+                                                            BackgroundColor="{StaticResource theme_color}"
+                                                            Style="{StaticResource lbl}"
+                                                            VerticalTextAlignment="Center"
+                                                            HorizontalTextAlignment="Center"/>
+                                                </Frame>
+                                            </Grid>
+                                        </Grid>
+                                    </Frame>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={x:Reference model_collection}, Path=BindingContext.ItemSelectionCommand}"
+                                                      CommandParameter="{Binding .}"/>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    <!--<Grid HorizontalOptions="EndAndExpand"
+                          VerticalOptions="EndAndExpand" 
+                          HeightRequest="55" 
+                          WidthRequest="55">
+                        <Frame CornerRadius="33" 
+                               Padding="8" 
+                               Margin="3" 
+                               HasShadow="True" 
+                               HorizontalOptions="FillAndExpand" 
+                               VerticalOptions="FillAndExpand">
+
+                            <ImageButton BackgroundColor="White" 
+                                         Command="{Binding FilterCommand}"
+                                         CornerRadius="20"
+                                         Source="ic_add_wiki.png">
+                                --><!--<ImageButton.Source>
+                                    <FontImageSource Glyph="&#xF0236;" 
+                                                     Color="{StaticResource theme_color}" 
+                                                     Size="20" />
+                                </ImageButton.Source>--><!--
+                            </ImageButton>
+                        </Frame>
+                    </Grid>-->
+                </Grid>
+            </Grid>
+            <Grid HorizontalOptions="FillAndExpand" 
+                  VerticalOptions="EndAndExpand" 
+                  BackgroundColor="#EBEBEB" 
+                  HeightRequest="200" TranslationY="205"
+                  x:Name="filter_view">
+                <Frame Padding="5" 
+                       Margin="2" 
+                       HasShadow="True">
+                    <Grid>
+                        <Grid VerticalOptions="CenterAndExpand" 
+                              RowSpacing="6"
+                              Padding="10,0,10,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="0"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <CollectionView x:Name="filter_list"
+                                            ItemsSource="{Binding filter_list,Mode=TwoWay}"
+                                            HorizontalOptions="CenterAndExpand">
+                                <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10" />
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                                <CheckBox Color="{StaticResource theme_color}"
+                                                      IsChecked="{Binding is_ckecked,Mode=TwoWay}"/>
+                                                <Label Text="{Binding filter_by}" VerticalTextAlignment="Center"/>
+                                                
+                                            </StackLayout>
+                                            <StackLayout>
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding Source={x:Reference filter_list}, Path=BindingContext.ByFilterCommand}"
+                                                                      CommandParameter="{Binding .}"/>
+                                                </StackLayout.GestureRecognizers>
+                                            </StackLayout>
+                                        </Grid>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                            <Frame Grid.Row="2" 
+                                   Style="{StaticResource frame}" 
+                                   Padding="15,0,5,0"
+                                   IsVisible="{Binding model_filter_visible}">
+                                <Grid ColumnSpacing="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="1.5"/>
+                                        <ColumnDefinition>
+                                            <ColumnDefinition.Width>
+                                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="40" />
+                                            </ColumnDefinition.Width>
+                                        </ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Label x:Name="txt_model" 
+                                           VerticalTextAlignment="Center"
+                                           Text="{Binding vehicle_model.name}" 
+                                           Style="{StaticResource lbl}"
+                                           Margin="5,0" 
+                                           TextColor="{Binding Source={x:Reference txt_model},Path=Text,Converter={StaticResource color}}" />
+                                    <BoxView Grid.Column="1" 
+                                             BackgroundColor="{StaticResource theme_color}"/>
+                                    <!--<Label Grid.Column="2" 
+                                           Text="&#xF035D;" 
+                                           TextColor="{StaticResource theme_color}"
+                                           HorizontalOptions="CenterAndExpand" 
+                                           VerticalOptions="CenterAndExpand" >
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Tablet="50" Phone="40"/>
+                                        </Label.FontSize>
+                                    </Label>-->
+                                    <Image Grid.Column="2" 
+                                           Source="ic_drop_down.png" 
+                                           HorizontalOptions="Center" 
+                                           VerticalOptions="Center" >
+                                    </Image>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectModelCommand}"/>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="2"
+                                   Style="{StaticResource frame}" 
+                                   Padding="15,0,5,0"
+                                   IsVisible="{Binding segment_filter_visible}">
+                                <Grid ColumnSpacing="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="1.5"/>
+                                        <ColumnDefinition>
+                                            <ColumnDefinition.Width>
+                                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="40"/>
+                                            </ColumnDefinition.Width>
+                                        </ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Label x:Name="txt_segment" 
+                                           VerticalTextAlignment="Center"
+                                           Text="{Binding vehicle_segment}" 
+                                           Style="{StaticResource lbl}"
+                                           Margin="5,0" 
+                                           TextColor="{Binding Source={x:Reference txt_segment},Path=Text,Converter={StaticResource color}}" />
+                                    <BoxView Grid.Column="1" 
+                                             BackgroundColor="{StaticResource theme_color}"/>
+                                    <!--<Label Grid.Column="2" 
+                                           Text="&#xF035D;" 
+                                           TextColor="{StaticResource theme_color}"
+                                           HorizontalTextAlignment="Center" 
+                                           VerticalTextAlignment="Center" >
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Tablet="50" Phone="40"/>
+                                        </Label.FontSize>
+                                    </Label>-->
+                                    <Image Grid.Column="2" 
+                                           Source="ic_drop_down.png" 
+                                           HorizontalOptions="Center" 
+                                           VerticalOptions="Center" >
+                                    </Image>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectSubModelCommand}"/>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="2"
+                                   Style="{StaticResource frame}" 
+                                   Padding="15,0,5,0"
+                                   IsVisible="{Binding oem_filter_visible}">
+                                <Grid ColumnSpacing="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="1.5"/>
+                                        <ColumnDefinition>
+                                            <ColumnDefinition.Width>
+                                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="40"/>
+                                            </ColumnDefinition.Width>
+                                        </ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Label x:Name="txt_oem" 
+                                           VerticalTextAlignment="Center"
+                                           Text="{Binding vehicle_oem}" 
+                                           Style="{StaticResource lbl}"
+                                           Margin="5,0" 
+                                           TextColor="{Binding Source={x:Reference txt_oem},Path=Text,Converter={StaticResource color}}" />
+                                    <BoxView Grid.Column="1" 
+                                             BackgroundColor="{StaticResource theme_color}"/>
+                                    <!--<Label Grid.Column="2" 
+                                           Text="&#xF035D;" 
+                                           TextColor="{StaticResource theme_color}"
+                                           HorizontalTextAlignment="Center" 
+                                           VerticalTextAlignment="Center" >
+                                        <Label.FontSize>
+                                            <OnIdiom x:TypeArguments="x:Double" Tablet="50" Phone="40"/>
+                                        </Label.FontSize>
+                                    </Label>-->
+                                    <Image Grid.Column="2" 
+                                           Source="ic_drop_down.png" 
+                                           HorizontalOptions="Center" 
+                                           VerticalOptions="Center" >
+                                    </Image>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectSubModelCommand}"/>
+                                    </Grid.GestureRecognizers>
+                                </Grid>
+                            </Frame>
+                            <Button Grid.Row="3"
+                                   Text="APPLY" 
+                                   FontSize="15"
+                                   FontAttributes="Bold"
+                                   TextColor="{StaticResource theme_color}"
+                                    HorizontalOptions="CenterAndExpand"
+                                    CornerRadius="20"
+                                    HeightRequest="38"
+                                    BackgroundColor="#FFF"/>
+                        </Grid>
+                        <!--<Label Text="&#xF0159;" 
+                               FontSize="30" 
+                               TextColor="{StaticResource theme_color}"
+                               HorizontalOptions="EndAndExpand"
+                               VerticalOptions="StartAndExpand"
+                               IsVisible="true">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CloseFilterCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>-->
+                        <Image Source="ic_close.png" 
+                               HeightRequest="30"
+                               HorizontalOptions="EndAndExpand"
+                               VerticalOptions="StartAndExpand"
+                               IsVisible="true">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CloseFilterCommand}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

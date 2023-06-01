@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WikitekMotorCycleMechanik.Views.Registration.RegistrationPage"
+             xmlns:local="clr-namespace:WikitekMotorCycleMechanik.CustomControls"
+             xmlns:behavior="clr-namespace:WikitekMotorCycleMechanik.Behaviors" 
+             Title="User Registration"
+             BackgroundColor="{StaticResource page_bg_color}"
+             xmlns:converter="clr-namespace:WikitekMotorCycleMechanik.Converters">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:DropDownTextColor x:Key="color" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="frame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="BorderColor" Value="{StaticResource theme_color}" />
+                <Setter Property="Padding" Value="10,0,10,0" />
+            </Style>
+            <Style x:Key="ent" TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="{StaticResource placeholder_color}" />
+                <Setter Property="TextColor" Value="{StaticResource text_color}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="{StaticResource font_size}" />
+            </Style>
+            <Style x:Key="lbl" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource text_color}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="{StaticResource font_size}" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="btn" TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource btn_text_color}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="BackgroundColor" Value="{StaticResource theme_color}" />
+                <Setter Property="FontSize" Value="{StaticResource font_size}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+    <ContentPage.Content>
+        <Grid RowSpacing="5"
+              Padding="20,5,20,5">
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ScrollView Grid.Row="0" 
+                        VerticalScrollBarVisibility="Never">
+                <Grid RowSpacing="10" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="0"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1" 
+                              HorizontalOptions="CenterAndExpand" 
+                              VerticalOptions="CenterAndExpand" >
+                            <Frame HorizontalOptions="CenterAndExpand" 
+                                   VerticalOptions="CenterAndExpand" 
+                                   CornerRadius="60"
+                                   Padding="0" 
+                                   IsClippedToBounds="True">
+                                <Image x:Name="img_user" 
+                                       Aspect="Fill" 
+                                       HorizontalOptions="CenterAndExpand"
+                                       VerticalOptions="CenterAndExpand">
+                                    <Image.Source>
+                                        <FileImageSource File="{Binding user_profile_pic,Mode=TwoWay}" />
+                                    </Image.Source>
+                                </Image>
+                            </Frame>
+                            <Frame CornerRadius="15" 
+                                   Padding="0" 
+                                   HasShadow="True" 
+                                   TranslationX="0" 
+                                   HorizontalOptions="EndAndExpand" 
+                                   VerticalOptions="EndAndExpand">
+                                <Label Text="&#xF0417;"
+                                       FontFamily="{DynamicResource Material}"
+                                       FontSize="30" 
+                                       TextColor="{StaticResource theme_color}">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding ProfileCommand}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Frame>
+                            <!--<ImageButton Source="ic_add" HeightRequest="40" WidthRequest="40" TranslationX="7" CornerRadius="20"
+                                         TranslationY="7" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"
+                                         BackgroundColor="#fff" Command="{Binding ProfileCommand}" />-->
+                        </Grid>
+                    </Grid>
+                    
+                    <Frame Grid.Row="2" 
+                           Style="{StaticResource frame}">
+                        <local:CustomEntry x:Name="txtFirstName" 
+                                           Text="{Binding first_name}" 
+                                           Placeholder="First name" 
+                                           Style="{StaticResource ent}"/>
+                    </Frame>
+                    
+                    <Frame Grid.Row="3" 
+                           Style="{StaticResource frame}">
+                        <local:CustomEntry x:Name="txtLastName"
+                                           Text="{Binding last_name}" 
+                                           Placeholder="Last name" 
+                                           Style="{StaticResource ent}"/>
+                    </Frame>
+                    
+                    <Frame Grid.Row="4" 
+                           Style="{StaticResource frame}">
+                        <local:CustomEntry Text="{Binding email}" 
+                                           Placeholder="Email" 
+                                           Style="{StaticResource ent}" 
+                                           Keyboard="Email"
+                                           ClassId="Registration">
+                            <Entry.Behaviors>
+                                <behavior:EmailValidatorBehavior/>
+                            </Entry.Behaviors>
+                        </local:CustomEntry>
+
+                    </Frame>
+                    
+                    <Frame Grid.Row="5" 
+                           Style="{StaticResource frame}">
+                        <local:CustomEntry Text="{Binding mobile}" 
+                                           Placeholder="Mobile number" 
+                                           MaxLength="10" 
+                                           Style="{StaticResource ent}" 
+                                           Keyboard="Numeric"/>
+                    </Frame>
+
+                    <Frame Grid.Row="6" 
+                           Style="{StaticResource frame}">
+                        <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                            <local:CustomEntry Text="{Binding password}"
+                                               Placeholder="Password" 
+                                               HorizontalOptions="FillAndExpand" 
+                                               IsPassword="{Binding is_password}" 
+                                               Style="{StaticResource ent}"
+                                               ClassId="Registration">
+                                <Entry.Behaviors>
+                                    <behavior:PasswordValidationBehavior />
+                                </Entry.Behaviors>
+                            </local:CustomEntry>
+                            <Label Text="{Binding password_image}" FontSize="27"
+                                   TextColor="{StaticResource theme_color}"
+                                   FontFamily="{DynamicResource Material}"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ShowHidePasswordCommand}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame Grid.Row="7" 
+                           Style="{StaticResource frame}">
+                        <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                            <local:CustomEntry Text="{Binding confirm_password}"
+                                               Placeholder="Confirm Password" 
+                                               HorizontalOptions="FillAndExpand" 
+                                               IsPassword="{Binding is_confirm_password}" 
+                                               Style="{StaticResource ent}"
+                                               ClassId="Registration">
+                                <Entry.Behaviors>
+                                    <behavior:PasswordValidationBehavior />
+                                </Entry.Behaviors>
+                            </local:CustomEntry>
+                            <Label Text="{Binding confirm_password_image}" FontSize="27"
+                                   TextColor="{StaticResource theme_color}"
+                                   FontFamily="{DynamicResource Material}"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ShowHideConfirmPasswordCommand}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame Grid.Row="8" Style="{StaticResource frame}" HeightRequest="46" IsVisible="False">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1.5"/>
+                                <ColumnDefinition>
+                                    <ColumnDefinition.Width>
+                                        <OnIdiom x:TypeArguments="GridLength" Tablet="40" Phone="35" />
+                                    </ColumnDefinition.Width>
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="txt_segment"
+                                   Text="2W" 
+                                   Style="{StaticResource lbl}"
+                                   Margin="5,0" 
+                                   VerticalTextAlignment="Center"
+                                   TextColor="{Binding Source={x:Reference txt_segment},Path=Text,Converter={StaticResource color}}" />
+                            <BoxView Grid.Column="1" 
+                                     BackgroundColor="{StaticResource theme_color}" IsVisible="False"/>
+                            <Label Grid.Column="2" 
+                                   Text="&#xF035D;" 
+                                   TextColor="{StaticResource theme_color}"
+                                   HorizontalTextAlignment="Center" 
+                                   VerticalTextAlignment="Center" 
+                                   IsVisible="False">
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Tablet="50" Phone="40"/>
+                                </Label.FontSize>
+                            </Label>
+                            <!--<Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SegmentCommand}"/>
+                            </Grid.GestureRecognizers>-->
+                        </Grid>
+                    </Frame>
+
+                    <Frame Grid.Row="8" Style="{StaticResource frame}" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1.5"/>
+                                <ColumnDefinition>
+                                    <ColumnDefinition.Width>
+                                        <OnIdiom x:TypeArguments="GridLength" Tablet="40" Phone="35" />
+                                    </ColumnDefinition.Width>
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="txt_country"
+                                   Text="{Binding country}" 
+                                   Style="{StaticResource lbl}"
+                                   Margin="5,0" 
+                                   TextColor="{Binding Source={x:Reference txt_country},Path=Text,Converter={StaticResource color}}" 
+                                   VerticalTextAlignment="Center"/>
+                            <BoxView Grid.Column="1" 
+                                     BackgroundColor="{StaticResource theme_color}"/>
+                            <Label Grid.Column="2" 
+                                   Text="&#xF035D;"
+                                   FontFamily="{DynamicResource Material}"
+                                   TextColor="{StaticResource theme_color}"
+                                   HorizontalTextAlignment="Center" 
+                                   VerticalTextAlignment="Center" >
+                                <Label.FontSize>
+                                    <OnIdiom x:TypeArguments="x:Double" Tablet="50" Phone="40"/>
+                                </Label.FontSize>
+                            </Label>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CountryCommand}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+
+                    <Frame Grid.Row="9" 
+                           Style="{StaticResource frame}">
+                        <local:CustomEntry Text="{Binding pin_code}" 
+                                           Placeholder="Pin code"  
+                                           Style="{StaticResource ent}"/>
+                    </Frame>
+
+                    <!--<Grid Grid.Row="9" ColumnSpacing="6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition>
+                                <ColumnDefinition.Width>
+                                    <OnIdiom x:TypeArguments="GridLength" Tablet="{StaticResource control_height_on_tablet}" Phone="{StaticResource control_height_on_phone}"/>
+                                </ColumnDefinition.Width>
+                            </ColumnDefinition>
+                        </Grid.ColumnDefinitions>-->
+                    <!--<Frame Grid.Row="8" Style="{StaticResource frame}">
+                        <local:CustomEntry Text="{Binding workshop_id}" Placeholder="Enter using workshop id" Style="{StaticResource ent}"/>
+                    </Frame>-->
+                    <Grid Grid.Row="10" ColumnSpacing="6" IsVisible="False">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition>
+                                <ColumnDefinition.Width>
+                                    <OnIdiom x:TypeArguments="GridLength" Tablet="{StaticResource control_height_on_tablet}" Phone="{StaticResource control_height_on_phone}"/>
+                                </ColumnDefinition.Width>
+                            </ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Frame Style="{StaticResource frame}">
+                            <Grid ColumnSpacing="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="1.5"/>
+                                    <ColumnDefinition>
+                                        <ColumnDefinition.Width>
+                                            <OnIdiom x:TypeArguments="GridLength" Tablet="40" Phone="35" />
+                                        </ColumnDefinition.Width>
+                                    </ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label x:Name="txt_rsagent_id" 
+                                   Text="{Binding workshop_id}" 
+                                   Style="{StaticResource lbl}" 
+                                   TextColor="{Binding workshop_text_color,Mode=TwoWay}"/>
+                                <BoxView Grid.Column="1" 
+                                     BackgroundColor="{StaticResource theme_color}"/>
+                                <Label Grid.Column="2" 
+                                   Text="&#xF035D;" 
+                                   TextColor="{StaticResource theme_color}"
+                                   HorizontalTextAlignment="Center" 
+                                   VerticalTextAlignment="Center" >
+                                    <Label.FontSize>
+                                        <OnIdiom x:TypeArguments="x:Double" Tablet="50" Phone="40"/>
+                                    </Label.FontSize>
+                                </Label>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding RSAgentCommand}"/>
+                                </Grid.GestureRecognizers>
+                            </Grid>
+                        </Frame>
+                        <ImageButton Grid.Column="1" BackgroundColor="{StaticResource theme_color}" HorizontalOptions="CenterAndExpand" 
+                                 Command="{Binding NewRSAgentCommand}" CornerRadius="35" 
+                                 BorderWidth="2" BorderColor="#FFF">
+                            <ImageButton.Source>
+                                <FontImageSource Glyph="&#xF0417;" 
+                                                 Color="#FFF" Size="55" />
+                            </ImageButton.Source>
+                        </ImageButton>
+                    </Grid>
+                </Grid>
+            </ScrollView>
+            <Button Grid.Row="1" 
+                    Text="Submit" 
+                    Style="{StaticResource btn}" 
+                    Command="{Binding SubmitCommand}"/>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

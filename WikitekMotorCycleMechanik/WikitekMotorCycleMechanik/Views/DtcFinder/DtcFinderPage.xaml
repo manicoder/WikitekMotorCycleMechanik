@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.DtcFinder.DtcFinderPage"
+             xmlns:local="clr-namespace:WikitekMotorCycleMechanik.CustomControls"
+             BackgroundColor="{StaticResource page_bg_color}"
+             Title="DTC Finder">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="0"
+                   Margin="10"
+                   Style="{StaticResource frame}">
+                <local:CustomEntry Text="{Binding txtSearch}" 
+                                   Placeholder="Enter code/description..."
+                                   Style="{StaticResource ent}"/>
+            </Frame>
+            <ListView Grid.Row="1" 
+                      ItemsSource="{Binding dtcList}" 
+                      HasUnevenRows="True" 
+                      SeparatorVisibility="None" 
+                      VerticalScrollBarVisibility="Never" 
+                      VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame HasShadow="True" Margin="0,5,0,5" Padding="15">
+                                <Grid ColumnSpacing="15">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0"
+                                           Text="{Binding code}" 
+                                           Style="{StaticResource lbl}"
+                                           VerticalTextAlignment="Center"
+                                           FontAttributes="Bold"/>
+
+                                    <Label Grid.Column="1"
+                                           Text="{Binding description}" 
+                                           Style="{StaticResource lbl}"
+                                           VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

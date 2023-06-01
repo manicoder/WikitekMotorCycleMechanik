@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.DeviceList.DongleListPage"
+             Title="Dongle List"
+             BackgroundColor="{StaticResource page_bg_color}"
+             x:Name="page">
+    <NavigationPage.TitleView>
+        <Grid ColumnDefinitions="*,45,5">
+            <Label Grid.Column="0"
+                   Text="Dongle List"
+                   FontSize="16" 
+                   TextColor="#FFF" 
+                   FontAttributes="Bold"
+                   VerticalTextAlignment="Center"/>
+            <!--<ImageButton Grid.Column="1" 
+                         Source="ic_refresh"
+                         BackgroundColor="{StaticResource theme_color}" 
+                         CornerRadius="5" 
+                         Padding="5"
+                         Command="{Binding DisconnectedCommand}"
+                         IsEnabled="{Binding refresh_button_enable}"
+                         CommandParameter="{Binding .}"/>-->
+            <ImageButton Grid.Column="1" 
+                         Source="ic_refresh"
+                         BackgroundColor="{StaticResource theme_color}" 
+                         CornerRadius="5" 
+                         Padding="5"
+                         Command="{Binding RefreshCommand}"
+                         IsEnabled="{Binding refresh_button_enable}"
+                         CommandParameter="{Binding .}"/>
+
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <Grid>
+            <CollectionView ItemsSource="{Binding bt_list,Mode=TwoWay}" Margin="10">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="5" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Frame HasShadow="True" Margin="1" Padding="10,5,10,5" BorderColor="LightSteelBlue">
+                                <Grid RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="25"/>
+                                        <RowDefinition Height="25"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" 
+                                       Grid.Column="0" 
+                                       Text="{Binding mac_address}" 
+                                       Style="{StaticResource lbl}"/>
+                                    <Label Grid.Row="1" 
+                                       Grid.Column="0" 
+                                       Text="{Binding name}" 
+                                       Style="{StaticResource lbl}"/>
+                                    <ImageButton Grid.Row="0" 
+                                             Grid.Column="1" 
+                                             Grid.RowSpan="2" 
+                                             BackgroundColor="{StaticResource theme_color}" 
+                                             Margin="1"
+                                             Padding="3"
+                                             CornerRadius="23" 
+                                             Command="{Binding Source={x:Reference page}, Path=BindingContext.ConnectCommand}"
+                                             CommandParameter="{Binding .}">
+                                        <ImageButton.Source>
+                                            <FontImageSource FontFamily="{DynamicResource Material}" 
+                                                         Glyph="&#xF0339;" 
+                                                         Color="#FFF">
+                                                <FontImageSource.Size>
+                                                    <OnIdiom x:TypeArguments="x:Double" Tablet="47" Phone="45"/>
+                                                </FontImageSource.Size>
+                                            </FontImageSource>
+                                        </ImageButton.Source>
+                                    </ImageButton>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Grid IsVisible="{Binding protocol_view_visible}">
+                <BoxView BackgroundColor="Black" Opacity=".5"/>
+                <Grid RowDefinitions="40,Auto" 
+                      RowSpacing="0"
+                      BackgroundColor="#FFF" 
+                      Margin="60,0,60,0" 
+                      VerticalOptions="Center">
+                    <Grid BackgroundColor="{StaticResource theme_color}">
+                        <Label Text="Available Protocol"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="#FFF" 
+                               HorizontalTextAlignment="Center" 
+                               VerticalTextAlignment="Center"/>
+                    </Grid>
+
+                    <Label Grid.Row="1" 
+                           Text="{Binding available_protocol}" 
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           Margin="15" />
+                </Grid>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ProtocolViewCommand}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+            <Grid IsVisible="{Binding loader_View_visible}" HeightRequest="60" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
+                <StackLayout VerticalOptions="CenterAndExpand" 
+                             HorizontalOptions="FillAndExpand"
+                             Orientation="Horizontal">
+                    <ActivityIndicator IsVisible="{Binding loader_visible}"
+                                       IsRunning="{Binding loader_visible}"
+                                       Color="{StaticResource theme_color}"
+                                       HorizontalOptions="EndAndExpand"/>
+                    <Label Text="{Binding msg}"
+                           HorizontalTextAlignment="Center"
+                           VerticalTextAlignment="Center"
+                           FontSize="18"
+                           TextColor="#000"
+                           FontAttributes="Bold"
+                           HorizontalOptions="StartAndExpand"/>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

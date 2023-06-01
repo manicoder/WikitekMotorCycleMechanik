@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.Colleborates.ColleboratePage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:temp="clr-namespace:WikitekMotorCycleMechanik.template"
+             BackgroundColor="White">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="VideoTemp">
+                <ViewCell>
+                    <Grid Margin="10,5,10,5" BackgroundColor="#F1F1F1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <ImageButton Grid.Column="0"
+                                     Source="ic_user.jpg"
+                                     HorizontalOptions="Start"
+                                     VerticalOptions="Start"
+                                     CornerRadius="40"
+                                     Margin="5"
+                                     Aspect="Fill"
+                                     HeightRequest="60"/>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="230"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="{Binding comment_list_height}"/>
+                            </Grid.RowDefinitions>
+                            <Label Text="{Binding name}" 
+                                   FontSize="25"/>
+                            <xct:MediaElement Grid.Row="1"
+                                              Source="{Binding video}"
+                                              AutoPlay="False"
+                                              ShowsPlaybackControls="True"
+                                              VerticalOptions="FillAndExpand"/>
+                            <Grid Grid.Row="2" 
+                                  ColumnSpacing="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" 
+                                      ColumnSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0"
+                                       Source="{Binding img_like}"
+                                       Margin="3">
+                                        <!--<Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="LikeDislikeTapped"/>
+                                        </Image.GestureRecognizers>-->
+                                    </Image>
+                                    <Label Grid.Column="1" 
+                                       Text="{Binding like_count}"
+                                       TextColor="#8C8D8D"
+                                       VerticalTextAlignment="Center"/>
+                                </Grid>
+                                <Grid Grid.Column="1" 
+                                      ColumnSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0"
+                                           Source="ic_comm.png"
+                                           Margin="3">
+                                        <!--<Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="CommentTapped"/>
+                                        </Image.GestureRecognizers>-->
+                                    </Image>
+                                    <Label Grid.Column="1" 
+                                       Text="{Binding comment_count}"
+                                       TextColor="#8C8D8D"
+                                       VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Row="3">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="55"/>
+                                </Grid.RowDefinitions>
+                                <ScrollView Grid.Row="0">
+                                    <StackLayout BindableLayout.ItemsSource="{Binding comment_list}"
+                                         Orientation="Vertical"
+                                         IsVisible="True" 
+                                         BackgroundColor="#eee">
+                                        <BindableLayout.ItemTemplate>
+                                            <DataTemplate>
+                                                <Label Text="{Binding comment}"
+                                           TextColor="#000"/>
+                                            </DataTemplate>
+                                        </BindableLayout.ItemTemplate>
+                                    </StackLayout>
+                                </ScrollView>
+                                <Entry Grid.Row="1" BackgroundColor="#ccc"/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="ImageTemp">
+                <ViewCell>
+                    <Grid Margin="10,5,10,5" BackgroundColor="#F1F1F1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <ImageButton Grid.Column="0"
+                                     Source="ic_user.jpg"
+                                     HorizontalOptions="Start"
+                                     VerticalOptions="Start"
+                                     CornerRadius="40"
+                                     Margin="5"
+                                     Aspect="Fill"
+                                     HeightRequest="60"/>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="230"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="{Binding comment_list_height}"/>
+                            </Grid.RowDefinitions>
+                            <Label Text="{Binding name}" 
+                           FontSize="25"/>
+                            <Image Grid.Row="1">
+                                <Image.Source>
+                                    <UriImageSource Uri="{Binding image}"/>
+                                </Image.Source>
+                            </Image>
+                            <Grid Grid.Row="2" 
+                                  ColumnSpacing="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" ColumnSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0"
+                                       Source="{Binding img_like}"
+                                       Margin="3"
+                                       Aspect="Fill">
+                                        <!--<Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="LikeDislikeTapped"/>
+                                        </Image.GestureRecognizers>-->
+                                    </Image>
+                                    <Label Grid.Column="1" Text="{Binding like_count}"
+                                       TextColor="#8C8D8D"
+                                       VerticalTextAlignment="Center"/>
+                                </Grid>
+                                <Grid Grid.Column="1" 
+                                      ColumnSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0"
+                                           Source="ic_comm.png"
+                                           Margin="3">
+                                        <!--<Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="CommentTapped"/>
+                                        </Image.GestureRecognizers>-->
+                                    </Image>
+                                    <Label Grid.Column="1" 
+                                       Text="{Binding comment_count}"
+                                       TextColor="#8C8D8D"
+                                       VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Row="3">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="55"/>
+                                </Grid.RowDefinitions>
+                                <ScrollView Grid.Row="0">
+                                    <StackLayout BindableLayout.ItemsSource="{Binding comment_list}"
+                                         Orientation="Vertical"
+                                         IsVisible="True" 
+                                         BackgroundColor="#eee">
+                                        <BindableLayout.ItemTemplate>
+                                            <DataTemplate>
+                                                <Label Text="{Binding comment}"
+                                           TextColor="#000"/>
+                                            </DataTemplate>
+                                        </BindableLayout.ItemTemplate>
+                                    </StackLayout>
+                                </ScrollView>
+                                <Entry Grid.Row="1" BackgroundColor="#ccc"/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="TextTemp">
+                <ViewCell>
+                    <Grid Margin="10,5,10,5" BackgroundColor="#F1F1F1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <ImageButton Grid.Column="0"
+                                     Source="ic_user_t.jpg"
+                                     HorizontalOptions="Start"
+                                     VerticalOptions="Start"
+                                     CornerRadius="40"
+                                     Margin="5"
+                                     Aspect="Fill"
+                                     HeightRequest="60"/>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="{Binding comment_list_height}"/>
+                            </Grid.RowDefinitions>
+                            <Label Text="{Binding name}" 
+                                   FontSize="25"/>
+                            <Grid Grid.Row="1" 
+                                  ColumnSpacing="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" ColumnSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0"
+                                       Source="{Binding img_like}"
+                                       Margin="3">
+                                        <!--<Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="LikeDislikeTapped"/>
+                                        </Image.GestureRecognizers>-->
+                                    </Image>
+                                    <Label Grid.Column="1" Text="{Binding like_count}"
+                                       TextColor="#8C8D8D"
+                                       VerticalTextAlignment="Center"/>
+                                </Grid>
+                                <Grid Grid.Column="1" 
+                                      ColumnSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0"
+                                           Source="ic_comm.png"
+                                           Margin="3">
+                                        <!--<Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="CommentTapped"/>
+                                        </Image.GestureRecognizers>-->
+                                    </Image>
+                                    <Label Grid.Column="1" 
+                                       Text="{Binding comment_count}"
+                                       TextColor="#8C8D8D"
+                                       VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="55"/>
+                                </Grid.RowDefinitions>
+                                <ScrollView Grid.Row="0">
+                                    <StackLayout BindableLayout.ItemsSource="{Binding comment_list}"
+                                         Orientation="Vertical"
+                                         IsVisible="True" 
+                                         BackgroundColor="#eee">
+                                        <BindableLayout.ItemTemplate>
+                                            <DataTemplate>
+                                                <Label Text="{Binding comment}"
+                                           TextColor="#000"/>
+                                            </DataTemplate>
+                                        </BindableLayout.ItemTemplate>
+                                    </StackLayout>
+                                </ScrollView>
+                                <Entry Grid.Row="1" BackgroundColor="#ccc"/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+
+            <temp:TwitDataTemplateSelector x:Key="TweetTemplateSelector"
+                             VideoTemplate="{StaticResource VideoTemp}"
+                             ImageTemplate="{StaticResource ImageTemp}"
+                             TextTemplate="{StaticResource TextTemp}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid Padding="10">
+            <ListView x:Name="listView" 
+                      ItemsSource="{Binding twit_list}" 
+                      ItemTemplate="{StaticResource TweetTemplateSelector}" 
+                      HasUnevenRows="True"
+                      VerticalOptions="FillAndExpand"
+                      SeparatorVisibility="None"/>
+            <ImageButton Source="ic_add.png"
+                         CornerRadius="27"
+                         Padding="5"
+                         BackgroundColor="{StaticResource theme_color}"
+                         HeightRequest="55"
+                         HorizontalOptions="End"
+                         VerticalOptions="End"
+                         Command="{Binding AddCollCommand}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

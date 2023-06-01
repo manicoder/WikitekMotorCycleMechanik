@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WikitekMotorCycleMechanik.Views.Login.LoginPage"
+             xmlns:local="clr-namespace:WikitekMotorCycleMechanik.CustomControls"
+             xmlns:behavior="clr-namespace:WikitekMotorCycleMechanik.Behaviors" 
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource page_bg_color}">
+    <ContentPage.Content>
+        <Grid RowDefinitions="35*,45*,10*,10*" Padding="10,30,10,0" RowSpacing="35">
+            <Grid Grid.Row="0" BackgroundColor="Red" IsVisible="False"/>
+            <Image Grid.Row="0" 
+                   Source="ic_logo.PNG" 
+                   Margin="0"
+                   VerticalOptions="Center"/>
+            <Grid Grid.Row="1" BackgroundColor="Red" IsVisible="False"/>
+            <Grid Grid.Row="1"  
+                  RowDefinitions="Auto,Auto,10,Auto,Auto,Auto"
+                  Padding="25,0,25,0" 
+                  RowSpacing="8" 
+                  VerticalOptions="Start">
+                
+                <Frame Grid.Row="0" 
+                       x:Name="frme" 
+                       Style="{StaticResource frame}" >
+                    <StackLayout VerticalOptions="FillAndExpand" 
+                                 Orientation="Horizontal">
+                        <Label Grid.Column="1" 
+                               Text="&#xF0013;" 
+                               FontFamily="{DynamicResource Material}"
+                               FontSize="28" 
+                               TextColor="{StaticResource theme_color}" 
+                               HorizontalTextAlignment="End"
+                               VerticalTextAlignment="Center"/>
+                        <local:CustomEntry Text="{Binding email}" 
+                                           Placeholder="Enter Registered Email" 
+                                           Style="{StaticResource ent}"
+                                           MaxLength="{Binding user_name_lenght}">
+                            <Entry.Behaviors>
+                                <behavior:EmailValidatorBehavior/>
+                            </Entry.Behaviors>
+                        </local:CustomEntry>
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Row="1" 
+                       Style="{StaticResource frame}">
+                    <StackLayout VerticalOptions="FillAndExpand" 
+                                 Orientation="Horizontal">
+                        <Label Grid.Column="1" 
+                               Text="&#xF0341;"
+                               FontFamily="{DynamicResource Material}" 
+                               FontSize="26" 
+                               TextColor="{StaticResource theme_color}" 
+                               HorizontalTextAlignment="End"
+                               VerticalTextAlignment="Center"/>
+                        <local:CustomEntry Text="{Binding password}" Placeholder="Password" 
+                                           HorizontalOptions="FillAndExpand" 
+                                           IsPassword="{Binding is_password}" 
+                                           Style="{StaticResource ent}">
+                            <Entry.Behaviors>
+                                <behavior:PasswordValidationBehavior/>
+                            </Entry.Behaviors>
+                        </local:CustomEntry>
+                        <Label Text="{Binding password_image}" 
+                               FontSize="27" 
+                               FontFamily="{DynamicResource Material}"
+                               TextColor="{StaticResource theme_color}" 
+                               HorizontalTextAlignment="End"
+                               VerticalTextAlignment="Center" 
+                               IsVisible="{Binding password_image_visible}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding IsPasswordCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                </Frame>
+                <Button Grid.Row="3" 
+                       Text="Login" 
+                       Style="{StaticResource btn}" 
+                       Command="{Binding LoginCommand}" />
+                <Label Grid.Row="4" 
+                       Style="{StaticResource lbl}" 
+                       Margin="0,5,0,0"
+                       HorizontalTextAlignment="Center" 
+                       VerticalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Don't have an account? " />
+                            <Span Text="Create" 
+                                  FontAttributes="Bold" 
+                                  TextColor="{StaticResource theme_color}" >
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SingUpCommand}" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Grid.Row="5" 
+                       Style="{StaticResource lbl}" 
+                       Margin="0,0,0,0"
+                       HorizontalTextAlignment="Center" 
+                       VerticalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Forgot " 
+                                  TextColor="Gray"/>
+                            <Span Text="Password?" 
+                                  FontAttributes="Bold" 
+                                  TextColor="{StaticResource theme_color}" >
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" />
+                                </Span.GestureRecognizers>
+                            </Span>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Grid>
+            <Grid Grid.Row="2" BackgroundColor="Red" IsVisible="False"/>
+            <Image Grid.Row="2" 
+                   Source="ic_wiki.PNG" 
+                   HorizontalOptions="CenterAndExpand"
+                   HeightRequest="37" 
+                   VerticalOptions="End"/>
+            <Grid Grid.Row="3" BackgroundColor="Red" IsVisible="False"/>
+            <Image Grid.Row="3" 
+                   Source="ic_powered_by.PNG" 
+                   HorizontalOptions="CenterAndExpand"
+                   HeightRequest="40" 
+                   VerticalOptions="End"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

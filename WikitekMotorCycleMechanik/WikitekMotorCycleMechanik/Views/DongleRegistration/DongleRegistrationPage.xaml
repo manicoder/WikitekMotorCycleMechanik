@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.DongleRegistration.DongleRegistrationPage"
+             BackgroundColor="{StaticResource page_bg_color}">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid RowSpacing="20" Padding="10,20,10,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Text="{Binding header}" Style="{StaticResource lbl}" 
+                           FontSize="17" VerticalTextAlignment="End"/>
+                <Image Grid.Row="1" Source="{Binding image}"/>
+                <Label Grid.Row="2" Text="Have you purchased your dongle yet ?" Style="{StaticResource lbl}" 
+                           FontSize="17" VerticalTextAlignment="End"/>
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Text="NO" Style="{StaticResource btn}" Command="{Binding NoCommand}"/>
+                    <Button Grid.Column="1" Text="YES" Style="{StaticResource btn}" Command="{Binding YesCommand}"/>
+                </Grid>
+                <Image Grid.Row="5" Source="location" IsVisible="{Binding visible_done_button}"/>
+                <Label Grid.Row="6" Text="Ensure that you have plugged the dongle in the OBD slot of the vehicle and the LED on the dongle is glowing" Style="{StaticResource lbl}" 
+                           FontSize="17" VerticalTextAlignment="End" IsVisible="{Binding visible_done_button}"/>
+                <Button Grid.Row="7" Text="Done" Style="{StaticResource btn}" Command="{Binding DoneCommand}" WidthRequest="160"
+                    HorizontalOptions="CenterAndExpand" IsVisible="{Binding visible_done_button}"/>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

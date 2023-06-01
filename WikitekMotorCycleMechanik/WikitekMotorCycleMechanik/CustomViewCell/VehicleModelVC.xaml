@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.CustomViewCell.VehicleModelVC"
+      x:Name="page">
+    <Frame HasShadow="True" Margin="1" Padding="5">
+        <Grid RowSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="{Binding selection_item_height}"/>
+                <RowDefinition Height="{Binding selection_item_height}"/>
+                <RowDefinition Height="{Binding space_height}"/>
+                <RowDefinition Height="{Binding button_height}"/>
+            </Grid.RowDefinitions>
+            <Image x:Name="txt_model_image" 
+                   Grid.RowSpan="4" 
+                   Source="{Binding model_file}" 
+                   VerticalOptions="CenterAndExpand"/>
+            <Label x:Name="txt_model_name" 
+                   Grid.Row="0" 
+                   Grid.Column="1" 
+                   Text="{Binding name}" 
+                   Style="{StaticResource lbl}" 
+                   HorizontalTextAlignment="Start"/>
+            <Label x:Name="txt_sub_model"
+                   Grid.Row="1" 
+                   Grid.Column="1" 
+                   Text="{Binding selected_sub_model.name,StringFormat='Sub Model : {0}'}" 
+                   Style="{StaticResource lbl}" 
+                   HorizontalTextAlignment="Start"/>
+            <Label x:Name="txt_model_year"
+                   Grid.Row="2" 
+                   Grid.Column="1" 
+                   Text="{Binding selected_model_year.model_year, StringFormat='Model Year : {0}'}"
+                   Style="{StaticResource lbl}" 
+                   HorizontalTextAlignment="Start"/>
+
+            <Button Grid.Row="4" Grid.Column="1" Text=" Submit" BackgroundColor="{StaticResource theme_color}" 
+                    Style="{StaticResource btn}" CornerRadius="3" FontSize="12" HorizontalOptions="StartAndExpand"
+                    Command="{Binding Source={x:Reference page}, Path=BindingContext.SubmitCommand}"
+                    CommandParameter="{Binding .}"/>
+        </Grid>
+        </Frame>
+        <Grid.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding Source={x:Reference page}, Path=BindingContext.ItemSelectionCommand}"
+                                  CommandParameter="{Binding .}"/>
+        </Grid.GestureRecognizers>
+</Grid>

@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.App">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="theme_color">#3e4095</Color>
+
+            <Color x:Key="light_theme_color">#d8d8e9</Color>
+
+            <Color x:Key="tab_unselect_color">#bbbbbb</Color>
+
+            <Color x:Key="page_bg_color">#fff</Color>
+
+            <Color x:Key="text_color">#555</Color>
+
+            <Color x:Key="placeholder_color">#bbb</Color>
+            
+
+            <x:Double x:Key="text_font_on_phone">14</x:Double>
+
+            <x:Double x:Key="text_font_on_tablet">15</x:Double>
+
+            <x:Int32 x:Key="corner_radius_on_phone">5</x:Int32>
+
+            <x:Int32 x:Key="corner_radius_on_tablet">5</x:Int32>
+
+            <x:Single x:Key="frame_corner_radius_on_phone">5</x:Single>
+
+            <x:Single x:Key="frame_corner_radius_on_tablet">5</x:Single>
+
+            <Color x:Key="btn_text_color">#FFF</Color>
+
+            <x:Double x:Key="control_height_on_phone">46</x:Double>
+
+            <x:Double x:Key="control_height_on_tablet">53</x:Double>
+
+            <x:String x:Key="User">&#xF0A67;</x:String>
+
+            <OnPlatform x:Key="Material" x:TypeArguments="x:String">
+                <!--<On Platform="iOS" Value="Material Design Icons" />-->
+                <On Platform="Android" Value="materialdesignicons-webfont.ttf#Material Design Icons" />
+            </OnPlatform>
+
+            <!--<Style x:Key="MaterialIcons" TargetType="{x:Type Label}">
+                <Setter Property="FontFamily" Value="{DynamicResource Material}" />
+            </Style>-->
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{DynamicResource theme_color}"></Setter>
+                <Setter Property="BarTextColor" Value="#fff"></Setter>
+            </Style>
+
+
+            <Style  x:Key="col_grid" TargetType="Grid">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#fcf4f5"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <Style x:Key="txt_tab" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource btn_text_color}" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+
+            <Style x:Key="frame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="BorderColor" Value="{DynamicResource theme_color}" />
+                <Setter Property="Padding" Value="15,2,15,2" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="CornerRadius">
+                    <Setter.Value>
+                        <OnIdiom x:TypeArguments="x:Single" 
+                                 Phone="{StaticResource frame_corner_radius_on_phone}" 
+                                 Tablet="{StaticResource frame_corner_radius_on_tablet}"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="HeightRequest">
+                    <Setter.Value>
+                        <OnIdiom x:TypeArguments="x:Double" 
+                                 Phone="{StaticResource control_height_on_phone}" 
+                                 Tablet="{StaticResource control_height_on_tablet}"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="editor" TargetType="Editor">
+                <Setter Property="PlaceholderColor" Value="{StaticResource placeholder_color}" />
+                <Setter Property="TextColor" Value="{StaticResource text_color}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize">
+                    <Setter.Value>
+                        <OnIdiom x:TypeArguments="x:Double" 
+                                 Phone="{StaticResource text_font_on_phone}" 
+                                 Tablet="{StaticResource text_font_on_tablet}"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="ent" TargetType="Entry">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource placeholder_color}" />
+                <Setter Property="TextColor" Value="{StaticResource text_color}" />
+                <Setter Property="FontSize">
+                    <Setter.Value>
+                        <OnIdiom x:TypeArguments="x:Double" 
+                                 Phone="{StaticResource text_font_on_phone}" 
+                                 Tablet="{StaticResource text_font_on_tablet}"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="lbl" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource text_color}" />
+                <Setter Property="FontSize">
+                    <Setter.Value>
+                        <OnIdiom x:TypeArguments="x:Double" 
+                                 Phone="{StaticResource text_font_on_phone}" 
+                                 Tablet="{StaticResource text_font_on_tablet}"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="btn" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{DynamicResource theme_color}" />
+                <Setter Property="TextColor" Value="{StaticResource btn_text_color}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="VerticalOptions" Value="EndAndExpand" />
+                <Setter Property="FontSize">
+                    <Setter.Value>
+                        <OnIdiom x:TypeArguments="x:Double" 
+                                 Phone="{StaticResource text_font_on_phone}" 
+                                 Tablet="{StaticResource text_font_on_tablet}"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="HeightRequest">
+                    <Setter.Value>
+                        <OnIdiom x:TypeArguments="x:Double" 
+                                 Phone="{StaticResource control_height_on_phone}" 
+                                 Tablet="{StaticResource control_height_on_tablet}"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="CornerRadius">
+                    <Setter.Value>
+                        <OnIdiom x:TypeArguments="x:Int32" 
+                                 Phone="{StaticResource corner_radius_on_phone}" 
+                                 Tablet="{StaticResource corner_radius_on_tablet}"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="check_box" TargetType="CheckBox">
+                <Setter Property="Scale">
+                    <Setter.Value>
+                        <OnIdiom x:TypeArguments ="x:Double" Phone = "1.2" Tablet = "1.4" Desktop="1.2"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Color" Value="{DynamicResource theme_color}" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+
+
+            <Style x:Key="GDentryStyle" TargetType="Entry">
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="FontSize" Value="13" />
+                <Setter Property="TextColor" Value="{StaticResource text_color}" />
+                <Setter Property="PlaceholderColor" Value="Gray" />
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+
+            <Style x:Key="CheckBoxStyle" TargetType="CheckBox">
+                <Setter Property="Scale">
+                    <Setter.Value>
+                        <OnIdiom x:TypeArguments ="x:Double" Phone = "1.2" Tablet = "1.4" Desktop="1.2"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Color" Value="{DynamicResource theme_color}" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

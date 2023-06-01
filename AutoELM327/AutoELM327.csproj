@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Android.UsbSerial">
+      <HintPath>..\Android.UsbSerial.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Android">
+      <HintPath>..\Mono.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

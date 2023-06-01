@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="WikitekMotorCycleMechanik.View.GdSection.ImageZoomingPage"
+             xmlns:behaviors="clr-namespace:WikitekMotorCycleMechanik.Behaviors"
+             xmlns:converter="clr-namespace:WikitekMotorCycleMechanik.Converters"
+             BackgroundColor="{StaticResource page_bg_color}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:ByteToImageFieldConverter x:Key="ByteToImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Grid.Row="1" Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0">
+            <behaviors:PinchToZoomContainers VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                <Image Source="{Binding gd_image,Converter={StaticResource ByteToImage}}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </behaviors:PinchToZoomContainers>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
