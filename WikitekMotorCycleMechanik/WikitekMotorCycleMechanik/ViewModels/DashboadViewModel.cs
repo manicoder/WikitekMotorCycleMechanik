@@ -235,7 +235,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
                     //bannerList = response.results.FirstOrDefault().marketplace_banner;
                     //HotPartList = response.results.FirstOrDefault().marketplace_hotproducts;
 
-                    Task.Run( async() =>
+                    Task.Run(async () =>
                     {
                         try
                         {
@@ -310,7 +310,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
                             }
                         });
 
-                        if(App.selectedSegment == "CV")
+                        if (App.selectedSegment == "CV")
                         {
                             if (!is24vPresent)
                             {
@@ -467,6 +467,29 @@ namespace WikitekMotorCycleMechanik.ViewModels
             }
         });
 
+        public ICommand VehicleManagementCommand => new Command(async (obj) =>
+        {
+            try
+            {
+                await this.page.Navigation.PushAsync(new Views.VechicleManagement.VehicleManagement());
+            }
+            catch (Exception ex)
+            {
+            }
+        });
+
+        public ICommand TechnicianManagementCommand => new Command(async (obj) =>
+        {
+            try
+            {
+                await this.page.Navigation.PushAsync(new Views.TechnicianManagement.TechnicianManagement());
+            }
+            catch (Exception ex)
+            {
+            }
+        });
+
+
         public ICommand SwitchUserCommand => new Command(async (obj) =>
         {
             try
@@ -580,7 +603,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
                             selected_hot_part = item.part_no;
                         }
                     }
-                    if(selected_hot_part.id != null)
+                    if (selected_hot_part.id != null)
                     {
                         await page.Navigation.PushAsync(new MasterDetailView(user) { Detail = new NavigationPage(new MarketPlaceDetailPage(selected_hot_part)) });
                     }
@@ -605,7 +628,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
                     await page.Navigation.PushAsync(new MasterDetailView(App.user) { Detail = new NavigationPage(new MarketPlacePage(null)) });
                 }
             }
-                
+
         });
         #endregion
 

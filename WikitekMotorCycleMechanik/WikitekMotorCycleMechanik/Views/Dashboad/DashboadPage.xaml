@@ -8,11 +8,17 @@
              Title="DASHBOARD"
              BackgroundColor="{StaticResource page_bg_color}">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="ic_setting_white.png"
+        <!--<ToolbarItem IconImageSource="ic_setting_white.png"
                      Order="Primary"
-                     Command="{Binding SettingCommand}"/>
-        <ToolbarItem IconImageSource="ic_switch_user"
-                     Order="Primary"
+                    />-->
+        <ToolbarItem  Text="Vehicle Mgmt"
+                     Order="Secondary"
+                     Command="{Binding VehicleManagementCommand}"/>
+        <ToolbarItem  Text="Technician Mgmt"
+                     Order="Secondary"
+                     Command="{Binding TechnicianManagementCommand}"/>
+        <ToolbarItem  Text="Profile"
+                     Order="Secondary"
                      Command="{Binding SwitchUserCommand}"/>
     </ContentPage.ToolbarItems>
 

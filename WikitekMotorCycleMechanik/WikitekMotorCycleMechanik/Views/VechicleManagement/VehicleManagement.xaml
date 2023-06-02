@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="WikitekMotorCycleMechanik.Views.VechicleManagement.VehicleManagement"
+             Title="Vehicle Management">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="{Binding toolbarImage}" Command="{Binding ToolbarImageCommand}"
+                     Order="Primary"
+                     />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid Padding="10,10,10,10">
+            <Label IsVisible="{Binding isshowMap}" Text="Map"></Label>
+            <CollectionView x:Name="vehicle_list" IsVisible="{Binding isshowList}" ItemsSource="{Binding my_vehicle_list}"
+                            SelectionMode="Single" 
+                            ItemSizingStrategy="MeasureAllItems" >
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Frame HasShadow="True" Margin="5" Padding="0">
+                                <Grid RowSpacing="0" Style="{StaticResource col_grid}"
+                                      ColumnSpacing="5"
+                                      BackgroundColor="{Binding bg_color}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="65"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!--<Image Grid.Column="0"
+                                               Source="{Binding vehicle_picture, Converter={StaticResource image_converter}}"
+                                               Margin="5" Aspect="AspectFit"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center"
+                                               HeightRequest="65"
+                                               WidthRequest="65"/>-->
+                                    <Grid Grid.Row="0" Grid.Column="1" 
+                                          RowSpacing="7" ColumnSpacing="8" VerticalOptions="CenterAndExpand"
+                                          Padding="0,5,0,5" 
+                                          RowDefinitions="*,Auto">
+                                        <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
+                                            <Label Grid.Column="0" 
+                                               Text="{Binding registration_id}" 
+                                               Style="{StaticResource lbl}" 
+                                               VerticalTextAlignment="Start"/>
+                                            <!--<ImageButton Grid.Column="1" 
+                                                         BackgroundColor="White"
+                                                         CornerRadius="20"
+                                                         HorizontalOptions="Center"
+                                                         VerticalOptions="Center"
+                                                         Command="{Binding Source={x:Reference page}, Path=BindingContext.EditVehicleBrandCommand}"
+                                                         CommandParameter="{Binding .}">
+                                                <ImageButton.Source>
+                                                    <FontImageSource FontFamily="{DynamicResource Material}" 
+                                                                     Glyph="&#xF096D;" 
+                                                                     Color="{StaticResource theme_color}" 
+                                                                     Size="25" />
+
+                                                </ImageButton.Source>
+                                            </ImageButton>-->
+                                        </Grid>
+                                        <Label Grid.Row="1" Style="{StaticResource lbl}" VerticalTextAlignment="Center">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{Binding registration_id,StringFormat='{0}_'}"/>
+                                                    <Span Text="{Binding status,StringFormat=' {0}_'}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                    </Grid>
+                                </Grid>
+                            </Frame>
+                            <!--<Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference vehicle_list}, Path=BindingContext.VehicleSelectionCommand}"
+                                                      CommandParameter="{Binding .}"/>
+                            </Grid.GestureRecognizers>-->
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <Label Text="No vehicles linked to you.&#10;Please add your vehicles." FontAttributes="Bold" FontSize="18"
+                               TextColor="{StaticResource text_color}" VerticalTextAlignment="Center"
+                               HorizontalTextAlignment="Center" />
+                    </Grid>
+                </CollectionView.EmptyView>
+            </CollectionView>
+
+            <Grid HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" HeightRequest="65" WidthRequest="65">
+                <Frame CornerRadius="33" Padding="-3" HasShadow="True" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                    <ImageButton BackgroundColor="White" Command="{Binding AddNewAssociateVehicleCommand}" >
+                        <ImageButton.Source>
+                            <FontImageSource FontFamily="{DynamicResource Material}" Glyph="&#xF0417;" 
+                                             Color="{StaticResource theme_color}" Size="65" />
+                        </ImageButton.Source>
+                    </ImageButton>
+                </Frame>
+                <!--<Frame CornerRadius="28" Padding="0" HasShadow="True">
+                    <Label Grid.Column="1" Text="&#xF0417;" FontFamily="{DynamicResource Material}" 
+                               TextColor="{StaticResource theme_color}" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand">
+                        <Label.FontSize>
+                            <OnIdiom x:TypeArguments="x:Double" Tablet="55" Phone="55"/>
+                        </Label.FontSize>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding AddNewAssociateVehicleCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Frame>-->
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:WikitekMotorCycleMechanik.CustomControls"
+             x:Class="WikitekMotorCycleMechanik.Views.AssignTechnicianVehicle.AssignTechnicianVehicle"
+             Title="Assign Technician">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="map.png"
+                     Order="Primary"
+                     />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid Padding="30,30,30,30" RowSpacing="18">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Padding="30,30,30,30" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Text="Reg No: xxx"></Label>
+                <Label Grid.Row="1" Text="VIN No: xxx"></Label>
+                <Label Grid.Row="2" Text="Owner: xxx"></Label>
+                <Label Grid.Row="3" Text="Run Hrs: xxx hrs / xxx hrs"></Label>
+                <Label Grid.Row="4" Text="Status: Associated"></Label>
+            </Grid>
+            <Frame Grid.Row="1" Style="{StaticResource frame}">
+                <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                    <local:CustomEntry x:Name="txtVehicleRegNo" Placeholder="Enter Vehicle Reg No"
+                                           MaxLength="1" Style="{StaticResource ent}" Keyboard="Text"/>
+                </StackLayout>
+            </Frame>
+            <Button Grid.Row="2" Text="Get OTP" Style="{StaticResource btn}" Command="{Binding OtpVerifyCommand}" />
+            <Grid Grid.Row="3" Padding="40,40,40,40">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource frame}">
+                    <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                        <local:CustomEntry x:Name="otp1" Text="{Binding otp1}"
+                                           MaxLength="1" Style="{StaticResource ent}" Keyboard="Numeric"/>
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Row="0" Grid.Column="1" Style="{StaticResource frame}">
+                    <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                        <local:CustomEntry x:Name="otp2" Text="{Binding otp2}" 
+                                           MaxLength="1" Style="{StaticResource ent}" Keyboard="Numeric"/>
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Row="0" Grid.Column="2" Style="{StaticResource frame}">
+                    <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                        <local:CustomEntry x:Name="otp3" Text="{Binding otp3}" 
+                                           MaxLength="1" Style="{StaticResource ent}" Keyboard="Numeric"/>
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Row="0" Grid.Column="3" Style="{StaticResource frame}">
+                    <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                        <local:CustomEntry x:Name="otp4" Text="{Binding otp4}" 
+                                           MaxLength="1" Style="{StaticResource ent}" Keyboard="Numeric"/>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+            <Button Grid.Row="4" Text="Send OTP" Style="{StaticResource btn}" Command="{Binding SendOTPCommand}" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

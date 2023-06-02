@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.AssociateVehicleDetail.AssociateVehicleDetail"
+             Title="Associate Vehicle Detail">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="map.png"
+                     Order="Primary"
+                     />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid Padding="30,30,30,30" RowSpacing="18">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Padding="30,30,30,30" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Text="Reg No: xxx"></Label>
+                <Label Grid.Row="1" Text="VIN No: xxx"></Label>
+                <Label Grid.Row="2" Text="Owner: xxx"></Label>
+                <Label Grid.Row="3" Text="Run Hrs: xxx hrs / xxx hrs"></Label>
+                <Label Grid.Row="4" Text="Status: Associated"></Label>
+            </Grid>
+            <Button Grid.Row="1" Text="Assign Technician" Style="{StaticResource btn}" Command="{Binding AssignTechnicianCommand}" />
+            <Button Grid.Row="2" Text="Diassociate" Style="{StaticResource btn}"  Command="{Binding DiassociateCommand}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

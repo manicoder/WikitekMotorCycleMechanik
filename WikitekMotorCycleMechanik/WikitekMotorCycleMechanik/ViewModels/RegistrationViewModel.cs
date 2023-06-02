@@ -218,6 +218,40 @@ namespace WikitekMotorCycleMechanik.ViewModels
             }
         }
 
+        private string _userType = "Select User Type";
+        public string userType
+        {
+            get => _userType;
+            set
+            {
+                _userType = value;
+
+                if (!string.IsNullOrEmpty(userType) && !userType.Contains("Select User Type"))
+                {
+                    //country_text_color = (Color)Application.Current.Resources["text_color"];
+                }
+
+                OnPropertyChanged("userType");
+            }
+        }
+
+        private string _vehiclesegment = "Select Vehicle Segment";
+        public string vehiclesegment
+        {
+            get => _vehiclesegment;
+            set
+            {
+                _vehiclesegment = value;
+
+                if (!string.IsNullOrEmpty(vehiclesegment) && !vehiclesegment.Contains("Select Vehicle Segment"))
+                {
+                    //country_text_color = (Color)Application.Current.Resources["text_color"];
+                }
+
+                OnPropertyChanged("vehiclesegment");
+            }
+        }
+
 
         //private Color _country_text_color = (Color)Application.Current.Resources["placeholder_color"];
         //public Color country_text_color
@@ -471,6 +505,26 @@ namespace WikitekMotorCycleMechanik.ViewModels
                 }
             });
 
+            SelectUserTypeCommand = new Command(async (obj) =>
+            {
+                using (UserDialogs.Instance.Loading("Loading...", null, null, true, MaskType.Black))
+                {
+                    await Task.Delay(200);
+                    StaticMethods.last_page = "registration";
+                    await Rg.Plugins.Popup.Services.PopupNavigation.PushAsync(new PopupPages.SelectUserTypePopupPage());
+                }
+            });
+
+            VehicleSegmentCommand = new Command(async (obj) =>
+            {
+                using (UserDialogs.Instance.Loading("Loading...", null, null, true, MaskType.Black))
+                {
+                    await Task.Delay(200);
+                    StaticMethods.last_page = "registration";
+                    await Rg.Plugins.Popup.Services.PopupNavigation.PushAsync(new PopupPages.SelectVehicleSegmentPopupPage());
+                }
+            });
+
             ShowHidePasswordCommand = new Command(async (obj) =>
             {
                 if (is_password)
@@ -719,12 +773,14 @@ namespace WikitekMotorCycleMechanik.ViewModels
         #region ICommands
         public ICommand ProfileCommand { get; set; }
         public ICommand CountryCommand { get; set; }
+        public ICommand SelectUserTypeCommand { get; set; }
         public ICommand RSAgentCommand { get; set; }
         public ICommand NewRSAgentCommand { get; set; }
         public ICommand SubmitCommand { get; set; }
         public ICommand SegmentCommand { get; set; }
         public ICommand ShowHidePasswordCommand { get; set; }
         public ICommand ShowHideConfirmPasswordCommand { get; set; }
+        public ICommand VehicleSegmentCommand { get; set; }
         #endregion
     }
 }
