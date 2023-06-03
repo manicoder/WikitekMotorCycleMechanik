@@ -553,6 +553,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
         {
             try
             {
+                
                 pack = obj as string;
                 switch (pack)
                 {

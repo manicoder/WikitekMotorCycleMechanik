@@ -11,7 +11,8 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid Padding="10,10,10,10">
-            <Label IsVisible="{Binding isshowMap}" Text="Map"></Label>
+            <!--<Label  Text="Map"></Label>-->
+            <maps:Map  x:Name="map" IsVisible="{Binding isshowMap}" />
             <CollectionView x:Name="vehicle_list" IsVisible="{Binding isshowList}" ItemsSource="{Binding my_vehicle_list}"
                             SelectionMode="Single" 
                             ItemSizingStrategy="MeasureAllItems" >

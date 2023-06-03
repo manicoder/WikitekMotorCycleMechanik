@@ -18,6 +18,40 @@ namespace WikitekMotorCycleMechanik.Models
         public string detail { get; set; }
         public HttpStatusCode status_code { get; set; }
     }
+    public class Vehicle : ViewModels.BaseViewModel
+    {
+        public string id { get; set; }
+        public string registration_id { get; set; }
+        public string vin { get; set; }
+        public Segment segment { get; set; }
+        //public Vehicle_Model vehicle_model { get; set; }
+        //public SubModel sub_model { get; set; }
+        //public ModelYear model_year { get; set; }
+        public object vehicle_type { get; set; }
+        public string picture { get; set; }
+        public string user { get; set; }
+        //public VehOem oem { get; set; }
+        public string vehicle_picture
+        {
+            get
+            {
+                return string.Format($"https://wikitek.io{picture}");
+            }
+        }
+        public List<object> dongle { get; set; }
+
+        private string _bg_color;
+        public string bg_color
+        {
+            get => _bg_color;
+            set
+            {
+                _bg_color = value;
+                OnPropertyChanged("bg_color");
+            }
+        }
+
+    }
 
     public class VehicleModelResult : BaseViewModel
     {

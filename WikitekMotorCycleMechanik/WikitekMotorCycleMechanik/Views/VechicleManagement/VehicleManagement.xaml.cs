@@ -25,14 +25,12 @@ namespace WikitekMotorCycleMechanik.Views.VechicleManagement
         {
             try
             {
-
-            
-            base.OnAppearing();
-            //var locator = CrossGeolocator.Current;
-            //var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(5));
-            //var currentPostion = new Position(position.Latitude, position.Longitude);
-            //MapSpan mapSpan = MapSpan.FromCenterAndRadius(currentPostion, Distance.FromKilometers(10));
-            //map.MoveToRegion(mapSpan);
+                base.OnAppearing();
+                var locator = CrossGeolocator.Current;
+                var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(5));
+                var currentPostion = new Position(position.Latitude, position.Longitude);
+                MapSpan mapSpan = MapSpan.FromCenterAndRadius(currentPostion, Distance.FromKilometers(10));
+                map.MoveToRegion(mapSpan);
             }
             catch (Exception ex)
             {
