@@ -35,6 +35,7 @@ namespace WikitekMotorCycleMechanik
         public static string user_type = string.Empty;
         public static string dongle_type = string.Empty;
         public static string dongle = string.Empty;
+        public static string Status = "Active";
         public static int? country_id;
         public static int submodel_id = 0;
         public static int model_id = 0;

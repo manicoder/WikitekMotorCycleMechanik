@@ -494,7 +494,9 @@ namespace WikitekMotorCycleMechanik.ViewModels
         {
             try
             {
-                await this.page.Navigation.PushAsync(new Views.UserType.UserTypePage());
+                //await this.page.Navigation.PushAsync(new Views.UserType.UserTypePage());
+
+                await this.page.Navigation.PushAsync(new Views.VehicleService.VehicleServicePage());
             }
             catch (Exception ex)
             {

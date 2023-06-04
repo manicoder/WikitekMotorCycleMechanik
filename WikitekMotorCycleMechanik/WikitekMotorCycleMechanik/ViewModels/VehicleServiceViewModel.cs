@@ -140,11 +140,20 @@ namespace WikitekMotorCycleMechanik.ViewModels
         #region ICommands
         public ICommand GoToJobcardDetailCommand => new Command(async (obj) =>
         {
-
             try
             {
                 selected_jobcard = (JobcardResult)obj;
-                //await page.Navigation.PushAsync(new Views.VehicleService.ServiceDetailPage(selected_jobcard));
+                await page.Navigation.PushAsync(new Views.RSTechnicianSection.RSTechnicianSection());
+                if (App.Status == "Active")
+                {
+                    App.Status = "DeActive";
+                    await page.Navigation.PushAsync(new Views.RSManagerSection.RSManagerSection());
+                }
+                else if (App.Status == "DeActive")
+                {
+                    App.Status = "Active";
+                    await page.Navigation.PushAsync(new Views.RSTechnicianSection.RSTechnicianSection());
+                }
             }
             catch (Exception ex)
             {

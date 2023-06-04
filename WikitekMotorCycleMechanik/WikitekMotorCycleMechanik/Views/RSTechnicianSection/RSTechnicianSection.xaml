@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="WikitekMotorCycleMechanik.Views.RSTechnicianSection.RSTechnicianSection"
+             Title="RS Techician Section">
+    <ContentPage.Content>
+        <Grid Padding="10,10,10,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <maps:Map  Grid.Row="0" x:Name="map"/>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="lblCustomerName" Grid.Row="0" Grid.Column="0" Text="Customer Name"></Label>
+                <Label x:Name="lblMobileNo" Grid.Row="1" Grid.Column="0" Text="Mobile No"></Label>
+
+                <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+                    <StackLayout>
+                        <Frame
+                            BackgroundColor="Transparent"
+                                            CornerRadius="25"
+                                            Padding="2"
+                                            HeightRequest="100"
+                                            WidthRequest="100"
+                                            >
+
+                            <Image
+                                                Source="phonecall.png"
+                                                HeightRequest="60"
+                                                WidthRequest="60"/>
+                        </Frame>
+                    </StackLayout>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

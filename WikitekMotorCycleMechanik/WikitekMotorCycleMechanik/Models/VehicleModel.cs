@@ -18,19 +18,44 @@ namespace WikitekMotorCycleMechanik.Models
         public string detail { get; set; }
         public HttpStatusCode status_code { get; set; }
     }
+    //public class Segment
+    //{
+    //    public int id { get; set; }
+    //    public string segment_name { get; set; }
+    //}
+    public class Vehicle_Model
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+    }
+    public class SubModel
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+    }
+    public class ModelYear
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+    }
+    public class VehOem
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+    }
     public class Vehicle : ViewModels.BaseViewModel
     {
         public string id { get; set; }
         public string registration_id { get; set; }
         public string vin { get; set; }
         public Segment segment { get; set; }
-        //public Vehicle_Model vehicle_model { get; set; }
-        //public SubModel sub_model { get; set; }
-        //public ModelYear model_year { get; set; }
+        public Vehicle_Model vehicle_model { get; set; }
+        public SubModel sub_model { get; set; }
+        public ModelYear model_year { get; set; }
         public object vehicle_type { get; set; }
         public string picture { get; set; }
         public string user { get; set; }
-        //public VehOem oem { get; set; }
+        public VehOem oem { get; set; }
         public string vehicle_picture
         {
             get
