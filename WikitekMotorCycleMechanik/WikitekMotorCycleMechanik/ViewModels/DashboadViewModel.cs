@@ -578,10 +578,10 @@ namespace WikitekMotorCycleMechanik.ViewModels
                         App.selectedPack = "OP";
                         break;
                 }
-
+                await this.page.Navigation.PushAsync(new Views.VehicleService.VehicleServicePage());
                 if (!string.IsNullOrEmpty(vehicle) && !string.IsNullOrEmpty(pack))
                 {
-                    submitMethod();
+                   // submitMethod();
                 }
             }
             catch (Exception ex)

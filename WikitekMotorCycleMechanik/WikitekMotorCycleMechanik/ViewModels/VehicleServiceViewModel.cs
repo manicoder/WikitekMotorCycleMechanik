@@ -143,16 +143,40 @@ namespace WikitekMotorCycleMechanik.ViewModels
             try
             {
                 selected_jobcard = (JobcardResult)obj;
-                if (App.Status == "Active")
-                {
-                    App.Status = "DeActive";
-                    await page.Navigation.PushAsync(new Views.RSManagerSection.RSManagerSection());
-                }
-                else if (App.Status == "DeActive")
-                {
-                    App.Status = "Active";
-                    await page.Navigation.PushAsync(new Views.RSTechnicianSection.RSTechnicianSection());
-                }
+                App.selected_jobcard = selected_jobcard;
+
+                /*
+                 STATUS_OPTIONS = (
+
+
+
+                            QuoteforTransport 
+                            ApprovedTransport' 
+                         Pickup 
+                         EntryCheck 
+                         QuoteForService 
+                         Service 
+                         ExitCheck 
+                         Drop' 
+                         ClosedApproved 
+                         ClosedDisapproved 
+                         ClosedByCustomer 
+                         AwaitClosurefromCustomer 
+ 
+ 
+ 
+                 */
+
+                //  if (App.Status == "Active")
+                //  {
+                App.Status = "DeActive";
+                await page.Navigation.PushAsync(new Views.RSManagerSection.RSManagerSection());
+                //   }
+                //   else if (App.Status == "DeActive")
+                //  {
+                //       App.Status = "Active";
+                //      await page.Navigation.PushAsync(new Views.RSTechnicianSection.RSTechnicianSection());
+                //   }
             }
             catch (Exception ex)
             {
@@ -161,7 +185,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
 
         public ICommand AddNewVehicleServiceCommand => new Command(async (obj) =>
         {
-           // await page.Navigation.PushAsync(new Views.CreateServiceTicket.CreateServiceTicketPage(selected_vehicle));
+            // await page.Navigation.PushAsync(new Views.CreateServiceTicket.CreateServiceTicketPage(selected_vehicle));
         });
         #endregion
     }

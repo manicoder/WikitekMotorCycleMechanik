@@ -19,7 +19,7 @@ using Xamarin.Forms.Xaml;
 namespace WikitekMotorCycleMechanik
 {
     public partial class App : Application
-    {   
+    {
         public static string base_url = "https://wikitek.io/api/v1/";//Original Server
         //public static string base_url = "http://128.199.17.43/api/v1/";//Test Server
         public static double ScreenHeight = 0;
@@ -66,9 +66,9 @@ namespace WikitekMotorCycleMechanik
 
         public static string selectedSegment = string.Empty;
         public static string selectedPack = string.Empty;
-        public static bool isFilter= false;
+        public static bool isFilter = false;
         public static string selectedBannerId = string.Empty;
-
+        public static JobcardResult selected_jobcard;
         public App()
         {
             Device.SetFlags(new string[] { "MediaElement_Experimentals" });
@@ -218,15 +218,15 @@ namespace WikitekMotorCycleMechanik
         {
             try
             {
-                
-                    is_global_method = false;
-                    Current.MainPage = new MasterDetailView(user)
-                    { Detail = new CustomNavigationPage(new VehicleDiagnosticsPage(user)) };
-                
-                   await Current.MainPage.DisplayAlert("Alert", "Dongle is disconnected", "Ok");
-                
 
-                }
+                is_global_method = false;
+                Current.MainPage = new MasterDetailView(user)
+                { Detail = new CustomNavigationPage(new VehicleDiagnosticsPage(user)) };
+
+                await Current.MainPage.DisplayAlert("Alert", "Dongle is disconnected", "Ok");
+
+
+            }
             catch (Exception ex)
             {
             }

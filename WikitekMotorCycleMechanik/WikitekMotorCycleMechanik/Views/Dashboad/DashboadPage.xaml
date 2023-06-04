@@ -17,9 +17,9 @@
         <ToolbarItem  Text="Technician Mgmt"
                      Order="Secondary"
                      Command="{Binding TechnicianManagementCommand}"/>
-        <ToolbarItem  Text="Profile"
+        <!--<ToolbarItem  Text="Profile"
                      Order="Secondary"
-                     Command="{Binding SwitchUserCommand}"/>
+                     Command="{Binding SwitchUserCommand}"/>-->
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
