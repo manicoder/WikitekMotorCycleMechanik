@@ -143,7 +143,6 @@ namespace WikitekMotorCycleMechanik.ViewModels
             try
             {
                 selected_jobcard = (JobcardResult)obj;
-                await page.Navigation.PushAsync(new Views.RSTechnicianSection.RSTechnicianSection());
                 if (App.Status == "Active")
                 {
                     App.Status = "DeActive";
