@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
+using WikitekMotorCycleMechanik.Models;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
@@ -23,6 +25,7 @@ namespace WikitekMotorCycleMechanik.Views.RSManagerSection
             try
             {
                 ic_down_button.IsVisible = false;
+                actionButtons.IsVisible = false;
                 base.OnAppearing();
                 var locator = CrossGeolocator.Current;
                 var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(5));
@@ -32,9 +35,12 @@ namespace WikitekMotorCycleMechanik.Views.RSManagerSection
                 var selected_jobcard = App.selected_jobcard;
                 if (selected_jobcard != null)
                 {
+                    var json1 = Preferences.Get("LoginResponse", null);
+                    LoginResponse login = JsonSerializer.Deserialize<LoginResponse>(json1);
+
                     this.Title = selected_jobcard.job_card_name + " (" + selected_jobcard.status + ") \r\n" + selected_jobcard.job_card_name;
-                    lblCustomerName.Text = "Customer Name";
-                    lblMobileNo.Text = "+91 9888098880";
+                    lblCustomerName.Text = login.first_name + " " + login.last_name;// "Customer Name";
+                    lblMobileNo.Text = login.mobile;
                     if (selected_jobcard.status == "ApprovedTransport")
                     {
 

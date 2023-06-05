@@ -69,6 +69,8 @@ namespace WikitekMotorCycleMechanik
         public static bool isFilter = false;
         public static string selectedBannerId = string.Empty;
         public static JobcardResult selected_jobcard;
+        public static int associateVechicleId;
+
         public App()
         {
             Device.SetFlags(new string[] { "MediaElement_Experimentals" });

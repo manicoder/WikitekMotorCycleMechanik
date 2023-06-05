@@ -18,7 +18,7 @@ using Plugin.Connectivity;
 
 namespace WikitekMotorCycleMechanik.Services
 {
-    public class ApiServices
+    public   class ApiServices
     {
         //string base_url = "https://wikitek.io/api/v1/";//Original Server
         //string base_url = "http://128.199.17.43/api/v1/";//Test Server
