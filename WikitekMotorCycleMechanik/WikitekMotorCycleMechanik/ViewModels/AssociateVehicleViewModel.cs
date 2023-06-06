@@ -79,7 +79,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
 
                         var msg = await apiServices.ConfirmAssociateVehicle(sentOtpVehicle);
                         await page.DisplayAlert("Success!", msg.message, "OK");
-
+                         
                         await this.page.Navigation.PushAsync(new Views.AssociateVehicleDetail.AssociateVehicleDetail());
                         //api/v1/workshops/associate-vehicle0099
 
