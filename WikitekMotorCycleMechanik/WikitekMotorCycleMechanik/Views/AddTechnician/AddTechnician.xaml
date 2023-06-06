@@ -17,40 +17,43 @@
                                            MaxLength="1" Style="{StaticResource ent}" Keyboard="Text"/>
                 </StackLayout>
             </Frame>
-            <Button Grid.Row="1" Text="Get OTP" Style="{StaticResource btn}" Command="{Binding OtpVerifyCommand}" />
-            <Grid Grid.Row="2" Padding="40,40,40,40">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource frame}">
-                    <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
-                        <local:CustomEntry x:Name="otp1" Text="{Binding otp1}"
+            <Button Grid.Row="1" Text="Get OTP" Style="{StaticResource btn}" Command="{Binding GetOtpCommand}" Clicked="Button_Clicked" />
+
+            <StackLayout x:Name="otpPanel"  Grid.Row="2" IsVisible="False">
+                <Grid Grid.Row="2" Padding="40,40,40,40">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource frame}">
+                        <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                            <local:CustomEntry x:Name="otp1" Text="{Binding otp1}"
+                                           MaxLength="1" Style="{StaticResource ent}" Keyboard="Numeric" TextChanged="otp1_TextChanged"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="0" Grid.Column="1" Style="{StaticResource frame}">
+                        <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                            <local:CustomEntry x:Name="otp2" Text="{Binding otp2}" 
+                                           MaxLength="1" Style="{StaticResource ent}" Keyboard="Numeric" TextChanged="otp2_TextChanged"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="0" Grid.Column="2" Style="{StaticResource frame}">
+                        <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                            <local:CustomEntry x:Name="otp3" Text="{Binding otp3}" 
+                                           MaxLength="1" Style="{StaticResource ent}" Keyboard="Numeric" TextChanged="otp3_TextChanged"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame Grid.Row="0" Grid.Column="3" Style="{StaticResource frame}">
+                        <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                            <local:CustomEntry x:Name="otp4" Text="{Binding otp4}" 
                                            MaxLength="1" Style="{StaticResource ent}" Keyboard="Numeric"/>
-                    </StackLayout>
-                </Frame>
-                <Frame Grid.Row="0" Grid.Column="1" Style="{StaticResource frame}">
-                    <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
-                        <local:CustomEntry x:Name="otp2" Text="{Binding otp2}" 
-                                           MaxLength="1" Style="{StaticResource ent}" Keyboard="Numeric"/>
-                    </StackLayout>
-                </Frame>
-                <Frame Grid.Row="0" Grid.Column="2" Style="{StaticResource frame}">
-                    <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
-                        <local:CustomEntry x:Name="otp3" Text="{Binding otp3}" 
-                                           MaxLength="1" Style="{StaticResource ent}" Keyboard="Numeric"/>
-                    </StackLayout>
-                </Frame>
-                <Frame Grid.Row="0" Grid.Column="3" Style="{StaticResource frame}">
-                    <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
-                        <local:CustomEntry x:Name="otp4" Text="{Binding otp4}" 
-                                           MaxLength="1" Style="{StaticResource ent}" Keyboard="Numeric"/>
-                    </StackLayout>
-                </Frame>
-            </Grid>
-            <Button Grid.Row="3" Text="Send OTP" Style="{StaticResource btn}" Command="{Binding SendOTPCommand}" />
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+                <Button Grid.Row="3" Text="Send OTP" Style="{StaticResource btn}" Command="{Binding SendOTPCommand}" />
+            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
