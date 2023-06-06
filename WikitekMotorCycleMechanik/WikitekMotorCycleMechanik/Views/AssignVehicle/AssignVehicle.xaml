@@ -29,8 +29,8 @@
             </Grid>
             <Frame Grid.Row="1" Style="{StaticResource frame}">
                 <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
-                    <local:CustomEntry x:Name="txtVehicleRegNo" Placeholder="Select Available Vehicle"
-                                           MaxLength="1" Style="{StaticResource ent}" Keyboard="Text"/>
+                    <Picker Title="--Select--" ItemsSource="{Binding Vehicles}" HeightRequest="60"
+                            ItemDisplayBinding="{Binding registration_id}" SelectedItem="{Binding CurrentSelectedVehicle}" />
                 </StackLayout>
             </Frame>
             <Frame Padding="10,0,0,0"  Grid.Row="2"      Margin="0" BorderColor="Red"  CornerRadius="5" HorizontalOptions="FillAndExpand">

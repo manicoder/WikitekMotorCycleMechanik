@@ -55,19 +55,6 @@ namespace WikitekMotorCycleMechanik.ViewModels
 
 
 
-        private Vehicle _selectedVehicle;
-        public Vehicle SelectedVehicle
-        {
-            get
-            {
-                return _selectedVehicle;
-            }
-            set
-            {
-                SetProperty(ref _selectedVehicle, value);
-            }
-        }
-
 
         private ObservableCollection<VehicleList> mVechicles;
         public ObservableCollection<VehicleList> Vehicles
@@ -114,9 +101,6 @@ namespace WikitekMotorCycleMechanik.ViewModels
         string json;
         public void InitializeCommands()
         {
-
-
-
             SendOTPCommand = new Command(async (obj) =>
             {
                 try
@@ -151,7 +135,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
                     //var id = Preferences.Get("associatevehicle", null);
                     DeAssociatevehicleModel deAssociatevehicleModel = new DeAssociatevehicleModel()
                     {
-                        associatevehicle_id = 3,
+                        associatevehicle_id = 1,
                     };
 
                     var msg = await apiServices.VechicleDeAssociate(deAssociatevehicleModel);

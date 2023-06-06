@@ -33,8 +33,14 @@
                 <StackLayout Orientation="Horizontal" Grid.Row="0">
                     <Label Text="dsadasdas:"/>
                     <Label Grid.Row="0" Text="{Binding CurrentSelectedVehicle.registration_id}"></Label>
-
                 </StackLayout>
+                <StackLayout Orientation="Horizontal" Grid.Row="1">
+                    <Label Text="dsadasdas:"/>
+                    <Label Grid.Row="0" Text="{Binding CurrentSelectedVehicle.registration_id}"></Label>
+                </StackLayout>
+
+
+
                 <Label Grid.Row="1" Text="VIN No: xxx"></Label>
                 <Label Grid.Row="2" Text="Owner: xxx"></Label>
                 <Label Grid.Row="3" Text="Run Hrs: xxx hrs / xxx hrs"></Label>

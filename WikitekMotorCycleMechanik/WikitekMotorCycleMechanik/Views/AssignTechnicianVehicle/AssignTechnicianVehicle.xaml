@@ -28,7 +28,10 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" Text="Reg No: xxx"></Label>
+                <StackLayout Orientation="Horizontal" Grid.Row="0">
+                    <Label Text="Reg No:"/>
+                    <Label Grid.Row="0" Text="{Binding CurrentSelectedTechnician.id}"></Label>
+                </StackLayout>
                 <Label Grid.Row="1" Text="VIN No: xxx"></Label>
                 <Label Grid.Row="2" Text="Owner: xxx"></Label>
                 <Label Grid.Row="3" Text="Run Hrs: xxx hrs / xxx hrs"></Label>
@@ -36,8 +39,8 @@
             </Grid>
             <Frame Grid.Row="1" Style="{StaticResource frame}">
                 <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
-                    <local:CustomEntry x:Name="txtVehicleRegNo" Placeholder="Enter Vehicle Reg No"
-                                           MaxLength="1" Style="{StaticResource ent}" Keyboard="Text"/>
+                    <Picker Title="--Select--" ItemsSource="{Binding Technicians}" HeightRequest="60"
+                            ItemDisplayBinding="{Binding first_name}" SelectedItem="{Binding CurrentSelectedTechnician}" />
                 </StackLayout>
             </Frame>
             <Frame Padding="10,0,0,0"  Grid.Row="2"      Margin="0" BorderColor="Red"  CornerRadius="5" HorizontalOptions="FillAndExpand">

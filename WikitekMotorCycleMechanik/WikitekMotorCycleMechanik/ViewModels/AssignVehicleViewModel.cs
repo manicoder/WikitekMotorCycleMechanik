@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using WikitekMotorCycleMechanik.Models;
 using WikitekMotorCycleMechanik.Models1;
@@ -17,9 +20,51 @@ namespace WikitekMotorCycleMechanik.ViewModels
         {
             InitializeCommands();
             apiServices = new ApiServices1();
+            Initialization = Init();
+        }
+
+        private ObservableCollection<VehicleList> mVechicles;
+        public ObservableCollection<VehicleList> Vehicles
+        {
+            get { return mVechicles; }
+            set
+            {
+                mVechicles = value;
+                OnPropertyChanged(nameof(Vehicles));
+            }
+        }
+
+        private VehicleList mCurrentSelectedVehicle;
+
+        public VehicleList CurrentSelectedVehicle
+        {
+            get { return mCurrentSelectedVehicle; }
+            set
+            {
+                mCurrentSelectedVehicle = value;
+                OnPropertyChanged(nameof(CurrentSelectedVehicle));
+            }
         }
 
 
+
+
+        public async Task Init()
+        {
+            try
+            {
+                var msgs = await apiServices.VehicleList();
+                Vehicles = new ObservableCollection<VehicleList>(msgs.results.Take(100));
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+
+        Task Initialization { get; }
         private string mstartDate;
         public string startDate
         {

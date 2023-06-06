@@ -27,8 +27,8 @@
             </Grid>
             <Frame Grid.Row="1" Style="{StaticResource frame}">
                 <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
-                    <local:CustomEntry x:Name="txtVehicleRegNo" Placeholder="Select Technician"
-                                           MaxLength="1" Style="{StaticResource ent}" Keyboard="Text"/>
+                    <Picker Title="--Select--" ItemsSource="{Binding Technicians}" HeightRequest="60"
+                            ItemDisplayBinding="{Binding first_name}" SelectedItem="{Binding CurrentSelectedTechnician}" />
                 </StackLayout>
             </Frame>
             <Button Grid.Row="2" Text="Get OTP" Style="{StaticResource btn}"  Command="{Binding GetOtpCommand}" Clicked="Button_Clicked" />
