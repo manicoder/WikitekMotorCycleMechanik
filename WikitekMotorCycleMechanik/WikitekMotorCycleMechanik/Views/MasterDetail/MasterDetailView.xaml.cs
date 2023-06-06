@@ -18,6 +18,7 @@ using Xamarin.Essentials;
 using WikitekMotorCycleMechanik.Views.AppFeature;
 using WikitekMotorCycleMechanik.Views.MarketPlace;
 using WikitekMotorCycleMechanik.Views.Dashboad;
+using MiBud;
 
 namespace WikitekMotorCycleMechanik.Views.MasterDetail
 {
@@ -56,21 +57,46 @@ namespace WikitekMotorCycleMechanik.Views.MasterDetail
                     this.IsGestureEnabled = false;
                 });
 
+                string userRole = Preferences.Get("user_role", null);
+                switch (user.user_type)
+                {
+                    case "WikitekMechanik":
+                        ChangeStatusColor(Color.Blue);
+                        break;
+
+                    case "MobitekMechanik":
+                        ChangeStatusColor((Color)Application.Current.Resources["theme_color"]);
+                        break;
+
+                    case "RSAngelMechanik":
+                        ChangeStatusColor(Color.Green);
+                        break;
+
+                }
+
                 if (user.role == "mobitekMechanik" || user.role == "rsangleMechanik")
                 {
-
+                    //  Preferences.Set("user_role", user.role);
                 }
             }
             catch (Exception ex)
             {
             }
         }
-
+        private   void ChangeStatusColor(Color color)
+        {
+            var statusbar = DependencyService.Get<IStatusBarPlatformSpecific>();
+            statusbar.SetStatusBarColor(color);
+            
+          //  var mdPage = Application.Current.MainPage as MasterDetailPage;
+            var navPage = this.Detail as NavigationPage;
+            navPage.BarBackgroundColor = color;
+        }
         public void GetUserCUrrLocation()
         {
             Device.StartTimer(TimeSpan.FromMinutes(1), () =>
             {
-                Device.BeginInvokeOnMainThread(async() =>
+                Device.BeginInvokeOnMainThread(async () =>
                 {
                     double latitude = 0;
                     double longitude = 0;
@@ -218,7 +244,7 @@ namespace WikitekMotorCycleMechanik.Views.MasterDetail
                 {
                     subscribe_pack = App.user.subscriptions.FirstOrDefault(x => x.segments.segment_name == "OBD2");
                 }
-                    
+
                 //if (subscribe_pack == null)
                 //{
                 //    subscribe_pack = App.user.subscriptions.FirstOrDefault(x => x.package_name == "DIYDiagnosticsPack" && x.segments.segment_name == "2W");

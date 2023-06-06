@@ -17,6 +17,7 @@ using System;
 using System.Linq;
 using Supremes;
 using System.Text.RegularExpressions;
+using MiBud;
 //using Plugin.LatestVersion;
 //using Supremes.Nodes;
 
@@ -438,7 +439,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
                             else
                             {
                                 await page.DisplayAlert("Error", user.error, "Ok");
-                                return; 
+                                return;
                             }
                         }
 
@@ -452,45 +453,63 @@ namespace WikitekMotorCycleMechanik.ViewModels
                         Preferences.Set("password", password);
                         Preferences.Set("token", user.token?.access);
                         Preferences.Set("refresh_token", user.token?.refresh);
-                      
+                        Preferences.Set("user_role", user.user_type);
                         if (user.mac_id.Contains("EXPERT123456"))
                         {
                             //user.role = "EXPERT";
                             Application.Current.MainPage = new MasterDetailView(user)
                             {
                                 Detail = new NavigationPage(new Views.RemoteRequest.RemoteRequestPage())
-                            }; 
+                            };
+
+                            switch (user.role)
+                            {
+                                case "WikitekMechanik":
+                                    ChangeStatusColor(Color.Blue);
+                                    break;
+
+                                case "MobitekMechanik":
+                                    ChangeStatusColor((Color)Application.Current.Resources["theme_color"]);
+                                    break;
+
+                                case "RSAngelMechanik":
+                                    ChangeStatusColor(Color.Green);
+                                    break;
+
+                            }
+
+
                             return;
                         }
 
-                        if (string.IsNullOrWhiteSpace(user.user_type))
-                        {
-                            Application.Current.Resources["theme_color"] = Color.FromHex("#3e4095");
-                            DependencyService.Get<IStatusBarStyleManager>().ChangeTheme(user.user_type);
-                            //DependencyService.Get<IStatusBarStyleManager>().SetWhiteStatusBar("#2d6810");
-                        }
-                        else if (user.user_type == "wikitekMechanik")
-                        {
-                            Application.Current.Resources["theme_color"] = Color.FromHex("#3e4095");
-                            DependencyService.Get<IStatusBarStyleManager>().ChangeTheme(user.user_type);
-                            //DependencyService.Get<IStatusBarStyleManager>().SetWhiteStatusBar("#2d6810");
-                        }
-                        else if (user.user_type == "rsangleMechanik")
-                        {
-                            Application.Current.Resources["theme_color"] = Color.FromHex("#37a437");
-                            DependencyService.Get<IStatusBarStyleManager>().ChangeTheme(user.user_type);
-                            //DependencyService.Get<IStatusBarStyleManager>().SetWhiteStatusBar("#2d6810");
-                        }
-                        else if (user.user_type == "mobitekMechanik")
-                        {
-                            Application.Current.Resources["theme_color"] = Color.FromHex("#b85e00");
-                            DependencyService.Get<IStatusBarStyleManager>().ChangeTheme(user.user_type);
-                            //DependencyService.Get<IStatusBarStyleManager>().SetWhiteStatusBar("#2d6810");
-                        }
-                       
+                        //if (string.IsNullOrWhiteSpace(user.user_type))
+                        //{
+                        //    Application.Current.Resources["theme_color"] = Color.FromHex("#3e4095");
+                        //    DependencyService.Get<IStatusBarStyleManager>().ChangeTheme(user.user_type);
+                        //    //DependencyService.Get<IStatusBarStyleManager>().SetWhiteStatusBar("#2d6810");
+                        //}
+                        //else if (user.user_type == "wikitekMechanik")
+                        //{
+                        //    Application.Current.Resources["theme_color"] = Color.FromHex("#3e4095");
+                        //    DependencyService.Get<IStatusBarStyleManager>().ChangeTheme(user.user_type);
+                        //    //DependencyService.Get<IStatusBarStyleManager>().SetWhiteStatusBar("#2d6810");
+                        //}
+                        //else if (user.user_type == "rsangleMechanik")
+                        //{
+                        //    Application.Current.Resources["theme_color"] = Color.FromHex("#37a437");
+                        //    DependencyService.Get<IStatusBarStyleManager>().ChangeTheme(user.user_type);
+                        //    //DependencyService.Get<IStatusBarStyleManager>().SetWhiteStatusBar("#2d6810");
+                        //}
+                        //else if (user.user_type == "mobitekMechanik")
+                        //{
+                        //    Application.Current.Resources["theme_color"] = Color.FromHex("#b85e00");
+                        //    DependencyService.Get<IStatusBarStyleManager>().ChangeTheme(user.user_type);
+                        //    //DependencyService.Get<IStatusBarStyleManager>().SetWhiteStatusBar("#2d6810");
+                        //}
+
                         Application.Current.MainPage = new MasterDetailView(user)
                         {
-                            Detail = new NavigationPage(new Views.Dashboad.DashboadPage(user)) 
+                            Detail = new NavigationPage(new Views.Dashboad.DashboadPage(user))
                         };
                     }
                 }
@@ -502,7 +521,15 @@ namespace WikitekMotorCycleMechanik.ViewModels
                 //await navigationService.PushAsync(new MasterDetailView(user) { Detail = new NavigationPage(new MyJobCardPage()) });
             }
         }
+        private   void ChangeStatusColor(Color color)
+        {
+            var statusbar = DependencyService.Get<IStatusBarPlatformSpecific>();
+            statusbar.SetStatusBarColor(color);
 
+            var mdPage = Application.Current.MainPage as MasterDetailPage;
+            var navPage = mdPage.Detail as NavigationPage;
+            navPage.BarBackgroundColor = color;
+        }
         async void GoToRegistrationPage()
         {
             using (UserDialogs.Instance.Loading("Loading...", null, null, true, MaskType.Black))

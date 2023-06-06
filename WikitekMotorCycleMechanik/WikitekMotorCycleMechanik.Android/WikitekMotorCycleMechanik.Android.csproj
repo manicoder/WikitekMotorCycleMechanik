@@ -155,6 +155,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="Dependencies\BadgeDrawable.cs" />
     <Compile Include="Dependencies\Bluetooth_Android.cs" />
     <Compile Include="Dependencies\DeviceMacAddress.cs" />
