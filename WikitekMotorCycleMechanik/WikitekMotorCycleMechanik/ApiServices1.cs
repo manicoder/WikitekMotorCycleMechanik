@@ -249,6 +249,26 @@ namespace WikitekMotorCycleMechanik
             }
         }
 
+        public async Task<NewVehicle> VehicleList()
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.GetAsync($"{App.base_url}vehicles/list/");
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var vehicles = JsonConvert.DeserializeObject<NewVehicle>(Data);
+                return vehicles;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public async Task<ErroMsg> ConfirmDeAssociateTechnician(SentOtpVehicle model)
         {
             HttpResponseMessage httpResponse = new HttpResponseMessage();

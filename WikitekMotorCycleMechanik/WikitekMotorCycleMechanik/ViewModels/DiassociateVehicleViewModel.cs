@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using WikitekMotorCycleMechanik.Models;
 using WikitekMotorCycleMechanik.Models1;
@@ -18,8 +20,10 @@ namespace WikitekMotorCycleMechanik.ViewModels
         {
             InitializeCommands();
             apiServices = new ApiServices1();
+            Initialization = Init();
         }
 
+        Task Initialization { get; }
         private string motp1;
         public string otp1
         {
@@ -48,10 +52,71 @@ namespace WikitekMotorCycleMechanik.ViewModels
             set { motp4 = value; }
         }
 
+
+
+
+        private Vehicle _selectedVehicle;
+        public Vehicle SelectedVehicle
+        {
+            get
+            {
+                return _selectedVehicle;
+            }
+            set
+            {
+                SetProperty(ref _selectedVehicle, value);
+            }
+        }
+
+
+        private ObservableCollection<VehicleList> mVechicles;
+        public ObservableCollection<VehicleList> Vehicles
+        {
+            get { return mVechicles; }
+            set
+            {
+                mVechicles = value;
+                OnPropertyChanged(nameof(Vehicles));
+            }
+        }
+
+        private VehicleList mCurrentSelectedVehicle;
+
+        public VehicleList CurrentSelectedVehicle
+        {
+            get { return mCurrentSelectedVehicle; }
+            set
+            {
+                mCurrentSelectedVehicle = value;
+                OnPropertyChanged(nameof(CurrentSelectedVehicle));
+            }
+        }
+
+
+
+
+        public async Task Init()
+        {
+            try
+            {
+                var msgs =await apiServices.VehicleList();
+                Vehicles = new ObservableCollection<VehicleList>(msgs.results);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+
         #region Methods
         string json;
         public void InitializeCommands()
         {
+
+
+
             SendOTPCommand = new Command(async (obj) =>
             {
                 try

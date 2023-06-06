@@ -20,6 +20,16 @@ namespace WikitekMotorCycleMechanik.ViewModels
             InitializeCommands();
             apiServices = new ApiServices1();
         }
+        private string mTechnicianId = "fafbbd01-f6ef-4763-be67-a8285c494fce";
+        public string TechnicianId
+        {
+            get { return mTechnicianId; }
+            set
+            {
+                mTechnicianId = value;
+                OnPropertyChanged(nameof(TechnicianId));
+            }
+        }
 
         private string motp1;
         public string otp1
@@ -85,7 +95,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
 
                     TechnicianvehicleModel technicianvehicleModel = new TechnicianvehicleModel();
                     technicianvehicleModel.user_id = login.user_id;// "fafbbd01-f6ef-4763-be67-a8285c494fce";//App.user.user_id;
-                    technicianvehicleModel.technician_id = "fafbbd01-f6ef-4763-be67-a8285c494fce";
+                    technicianvehicleModel.technician_id = TechnicianId;
                     technicianvehicleModel.workshop_id = login.agent.workshop.id;
                     var resp = await apiServices.AddTechnician(technicianvehicleModel);
                     App.associateVechicleId = resp.id;
