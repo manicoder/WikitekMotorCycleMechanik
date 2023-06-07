@@ -28,36 +28,40 @@ namespace WikitekMotorCycleMechanik.ViewModels
         public string otp1
         {
             get { return motp1; }
-            set { motp1 = value; }
+            set
+            {
+                motp1 = value;
+                OnPropertyChanged(nameof(otp1));
+            }
         }
 
         private string motp2;
         public string otp2
         {
             get { return motp2; }
-            set { motp2 = value; }
+            set { motp2 = value; OnPropertyChanged(nameof(otp2)); }
         }
 
         private string motp3;
         public string otp3
         {
             get { return motp3; }
-            set { motp3 = value; }
+            set { motp3 = value; OnPropertyChanged(nameof(otp3)); }
         }
 
         private string motp4;
         public string otp4
         {
             get { return motp4; }
-            set { motp4 = value; }
+            set { motp4 = value; OnPropertyChanged(nameof(otp4)); }
         }
 
 
 
 
 
-        private ObservableCollection<VehicleList> mVechicles;
-        public ObservableCollection<VehicleList> Vehicles
+        private ObservableCollection<DisVechicleList> mVechicles;
+        public ObservableCollection<DisVechicleList> Vehicles
         {
             get { return mVechicles; }
             set
@@ -67,9 +71,9 @@ namespace WikitekMotorCycleMechanik.ViewModels
             }
         }
 
-        private VehicleList mCurrentSelectedVehicle;
+        private DisVechicleList mCurrentSelectedVehicle;
 
-        public VehicleList CurrentSelectedVehicle
+        public DisVechicleList CurrentSelectedVehicle
         {
             get { return mCurrentSelectedVehicle; }
             set
@@ -86,13 +90,25 @@ namespace WikitekMotorCycleMechanik.ViewModels
         {
             try
             {
-                var msgs = await apiServices.VehicleList();
-                Vehicles = new ObservableCollection<VehicleList>(msgs.results);
+                var msgs = await apiServices.DisVehicleList();
+
+                Vehicles = new ObservableCollection<DisVechicleList>(msgs.results);
+
             }
             catch (Exception ex)
             {
 
                 throw;
+            }
+        }
+        private bool mOTPOpenPanel;
+        public bool OTPOpenPanel
+        {
+            get { return mOTPOpenPanel; }
+            set
+            {
+                mOTPOpenPanel = value;
+                OnPropertyChanged(nameof(OTPOpenPanel));
             }
         }
 
@@ -108,12 +124,12 @@ namespace WikitekMotorCycleMechanik.ViewModels
                     //var id = Preferences.Get("associatevehicle", null);
                     SentOtpVehicle sentOtpVehicle = new SentOtpVehicle()
                     {
-                        associatevehicle_id = 3,
+                        associatevehicle_id = CurrentSelectedVehicle.id,
                         otp = otp1 + otp2 + otp3 + otp4
                     };
 
                     var msg = await apiServices.ConfirmDeAssociateVehicle(sentOtpVehicle);
-                    await page.DisplayAlert("Success!", msg.message, "OK");
+                    await page.DisplayAlert(msg.message, msg.status, "OK");
                     otp1 = string.Empty;
                     otp2 = string.Empty;
                     otp3 = string.Empty;
@@ -140,12 +156,16 @@ namespace WikitekMotorCycleMechanik.ViewModels
                     //var id = Preferences.Get("associatevehicle", null);
                     DeAssociatevehicleModel deAssociatevehicleModel = new DeAssociatevehicleModel()
                     {
-                        associatevehicle_id = 1,
+                        associatevehicle_id = CurrentSelectedVehicle.id,
                     };
 
                     var msg = await apiServices.VechicleDeAssociate(deAssociatevehicleModel);
-                    await page.DisplayAlert("Success!", msg.message, "OK");
+                    await page.DisplayAlert(msg.message, msg.status, "OK");
 
+                    if (msg.success)
+                    {
+                        OTPOpenPanel = true;
+                    }
                     //await this.page.Navigation.PushAsync(new Views.AssociateVehicleDetail.AssociateVehicleDetail());
                     ////api/v1/workshops/associate-vehicle0099
                 }

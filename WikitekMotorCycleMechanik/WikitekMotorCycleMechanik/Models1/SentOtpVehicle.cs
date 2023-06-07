@@ -7,7 +7,7 @@ namespace WikitekMotorCycleMechanik.Models1
 
     public class SentOtpVehicle
     {
-        public int associatevehicle_id { get; set; }
+        public string associatevehicle_id { get; set; }
         public string otp { get; set; }
         //public int associatevehicletechnician_id { get; set; }
         //public int associatetechnician_id { get; set; }
@@ -19,5 +19,10 @@ namespace WikitekMotorCycleMechanik.Models1
         //public int associatevehicletechnician_id { get; set; }
         //public int associatetechnician_id { get; set; }
     }
+    public class AssociateSentOtpVehicle
+    {
+        public int associatevehicle_id { get; set; }
+        public string otp { get; set; }
 
+    };
 }

@@ -31,10 +31,7 @@ namespace WikitekMotorCycleMechanik.Views.AddTechnician
             progressPanel.IsVisible = false;
             progress.IsRunning = false;
         }
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            otpPanel.IsVisible = true;
-        }
+        
 
         private void otp1_TextChanged(object sender, TextChangedEventArgs e)
         {

@@ -28,9 +28,11 @@ namespace WikitekMotorCycleMechanik.ViewModels
         {
             try
             {
-
-                var msgs = await apiServices.TechnicianList();
-                Technicians = new ObservableCollection<NewTechnicianList>(msgs.results);
+                var json = Preferences.Get("LoginResponse", null);
+                LoginResponse login = JsonSerializer.Deserialize<LoginResponse>(json);
+                int WorkShopId = login.agent.workshop.id;
+                var msgs = await apiServices.AssignTechnicianList(WorkShopId);
+                Technicians = new ObservableCollection<AssignTechnicianItem>(msgs.results); 
             }
             catch (Exception ex)
             {
@@ -40,8 +42,8 @@ namespace WikitekMotorCycleMechanik.ViewModels
         }
 
 
-        private ObservableCollection<NewTechnicianList> mTechnicians;
-        public ObservableCollection<NewTechnicianList> Technicians
+        private ObservableCollection<AssignTechnicianItem> mTechnicians;
+        public ObservableCollection<AssignTechnicianItem> Technicians
         {
             get { return mTechnicians; }
             set
@@ -51,9 +53,9 @@ namespace WikitekMotorCycleMechanik.ViewModels
             }
         }
 
-        private NewTechnicianList mCurrentSelectedTechnician;
+        private AssignTechnicianItem mCurrentSelectedTechnician;
 
-        public NewTechnicianList CurrentSelectedTechnician
+        public AssignTechnicianItem CurrentSelectedTechnician
         {
             get { return mCurrentSelectedTechnician; }
             set
@@ -67,14 +69,36 @@ namespace WikitekMotorCycleMechanik.ViewModels
         public string startDate
         {
             get { return mstartDate; }
-            set { mstartDate = value; }
+            set { mstartDate = value;
+                OnPropertyChanged(nameof(startDate));
+            }
         }
 
         private string mendDate;
         public string endDate
         {
             get { return mendDate; }
-            set { mendDate = value; }
+            set { mendDate = value;
+                OnPropertyChanged(nameof(endDate));
+            }
+        }
+        private string mstartTime;
+
+        public string startTime
+        {
+            get { return mstartTime; }
+            set { mstartTime = value;
+                OnPropertyChanged(nameof(startTime));
+            }
+        }
+        private string mendTime;
+
+        public string endTime
+        {
+            get { return mendTime; }
+            set { mendTime = value;
+                OnPropertyChanged(nameof(endTime));
+            }
         }
 
 
@@ -151,7 +175,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
                     json = Preferences.Get("LoginResponse", null);
                     LoginResponse login = JsonSerializer.Deserialize<LoginResponse>(json);
                     AssignTechnicianVehicleModel assignTechnicianVehicleModel = new AssignTechnicianVehicleModel();
-                        assignTechnicianVehicleModel.associate_technician_id = App.SelectedTechnician.id; 
+                    assignTechnicianVehicleModel.associate_technician_id = App.SelectedTechnician.id;
                     assignTechnicianVehicleModel.associate_vehicle_id = App.associateVechicleId;
                     assignTechnicianVehicleModel.user_id = login.user_id;// "fafbbd01-f6ef-4763-be67-a8285c494fce";//App.user.user_id;
                     assignTechnicianVehicleModel.start_date = startDate;

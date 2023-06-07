@@ -29,7 +29,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
             try
             {
                 var msgs = await apiServices.TechnicianList();
-                Technicians = new ObservableCollection<NewTechnicianList>(msgs.results.Take(50));
+                Technicians = new ObservableCollection<NewTechnicianList>(msgs.results);
             }
             catch (Exception ex)
             {
@@ -99,6 +99,14 @@ namespace WikitekMotorCycleMechanik.ViewModels
             get { return motp4; }
             set { motp4 = value; }
         }
+        private bool mOTPOpenPanel; 
+        public bool OTPOpenPanel
+        {
+            get { return mOTPOpenPanel; }
+            set { mOTPOpenPanel = value;
+                OnPropertyChanged(nameof(OTPOpenPanel));
+            }
+        }
 
         #region Methods
         string json;
@@ -117,9 +125,12 @@ namespace WikitekMotorCycleMechanik.ViewModels
                     };
 
                     var msg = await apiServices.ConfirmTechnicianAssociateVehicle(sentOtpVehicle);
-                    await page.DisplayAlert("Success!", msg.message, "OK");
+                    await page.DisplayAlert(msg.status, msg.message, "OK");
 
-                    await this.page.Navigation.PushAsync(new Views.TechnicianUserDetail.TechnicianUserDetail());
+                    if (msg.success)
+                    {
+                        await this.page.Navigation.PushAsync(new Views.TechnicianUserDetail.TechnicianUserDetail());
+                    }
                     //api/v1/workshops/associate-vehicle0099
 
                 }
@@ -147,6 +158,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
 
                     if (idd != null)
                     {
+                        OTPOpenPanel = true;
                         App.SelectedTechnician = idd;
 
                         json = Preferences.Get("LoginResponse", null);
@@ -159,7 +171,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
                         var resp = await apiServices.AddTechnician(technicianvehicleModel);
                         App.associateVechicleId = resp.id;
 
-                        await page.DisplayAlert("", resp.message, "OK");
+                        await page.DisplayAlert(resp.status, resp.message, "OK");
                     }
                     else
                     {

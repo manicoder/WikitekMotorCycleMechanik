@@ -6,6 +6,14 @@ namespace WikitekMotorCycleMechanik.Models1
 {
     public class DeAssociatevehicleModel
     {
-        public int associatevehicle_id { get; set; }
+        public string associatevehicle_id { get; set; }
     }
+
+    public class DiAssociateTechnicianModel
+    {
+        public string associatetechnician_id { get; set; }
+        public string otp { get; set; }
+
+    }
+
 }

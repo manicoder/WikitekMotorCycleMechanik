@@ -41,11 +41,11 @@
             <Frame Grid.Row="1" Style="{StaticResource frame}">
                 <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
                     <Picker Title="--Select--" ItemsSource="{Binding Technicians}" HeightRequest="60"  HorizontalOptions="FillAndExpand"
-                            ItemDisplayBinding="{Binding first_name}" SelectedItem="{Binding CurrentSelectedTechnician}" />
+                            ItemDisplayBinding="{Binding email}" SelectedItem="{Binding CurrentSelectedTechnician}" />
                 </StackLayout>
             </Frame>
             <Button Grid.Row="2" Text="Get OTP" Style="{StaticResource btn}"  Command="{Binding GetOtpCommand}" Clicked="Button_Clicked" />
-            <StackLayout x:Name="otpPanel"  Grid.Row="3" IsVisible="False">
+            <StackLayout x:Name="otpPanel" IsVisible="{Binding OTPOpenPanel}" Grid.Row="3"  >
                 <Grid Padding="40,40,40,40">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />

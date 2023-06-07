@@ -30,11 +30,11 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <StackLayout Orientation="Horizontal" Grid.Row="0">
-                         
+
                         <Label Grid.Row="0" Text="{Binding CurrentSelectedTechnician.registration_id}"></Label>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" Grid.Row="1">
-                       
+
                         <Label Grid.Row="1" Text="{Binding CurrentSelectedTechnician.vin}"></Label>
                     </StackLayout>
 
@@ -65,14 +65,29 @@
                 <Frame Grid.Row="1" Style="{StaticResource frame}">
                     <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
                         <Picker Title="--Select--" ItemsSource="{Binding Technicians}" HeightRequest="60" HorizontalOptions="FillAndExpand"
-                            ItemDisplayBinding="{Binding first_name}" SelectedItem="{Binding CurrentSelectedTechnician}" />
+                            ItemDisplayBinding="{Binding user.email}"
+                                SelectedItem="{Binding CurrentSelectedTechnician}" />
                     </StackLayout>
                 </Frame>
                 <Frame Padding="10,0,0,0"  Grid.Row="2"      Margin="0" BorderColor="Red"  CornerRadius="5" HorizontalOptions="FillAndExpand">
-                    <DatePicker  Format="dd-MM-yyyy"  Date="{Binding startDate,Mode=TwoWay}" HorizontalOptions="FillAndExpand"  FontSize="Small"   />
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <DatePicker  Format="dd-MM-yyyy"  Date="{Binding startDate,Mode=TwoWay}" HorizontalOptions="FillAndExpand"  FontSize="Small"   />
+                        <TimePicker Grid.Column="1" Time="{Binding startTime}"/>
+                    </Grid>
                 </Frame>
                 <Frame Padding="10,0,0,0"  Grid.Row="3"    Margin="0" BorderColor="Red"  CornerRadius="5" HorizontalOptions="FillAndExpand">
-                    <DatePicker  Format="dd-MM-yyyy"  Date="{Binding endDate,Mode=TwoWay}" HorizontalOptions="FillAndExpand"  FontSize="Small"   />
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <DatePicker  Format="dd-MM-yyyy"  Date="{Binding endDate,Mode=TwoWay}" HorizontalOptions="FillAndExpand"  FontSize="Small"   />
+                        <TimePicker Grid.Column="1" Time="{Binding endTime}"/>
+                    </Grid>
                 </Frame>
                 <Button Grid.Row="4" Text="Get OTP" Style="{StaticResource btn}" Command="{Binding GetOtpCommand}" Clicked="Button_Clicked" />
 

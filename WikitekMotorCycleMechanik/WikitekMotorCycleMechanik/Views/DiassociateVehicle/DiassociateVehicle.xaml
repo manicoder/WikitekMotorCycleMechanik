@@ -22,7 +22,7 @@
                                            MaxLength="1" Style="{StaticResource ent}" Keyboard="Text"/>-->
                 </StackLayout>
             </Frame>
-            <Grid Grid.Row="1" Padding="30,30,30,30" RowSpacing="0">
+            <Grid Grid.Row="1" Padding="30,30,30,30" RowSpacing="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -41,12 +41,12 @@
 
                 <StackLayout Orientation="Horizontal" Grid.Row="2">
                     <Label Text="Owner :"/>
-                    <Label Grid.Row="2" Text="{Binding CurrentSelectedVehicle.oem.name}"></Label>
+                    <Label Grid.Row="2" Text="{Binding CurrentSelectedVehicle.user.email}"></Label>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" Grid.Row="3">
+                <!--<StackLayout Orientation="Horizontal" Grid.Row="3">
                     <Label Text="Run Hrs :"/>
                     <Label Grid.Row="3" Text="{Binding CurrentSelectedVehicle.registration_id}"></Label>
-                </StackLayout>
+                </StackLayout>-->
                 <StackLayout Orientation="Horizontal" Grid.Row="4">
                     <Label Text="Status :"/>
                     <Label Grid.Row="4" Text="{Binding CurrentSelectedVehicle.vehicle_status}"></Label>
@@ -58,7 +58,7 @@
             </Grid>
             <Button Grid.Row="2" Text="Get OTP" Style="{StaticResource btn}" Command="{Binding GetOtpCommand}" Clicked="Button_Clicked"  />
 
-            <StackLayout x:Name="otpPanel"  Grid.Row="3" IsVisible="False">
+            <StackLayout x:Name="otpPanel"  Grid.Row="3" IsVisible="{Binding OTPOpenPanel}">
                 <Grid  Padding="40,40,40,40">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />

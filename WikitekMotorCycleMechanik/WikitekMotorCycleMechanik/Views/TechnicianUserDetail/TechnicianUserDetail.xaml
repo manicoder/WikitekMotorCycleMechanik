@@ -10,7 +10,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Padding="30,30,30,30" RowSpacing="0">
+            <Grid Grid.Row="0" Padding="30,30,30,30" RowSpacing="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -24,8 +24,8 @@
                 </StackLayout>-->
 
                 <StackLayout Grid.Row="1" Orientation="Horizontal">
-                    <Label Grid.Row="1" Text="VIN No:"></Label>
-                    <Label Grid.Row="1" Text="{Binding WorkShopId}"></Label>
+                    <Label Grid.Row="1" Text="Email:"></Label>
+                    <Label Grid.Row="1" Text="{Binding SelectedTechnician.email}"></Label>
                 </StackLayout>
 
                 <StackLayout Grid.Row="2" Orientation="Horizontal">
@@ -34,13 +34,15 @@
                 </StackLayout>
 
                 <StackLayout Grid.Row="3" Orientation="Horizontal">
-                    <Label Grid.Row="3" Text="Created At:"></Label>
-                    <Label Grid.Row="3" Text="{Binding SelectedTechnician.created_at}"></Label>
+                    <Label Grid.Row="3" Text="Mobile:"></Label>
+                    <Label Grid.Row="3" Text="{Binding SelectedTechnician.mobile}"></Label>
                 </StackLayout>
 
                 <StackLayout Grid.Row="4" Orientation="Horizontal">
                     <Label Grid.Row="4" Text="Status:"></Label>
-                    <Label Grid.Row="4" Text="{Binding SelectedTechnician.status}"></Label>
+                    <Label Grid.Row="4" Text="Associated"></Label>
+
+                    <!--<Label Grid.Row="4" Text="{Binding SelectedTechnician.status}"></Label>-->
                 </StackLayout>
             </Grid>
             <Button Grid.Row="1" Text="Assign Vehicle" Style="{StaticResource btn}" Command="{Binding AssignVechicleCommand}" />

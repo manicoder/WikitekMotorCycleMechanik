@@ -21,9 +21,9 @@
                                             Style="{StaticResource ent}" Keyboard="Text"/>
                     </StackLayout>
                 </Frame>
-                <Button Grid.Row="2" Text="Get OTP" Style="{StaticResource btn}" Command="{Binding GetOtpCommand}" Clicked="Button_Clicked" />
+                <Button Grid.Row="2" Text="Get OTP" Style="{StaticResource btn}" Command="{Binding GetOtpCommand}"  />
 
-                <StackLayout x:Name="otpPanel"  Grid.Row="3" IsVisible="False">
+                <StackLayout x:Name="otpPanel" IsVisible="{Binding OTPOpenPanel}" Grid.Row="3">
                     <Grid Grid.Row="2" Padding="40,40,40,40">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />

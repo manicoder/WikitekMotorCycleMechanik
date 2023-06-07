@@ -25,8 +25,8 @@ namespace WikitekMotorCycleMechanik.ViewModels
         {
             try
             {
-                var msgs = await apiServices.TechnicianList();
-                Technicians = new ObservableCollection<NewTechnicianList>(msgs.results.Take(50));
+                var msgs = await apiServices.GetAssociatedUserList();
+                Technicians = new ObservableCollection<GetAssociateUser>(msgs.results);
             }
             catch (Exception ex)
             {
@@ -36,8 +36,8 @@ namespace WikitekMotorCycleMechanik.ViewModels
         }
 
 
-        private ObservableCollection<NewTechnicianList> mTechnicians;
-        public ObservableCollection<NewTechnicianList> Technicians
+        private ObservableCollection<GetAssociateUser> mTechnicians;
+        public ObservableCollection<GetAssociateUser> Technicians
         {
             get { return mTechnicians; }
             set
@@ -47,9 +47,9 @@ namespace WikitekMotorCycleMechanik.ViewModels
             }
         }
 
-        private NewTechnicianList mCurrentSelectedTechnician;
+        private GetAssociateUser mCurrentSelectedTechnician;
 
-        public NewTechnicianList CurrentSelectedTechnician
+        public GetAssociateUser CurrentSelectedTechnician
         {
             get { return mCurrentSelectedTechnician; }
             set
@@ -64,28 +64,43 @@ namespace WikitekMotorCycleMechanik.ViewModels
         public string otp1
         {
             get { return motp1; }
-            set { motp1 = value; }
+            set
+            {
+                motp1 = value;
+                OnPropertyChanged(nameof(otp1));
+            }
         }
 
         private string motp2;
         public string otp2
         {
             get { return motp2; }
-            set { motp2 = value; }
+            set
+            {
+                motp2 = value;
+                OnPropertyChanged(nameof(otp2));
+            }
         }
 
         private string motp3;
         public string otp3
         {
             get { return motp3; }
-            set { motp3 = value; }
+            set
+            {
+                motp3 = value;
+                OnPropertyChanged(nameof(otp3));
+            }
         }
-
         private string motp4;
         public string otp4
         {
             get { return motp4; }
-            set { motp4 = value; }
+            set
+            {
+                motp4 = value;
+                OnPropertyChanged(nameof(otp4));
+            }
         }
 
         #region Methods
@@ -97,20 +112,22 @@ namespace WikitekMotorCycleMechanik.ViewModels
                 try
                 {
                     //var id = Preferences.Get("associatevehicle", null);
-                    SentOtpVehicle sentOtpVehicle = new SentOtpVehicle()
+
+                    DiAssociateTechnicianModel deAssociatevehicleModel = new DiAssociateTechnicianModel()
                     {
-                        associatevehicle_id = 3,
+                        associatetechnician_id = CurrentSelectedTechnician.id,
                         otp = otp1 + otp2 + otp3 + otp4
+
                     };
 
-                    var msg = await apiServices.ConfirmDeAssociateTechnician(sentOtpVehicle);
-                    await page.DisplayAlert("Success!", msg.message, "OK");
+                    var msg = await apiServices.ConfirmDeAssociateTechnician(deAssociatevehicleModel);
+                    await page.DisplayAlert(msg.status, msg.message, "OK");
                     otp1 = string.Empty;
                     otp2 = string.Empty;
                     otp3 = string.Empty;
                     otp4 = string.Empty;
 
-                    //await this.page.Navigation.PushAsync(new Views.AssociateVehicleDetail.AssociateVehicleDetail());
+                    await this.page.Navigation.PopToRootAsync();
                     ////api/v1/workshops/associate-vehicle0099
 
                 }
@@ -124,14 +141,19 @@ namespace WikitekMotorCycleMechanik.ViewModels
                 try
                 {
                     //var id = Preferences.Get("associatevehicle", null);
-                    DeAssociatevehicleModel deAssociatevehicleModel = new DeAssociatevehicleModel()
+                    DiAssociateTechnicianModel deAssociatevehicleModel = new DiAssociateTechnicianModel()
                     {
-                        associatevehicle_id = 3,
+                        associatetechnician_id = CurrentSelectedTechnician.id,
+                        otp = otp1 + otp2 + otp3 + otp4
                     };
 
                     var msg = await apiServices.Techniciandisassociate(deAssociatevehicleModel);
                     await page.DisplayAlert("Success!", msg.message, "OK");
 
+                    if (msg.success)
+                    {
+                        OTPOpenPanel = true;
+                    }
                     //await this.page.Navigation.PushAsync(new Views.AssociateVehicleDetail.AssociateVehicleDetail());
                     ////api/v1/workshops/associate-vehicle0099
                 }
@@ -141,6 +163,16 @@ namespace WikitekMotorCycleMechanik.ViewModels
             });
         }
         #endregion
+        private bool mOTPOpenPanel;
+        public bool OTPOpenPanel
+        {
+            get { return mOTPOpenPanel; }
+            set
+            {
+                mOTPOpenPanel = value;
+                OnPropertyChanged(nameof(OTPOpenPanel));
+            }
+        }
 
         #region ICommands
         public ICommand SendOTPCommand { get; set; }
