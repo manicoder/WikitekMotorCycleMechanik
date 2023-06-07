@@ -54,7 +54,7 @@
                 <Button Grid.Row="3" Text="Send OTP" Style="{StaticResource btn}" Command="{Binding SendOTPCommand}" />
             </StackLayout>
 
-            <Button Visual="{Binding OpenButton,Mode=TwoWay}" Grid.Row="2" Text="Diassociate Vehicle" Style="{StaticResource btn}" Command="{Binding DisassociateVehicleCommand}"/>
+            <!--<Button Visual="{Binding OpenButton,Mode=TwoWay}" Grid.Row="2" Text="Diassociate Vehicle" Style="{StaticResource btn}" Command="{Binding DisassociateVehicleCommand}"/>-->
 
         </Grid>
     </ContentPage.Content>

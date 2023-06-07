@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="5" android:versionName="1.1.11" package="com.wikiteksystems.mibud" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="6" android:versionName="1.1.12" package="com.wikiteksystems.mibud" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="31" />
 	<application android:label="wikitek1" android:theme="@style/MainTheme" android:icon="@drawable/ic_wikitek1" android:usesCleartextTraffic="true" android:hardwareAccelerated="true" android:allowBackup="true" android:fullBackupContent="false">
 		<!-- Necessary for apps that target Android 9.0 or higher -->

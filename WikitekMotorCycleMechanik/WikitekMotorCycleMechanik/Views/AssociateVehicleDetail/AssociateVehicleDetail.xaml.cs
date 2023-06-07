@@ -18,5 +18,15 @@ namespace WikitekMotorCycleMechanik.Views.AssociateVehicleDetail
             InitializeComponent();
             BindingContext = viewModel = new AssociateVehicleDetailViewModel(this, null);
         }
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            progressPanel.IsVisible = true;
+            progress.IsRunning = true;
+            await Task.Delay(100);
+            await viewModel.Init();
+            progressPanel.IsVisible = false;
+            progress.IsRunning = false;
+        }
     }
 }

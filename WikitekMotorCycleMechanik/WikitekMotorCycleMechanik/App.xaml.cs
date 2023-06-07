@@ -72,6 +72,7 @@ namespace WikitekMotorCycleMechanik
         public static JobcardResult selected_jobcard;
         public static int associateVechicleId;
         public static NewTechnicianList SelectedTechnician;
+        public static string AssociateVehicleId;
 
         public App()
         {

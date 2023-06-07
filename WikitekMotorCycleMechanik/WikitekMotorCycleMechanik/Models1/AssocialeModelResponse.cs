@@ -7,7 +7,7 @@ namespace WikitekMotorCycleMechanik.Models1
 {
 
 
-    public class AssocialeModelResponse
+    public class AssocialeModelResponse: ErroMsg
     {
         public int id { get; set; }
         public int workshop { get; set; }

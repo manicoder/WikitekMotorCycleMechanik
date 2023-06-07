@@ -31,6 +31,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
             set
             {
                 mAssociateVehicleId = value;
+                App.AssociateVehicleId = AssociateVehicleId;
                 OnPropertyChanged(nameof(AssociateVehicleId));
             }
         }
@@ -103,9 +104,12 @@ namespace WikitekMotorCycleMechanik.ViewModels
                         };
 
                         var msg = await apiServices.ConfirmAssociateVehicle(sentOtpVehicle);
-                        await page.DisplayAlert("Success!", msg.message, "OK");
+                        await page.DisplayAlert(msg.message, msg.status, "OK");
 
-                        await this.page.Navigation.PushAsync(new Views.AssociateVehicleDetail.AssociateVehicleDetail());
+                        if (msg.success)
+                        {
+                            await this.page.Navigation.PushAsync(new Views.AssociateVehicleDetail.AssociateVehicleDetail());
+                        }
                         //api/v1/workshops/associate-vehicle0099
 
                     }
@@ -134,15 +138,9 @@ namespace WikitekMotorCycleMechanik.ViewModels
                     await page.DisplayAlert("", resp?.message, "OK");
 
                     App.associateVechicleId = resp.id;
-                    if (resp.id < 1)
-                    {
-                        OTPOpenPanel = false;
-                        OpenButton = true;
-                    }
-                    else
+                    if (resp.status_code == System.Net.HttpStatusCode.OK)
                     {
                         OTPOpenPanel = true;
-                        OpenButton = false;
                     }
                     //api/v1/workshops/associate-vehicle0099
 
