@@ -22,7 +22,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
             {
                 try
                 {
-                    await this.page.Navigation.PushAsync(new Views.AssignVehicle.AssignVehicle());
+                    await this.page.Navigation.PushAsync(new Views.AssignTechnicianVehicle.AssignTechnicianVehicle());
                 }
                 catch (Exception ex)
                 {

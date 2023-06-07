@@ -52,6 +52,83 @@ namespace WikitekMotorCycleMechanik
                 return null;
             }
         }
+
+        public async Task<AssocialeModelResponse> AddTechnician(TechnicianvehicleModel model)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                //client = new HttpClient();
+                var json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.PostAsync($"{App.base_url}workshops/associate-technician/", content);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var countries = JsonConvert.DeserializeObject<AssocialeModelResponse>(Data);
+                countries.status_code = httpResponse.StatusCode;
+                Preferences.Set("associatevehicle", countries.id);
+                return countries;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+        public async Task<AssocialeModelResponse> AssignTechnician(AssignTechnicianVehicleModel model)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                //client = new HttpClient();
+                var json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.PostAsync($"{App.base_url}workshops/vehicle-technician-associate/", content);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var countries = JsonConvert.DeserializeObject<AssocialeModelResponse>(Data);
+                countries.status_code = httpResponse.StatusCode;
+                Preferences.Set("associatevehicle", countries.id);
+                return countries;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<AssocialeModelResponse> VehicleTechnicianAssociation(AssignTechnicianVehicleModel model)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                //client = new HttpClient();
+                var json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.PostAsync($"{App.base_url}workshops/vehicle-technician-associate/", content);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var countries = JsonConvert.DeserializeObject<AssocialeModelResponse>(Data);
+                countries.status_code = httpResponse.StatusCode;
+                Preferences.Set("associatevehicle", countries.id);
+                return countries;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public async Task<ErroMsg> ConfirmAssociateVehicle(SentOtpVehicle model)
         {
             HttpResponseMessage httpResponse = new HttpResponseMessage();
@@ -75,5 +152,240 @@ namespace WikitekMotorCycleMechanik
                 return null;
             }
         }
+
+        public async Task<ErroMsg> ConfirmTechnicianAssociateVehicle(SentOtpVehicle model)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                //client = new HttpClient();
+                var json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.PostAsync($"{App.base_url}workshops/confirm-technician-association/", content);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var countries = JsonConvert.DeserializeObject<ErroMsg>(Data);
+
+                return countries;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<ErroMsg> ConfirmVehicleTechnicianAssociateVehicle(SentOtpVehicle model)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                //client = new HttpClient();
+                var json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.PostAsync($"{App.base_url}workshops/confirm-vehicle-technician-association/", content);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var countries = JsonConvert.DeserializeObject<ErroMsg>(Data);
+
+                return countries;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<ErroMsg> ConfirmVehicleTechnicianAssociation(SentOtpVehicle model)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                //client = new HttpClient();
+                var json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.PostAsync($"{App.base_url}workshops/confirm-vehicle-technician-association/", content);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var countries = JsonConvert.DeserializeObject<ErroMsg>(Data);
+
+                return countries;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<ErroMsg> ConfirmDeAssociateVehicle(SentOtpVehicle model)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                //client = new HttpClient();
+                var json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.PostAsync($"{App.base_url}workshops/confirm-vehicle-disassociation/", content);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var countries = JsonConvert.DeserializeObject<ErroMsg>(Data);
+
+                return countries;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<NewVehicle> VehicleList()
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.GetAsync($"{App.base_url}vehicles/list/");
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var vehicles = JsonConvert.DeserializeObject<NewVehicle>(Data);
+                return vehicles;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<NewTechnicanModel> TechnicianList()
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.GetAsync($"{App.base_url}users/get-unassociated-user");
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var Technicans = JsonConvert.DeserializeObject<NewTechnicanModel>(Data);
+                return Technicans;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<ErroMsg> ConfirmDeAssociateTechnician(SentOtpVehicle model)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                //client = new HttpClient();
+                var json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.PostAsync($"{App.base_url}workshops/confirm-vehicle-disassociation/", content);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var countries = JsonConvert.DeserializeObject<ErroMsg>(Data);
+
+                return countries;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<ErroMsg> Techniciandisassociate(DeAssociatevehicleModel model)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                //client = new HttpClient();
+                var json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.PostAsync($"{App.base_url}workshops/technician-disassociate/", content);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var countries = JsonConvert.DeserializeObject<ErroMsg>(Data);
+
+                return countries;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<ErroMsg> VechicleDeAssociate(DeAssociatevehicleModel model)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                //client = new HttpClient();
+                var json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.PostAsync($"{App.base_url}workshops/vehicle-disassociate/", content);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var countries = JsonConvert.DeserializeObject<ErroMsg>(Data);
+
+                return countries;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+        //techincian
+        //public async Task<AssocialeModelResponse> AssociateTechnicial(technicai model)
+        //{
+        //    HttpResponseMessage httpResponse = new HttpResponseMessage();
+        //    try
+        //    {
+        //        var token = Preferences.Get("token", null);
+
+        //        string Data = string.Empty;
+        //        //client = new HttpClient();
+        //        var json = JsonConvert.SerializeObject(model);
+        //        var content = new StringContent(json, Encoding.UTF8, "application/json");
+        //        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+        //        httpResponse = await client.PostAsync($"{App.base_url}workshops/associate-vehicle/", content);
+        //        Data = httpResponse.Content.ReadAsStringAsync().Result;
+        //        var countries = JsonConvert.DeserializeObject<AssocialeModelResponse>(Data);
+        //        countries.status_code = httpResponse.StatusCode;
+        //        Preferences.Set("associatevehicle", countries.id);
+        //        return countries;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return null;
+        //    }
+        //}
     }
 }

@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WikitekMotorCycleMechanik.Models
+namespace WikitekMotorCycleMechanik.Models1
 {
-
-    public class AssociatevehicleModel
+    public class TechnicianvehicleModel
     {
         public string user_id { get; set; }
         public int workshop_id { get; set; }
-        public string vehicle_id { get; set; }
+        public string technician_id { get; set; }
     }
 }
