@@ -73,7 +73,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
                         // var id = Preferences.Get("associatevehicle", null);
                         SentOtpVehicle sentOtpVehicle = new SentOtpVehicle()
                         {
-                            associatevehicle_id = App.associateVechicleId,
+                            associatevehicle_id = 3,
                             otp = otp1 + otp2 + otp3 + otp4
                         };
 
