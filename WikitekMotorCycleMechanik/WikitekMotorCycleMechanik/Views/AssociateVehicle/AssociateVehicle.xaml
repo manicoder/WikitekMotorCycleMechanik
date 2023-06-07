@@ -17,8 +17,8 @@
                                             Style="{StaticResource ent}" Keyboard="Text"/>
                 </StackLayout>
             </Frame>
-            <Button Grid.Row="1" Text="Get OTP" Clicked="Button_Clicked_2" Style="{StaticResource btn}" Command="{Binding GetOtpCommand}"/>
-            <StackLayout x:Name="otpPanel"  Grid.Row="2" IsVisible="False">
+            <Button Grid.Row="1" Text="Get OTP"  Style="{StaticResource btn}" Command="{Binding GetOtpCommand}"/>
+            <StackLayout x:Name="otpPanel" IsVisible="{Binding OTPOpenPanel}"  Grid.Row="2">
                 <Grid Padding="40,40,40,40">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
@@ -53,6 +53,9 @@
                 </Grid>
                 <Button Grid.Row="3" Text="Send OTP" Style="{StaticResource btn}" Command="{Binding SendOTPCommand}" />
             </StackLayout>
+
+            <Button Visual="{Binding OpenButton,Mode=TwoWay}" Grid.Row="2" Text="Diassociate Vehicle" Style="{StaticResource btn}" Command="{Binding DisassociateVehicleCommand}"/>
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>

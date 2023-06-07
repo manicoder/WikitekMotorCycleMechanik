@@ -20,14 +20,15 @@ namespace WikitekMotorCycleMechanik.ViewModels
         {
             InitializeCommands();
             apiServices = new ApiServices1();
-            Initialization = Init();
+            // Initialization = Init();
         }
 
-        Task Initialization { get; }
+        //   Task Initialization { get; }
         public async Task Init()
         {
             try
             {
+
                 var msgs = await apiServices.TechnicianList();
                 Technicians = new ObservableCollection<NewTechnicianList>(msgs.results);
             }
@@ -123,7 +124,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
                     //var id = Preferences.Get("associatevehicle", null);
                     SentOtpVehicle sentOtpVehicle = new SentOtpVehicle()
                     {
-                        associatevehicletechnician_id = 2,
+                        // associatevehicletechnician_id = 2,
                         otp = otp1 + otp2 + otp3 + otp4
                     };
 
@@ -149,10 +150,9 @@ namespace WikitekMotorCycleMechanik.ViewModels
                 {
                     json = Preferences.Get("LoginResponse", null);
                     LoginResponse login = JsonSerializer.Deserialize<LoginResponse>(json);
-
                     AssignTechnicianVehicleModel assignTechnicianVehicleModel = new AssignTechnicianVehicleModel();
-                    assignTechnicianVehicleModel.associate_technician_id = 2;
-                    assignTechnicianVehicleModel.associate_vehicle_id = 4;
+                        assignTechnicianVehicleModel.associate_technician_id = App.SelectedTechnician.id; 
+                    assignTechnicianVehicleModel.associate_vehicle_id = App.associateVechicleId;
                     assignTechnicianVehicleModel.user_id = login.user_id;// "fafbbd01-f6ef-4763-be67-a8285c494fce";//App.user.user_id;
                     assignTechnicianVehicleModel.start_date = startDate;
                     assignTechnicianVehicleModel.end_date = endDate;
@@ -166,11 +166,15 @@ namespace WikitekMotorCycleMechanik.ViewModels
                 {
                 }
             });
+
+
         }
         #endregion
         #region ICommands
         public ICommand SendOTPCommand { get; set; }
         public ICommand GetOtpCommand { get; set; }
+        public ICommand DisassociateVehicleCommand { get; set; }
+
         #endregion
     }
 }

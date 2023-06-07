@@ -28,6 +28,16 @@ namespace WikitekMotorCycleMechanik.Views.AssignTechnicianVehicle
             }
         }
 
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            progressPanel.IsVisible = true;
+            progress.IsRunning = true;
+            await Task.Delay(100);
+            await viewModel.Init();
+            progressPanel.IsVisible = false;
+            progress.IsRunning = false;
+        }
         private void otp1_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (e.NewTextValue.Length == 1)

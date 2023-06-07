@@ -30,10 +30,7 @@ namespace WikitekMotorCycleMechanik.Views.AssociateVehicle
         }
 
 
-        private void Button_Clicked_2(object sender, EventArgs e)
-        {
-            otpPanel.IsVisible = true;
-        }
+        
         private void otp1_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (e.NewTextValue.Length == 1)

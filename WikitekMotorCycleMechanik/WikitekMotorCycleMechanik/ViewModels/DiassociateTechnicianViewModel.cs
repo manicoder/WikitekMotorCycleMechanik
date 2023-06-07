@@ -26,7 +26,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
             try
             {
                 var msgs = await apiServices.TechnicianList();
-                Technicians = new ObservableCollection<NewTechnicianList>(msgs.results.Take(100));
+                Technicians = new ObservableCollection<NewTechnicianList>(msgs.results.Take(50));
             }
             catch (Exception ex)
             {

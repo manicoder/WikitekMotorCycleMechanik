@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using WikitekMotorCycleMechanik.CustomControls;
 using WikitekMotorCycleMechanik.Interfaces;
 using WikitekMotorCycleMechanik.Models;
+using WikitekMotorCycleMechanik.Models1;
 using WikitekMotorCycleMechanik.Services;
 using WikitekMotorCycleMechanik.ViewModels;
 using WikitekMotorCycleMechanik.Views.MasterDetail;
@@ -70,6 +71,7 @@ namespace WikitekMotorCycleMechanik
         public static string selectedBannerId = string.Empty;
         public static JobcardResult selected_jobcard;
         public static int associateVechicleId;
+        public static NewTechnicianList SelectedTechnician;
 
         public App()
         {

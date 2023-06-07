@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,16 @@ namespace WikitekMotorCycleMechanik.Views.AddTechnician
             InitializeComponent();
             BindingContext = viewModel = new AddTechnicianViewModel(this, null);
         }
-
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            progressPanel.IsVisible = true;
+            progress.IsRunning = true;
+            await Task.Delay(100);
+            await viewModel.Init();
+            progressPanel.IsVisible = false;
+            progress.IsRunning = false;
+        }
         private void Button_Clicked(object sender, EventArgs e)
         {
             otpPanel.IsVisible = true;

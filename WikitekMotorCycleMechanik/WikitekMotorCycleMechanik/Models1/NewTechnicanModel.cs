@@ -9,11 +9,12 @@ namespace WikitekMotorCycleMechanik.Models1
         public int count { get; set; }
         public string next { get; set; }
         public object previous { get; set; }
-        public  List<NewTechnicianList> results { get; set; }
+        public List<NewTechnicianList> results { get; set; }
     }
 
     public class NewTechnicianList
-    {
+    { 
+
         public string id { get; set; }
         public string email { get; set; }
         public string mobile { get; set; }

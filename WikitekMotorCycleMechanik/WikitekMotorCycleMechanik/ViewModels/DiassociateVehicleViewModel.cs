@@ -86,7 +86,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
         {
             try
             {
-                var msgs =await apiServices.VehicleList();
+                var msgs = await apiServices.VehicleList();
                 Vehicles = new ObservableCollection<VehicleList>(msgs.results);
             }
             catch (Exception ex)
@@ -118,6 +118,11 @@ namespace WikitekMotorCycleMechanik.ViewModels
                     otp2 = string.Empty;
                     otp3 = string.Empty;
                     otp4 = string.Empty;
+
+                    if (msg.success)
+                    {
+                        await this.page.Navigation.PopToRootAsync();
+                    }
 
                     //await this.page.Navigation.PushAsync(new Views.AssociateVehicleDetail.AssociateVehicleDetail());
                     ////api/v1/workshops/associate-vehicle0099

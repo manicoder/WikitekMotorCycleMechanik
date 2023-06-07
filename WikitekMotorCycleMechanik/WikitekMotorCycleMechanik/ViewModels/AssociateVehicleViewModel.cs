@@ -19,9 +19,12 @@ namespace WikitekMotorCycleMechanik.ViewModels
         {
             InitializeCommands();
             apiServices = new ApiServices1();
+
+            OTPOpenPanel = false;
+            OpenButton = false;
         }
 
-        private string mAssociateVehicleId = "MR17RU2748";
+        private string mAssociateVehicleId = "MP094321";
         public string AssociateVehicleId
         {
             get { return mAssociateVehicleId; }
@@ -58,7 +61,29 @@ namespace WikitekMotorCycleMechanik.ViewModels
             get { return motp4; }
             set { motp4 = value; }
         }
+        private bool mOTPOpenPanel;
 
+        public bool OTPOpenPanel
+        {
+            get { return mOTPOpenPanel; }
+            set
+            {
+                mOTPOpenPanel = value;
+                OnPropertyChanged(nameof(OTPOpenPanel));
+            }
+        }
+
+        private bool mOpenButton;
+
+        public bool OpenButton
+        {
+            get { return mOpenButton; }
+            set
+            {
+                mOpenButton = value;
+                OnPropertyChanged(nameof(OpenButton));
+            }
+        }
 
         #region Methods
         string json;
@@ -73,13 +98,13 @@ namespace WikitekMotorCycleMechanik.ViewModels
                         // var id = Preferences.Get("associatevehicle", null);
                         SentOtpVehicle sentOtpVehicle = new SentOtpVehicle()
                         {
-                            associatevehicle_id = 3,
+                            associatevehicle_id = App.associateVechicleId,
                             otp = otp1 + otp2 + otp3 + otp4
                         };
 
                         var msg = await apiServices.ConfirmAssociateVehicle(sentOtpVehicle);
                         await page.DisplayAlert("Success!", msg.message, "OK");
-                         
+
                         await this.page.Navigation.PushAsync(new Views.AssociateVehicleDetail.AssociateVehicleDetail());
                         //api/v1/workshops/associate-vehicle0099
 
@@ -106,7 +131,33 @@ namespace WikitekMotorCycleMechanik.ViewModels
                     associatevehicleModel.vehicle_id = AssociateVehicleId;
                     associatevehicleModel.workshop_id = login.agent.workshop.id;
                     var resp = await apiServices.AssociateVehicle(associatevehicleModel);
+                    await page.DisplayAlert("", resp?.message, "OK");
+
                     App.associateVechicleId = resp.id;
+                    if (resp.id < 1)
+                    {
+                        OTPOpenPanel = false;
+                        OpenButton = true;
+                    }
+                    else
+                    {
+                        OTPOpenPanel = true;
+                        OpenButton = false;
+                    }
+                    //api/v1/workshops/associate-vehicle0099
+
+                }
+                catch (Exception ex)
+                {
+                }
+            });
+
+            DisassociateVehicleCommand = new Command(async (obj) =>
+            {
+                try
+                {
+                    await this.page.Navigation.PushAsync(new Views.DiassociateVehicle.DiassociateVehicle());
+
                     //api/v1/workshops/associate-vehicle0099
 
                 }
@@ -119,6 +170,9 @@ namespace WikitekMotorCycleMechanik.ViewModels
         #region ICommands
         public ICommand SendOTPCommand { get; set; }
         public ICommand GetOtpCommand { get; set; }
+        public ICommand DisassociateVehicleCommand { get; set; }
+
+
         #endregion
     }
 }

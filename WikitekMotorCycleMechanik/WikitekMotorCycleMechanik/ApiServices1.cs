@@ -153,7 +153,7 @@ namespace WikitekMotorCycleMechanik
             }
         }
 
-        public async Task<ErroMsg> ConfirmTechnicianAssociateVehicle(SentOtpVehicle model)
+        public async Task<ErroMsg> ConfirmTechnicianAssociateVehicle(SentOtpTechnician model)
         {
             HttpResponseMessage httpResponse = new HttpResponseMessage();
             try

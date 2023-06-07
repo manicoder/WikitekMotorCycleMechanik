@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using WikitekMotorCycleMechanik.Models;
 using WikitekMotorCycleMechanik.Models1;
@@ -20,7 +23,45 @@ namespace WikitekMotorCycleMechanik.ViewModels
             InitializeCommands();
             apiServices = new ApiServices1();
         }
-        private string mTechnicianId = "fafbbd01-f6ef-4763-be67-a8285c494fce";
+
+        public async Task Init()
+        {
+            try
+            {
+                var msgs = await apiServices.TechnicianList();
+                Technicians = new ObservableCollection<NewTechnicianList>(msgs.results.Take(50));
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
+        private NewTechnicianList mCurrentSelectedTechnician;
+
+        public NewTechnicianList CurrentSelectedTechnician
+        {
+            get { return mCurrentSelectedTechnician; }
+            set
+            {
+                mCurrentSelectedTechnician = value;
+                //  this.TechnicianId = value.id;
+                OnPropertyChanged(nameof(CurrentSelectedTechnician));
+            }
+        }
+
+        private ObservableCollection<NewTechnicianList> mTechnicians;
+        public ObservableCollection<NewTechnicianList> Technicians
+        {
+            get { return mTechnicians; }
+            set
+            {
+                mTechnicians = value;
+                OnPropertyChanged(nameof(Technicians));
+            }
+        }
+        private string mTechnicianId;// = "fafbbd01-f6ef-4763-be67-a8285c494fce";
         public string TechnicianId
         {
             get { return mTechnicianId; }
@@ -68,9 +109,10 @@ namespace WikitekMotorCycleMechanik.ViewModels
                 try
                 {
                     // var id = Preferences.Get("associatevehicle", null);
-                    SentOtpVehicle sentOtpVehicle = new SentOtpVehicle()
+                    SentOtpTechnician sentOtpVehicle = new SentOtpTechnician()
                     {
-                        associatetechnician_id = 1,
+
+                        associatetechnician_id = App.associateVechicleId,
                         otp = otp1 + otp2 + otp3 + otp4
                     };
 
@@ -90,15 +132,41 @@ namespace WikitekMotorCycleMechanik.ViewModels
             {
                 try
                 {
-                    json = Preferences.Get("LoginResponse", null);
-                    LoginResponse login = JsonSerializer.Deserialize<LoginResponse>(json);
+                    NewTechnicianList idd;
+                    idd = this.Technicians.Where(x => x.email == TechnicianId).FirstOrDefault();
+                    if (idd == null)
+                    {
+                        idd = this.Technicians.Where(x => x.mobile == TechnicianId).FirstOrDefault();
+                        if (idd == null)
+                        {
+                            idd = this.Technicians.Where(x => x.email == TechnicianId).FirstOrDefault();
 
-                    TechnicianvehicleModel technicianvehicleModel = new TechnicianvehicleModel();
-                    technicianvehicleModel.user_id = login.user_id;// "fafbbd01-f6ef-4763-be67-a8285c494fce";//App.user.user_id;
-                    technicianvehicleModel.technician_id = TechnicianId;
-                    technicianvehicleModel.workshop_id = login.agent.workshop.id;
-                    var resp = await apiServices.AddTechnician(technicianvehicleModel);
-                    App.associateVechicleId = resp.id;
+                        }
+                    }
+
+
+                    if (idd != null)
+                    {
+                        App.SelectedTechnician = idd;
+
+                        json = Preferences.Get("LoginResponse", null);
+                        LoginResponse login = JsonSerializer.Deserialize<LoginResponse>(json);
+
+                        TechnicianvehicleModel technicianvehicleModel = new TechnicianvehicleModel();
+                        technicianvehicleModel.user_id = login.user_id;// "fafbbd01-f6ef-4763-be67-a8285c494fce";//App.user.user_id;
+                        technicianvehicleModel.technician_id = idd.id;
+                        technicianvehicleModel.workshop_id = login.agent.workshop.id;
+                        var resp = await apiServices.AddTechnician(technicianvehicleModel);
+                        App.associateVechicleId = resp.id;
+
+                        await page.DisplayAlert("", resp.message, "OK");
+                    }
+                    else
+                    {
+                        await page.DisplayAlert("", "Technician Not found!", "OK");
+                    }
+
+
                     //api/v1/workshops/associate-vehicle0099
 
                 }

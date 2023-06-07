@@ -126,7 +126,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
                     //var id = Preferences.Get("associatevehicle", null);
                     SentOtpVehicle sentOtpVehicle = new SentOtpVehicle()
                     {
-                        associatevehicletechnician_id = 2,
+                       // associatevehicletechnician_id = 2,
                         otp = otp1 + otp2 + otp3 + otp4
                     };
 
@@ -153,9 +153,16 @@ namespace WikitekMotorCycleMechanik.ViewModels
                     json = Preferences.Get("LoginResponse", null);
                     LoginResponse login = JsonSerializer.Deserialize<LoginResponse>(json);
 
+                    //AssignTechnicianVehicleModel assignTechnicianVehicleModel = new AssignTechnicianVehicleModel();
+                    //assignTechnicianVehicleModel.associate_technician_id = 2;
+                    //assignTechnicianVehicleModel.associate_vehicle_id = 4;
+                    //assignTechnicianVehicleModel.user_id = login.user_id;// "fafbbd01-f6ef-4763-be67-a8285c494fce";//App.user.user_id;
+                    //assignTechnicianVehicleModel.start_date = startDate;
+                    //assignTechnicianVehicleModel.end_date = endDate;
+
                     AssignTechnicianVehicleModel assignTechnicianVehicleModel = new AssignTechnicianVehicleModel();
-                    assignTechnicianVehicleModel.associate_technician_id = 2;
-                    assignTechnicianVehicleModel.associate_vehicle_id = 4;
+                    assignTechnicianVehicleModel.associate_technician_id = App.SelectedTechnician.id;
+                    assignTechnicianVehicleModel.associate_vehicle_id = App.associateVechicleId;
                     assignTechnicianVehicleModel.user_id = login.user_id;// "fafbbd01-f6ef-4763-be67-a8285c494fce";//App.user.user_id;
                     assignTechnicianVehicleModel.start_date = startDate;
                     assignTechnicianVehicleModel.end_date = endDate;
