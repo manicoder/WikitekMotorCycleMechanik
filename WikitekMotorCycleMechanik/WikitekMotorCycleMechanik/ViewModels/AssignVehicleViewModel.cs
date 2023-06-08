@@ -22,6 +22,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
             apiServices = new ApiServices1();
             Initialization = Init();
         }
+       
 
         private ObservableCollection<VehicleList> mVechicles;
         public ObservableCollection<VehicleList> Vehicles
@@ -63,6 +64,28 @@ namespace WikitekMotorCycleMechanik.ViewModels
             }
         }
 
+        private string mSelectedStartDate;
+        public string SelectedStartDate
+        {
+            get { return mSelectedStartDate; }
+            set
+            {
+                mSelectedStartDate = value;
+                OnPropertyChanged(nameof(SelectedStartDate));
+            }
+        }
+
+        private string mSelectedEndDate;
+        public string SelectedEndDate
+        {
+            get { return mSelectedEndDate; }
+            set
+            {
+                mSelectedEndDate = value;
+                OnPropertyChanged(nameof(SelectedEndDate));
+            }
+        }
+
 
         Task Initialization { get; }
         private string mstartDate;
@@ -79,6 +102,27 @@ namespace WikitekMotorCycleMechanik.ViewModels
             set { mendDate = value; }
         }
 
+        private string mstartTime;
+        public string startTime
+        {
+            get { return mstartTime; }
+            set
+            {
+                mstartTime = value;
+                OnPropertyChanged(nameof(startTime));
+            }
+        }
+        private string mendTime;
+
+        public string endTime
+        {
+            get { return mendTime; }
+            set
+            {
+                mendTime = value;
+                OnPropertyChanged(nameof(endTime));
+            }
+        }
 
         private string motp1;
         public string otp1
@@ -126,7 +170,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
                     //var id = Preferences.Get("associatevehicle", null);
                     SentOtpVehicle sentOtpVehicle = new SentOtpVehicle()
                     {
-                       // associatevehicletechnician_id = 2,
+                        // associatevehicletechnician_id = 2,
                         otp = otp1 + otp2 + otp3 + otp4
                     };
 
@@ -164,8 +208,8 @@ namespace WikitekMotorCycleMechanik.ViewModels
                     assignTechnicianVehicleModel.associate_technician_id = App.SelectedTechnician.id;
                     assignTechnicianVehicleModel.associate_vehicle_id = App.associateVechicleId;
                     assignTechnicianVehicleModel.user_id = login.user_id;// "fafbbd01-f6ef-4763-be67-a8285c494fce";//App.user.user_id;
-                    assignTechnicianVehicleModel.start_date = startDate;
-                    assignTechnicianVehicleModel.end_date = endDate;
+                    assignTechnicianVehicleModel.start_date = SelectedStartDate;
+                    assignTechnicianVehicleModel.end_date = SelectedEndDate;
 
                     var resp = await apiServices.VehicleTechnicianAssociation(assignTechnicianVehicleModel);
                     App.associateVechicleId = resp.id;

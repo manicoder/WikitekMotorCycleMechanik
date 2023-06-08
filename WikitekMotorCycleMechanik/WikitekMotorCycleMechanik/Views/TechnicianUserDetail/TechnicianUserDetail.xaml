@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WikitekMotorCycleMechanik.Views.TechnicianUserDetail.TechnicianUserDetail"
-             Title="TechnicianUserDetail">
+             Title="Assign Vehicle">
     <ContentPage.Content>
         <Grid Padding="30,30,30,30" RowSpacing="18">
             <Grid.RowDefinitions>

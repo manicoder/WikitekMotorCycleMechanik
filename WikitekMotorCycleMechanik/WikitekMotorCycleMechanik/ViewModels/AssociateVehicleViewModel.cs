@@ -24,7 +24,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
             OpenButton = false;
         }
 
-        private string mAssociateVehicleId = "MP094321";
+        private string mAssociateVehicleId;// = "MP094321";
         public string AssociateVehicleId
         {
             get { return mAssociateVehicleId; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
@@ -13,27 +14,28 @@ using Xamarin.Forms;
 
 namespace WikitekMotorCycleMechanik.ViewModels
 {
-    public class AssignTechnicianViewModel : ViewModelBase
+    public class AssignTechniciansViewModel : ViewModelBase
     {
+
         ApiServices1 apiServices;
-        public AssignTechnicianViewModel(Page page, LoginResponse use) : base(page)
+        public AssignTechniciansViewModel(Page page, LoginResponse use) : base(page)
         {
             InitializeCommands();
             apiServices = new ApiServices1();
-            SelectedTechnician = App.SelectedTechnician;
+            this.SelectedVehicle = App.SelectedVehicle;
             // Initialization = Init();
         }
-
-        private NewTechnicianList mSelectedTechnician;
-        public NewTechnicianList SelectedTechnician
+        private VehicleList mSelectedVehicle;
+        public VehicleList SelectedVehicle
         {
-            get { return mSelectedTechnician; }
+            get { return mSelectedVehicle; }
             set
             {
-                mSelectedTechnician = value;
-                OnPropertyChanged(nameof(SelectedTechnician));
+                mSelectedVehicle = value;
+                OnPropertyChanged(nameof(SelectedVehicle));
             }
         }
+
 
         //   Task Initialization { get; }
         public async Task Init()
@@ -43,24 +45,8 @@ namespace WikitekMotorCycleMechanik.ViewModels
                 var json = Preferences.Get("LoginResponse", null);
                 LoginResponse login = JsonSerializer.Deserialize<LoginResponse>(json);
                 int WorkShopId = login.agent.workshop.id;
-                var msgs = await apiServices.AssignTechnicianList(WorkShopId);
-                Technicians = new ObservableCollection<AssignTechnicianItem>(msgs.results);
-            }
-            catch (Exception ex)
-            {
-
-                throw;
-            }
-        }
-        public async Task Init1()
-        {
-            try
-            {
-                var json = Preferences.Get("LoginResponse", null);
-                LoginResponse login = JsonSerializer.Deserialize<LoginResponse>(json);
-                int WorkShopId = login.agent.workshop.id;
-                var msgs = await apiServices.AssignTechnicianList(WorkShopId);
-                Technicians = new ObservableCollection<AssignTechnicianItem>(msgs.results);
+                var msgs = await apiServices.GetAssignTechnicianList(WorkShopId);
+                Technicians = new ObservableCollection<AssignTechnicianVehiclesItem>(msgs.results);
             }
             catch (Exception ex)
             {
@@ -69,8 +55,8 @@ namespace WikitekMotorCycleMechanik.ViewModels
             }
         }
 
-        private ObservableCollection<AssignTechnicianItem> mTechnicians;
-        public ObservableCollection<AssignTechnicianItem> Technicians
+        private ObservableCollection<AssignTechnicianVehiclesItem> mTechnicians;
+        public ObservableCollection<AssignTechnicianVehiclesItem> Technicians
         {
             get { return mTechnicians; }
             set
@@ -80,15 +66,14 @@ namespace WikitekMotorCycleMechanik.ViewModels
             }
         }
 
-        private AssignTechnicianItem mCurrentSelectedTechnician;
+        private AssignTechnicianVehiclesItem mCurrentSelectedTechnician;
 
-        public AssignTechnicianItem CurrentSelectedTechnician
+        public AssignTechnicianVehiclesItem CurrentSelectedTechnician
         {
             get { return mCurrentSelectedTechnician; }
             set
             {
                 mCurrentSelectedTechnician = value;
-                App.CurrentSelectedTechnician = CurrentSelectedTechnician;
                 OnPropertyChanged(nameof(CurrentSelectedTechnician));
             }
         }
@@ -218,17 +203,20 @@ namespace WikitekMotorCycleMechanik.ViewModels
                     //var id = Preferences.Get("associatevehicle", null);
                     SentOtpAssignTechnician sentOtpVehicle = new SentOtpAssignTechnician()
                     {
-                         associatevehicletechnician_id = App.associateVechicleId,
+                        associatevehicletechnician_id = App.associateVechicleId,
                         otp = otp1 + otp2 + otp3 + otp4
                     };
 
-                    var msg = await apiServices.ConfirmVehicleTechnicianAssociateVehicle2(sentOtpVehicle);
+                    var msg = await apiServices.ConfirmVehicleTechnicianAssociateVehicle1(sentOtpVehicle);
                     await page.DisplayAlert(msg.status, msg.message, "OK");
                     otp1 = string.Empty;
                     otp2 = string.Empty;
                     otp3 = string.Empty;
                     otp4 = string.Empty;
-                    await this.page.Navigation.PopToRootAsync();
+                    if (msg.success)
+                    {
+                        this.page.Navigation.PopToRootAsync();
+                    }
                     //await this.page.Navigation.PushAsync(new Views.AssociateVehicleDetail.AssociateVehicleDetail());
                     //api/v1/workshops/associate-vehicle0099
 
@@ -237,30 +225,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
                 {
                 }
             });
-            //totomanoj CurrentSelectedTechnician
-            GetOtpCommand1 = new Command(async (obj) =>
-            {
-                try
-                {
-                    json = Preferences.Get("LoginResponse", null);
-                    LoginResponse login = JsonSerializer.Deserialize<LoginResponse>(json);
-                    AssignTechnicianVehicleModel assignTechnicianVehicleModel = new AssignTechnicianVehicleModel();
-                    assignTechnicianVehicleModel.associate_technician_id = App.SelectedTechnician.email;
-                    assignTechnicianVehicleModel.associate_vehicle_id = App.associateVechicleId;
-                    assignTechnicianVehicleModel.user_id = login.user_id;// "fafbbd01-f6ef-4763-be67-a8285c494fce";//App.user.user_id;
-                    assignTechnicianVehicleModel.start_date = startDate;
-                    assignTechnicianVehicleModel.end_date = endDate;
 
-                    var msg = await apiServices.AssignTechnician(assignTechnicianVehicleModel);
-                    App.associateVechicleId = msg.id;
-                    await page.DisplayAlert(msg.status, msg.message, "OK");
-
-                    //api/v1/workshops/associate-vehicle0099
-                }
-                catch (Exception ex)
-                {
-                }
-            });
             GetOtpCommand = new Command(async (obj) =>
             {
                 try
@@ -268,13 +233,23 @@ namespace WikitekMotorCycleMechanik.ViewModels
                     json = Preferences.Get("LoginResponse", null);
                     LoginResponse login = JsonSerializer.Deserialize<LoginResponse>(json);
                     AssignTechnicianVehicleModel1 assignTechnicianVehicleModel = new AssignTechnicianVehicleModel1();
-                    assignTechnicianVehicleModel.associate_technician_id = App.SelectedTechnician.email;
-                  
-                   //get otp todo
-                    assignTechnicianVehicleModel.associate_vehicle_id = App.CurrentSelectedTechnician.registration_id;
+                    assignTechnicianVehicleModel.associate_technician_id = CurrentSelectedTechnician.email;
+                    assignTechnicianVehicleModel.associate_vehicle_id = App.AssociateVehicleId;// App.associateVechicleId;
                     assignTechnicianVehicleModel.user_id = login.user_id;// "fafbbd01-f6ef-4763-be67-a8285c494fce";//App.user.user_id;
-                    assignTechnicianVehicleModel.start_date = SelectedStartDate;
                     assignTechnicianVehicleModel.end_date = SelectedStartDate;
+                    assignTechnicianVehicleModel.end_date = SelectedEndDate;
+
+                    if (startTime != null && startTime.Contains("PM") || startTime.Contains("AM"))
+                    {
+                        await page.DisplayAlert("Error", "Please enter start date and time", "OK");
+                        return;
+                    }
+                    else if (endTime != null && endTime.Contains("PM") || endTime.Contains("AM"))
+                    {
+                        await page.DisplayAlert("Error", "Please enter start date and time", "OK");
+                        return;
+                    }
+
 
                     var msg = await apiServices.AssignTechnician1(assignTechnicianVehicleModel);
                     App.associateVechicleId = msg.id;
@@ -294,8 +269,6 @@ namespace WikitekMotorCycleMechanik.ViewModels
         #region ICommands
         public ICommand SendOTPCommand { get; set; }
         public ICommand GetOtpCommand { get; set; }
-        public ICommand GetOtpCommand1 { get; set; }
-
         public ICommand DisassociateVehicleCommand { get; set; }
 
         #endregion

@@ -34,11 +34,30 @@
                 </StackLayout>
             </Frame>
             <Frame Padding="10,0,0,0"  Grid.Row="2"      Margin="0" BorderColor="Red"  CornerRadius="5" HorizontalOptions="FillAndExpand">
-                <DatePicker  Format="dd-MM-yyyy"  Date="{Binding startDate,Mode=TwoWay}" HorizontalOptions="FillAndExpand"  FontSize="Small"   />
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="80"/>
+                    </Grid.ColumnDefinitions>
+                    <DatePicker x:Name="startDatePicker" Format="yyyy-MM-dd" DateSelected="DatePicker_DateSelected" HorizontalOptions="FillAndExpand"  FontSize="Small"   />
+                    <TimePicker Grid.Column="1" x:Name="startTimePicker" PropertyChanged="TimePicker_PropertyChanged" />
+                    <Button Text="Now" Clicked="Button_Clicked_1" Grid.Column="2"/>
+                </Grid> 
             </Frame>
             <Frame Padding="10,0,0,0"  Grid.Row="3"    Margin="0" BorderColor="Red"  CornerRadius="5" HorizontalOptions="FillAndExpand">
-                <DatePicker  Format="dd-MM-yyyy"  Date="{Binding endDate,Mode=TwoWay}" HorizontalOptions="FillAndExpand"  FontSize="Small"   />
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="80"/>
+                    </Grid.ColumnDefinitions>
+                    <DatePicker  x:Name="endDatePicker" Format="yyyy-MM-dd" DateSelected="DatePicker_DateSelected_1" HorizontalOptions="FillAndExpand"  FontSize="Small"   />
+                    <TimePicker x:Name="endTimePicker"  PropertyChanged="TimePicker_PropertyChanged_1" Grid.Column="1" />
+                    <Button Text="Now" Clicked="Button_Clicked_2" Grid.Column="2"/>
+                </Grid>
             </Frame>
+
             <Button Grid.Row="2" Text="Get OTP" Style="{StaticResource btn}" Command="{Binding GetOtpCommand}" Clicked="Button_Clicked" />
             <StackLayout x:Name="otpPanel"  Grid.Row="3" IsVisible="False">
                 <Grid  Padding="40,40,40,40">

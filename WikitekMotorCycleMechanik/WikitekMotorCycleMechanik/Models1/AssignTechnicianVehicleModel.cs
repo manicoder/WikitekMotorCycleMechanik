@@ -12,4 +12,12 @@ namespace WikitekMotorCycleMechanik.Models1
         public string start_date { get; set; }
         public string end_date { get; set; }
     }
+    public class AssignTechnicianVehicleModel1
+    {
+        public string associate_technician_id { get; set; }
+        public string associate_vehicle_id { get; set; }
+        public string user_id { get; set; }
+        public string start_date { get; set; }
+        public string end_date { get; set; }
+    }
 }

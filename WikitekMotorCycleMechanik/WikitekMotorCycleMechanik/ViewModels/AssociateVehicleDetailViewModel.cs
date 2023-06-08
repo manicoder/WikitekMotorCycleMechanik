@@ -26,6 +26,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
                 var msgs = await apiServices.VehicleList();
                 Vehicles = new ObservableCollection<VehicleList>(msgs.results);
                 SelectedVehicle = Vehicles.Where(x => x.registration_id == App.AssociateVehicleId).FirstOrDefault();
+                App.SelectedVehicle = SelectedVehicle;
             }
             catch (Exception ex)
             {
@@ -58,14 +59,13 @@ namespace WikitekMotorCycleMechanik.ViewModels
         }
 
         #region Methods
-        [Obsolete]
-        public void InitializeCommands()
+         public void InitializeCommands()
         {
             AssignTechnicianCommand = new Command(async (obj) =>
             {
                 try
                 {
-                    await this.page.Navigation.PushAsync(new Views.AssignTechnicianVehicle.AssignTechnicianVehicle());
+                    await this.page.Navigation.PushAsync(new Views.AssignTechnicianVehicle.AssignTechnicians());
                 }
                 catch (Exception ex)
                 {

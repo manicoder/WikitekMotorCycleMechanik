@@ -73,6 +73,9 @@ namespace WikitekMotorCycleMechanik
         public static int associateVechicleId;
         public static NewTechnicianList SelectedTechnician;
         public static string AssociateVehicleId;
+        public static string TechnicianId;
+        public static VehicleList SelectedVehicle;
+        public static AssignTechnicianItem CurrentSelectedTechnician;
 
         public App()
         {

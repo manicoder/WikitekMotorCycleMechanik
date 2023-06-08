@@ -44,6 +44,9 @@
     <Compile Update="PopupPages\SelectVehicleSegmentPopupPage.xaml.cs">
       <DependentUpon>SelectVehicleSegmentPopupPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\AssignTechnicianVehicle\AssignTechnicians.xaml.cs">
+      <DependentUpon>AssignTechnicians.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

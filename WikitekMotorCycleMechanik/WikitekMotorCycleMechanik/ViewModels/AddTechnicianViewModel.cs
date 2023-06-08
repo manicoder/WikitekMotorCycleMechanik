@@ -151,7 +151,6 @@ namespace WikitekMotorCycleMechanik.ViewModels
                         if (idd == null)
                         {
                             idd = this.Technicians.Where(x => x.email == TechnicianId).FirstOrDefault();
-
                         }
                     }
 
@@ -163,7 +162,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
 
                         json = Preferences.Get("LoginResponse", null);
                         LoginResponse login = JsonSerializer.Deserialize<LoginResponse>(json);
-
+                        App.TechnicianId = idd.email;
                         TechnicianvehicleModel technicianvehicleModel = new TechnicianvehicleModel();
                         technicianvehicleModel.user_id = login.user_id;// "fafbbd01-f6ef-4763-be67-a8285c494fce";//App.user.user_id;
                         technicianvehicleModel.technician_id = idd.id;

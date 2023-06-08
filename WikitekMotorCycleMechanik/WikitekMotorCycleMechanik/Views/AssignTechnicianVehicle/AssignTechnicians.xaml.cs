@@ -12,15 +12,15 @@ using Xamarin.Forms.Xaml;
 namespace WikitekMotorCycleMechanik.Views.AssignTechnicianVehicle
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AssignTechnicianVehicle : ContentPage
+    public partial class AssignTechnicians : ContentPage
     {
-        AssignTechnicianViewModel viewModel;
-        public AssignTechnicianVehicle()
+        AssignTechniciansViewModel viewModel;
+        public AssignTechnicians()
         {
             try
             {
                 InitializeComponent();
-                BindingContext = viewModel = new AssignTechnicianViewModel(this, null);
+                BindingContext = viewModel = new AssignTechniciansViewModel(this, null);
             }
             catch (Exception ex)
             {
