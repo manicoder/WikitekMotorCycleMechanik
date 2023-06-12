@@ -187,6 +187,23 @@ namespace WikitekMotorCycleMechanik.ViewModels
         {
             // await page.Navigation.PushAsync(new Views.CreateServiceTicket.CreateServiceTicketPage(selected_vehicle));
         });
+
+        public ICommand ActivityRSManagerSectionCommand => new Command(async (obj) =>
+        {
+            try
+            {
+                using (UserDialogs.Instance.Loading("Loading...", null, null, true, MaskType.Black))
+                {
+                    await Task.Delay(200);
+                    await page.Navigation.PushAsync(new Views.ActivityRSManagerSection.ActivityRSManagerSection());
+                    //await page.Navigation.PushAsync(new Views.ActivityRSTechnicianSection.ActivityRSTechnicianSection());
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        });
         #endregion
     }
 }

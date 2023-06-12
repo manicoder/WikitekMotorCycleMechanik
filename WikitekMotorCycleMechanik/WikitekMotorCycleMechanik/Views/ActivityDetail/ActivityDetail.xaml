@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WikitekMotorCycleMechanik.Views.ActivityDetail.ActivityDetail"
+             Title="Activity Detail">
+    <ContentPage.Content>
+        <Grid Padding="20,20,20,20" RowSpacing="18">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" >
+                <Grid ColumnSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" 
+                                       Grid.Column="0"
+                                       Text="{Binding technician}" 
+                                       Style="{StaticResource lbl}"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"/>
+                    <Label Grid.Row="1" 
+                                       Grid.Column="0"
+                                       Text="{Binding vin}" 
+                                       Style="{StaticResource lbl}"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Start"/>
+
+                    <Label  Grid.Row="2"  Grid.Column="0"  Style="{StaticResource lbl}"
+                                           VerticalTextAlignment="Start"
+                                           HorizontalTextAlignment="Start">
+                        <Label.Text>
+                            <MultiBinding StringFormat="{}{0} {1}">
+                                <Binding Path="fromdate" />
+                                <Binding Path="todate" />
+                            </MultiBinding>
+                        </Label.Text>
+                    </Label>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1" >
+                <ListView x:Name="vehicletechnician_list" ItemsSource="{Binding VehicleTechnicians}"
+                      SelectedItem="{Binding CurrentSelectedVehicleTechnician}"
+                      HasUnevenRows="True" 
+                      SeparatorVisibility="None" 
+                      VerticalScrollBarVisibility="Never" 
+                      VerticalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame HasShadow="True" Margin="0,1,0,1" Padding="5">
+                                    <Grid ColumnSpacing="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Frame HasShadow="True" 
+                                           Padding="0"
+                                           Grid.Row="0"
+                                           Grid.Column="0"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"
+                                           CornerRadius="30">
+                                        </Frame>
+                                        <Label  Grid.Row="0"  Grid.Column="0"  Style="{StaticResource lbl}"
+                                           VerticalTextAlignment="Center"
+                                           HorizontalTextAlignment="Center">
+                                            <Label.Text>
+                                                <MultiBinding StringFormat="{}{0} {1}">
+                                                    <Binding Path="from_date" />
+                                                    <Binding Path="to_date" />
+                                                </MultiBinding>
+                                            </Label.Text>
+                                        </Label>
+                                       
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

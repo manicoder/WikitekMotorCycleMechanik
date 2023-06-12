@@ -32,6 +32,7 @@ namespace WikitekMotorCycleMechanik
         //public static string user_mail = string.Empty;
         public static string user_first_name = string.Empty;
         public static string user_last_name = string.Empty;
+        public static int workshopid;
         public static string user_id = string.Empty;
         public static string user_type = string.Empty;
         public static string dongle_type = string.Empty;
@@ -141,6 +142,7 @@ namespace WikitekMotorCycleMechanik
                         user_id = user?.user_id;
                         user_type = user?.user_type;
                         country_id = user?.agent?.workshop?.country;
+                        workshopid= user.agent.workshop.id;
                         MainPage = new MasterDetailView(user) { Detail = new NavigationPage(new Views.Dashboad.DashboadPage(user)) };
                     }
                 }

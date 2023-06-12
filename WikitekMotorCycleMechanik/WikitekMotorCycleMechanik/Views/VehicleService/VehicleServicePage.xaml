@@ -2,6 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WikitekMotorCycleMechanik.Views.VehicleService.VehicleServicePage" Title="Vehicle Service">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem   IconImageSource="run.png"
+                     Order="Primary"
+                     Command="{Binding ActivityRSManagerSectionCommand}"/>
+        <!--<ToolbarItem  Text="Technician Mgmt"
+                     Order="Primary"
+                     Command="{Binding TechnicianManagementCommand}"/>-->
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid Padding="10">
             <ListView x:Name="jobcard_list" ItemsSource="{Binding jobcard_list}"

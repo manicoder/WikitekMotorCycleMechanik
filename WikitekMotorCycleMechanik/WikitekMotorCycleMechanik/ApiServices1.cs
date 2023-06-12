@@ -361,6 +361,130 @@ namespace WikitekMotorCycleMechanik
             }
         }
 
+        public async Task<ActivityTechnician> ActivityTechnicianList(int workshopId)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.GetAsync($"{App.base_url}users/get-avaiable-user/?associate_workshop=" + workshopId);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var technicians = JsonConvert.DeserializeObject<ActivityTechnician>(Data);
+                return technicians;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<VechicleTechician> GetSctiveRSTechnicianSectionLoad(string email)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.GetAsync($"{App.base_url}workshops/get-vehicle-technician-association/?technician" + email);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var technicians = JsonConvert.DeserializeObject<VechicleTechician>(Data);
+                return technicians;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<ErroMsg> StartTrip(StartTripModel model)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                var json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.PostAsync($"{App.base_url}workshops/start-trip", content);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var res = JsonConvert.DeserializeObject<ErroMsg>(Data);
+                return res;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<ErroMsg> StopTrip(StopTripModel model)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                var json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.PostAsync($"{App.base_url}workshops/stop-trip", content);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var res = JsonConvert.DeserializeObject<ErroMsg>(Data);
+                return res;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+        public async Task<VechicleTechician> GetVechicleTechnicianAssociate(string technicianemailid)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+                string Data = string.Empty;
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.GetAsync($"{App.base_url}workshops/get-vehicle-technician-association/?technician=" + technicianemailid);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var technicians = JsonConvert.DeserializeObject<VechicleTechician>(Data);
+                return technicians;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<VechicleTechician> GetVechicleTechnicianAssociateDetail(int vechicletechnicianassociateid)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+                string Data = string.Empty;
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.GetAsync($"{App.base_url}workshops/get-vehicle-technician-association/?id=" + vechicletechnicianassociateid);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var technicians = JsonConvert.DeserializeObject<VechicleTechician>(Data);
+                return technicians;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
         public async Task<GetAssociateUserModel> GetAssociatedUserList()
         {
             HttpResponseMessage httpResponse = new HttpResponseMessage();
