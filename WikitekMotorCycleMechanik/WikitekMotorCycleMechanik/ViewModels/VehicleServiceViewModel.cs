@@ -143,7 +143,9 @@ namespace WikitekMotorCycleMechanik.ViewModels
             try
             {
                 selected_jobcard = (JobcardResult)obj;
+
                 App.selected_jobcard = selected_jobcard;
+                string role = App.user.role;
 
                 /*
                  STATUS_OPTIONS = (
@@ -170,12 +172,24 @@ namespace WikitekMotorCycleMechanik.ViewModels
                 //  if (App.Status == "Active")
                 //  {
                 App.Status = "DeActive";
-                await page.Navigation.PushAsync(new Views.RSManagerSection.RSManagerSection());
+                using (UserDialogs.Instance.Loading("Loading...", null, null, true, MaskType.Black))
+                {
+                    await Task.Delay(200);
+                    if (role == "RSAngel Technician")
+                    {
+                        await page.Navigation.PushAsync(new Views.RSTechnicianSection.RSTechnicianSection());
+                    }
+                    else
+                    {
+                        await page.Navigation.PushAsync(new Views.RSManagerSection.RSManagerSection());
+                    }
+                }
+                //
                 //   }
                 //   else if (App.Status == "DeActive")
                 //  {
                 //       App.Status = "Active";
-                //      await page.Navigation.PushAsync(new Views.RSTechnicianSection.RSTechnicianSection());
+                //  await page.Navigation.PushAsync(new Views.RSTechnicianSection.RSTechnicianSection());
                 //   }
             }
             catch (Exception ex)
@@ -195,8 +209,15 @@ namespace WikitekMotorCycleMechanik.ViewModels
                 using (UserDialogs.Instance.Loading("Loading...", null, null, true, MaskType.Black))
                 {
                     await Task.Delay(200);
-                    await page.Navigation.PushAsync(new Views.ActivityRSManagerSection.ActivityRSManagerSection());
-                    //await page.Navigation.PushAsync(new Views.ActivityRSTechnicianSection.ActivityRSTechnicianSection());
+                    string role = App.user.role;
+                    if (role == "RSAngel Technician")
+                    {
+                        await page.Navigation.PushAsync(new Views.ActivityRSTechnicianSection.ActivityRSTechnicianSection());
+                    }
+                    else
+                    {
+                        await page.Navigation.PushAsync(new Views.ActivityRSManagerSection.ActivityRSManagerSection());
+                    }
                 }
             }
             catch (Exception ex)

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" xmlns:local="clr-namespace:WikitekMotorCycleMechanik.CustomControls"
              x:Class="WikitekMotorCycleMechanik.Views.RSManagerSection.RSManagerSection"
              Title="RS Manager Section">
     <ContentPage.Content>
@@ -14,29 +14,68 @@
                 <ImageButton Source="ic_down.png" x:Name="ic_down_button" HorizontalOptions="Center"  BackgroundColor="White" BorderColor="White" Clicked="ImageButton_Clicked" WidthRequest="30" HeightRequest="30"/>
 
                 <StackLayout  BackgroundColor="White" Padding="10,0,10,10" VerticalOptions="FillAndExpand">
-                    <StackLayout x:Name="actionButtons">
-                        <Button Text="Arrange for Transport"/>
-                        <Button Text="Start for Pickup"/>
-                        <Button Text="Reached Customer"/>
+                    <StackLayout x:Name="actionButtons" VerticalOptions="EndAndExpand" Grid.Row="0">
+                        <Grid VerticalOptions="EndAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Row="2" Grid.Column="0">
+                                <Label x:Name="lblCustomerName"  Text="Customer Name" ></Label>
+                                <Label x:Name="lblMobileNo" Text="Mobile No" ></Label>
+                                <Label x:Name="lblStatus" Text="Status" ></Label>
+                                <Label x:Name="lblVechiclename" Text="VechicleName" ></Label>
+                            </StackLayout>
+                            <Image Grid.Row="2" Grid.Column="1" Source="phonecall.png" x:Name="btnPhonecall" HorizontalOptions="End"
+                                                HeightRequest="40"
+                                                WidthRequest="40">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="TalPhoneCall"
+                Tapped="TalPhoneCall_Tapped"
+                NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Frame Grid.Row="4" Grid.Column="0" IsVisible="{Binding QuotationIsVisible}" Grid.ColumnSpan="2" Style="{StaticResource frame}">
+                                <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                                    <local:CustomEntry x:Name="otp1" Text="{Binding Quotation}" Placeholder="Quotation"
+                                            Style="{StaticResource ent}" Keyboard="Text"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" IsVisible="{Binding VehicleDropDownIsVisible}" Style="{StaticResource frame}">
+                                <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                                    <Picker Title="--Select Vehicle--" ItemsSource="{Binding Vehicles}" HeightRequest="60" HorizontalOptions="FillAndExpand"
+                            ItemDisplayBinding="{Binding registration_id}" SelectedItem="{Binding CurrentSelectedVehicle}" />
+                               
+                                </StackLayout>
+                            </Frame>
+
+                            <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding buttonText}"  HorizontalOptions="Center" Style="{StaticResource btn}"  Command="{Binding PickUpCommand}"/>
+                        </Grid>
                     </StackLayout>
-                    <Grid VerticalOptions="FillAndExpand"/>
-                    <Grid VerticalOptions="End" Grid.Row="1">
+                    <Grid VerticalOptions="End" Grid.Row="1" x:Name="listItem" IsVisible="true">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
                         <StackLayout>
-                            <Label x:Name="lblCustomerName"  Text="Customer Name"></Label>
-                            <Label x:Name="lblMobileNo" Text="Mobile No"></Label>
+                            <Label x:Name="lblCustomerName1"  Text="Customer Name" Grid.Row="0" Grid.Column="0"></Label>
+                            <Label x:Name="lblMobileNo1" Text="Mobile No" Grid.Row="1" Grid.Column="0"></Label>
+                            <!--<Label x:Name="lblStatus1" Text="Status" Grid.Row="2" Grid.Column="0"></Label>-->
                         </StackLayout>
 
                         <Image Grid.Column="1" Source="phonecall.png" HorizontalOptions="End"
                                                 HeightRequest="40"
-                                                WidthRequest="40"/>
+                                                WidthRequest="40">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="TalPhoneCall1"
+                Tapped="TalPhoneCall1_Tapped"
+                NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>
                     </Grid>
                 </StackLayout>
             </StackLayout>
-
         </Grid>
     </ContentPage.Content>
 </ContentPage>

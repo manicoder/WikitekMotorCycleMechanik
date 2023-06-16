@@ -1,11 +1,106 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" xmlns:local="clr-namespace:WikitekMotorCycleMechanik.CustomControls"
              x:Class="WikitekMotorCycleMechanik.Views.RSTechnicianSection.RSTechnicianSection"
              Title="RS Techician Section">
     <ContentPage.Content>
-        <Grid Padding="10,10,10,10">
+        <Grid>
+
+            <maps:Map x:Name="map" BackgroundColor="White"/>
+
+            <StackLayout x:Name="customerPanel"  HeightRequest="100"  VerticalOptions="End" BackgroundColor="#ffffff">
+                <ImageButton Source="ic_up.png" x:Name="ic_up_button" HorizontalOptions="Center"  BackgroundColor="White" BorderColor="White" Clicked="ImageButton_Clicked" WidthRequest="30" HeightRequest="30"/>
+                <ImageButton Source="ic_down.png" x:Name="ic_down_button" HorizontalOptions="Center"  BackgroundColor="White" BorderColor="White" Clicked="ImageButton_Clicked" WidthRequest="30" HeightRequest="30"/>
+
+                <StackLayout  BackgroundColor="White" Padding="10,0,10,10" VerticalOptions="FillAndExpand">
+                    <StackLayout x:Name="actionButtons"  VerticalOptions="EndAndExpand">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout>
+                                <Label x:Name="lblCustomerName"  Text="Customer Name" Grid.Row="0" Grid.Column="0"></Label>
+                                <Label x:Name="lblMobileNo" Text="Mobile No" Grid.Row="1" Grid.Column="0"></Label>
+                                <Label x:Name="lblStatus" Text="Status" Grid.Row="2" Grid.Column="0"></Label>
+                            </StackLayout>
+
+                            <Image Grid.Column="1" Source="phonecall.png" x:Name="btnPhonecall" HorizontalOptions="End"
+                                                HeightRequest="40"
+                                                WidthRequest="40">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="TalPhoneCall"
+                Tapped="TalPhoneCall_Tapped"
+                NumberOfTapsRequired="1" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </Grid>
+                        <StackLayout x:Name="otpPanel" IsVisible="{Binding OTPOpenPanel}" >
+                            <Grid  Padding="40,10,40,10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Frame Grid.Row="0" Grid.Column="0" Style="{StaticResource frame}">
+                                    <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                                        <local:CustomEntry x:Name="otp1" Text="{Binding otp1}"
+                                           MaxLength="1" Style="{StaticResource ent}" Keyboard="Numeric" TextChanged="otp1_TextChanged"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame Grid.Row="0" Grid.Column="1" Style="{StaticResource frame}">
+                                    <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                                        <local:CustomEntry x:Name="otp2" Text="{Binding otp2}" 
+                                           MaxLength="1" Style="{StaticResource ent}" Keyboard="Numeric" TextChanged="otp2_TextChanged"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame Grid.Row="0" Grid.Column="2" Style="{StaticResource frame}">
+                                    <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                                        <local:CustomEntry x:Name="otp3" Text="{Binding otp3}" 
+                                           MaxLength="1" Style="{StaticResource ent}" Keyboard="Numeric" TextChanged="otp3_TextChanged"/>
+                                    </StackLayout>
+                                </Frame>
+                                <Frame Grid.Row="0" Grid.Column="3" Style="{StaticResource frame}">
+                                    <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
+                                        <local:CustomEntry x:Name="otp4" Text="{Binding otp4}" 
+                                           MaxLength="1" Style="{StaticResource ent}" Keyboard="Numeric"/>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </StackLayout>
+                        <Button Text="{Binding buttonText}"  HorizontalOptions="Center" Style="{StaticResource btn}"  Command="{Binding PickUpCommand}"/>
+                    </StackLayout>
+                    <!--<Grid VerticalOptions="FillAndExpand"/>-->
+                    <Grid VerticalOptions="End" Grid.Row="1" x:Name="listItem" IsVisible="true">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout>
+                            <Label x:Name="lblCustomerName1"  Text="Customer Name" Grid.Row="0" Grid.Column="0"></Label>
+                            <Label x:Name="lblMobileNo1" Text="Mobile No" Grid.Row="1" Grid.Column="0"></Label>
+                            <!--<Label x:Name="lblStatus1" Text="Status" Grid.Row="2" Grid.Column="0"></Label>-->
+                        </StackLayout>
+
+                        <Image Grid.Column="1" Source="phonecall.png" HorizontalOptions="End"
+                                                HeightRequest="40"
+                                                WidthRequest="40">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="TalPhoneCall1"
+                Tapped="TalPhoneCall1_Tapped"
+                NumberOfTapsRequired="1" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+
+        </Grid>
+
+
+        <!--<Grid Padding="10,10,10,10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="50"/>
@@ -23,6 +118,7 @@
                 <Label x:Name="lblCustomerName" Grid.Row="0" Grid.Column="0" Text="Customer Name"></Label>
                 <Label x:Name="lblMobileNo" Grid.Row="1" Grid.Column="0" Text="Mobile No"></Label>
 
+                
                 <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
                     <StackLayout>
                         <Frame
@@ -41,6 +137,6 @@
                     </StackLayout>
                 </Grid>
             </Grid>
-        </Grid>
+        </Grid>-->
     </ContentPage.Content>
 </ContentPage>

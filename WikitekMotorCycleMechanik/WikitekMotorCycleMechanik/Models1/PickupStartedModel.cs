@@ -4,13 +4,9 @@ using System.Text;
 
 namespace WikitekMotorCycleMechanik.Models1
 {
-
-    public class ErroMsg
+    public class PickupStartedModel
     {
-        public int id { get; set; }
+        public string id { get; set; }
         public string status { get; set; }
-        public string message { get; set; }
-        public bool success { get; set; }
     }
-
 }

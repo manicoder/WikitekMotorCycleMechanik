@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using WikitekMotorCycleMechanik.Models;
+using WikitekMotorCycleMechanik.ViewModels;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
@@ -16,9 +17,11 @@ namespace WikitekMotorCycleMechanik.Views.RSManagerSection
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RSManagerSection : ContentPage
     {
+        RSManagerSectionViewModel viewModel;
         public RSManagerSection()
         {
             InitializeComponent();
+            BindingContext = viewModel = new RSManagerSectionViewModel(this, null);
         }
         protected async override void OnAppearing()
         {
@@ -41,6 +44,11 @@ namespace WikitekMotorCycleMechanik.Views.RSManagerSection
                     this.Title = selected_jobcard.job_card_name + " (" + selected_jobcard.status + ") \r\n" + selected_jobcard.job_card_name;
                     lblCustomerName.Text = login.first_name + " " + login.last_name;// "Customer Name";
                     lblMobileNo.Text = login.mobile;
+
+                    lblStatus.Text = selected_jobcard.status;
+                    lblVechiclename.Text= selected_jobcard.job_card_name;
+                    lblCustomerName1.Text = login.first_name + " " + login.last_name;// "Customer Name";
+                    lblMobileNo1.Text = login.mobile;
                     if (selected_jobcard.status == "ApprovedTransport")
                     {
 
@@ -73,6 +81,7 @@ namespace WikitekMotorCycleMechanik.Views.RSManagerSection
                 ic_up_button.IsVisible = true;
                 ic_down_button.IsVisible = false;
                 actionButtons.IsVisible = false;
+                listItem.IsVisible = true;
             }
             else
             {
@@ -80,6 +89,7 @@ namespace WikitekMotorCycleMechanik.Views.RSManagerSection
                 ic_up_button.IsVisible = false;
                 ic_down_button.IsVisible = true;
                 actionButtons.IsVisible = true;
+                listItem.IsVisible = false;
             }
         }
 
@@ -92,6 +102,37 @@ namespace WikitekMotorCycleMechanik.Views.RSManagerSection
             catch (ArgumentNullException anEx)
             {
                 // Number was null or white space
+            }
+        }
+        private async void TalPhoneCall_Tapped(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(lblMobileNo.Text))
+            {
+                await Call(lblMobileNo.Text);
+            }
+        }
+        public async Task Call(string number)
+        {
+            try
+            {
+                PhoneDialer.Open(number);
+            }
+
+            catch (FeatureNotSupportedException ex)
+            {
+                // Phone Dialer is not supported on this device.  
+            }
+            catch (Exception ex)
+            {
+                // Other error has occurred.  
+            }
+        }
+
+        private async void TalPhoneCall1_Tapped(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(lblMobileNo1.Text))
+            {
+                await Call(lblMobileNo.Text);
             }
         }
     }

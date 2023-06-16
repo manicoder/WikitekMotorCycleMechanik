@@ -19,6 +19,8 @@ namespace WikitekMotorCycleMechanik.ViewModels
             //InitializeCommands();
             apiServices = new ApiServices1();
             this.IsToggled = false;
+            this.IsListVisible = false;
+            this.IsStartStopVisible = false;
             Initialization = Init();
         }
         Task Initialization { get; }
@@ -34,6 +36,28 @@ namespace WikitekMotorCycleMechanik.ViewModels
             }
         }
 
+        private bool _IsStartStopVisible;
+        public bool IsStartStopVisible
+        {
+            get => _IsStartStopVisible;
+            set
+            {
+                _IsStartStopVisible = value;
+                OnPropertyChanged("IsStartStopVisible");
+            }
+        }
+
+        private bool _IsListVisible;
+        public bool IsListVisible
+        {
+            get => _IsListVisible;
+            set
+            {
+                _IsListVisible = value;
+                OnPropertyChanged("IsListVisible");
+            }
+        }
+
         private string _status;
         public string status
         {
@@ -42,6 +66,28 @@ namespace WikitekMotorCycleMechanik.ViewModels
             {
                 _status = value;
                 OnPropertyChanged("status");
+            }
+        }
+
+        private int _id;
+        public int id
+        {
+            get => _id;
+            set
+            {
+                _id = value;
+                OnPropertyChanged("id");
+            }
+        }
+
+        private int _startResid;
+        public int startResid
+        {
+            get => _startResid;
+            set
+            {
+                _startResid = value;
+                OnPropertyChanged("startResid");
             }
         }
 
@@ -128,11 +174,24 @@ namespace WikitekMotorCycleMechanik.ViewModels
                 string email = App.user.email;
                 var msgs = await apiServices.GetSctiveRSTechnicianSectionLoad(email);
                 VehicleTechnicians = new ObservableCollection<VechicleTechicianList>(msgs.results);
-                if (VehicleTechnicians.Count > 0)
+                VehicleTechn = new ObservableCollection<VechicleTechicianList>(msgs.results);
+                var res = VehicleTechnicians.FirstOrDefault(s => s.status == "Associated");
+                if (res != null)
                 {
-                    this.status = VehicleTechnicians[0].status;
-                    this.fromdate = VehicleTechnicians[0].from_date;
-                    this.todate = VehicleTechnicians[0].to_date;
+                    if (VehicleTechnicians.Count > 0)
+                    {
+                        this.status = VehicleTechnicians[0].status;
+                        this.fromdate = VehicleTechnicians[0].from_date;
+                        this.todate = VehicleTechnicians[0].to_date;
+                        this.id = VehicleTechnicians[0].id;
+                        this.IsStartStopVisible = true;
+                        this.IsListVisible = false;
+                    }
+                }
+                else
+                {
+                    this.IsStartStopVisible = false;
+                    this.IsListVisible = true;
                 }
             }
             catch (Exception ex)
@@ -146,11 +205,11 @@ namespace WikitekMotorCycleMechanik.ViewModels
             this.IsToggled = Istog;
             if (this.IsToggled == true)
             {
-                ObservableCollection<VechicleTechicianList> VehicleTechn = new ObservableCollection<VechicleTechicianList>();
-                VechicleTechicianList obj = new VechicleTechicianList();
-                obj.id = 12;
-                obj.from_date = DateTime.Now;
-                VehicleTechn.Add(obj);
+                //ObservableCollection<VechicleTechicianList> VehicleTechn = new ObservableCollection<VechicleTechicianList>();
+                //VechicleTechicianList obj = new VechicleTechicianList();
+                //obj.id = 12;
+                //obj.from_date = DateTime.Now;
+                //VehicleTechn.Add(obj);
 
 
                 //VechicleTechicianList vehicleTechn = new VechicleTechicianList();
@@ -161,7 +220,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
 
                 StartTripModel startTripModel = new StartTripModel()
                 {
-                    associatevehicletechnician_id = 5,
+                    associatevehicletechnician_id = this.id,
                     start_date = DateTime.Now,
                     latlong = "103,104"
                 };
@@ -170,7 +229,12 @@ namespace WikitekMotorCycleMechanik.ViewModels
                     try
                     {
                         var msg = await apiServices.StartTrip(startTripModel);
-                        await page.DisplayAlert(msg.message, msg.status, "OK");
+                        if (msg.id > 0)
+                        {
+                            await page.DisplayAlert(msg.message, msg.status, "OK");
+                            this.startResid = msg.id;
+                        }
+
                     }
                     catch (Exception ex)
                     {
@@ -181,14 +245,14 @@ namespace WikitekMotorCycleMechanik.ViewModels
             }
             else
             {
-                var res = VehicleTechn.FirstOrDefault(e => e.id == 12);
-                if (res != null)
-                { 
-                    res.to_date=DateTime.Now;
-                }
+                //var res = VehicleTechn.FirstOrDefault(e => e.id == 12);
+                //if (res != null)
+                //{
+                //    res.to_date = DateTime.Now;
+                //}
                 StopTripModel stopTripModel = new StopTripModel()
                 {
-                    start_trip_id = 2,
+                    start_trip_id = this.startResid,
                     stop_date = DateTime.Now,
                 };
                 Device.BeginInvokeOnMainThread(async () =>

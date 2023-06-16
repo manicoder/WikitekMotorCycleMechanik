@@ -10,41 +10,42 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <StackLayout Grid.Row="0" Orientation="Horizontal" >
-                <Switch x:Name="Switch" VerticalOptions="Start" Toggled="Switch_Toggled" WidthRequest="50" HeightRequest="50"></Switch>
-                <Label Text="Start/ Stop" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-            </StackLayout>
-            <Grid Grid.Row="1" >
-                <Grid ColumnSpacing="10">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <!--<RowDefinition Height="Auto"/>-->
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Row="0" 
+            <StackLayout Grid.Row="0" IsVisible="{Binding IsStartStopVisible}">
+                <StackLayout Grid.Row="0" Orientation="Horizontal" >
+                    <Switch x:Name="Switch" VerticalOptions="Start" Toggled="Switch_Toggled" WidthRequest="50" HeightRequest="50"></Switch>
+                    <Label Text="Start/ Stop" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
+                </StackLayout>
+                <Grid Grid.Row="1" >
+                    <Grid ColumnSpacing="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <!--<RowDefinition Height="Auto"/>-->
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" 
                                        Grid.Column="0"
                                        Text="{Binding status}" 
                                        Style="{StaticResource lbl}"
                                        VerticalTextAlignment="Center"
                                        HorizontalTextAlignment="Start"/>
 
-                    <Label  Grid.Row="1"  Grid.Column="0"  Style="{StaticResource lbl}"
+                        <Label  Grid.Row="1"  Grid.Column="0"  Style="{StaticResource lbl}"
                                            VerticalTextAlignment="Start"
                                            HorizontalTextAlignment="Start">
-                        <Label.Text>
-                            <MultiBinding StringFormat="{}{0} {1}">
-                                <Binding Path="fromdate" />
-                                <Binding Path="todate" />
-                            </MultiBinding>
-                        </Label.Text>
-                    </Label>
+                            <Label.Text>
+                                <MultiBinding StringFormat="{}{0} {1}">
+                                    <Binding Path="fromdate" />
+                                    <Binding Path="todate" />
+                                </MultiBinding>
+                            </Label.Text>
+                        </Label>
+                    </Grid>
                 </Grid>
-            </Grid>
-
-            <Grid Grid.Row="2" >
+            </StackLayout>
+            <Grid Grid.Row="2" IsVisible="{Binding IsListVisible}">
                 <ListView x:Name="vehicletechnician_list" ItemsSource="{Binding VehicleTechn}"
                       SelectedItem="{Binding CurrentSelectedVehicleTechns}"
                       HasUnevenRows="True" 

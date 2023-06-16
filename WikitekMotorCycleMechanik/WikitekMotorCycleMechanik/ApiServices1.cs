@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -322,6 +323,146 @@ namespace WikitekMotorCycleMechanik
             }
         }
 
+
+        public async Task<ErroMsg> PickupStarted(PickupStartedModel model)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                //client = new HttpClient();
+                var json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.PostAsync($"{App.base_url}analyze/pickup-started/", content);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var results = JsonConvert.DeserializeObject<ErroMsg>(Data);
+                return results;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<ErroMsg>  QuotedForTransport(PickupModel model)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                //client = new HttpClient();
+                var json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.PostAsync($"{App.base_url}analyze/jcstatus-quotedfortransport/", content);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var results = JsonConvert.DeserializeObject<ErroMsg>(Data);
+                return results;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<ErroMsg> ArrangeTranport(PickupModel model)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                //client = new HttpClient();
+                var json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.PostAsync($"{App.base_url}analyze/jcstatus-approved/", content);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var results = JsonConvert.DeserializeObject<ErroMsg>(Data);
+                return results;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<ErroMsg> PickupReachedcustomer(PickupModel model)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                //client = new HttpClient();
+                var json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.PostAsync($"{App.base_url}analyze/pickup-reachedcustomer/", content);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var results = JsonConvert.DeserializeObject<ErroMsg>(Data);
+                return results;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<ErroMsg> PickupVehicle(PickupModel model)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                //client = new HttpClient();
+                var json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.PostAsync($"{App.base_url}analyze/pickup-vehicle/", content);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var results = JsonConvert.DeserializeObject<ErroMsg>(Data);
+                return results;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+
+        public async Task<ErroMsg> PickupClose(PickupModel model)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                //client = new HttpClient();
+                var json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.PostAsync($"{App.base_url}analyze/pickup-close/", content);
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var results = JsonConvert.DeserializeObject<ErroMsg>(Data);
+                return results;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
         public async Task<NewVehicle> VehicleList()
         {
             HttpResponseMessage httpResponse = new HttpResponseMessage();
@@ -351,6 +492,26 @@ namespace WikitekMotorCycleMechanik
                 string Data = string.Empty;
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
                 httpResponse = await client.GetAsync($"{App.base_url}vehicles/vehicle-associated-list/");
+                Data = httpResponse.Content.ReadAsStringAsync().Result;
+                var vehicles = JsonConvert.DeserializeObject<DisVechicle>(Data);
+                return vehicles;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<DisVechicle> AvailableVehicleList(int workshopId)
+        {
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+            try
+            {
+                var token = Preferences.Get("token", null);
+
+                string Data = string.Empty;
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("JWT", token);
+                httpResponse = await client.GetAsync($"{App.base_url}vehicles/avaiable-vehicle-list/?associate_workshop=" + workshopId);
                 Data = httpResponse.Content.ReadAsStringAsync().Result;
                 var vehicles = JsonConvert.DeserializeObject<DisVechicle>(Data);
                 return vehicles;
