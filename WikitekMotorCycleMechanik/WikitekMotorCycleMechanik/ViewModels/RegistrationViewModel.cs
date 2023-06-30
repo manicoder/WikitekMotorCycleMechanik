@@ -15,7 +15,7 @@ using System.Linq;
 
 namespace WikitekMotorCycleMechanik.ViewModels
 {
-    public class RegistrationViewModel: ViewModelBase
+    public class RegistrationViewModel : ViewModelBase
     {
         ApiServices apiServices;
         readonly IDeviceMacAddress device_mac_id;
@@ -201,7 +201,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
             }
         }
 
-        private string _country=  "Select country";
+        private string _country = "Select country";
         public string country
         {
             get => _country;
@@ -363,6 +363,28 @@ namespace WikitekMotorCycleMechanik.ViewModels
             }
         }
 
+        private UserType _selected_userType;
+        public UserType selected_userType
+        {
+            get => _selected_userType;
+            set
+            {
+                _selected_userType = value;
+                OnPropertyChanged("selected_userType");
+            }
+        }
+
+        private VehicleSegmentModel _selectvehiclesegment_list;
+        public VehicleSegmentModel selectvehiclesegment_list
+        {
+            get => _selectvehiclesegment_list;
+            set
+            {
+                _selectvehiclesegment_list = value;
+                OnPropertyChanged("selectvehiclesegment_list");
+            }
+        }
+
         private RsUserTypeCountry _country_detail;
         public RsUserTypeCountry country_detail
         {
@@ -395,13 +417,25 @@ namespace WikitekMotorCycleMechanik.ViewModels
             {
                 segment = arg.segment_name;
                 segment_id = arg.id;
-                segement_detail= arg;
+                segement_detail = arg;
             });
 
             MessagingCenter.Subscribe<CountyViewModel, RsUserTypeCountry>(this, "selected_country_registrationVM", async (sender, arg) =>
             {
                 country = arg.name;
                 country_detail = arg;
+            });
+
+            MessagingCenter.Subscribe<SelectUserTypeViewModel, UserType>(this, "selected_userType_registrationVM", async (sender, arg) =>
+            {
+                userType = arg.name;
+                selected_userType = arg;
+            });
+
+            MessagingCenter.Subscribe<SelectVehicleSegmentViewModel, VehicleSegmentModel>(this, "selected_vehiclesegment_registrationVM", async (sender, arg) =>
+            {
+                vehiclesegment = arg.name;
+                selectvehiclesegment_list = arg;
             });
 
             MessagingCenter.Subscribe<AgentViewModel, AgentUserType>(this, "selected_agent_registrationVM", async (sender, arg) =>
@@ -570,6 +604,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
                             await page.DisplayAlert("Error", "Your device id not found.", "Ok");
                             return;
                         }
+
                         await Task.Delay(200);
                         user_detail = new UserModel();
                         user_detail.first_name = first_name;
@@ -587,13 +622,15 @@ namespace WikitekMotorCycleMechanik.ViewModels
                         //user_detail.segment_id = 1;
                         user_detail.role = "wikitektechnician";
                         user_detail.country_name = country_detail.name;
+                        user_detail.userType_name = selected_userType.name;
+                        user_detail.vehicleSegment_name = selectvehiclesegment_list.name;
 
-
+                        
                         var response = await apiServices.UserRegistrationNew(file, user_detail);
 
-                        if(!string.IsNullOrEmpty(response.null_error))
+                        if (!string.IsNullOrEmpty(response.null_error))
                         {
-                            await page.DisplayAlert("Error",response.null_error,"Ok");
+                            await page.DisplayAlert("Error", response.null_error, "Ok");
                             return;
                         }
 
@@ -618,7 +655,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
                                     return;
                                 }
                             }
-                            if (response.registrationError.mobile!= null)
+                            if (response.registrationError.mobile != null)
                             {
                                 if (response.registrationError.mobile.Count > 0)
                                 {
@@ -626,7 +663,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
                                     await page.DisplayAlert(api_status_code, $"{error_message}. \n", "Ok");
                                 }
                             }
-                            if (response.registrationError.email!= null)
+                            if (response.registrationError.email != null)
                             {
                                 if (response.registrationError.email.Count > 0)
                                 {
@@ -658,7 +695,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
             {
             }
         }
-     
+
         public void GetDeviceType()
         {
             switch (Device.RuntimePlatform)
@@ -685,12 +722,12 @@ namespace WikitekMotorCycleMechanik.ViewModels
         {
             bool IsError = false;
 
-            if (file == null)
-            {
-                await page.DisplayAlert("Alert", "Click your profile image", "Ok");
-                IsError = true;
-            }
-            else if (string.IsNullOrEmpty(first_name))
+            //if (file == null)
+            //{
+            //    await page.DisplayAlert("Alert", "Click your profile image", "Ok");
+            //    IsError = true;
+            //}
+             if (string.IsNullOrEmpty(first_name))
             {
                 await page.DisplayAlert("Alert", "Please enter your first name", "Ok");
                 IsError = true;

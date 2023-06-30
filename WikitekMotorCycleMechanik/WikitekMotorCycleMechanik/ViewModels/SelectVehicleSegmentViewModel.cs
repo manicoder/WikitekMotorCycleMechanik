@@ -102,7 +102,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
                         switch (StaticMethods.last_page)
                         {
                             case "registration":
-                                MessagingCenter.Send<SelectVehicleSegmentViewModel, VehicleSegmentModel>(this, "selected_userType_registrationVM", selected_vehiclesegment);
+                                MessagingCenter.Send<SelectVehicleSegmentViewModel, VehicleSegmentModel>(this, "selected_vehiclesegment_registrationVM", selected_vehiclesegment);
                                 break;
 
                             case "CreateWorkshop":

@@ -199,7 +199,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
 
         public ICommand AddNewVehicleServiceCommand => new Command(async (obj) =>
         {
-            // await page.Navigation.PushAsync(new Views.CreateServiceTicket.CreateServiceTicketPage(selected_vehicle));
+            //await page.Navigation.PushAsync(new Views.CreateServiceTicket.CreateServiceTicketPage(selected_vehicle));
         });
 
         public ICommand ActivityRSManagerSectionCommand => new Command(async (obj) =>

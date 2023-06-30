@@ -22,9 +22,9 @@ namespace WikitekMotorCycleMechanik.ViewModels
             apiServices = new ApiServices();
             usertype_list = new ObservableCollection<UserType>();
             selected_userType = new UserType();
-            Device.InvokeOnMainThreadAsync( () =>
+            Device.InvokeOnMainThreadAsync(() =>
             {
-                 GetUserTypeList();
+                GetUserTypeList();
             });
 
             ClosePopupCommand = new Command(async (obj) =>
@@ -106,12 +106,12 @@ namespace WikitekMotorCycleMechanik.ViewModels
                                 MessagingCenter.Send<SelectUserTypeViewModel, UserType>(this, "selected_userType_registrationVM", selected_userType);
                                 break;
 
-                            case "CreateWorkshop":
-                                MessagingCenter.Send<SelectUserTypeViewModel, UserType>(this, "selected_userType_CreateRSAgentVM", selected_userType);
-                                break;
-                            case "billing":
-                                MessagingCenter.Send<SelectUserTypeViewModel, UserType>(this, "selected_userType_billing", selected_userType);
-                                break;
+                            //case "CreateWorkshop":
+                            //    MessagingCenter.Send<SelectUserTypeViewModel, UserType>(this, "selected_userType_CreateRSAgentVM", selected_userType);
+                            //    break;
+                            //case "billing":
+                            //    MessagingCenter.Send<SelectUserTypeViewModel, UserType>(this, "selected_userType_billing", selected_userType);
+                            //    break;
                         }
 
                         CloseSelectUserTypePopup?.Invoke("", new EventArgs());

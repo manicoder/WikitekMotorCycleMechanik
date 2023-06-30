@@ -104,9 +104,9 @@
                                        FontFamily="{DynamicResource Material}"
                                        FontSize="30" 
                                        TextColor="{StaticResource theme_color}">
-                                    <Label.GestureRecognizers>
+                                    <!--<Label.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding ProfileCommand}"/>
-                                    </Label.GestureRecognizers>
+                                    </Label.GestureRecognizers>-->
                                 </Label>
                             </Frame>
                             <!--<ImageButton Source="ic_add" HeightRequest="40" WidthRequest="40" TranslationX="7" CornerRadius="20"

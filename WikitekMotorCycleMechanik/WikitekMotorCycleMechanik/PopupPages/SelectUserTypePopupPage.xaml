@@ -111,7 +111,7 @@
             </CollectionView>-->
 
             <CollectionView Grid.Row="2" ItemsSource="{Binding usertype_list,Mode=TwoWay}" EmptyView="{Binding emptyView}" 
-                                    SelectionMode="Single" SelectedItem="{Binding selected_usertype, Mode=TwoWay}">
+                                    SelectionMode="Single" SelectedItem="{Binding selected_userType, Mode=TwoWay}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Vertical" ItemSpacing="5" />
                 </CollectionView.ItemsLayout>

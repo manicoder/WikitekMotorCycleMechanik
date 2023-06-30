@@ -1634,33 +1634,35 @@ namespace WikitekMotorCycleMechanik.Services
                 string Data = string.Empty;
                 try
                 {
-                    string js = JsonConvert.SerializeObject(model);
-                    var content = new MultipartFormDataContent();
+                    model.user_profile_pic = null;
+                    string json = JsonConvert.SerializeObject(model);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+                    //var content = new MultipartFormDataContent();
 
-                    StringContent first_name = new StringContent(model.first_name);
-                    StringContent last_name = new StringContent(model.last_name);
-                    StringContent email = new StringContent(model.email);
-                    StringContent mobile = new StringContent(model.mobile);
-                    StringContent password = new StringContent(model.password);
-                    StringContent device_type = new StringContent(model.device_type);
-                    StringContent mac_id = new StringContent(model.mac_id);
-                    StringContent role = new StringContent(model.role);
-                    StringContent pin_code = new StringContent(model.pin_code);
-                    StringContent coutry_id = new StringContent(model.country_name);
+                    //StringContent first_name = new StringContent(model.first_name);
+                    //StringContent last_name = new StringContent(model.last_name);
+                    //StringContent email = new StringContent(model.email);
+                    //StringContent mobile = new StringContent(model.mobile);
+                    //StringContent password = new StringContent(model.password);
+                    //StringContent device_type = new StringContent(model.device_type);
+                    //StringContent mac_id = new StringContent(model.mac_id);
+                    //StringContent role = new StringContent(model.role);
+                    //StringContent pin_code = new StringContent(model.pin_code);
+                    //StringContent coutry_id = new StringContent(model.country_name);
 
-                    content.Add(new StreamContent(file.GetStream()), "\"user_profile_pic\"", $"{file.Path}");
+                    //content.Add(new StreamContent(file.GetStream()), "\"user_profile_pic\"", $"{file.Path}");
 
-                    content.Add(first_name, "first_name");
-                    content.Add(last_name, "last_name");
-                    content.Add(email, "email");
-                    content.Add(mobile, "mobile");
-                    content.Add(password, "password");
-                    content.Add(device_type, "device_type");
-                    content.Add(mac_id, "mac_id");
-                    content.Add(role, "role");
-                    content.Add(pin_code, "pincode");
-                    content.Add(coutry_id, "country");
-                    
+                    //content.Add(first_name, "first_name");
+                    //content.Add(last_name, "last_name");
+                    //content.Add(email, "email");
+                    //content.Add(mobile, "mobile");
+                    //content.Add(password, "password");
+                    //content.Add(device_type, "device_type");
+                    //content.Add(mac_id, "mac_id");
+                    //content.Add(role, "role");
+                    //content.Add(pin_code, "pincode");
+                    //content.Add(coutry_id, "country");
+
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                     var url = $"{App.base_url}users/create/user/";
                     http_response = await client.PostAsync(url, content);
