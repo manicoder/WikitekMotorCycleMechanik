@@ -1702,45 +1702,51 @@ namespace WikitekMotorCycleMechanik.Services
             string Data_inventab = string.Empty;
             try
             {
-                string js = JsonConvert.SerializeObject(model);
-                var content = new MultipartFormDataContent();
+                model.user_profile_pic = null;
+                model.org = "Wikitek Systems";
+                model.role = "NORMALUSER";
+                string json = JsonConvert.SerializeObject(model);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                //string js = JsonConvert.SerializeObject(model);
+                //var content = new MultipartFormDataContent();
 
                 // string segmentId = JsonConvert.SerializeObject(model.segment_id);
 
-                StringContent first_name = new StringContent(model.first_name);
-                StringContent last_name = new StringContent(model.last_name);
-                StringContent email = new StringContent(model.email);
-                StringContent mobile = new StringContent(model.mobile);
-                StringContent password = new StringContent(model.password);
-                StringContent device_type = new StringContent(model.device_type);
-                StringContent mac_id = new StringContent(model.mac_id);
-                //StringContent rs_agent_id = new StringContent(model.rs_agent_id);
-                //StringContent segment = new StringContent(model.segment);
-                //StringContent user_type = new StringContent(model.user_type);
-                //StringContent segment_id = new StringContent(segmentId);
-                StringContent role = new StringContent("NORMALUSER");
-                StringContent pin_code = new StringContent(model.pin_code);
-                StringContent coutry_id = new StringContent(model.country_name);
-                StringContent org = new StringContent("Wikitek Systems");
-                StringContent role1 = new StringContent("NORMALUSER");
+                //StringContent first_name = new StringContent(model.first_name);
+                //StringContent last_name = new StringContent(model.last_name);
+                //StringContent email = new StringContent(model.email);
+                //StringContent mobile = new StringContent(model.mobile);
+                //StringContent password = new StringContent(model.password);
+                //StringContent device_type = new StringContent(model.device_type);
+                //StringContent mac_id = new StringContent(model.mac_id);
+                ////StringContent rs_agent_id = new StringContent(model.rs_agent_id);
+                ////StringContent segment = new StringContent(model.segment);
+                ////StringContent user_type = new StringContent(model.user_type);
+                ////StringContent segment_id = new StringContent(segmentId);
+                //StringContent role = new StringContent("NORMALUSER");
+                //StringContent pin_code = new StringContent(model.pin_code);
+                //StringContent coutry_id = new StringContent(model.country_name);
+                //StringContent org = new StringContent("Wikitek Systems");
+                //StringContent role1 = new StringContent("NORMALUSER");
 
-                content.Add(new StreamContent(file.GetStream()), "\"user_profile_pic\"", $"{file.Path}");
+                //content.Add(new StreamContent(file.GetStream()), "\"user_profile_pic\"", $"{file.Path}");
 
-                content.Add(first_name, "first_name");
-                content.Add(last_name, "last_name");
-                content.Add(email, "email");
-                content.Add(mobile, "mobile");
-                content.Add(password, "password");
-                content.Add(device_type, "device_type");
-                content.Add(mac_id, "mac_id");
+                //content.Add(first_name, "first_name");
+                //content.Add(last_name, "last_name");
+                //content.Add(email, "email");
+                //content.Add(mobile, "mobile");
+                //content.Add(password, "password");
+                //content.Add(device_type, "device_type");
+                //content.Add(mac_id, "mac_id");
                 //content.Add(rs_agent_id, "rsagent_id");
                 //content.Add(segment, "segment");
                 //content.Add(segment_id, "segment_id");
                 //content.Add(user_type, "user_type");
-                content.Add(role, "role");
-                content.Add(pin_code, "pincode");
-                content.Add(coutry_id, "country");
-                content.Add(org, "org");
+                //content.Add(role, "role");
+                //content.Add(pin_code, "pincode");
+                //content.Add(coutry_id, "country");
+                //content.Add(org, "org");
                 //var http//client = new System.Net.Http.HttpClient();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 var urlIT = $"{inventabBaseUrl}users/create/user/";

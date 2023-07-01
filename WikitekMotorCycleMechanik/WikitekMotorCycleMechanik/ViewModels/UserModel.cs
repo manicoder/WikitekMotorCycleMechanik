@@ -28,6 +28,7 @@ namespace WikitekMotorCycleMechanik.Models
         public string country_name { get; set; }
         public string userType_name { get; set; }
         public string vehicleSegment_name { get; set; }
+        public string org { get; set; }
     }
 
     /// <summary>
