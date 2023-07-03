@@ -19,13 +19,13 @@ namespace WikitekMotorCycleMechanik.Models
         public string device_type { get; set; }
         public string mac_id { get; set; }
         public ImageSource user_profile_pic { get; set; }
-        public string pin_code { get; set; }
+        public string pincode { get; set; }
         public string rs_agent_id { get; set; }
         public string segment { get; set; }
         public int segment_id { get; set; }
         public string user_type { get; set; }
         public string role { get; set; }
-        public string country_name { get; set; }
+        public string country { get; set; }
         public string userType_name { get; set; }
         public string vehicleSegment_name { get; set; }
         public string org { get; set; }

@@ -981,8 +981,8 @@ namespace WikitekMotorCycleMechanik.Services
                 StringContent user_type = new StringContent(model.user_type);
                 StringContent segment_id = new StringContent(segmentId);
                 StringContent role = new StringContent(model.role);
-                StringContent pin_code = new StringContent(model.pin_code);
-                StringContent coutry_id = new StringContent(model.country_name);
+                StringContent pin_code = new StringContent(model.pincode);
+                StringContent coutry_id = new StringContent(model.country);
 
                 content.Add(new StreamContent(file.GetStream()), "\"user_profile_pic\"", $"{file.Path}");
 
@@ -1634,6 +1634,7 @@ namespace WikitekMotorCycleMechanik.Services
                 string Data = string.Empty;
                 try
                 {
+                    model.role = "wikitektechnician";
                     model.user_profile_pic = null;
                     string json = JsonConvert.SerializeObject(model);
                     var content = new StringContent(json, Encoding.UTF8, "application/json");

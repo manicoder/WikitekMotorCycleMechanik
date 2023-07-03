@@ -615,13 +615,13 @@ namespace WikitekMotorCycleMechanik.ViewModels
                         user_detail.device_type = device_type;
                         user_detail.mac_id = /*"EXPERT123456";*/mac_id;
                         user_detail.user_profile_pic = user_profile_pic;
-                        user_detail.pin_code = pin_code;
+                        user_detail.pincode = pin_code;
                         //user_detail.rs_agent_id = workshop_detail.code;//"WK2397950556"; 
                         //user_detail.user_type = "wikitekMechanik";
                         //user_detail.segment = "2W";
                         //user_detail.segment_id = 1;
                         user_detail.role = "wikitektechnician";
-                        user_detail.country_name = country_detail.name;
+                        user_detail.country = country_detail.name;
                         user_detail.userType_name = selected_userType.name;
                         user_detail.vehicleSegment_name = selectvehiclesegment_list.name;
 
