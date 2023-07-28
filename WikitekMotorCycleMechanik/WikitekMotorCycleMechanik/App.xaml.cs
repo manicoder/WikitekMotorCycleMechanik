@@ -142,7 +142,11 @@ namespace WikitekMotorCycleMechanik
                         user_id = user?.user_id;
                         user_type = user?.user_type;
                         country_id = user?.agent?.workshop?.country;
-                        workshopid= user.agent.workshop.id;
+                        if (user.agent.workshop!=null)
+                        {
+                            workshopid = user.agent.workshop.id;
+                        }
+                       
                         MainPage = new MasterDetailView(user) { Detail = new NavigationPage(new Views.Dashboad.DashboadPage(user)) };
                     }
                 }

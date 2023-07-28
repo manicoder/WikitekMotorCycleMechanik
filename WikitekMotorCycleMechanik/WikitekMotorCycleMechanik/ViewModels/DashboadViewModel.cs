@@ -11,6 +11,7 @@ using WikitekMotorCycleMechanik.Views.Login;
 using WikitekMotorCycleMechanik.Views.MarketPlace;
 using WikitekMotorCycleMechanik.Views.MasterDetail;
 using WikitekMotorCycleMechanik.Views.Settings;
+using WikitekMotorCycleMechanik.Views.Subscription;
 using WikitekMotorCycleMechanik.Views.VehicleDiagnostics;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -477,7 +478,16 @@ namespace WikitekMotorCycleMechanik.ViewModels
             {
             }
         });
-
+        public ICommand SettingsCommand => new Command(async (obj) =>
+        {
+            try
+            {
+                await this.page.Navigation.PushAsync(new SettingPage(App.user));
+            }
+            catch (Exception ex)
+            {
+            }
+        });
         public ICommand TechnicianManagementCommand => new Command(async (obj) =>
         {
             try
@@ -555,7 +565,7 @@ namespace WikitekMotorCycleMechanik.ViewModels
         {
             try
             {
-                
+
                 pack = obj as string;
                 switch (pack)
                 {
@@ -564,24 +574,39 @@ namespace WikitekMotorCycleMechanik.ViewModels
                         ADPColor = Color.White;
                         OPColor = Color.White;
                         App.selectedPack = "DIYDP";
+                        await this.page.Navigation.PushAsync(new SubscrionsDetailPage(App.user));
+
                         break;
                     case "ADP":
                         ADPColor = Color.LightSteelBlue;
                         DPColor = Color.White;
                         OPColor = Color.White;
                         App.selectedPack = "ADP";
+                        var pack = App.user.subscriptions.Where(x => x.code == App.selectedPack).FirstOrDefault();
+                        if (pack == null)
+                        {
+                            var result = await page.DisplayAlert("Alert", "you have no subscription enabled, please visit settings page and subscribe for DIY Diagnostics Pack or Assisted Diagnostics Pack .", null, "OK");
+
+                        }
+                        // var valid= pack.
                         break;
                     case "OP":
                         OPColor = Color.LightSteelBlue;
                         ADPColor = Color.White;
                         DPColor = Color.White;
                         App.selectedPack = "OP";
+                        var pack1 = App.user.subscriptions.Where(x => x.code == App.selectedPack).FirstOrDefault();
+                        if (pack1 == null)
+                        {
+                            var result = await page.DisplayAlert("Alert", "you have no subscription enabled, please visit settings page and subscribe for DIY Diagnostics Pack or Assisted Diagnostics Pack .", null, "OK");
+
+                        }
                         break;
                 }
-                await this.page.Navigation.PushAsync(new Views.VehicleService.VehicleServicePage());
+              //  await this.page.Navigation.PushAsync(new Views.VehicleService.VehicleServicePage());
                 if (!string.IsNullOrEmpty(vehicle) && !string.IsNullOrEmpty(pack))
                 {
-                   // submitMethod();
+                    // submitMethod();
                 }
             }
             catch (Exception ex)

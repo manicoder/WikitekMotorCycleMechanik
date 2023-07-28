@@ -8,9 +8,8 @@
              Title="DASHBOARD"
              BackgroundColor="{StaticResource page_bg_color}">
     <ContentPage.ToolbarItems>
-        <!--<ToolbarItem IconImageSource="ic_setting_white.png"
-                     Order="Primary"
-                    />-->
+      <ToolbarItem IconImageSource="ic_setting_white.png"
+                     Order="Primary" Command="{Binding SettingsCommand}"/> 
         <ToolbarItem  Text="Vehicle Mgmt"
                      Order="Secondary"
                      Command="{Binding VehicleManagementCommand}"/>

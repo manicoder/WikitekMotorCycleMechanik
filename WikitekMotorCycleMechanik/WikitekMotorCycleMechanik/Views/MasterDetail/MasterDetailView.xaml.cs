@@ -155,58 +155,90 @@ namespace WikitekMotorCycleMechanik.Views.MasterDetail
                             Application.Current.MainPage = new MasterDetailView(App.user) { Detail = new NavigationPage(new DashboadPage(App.user)) };
                             IsPresented = false;
                         }
+                        else if (item.Title == "Settings")
+                        {
+                            IsPresented = false;
+                            App.Current.MainPage = new NavigationPage(new MasterDetailView(App.user) { Detail = new NavigationPage(new SettingPage(App.user)) });
+                        }
                         else if (item.Title == "Sync Data")
                         {
-                            if (App.user.subscriptions.FirstOrDefault() == null)
+                            if (NetworkConnection())
                             {
-                                var result = await DisplayAlert("Alert", "you have no subscription enabled, please visit the settings step and subscribe for a package.", null, "OK");
-                                if (!result)
-                                {
-                                    IsPresented = false;
-                                    App.Current.MainPage = new NavigationPage(new MasterDetailView(App.user) { Detail = new NavigationPage(new SettingPage(App.user)) });
-                                }
-                            }
-                            else if (App.user.dongles.FirstOrDefault() == null)
-                            {
+                                App.is_update = true;
+                                IsPresented = false;
+                                await UpdateLocalData();
+                                await DisplayAlert("", "Local data update successfully", "Ok");
+                              //  Preferences.Set("token", "");
 
-                                var result = await DisplayAlert("Alert", "you have no registered dongle, please visit the settings step and register a dongle.", null, "OK");
-                                if (!result)
-                                {
-                                    IsPresented = false;
-                                    App.Current.MainPage = new NavigationPage(new MasterDetailView(App.user) { Detail = new NavigationPage(new SettingPage(App.user)) });
-                                    //await this.Navigation.PushAsync(new MasterDetailView(App.user) { Detail = new NavigationPage(new SettingPage(App.user)) });
-                                }
+                                //var oems = await apiServices.GetAllOems(Preferences.Get("token", null), App.getModel.segment, App.is_update);
+                                //if (oems.status_code != System.Net.HttpStatusCode.Unauthorized)
+                                //{
+                                //    //await apiServices.GetModelByOem(Preferences.Get("token", null), App.getModel, App.is_update);
+                                //    //await apiServices.GetPid(Preferences.Get("token", null), 0, App.is_update);
+                                //    //await apiServices.GetDtc(Preferences.Get("token", null), 0, App.is_update);
+                                //    //await apiServices.GetDongleStatus(Preferences.Get("token", null), App.user.dongles.FirstOrDefault().mac_id, App.is_update);
+                                //    //await apiServices.Countries("wikitekMechanik", App.is_update);
+                                //    //App.Current.MainPage = new NavigationPage(new LoginPage());
+                                //    await UpdateLocalData();
+                                //}
+                                //else
+                                //{
+                                //    await DisplayAlert("Unauthorized", "Your access token has been expired please login again and update local data", "OK");
+                                //}
+                                //App.Current.MainPage = new NavigationPage(new LoginPage());
+                                //IsPresented = false;
+                                //return;
                             }
-                            else
-                            {
-                                if (NetworkConnection())
-                                {
-                                    App.is_update = true;
-                                    IsPresented = false;
-                                    await UpdateLocalData();
-                                    await DisplayAlert("", "Local data update successfully", "Ok");
-                                    Preferences.Set("token", "");
+                            //if (App.user.subscriptions.FirstOrDefault() == null)
+                            //{
+                            //    var result = await DisplayAlert("Alert", "you have no subscription enabled, please visit the settings step and subscribe for a package.", null, "OK");
+                            //    if (!result)
+                            //    {
+                            //        IsPresented = false;
+                            //        App.Current.MainPage = new NavigationPage(new MasterDetailView(App.user) { Detail = new NavigationPage(new SettingPage(App.user)) });
+                            //    }
+                            //}
+                            //else if (App.user.dongles.FirstOrDefault() == null)
+                            //{
 
-                                    //var oems = await apiServices.GetAllOems(Preferences.Get("token", null), App.getModel.segment, App.is_update);
-                                    //if (oems.status_code != System.Net.HttpStatusCode.Unauthorized)
-                                    //{
-                                    //    //await apiServices.GetModelByOem(Preferences.Get("token", null), App.getModel, App.is_update);
-                                    //    //await apiServices.GetPid(Preferences.Get("token", null), 0, App.is_update);
-                                    //    //await apiServices.GetDtc(Preferences.Get("token", null), 0, App.is_update);
-                                    //    //await apiServices.GetDongleStatus(Preferences.Get("token", null), App.user.dongles.FirstOrDefault().mac_id, App.is_update);
-                                    //    //await apiServices.Countries("wikitekMechanik", App.is_update);
-                                    //    //App.Current.MainPage = new NavigationPage(new LoginPage());
-                                    //    await UpdateLocalData();
-                                    //}
-                                    //else
-                                    //{
-                                    //    await DisplayAlert("Unauthorized", "Your access token has been expired please login again and update local data", "OK");
-                                    //}
-                                    //App.Current.MainPage = new NavigationPage(new LoginPage());
-                                    //IsPresented = false;
-                                    //return;
-                                }
-                            }
+                            //    var result = await DisplayAlert("Alert", "you have no registered dongle, please visit the settings step and register a dongle.", null, "OK");
+                            //    if (!result)
+                            //    {
+                            //        IsPresented = false;
+                            //        App.Current.MainPage = new NavigationPage(new MasterDetailView(App.user) { Detail = new NavigationPage(new SettingPage(App.user)) });
+                            //        //await this.Navigation.PushAsync(new MasterDetailView(App.user) { Detail = new NavigationPage(new SettingPage(App.user)) });
+                            //    }
+                            //}
+                            //else
+                            //{
+                            //    if (NetworkConnection())
+                            //    {
+                            //        App.is_update = true;
+                            //        IsPresented = false;
+                            //        await UpdateLocalData();
+                            //        await DisplayAlert("", "Local data update successfully", "Ok");
+                            //        Preferences.Set("token", "");
+
+                            //        //var oems = await apiServices.GetAllOems(Preferences.Get("token", null), App.getModel.segment, App.is_update);
+                            //        //if (oems.status_code != System.Net.HttpStatusCode.Unauthorized)
+                            //        //{
+                            //        //    //await apiServices.GetModelByOem(Preferences.Get("token", null), App.getModel, App.is_update);
+                            //        //    //await apiServices.GetPid(Preferences.Get("token", null), 0, App.is_update);
+                            //        //    //await apiServices.GetDtc(Preferences.Get("token", null), 0, App.is_update);
+                            //        //    //await apiServices.GetDongleStatus(Preferences.Get("token", null), App.user.dongles.FirstOrDefault().mac_id, App.is_update);
+                            //        //    //await apiServices.Countries("wikitekMechanik", App.is_update);
+                            //        //    //App.Current.MainPage = new NavigationPage(new LoginPage());
+                            //        //    await UpdateLocalData();
+                            //        //}
+                            //        //else
+                            //        //{
+                            //        //    await DisplayAlert("Unauthorized", "Your access token has been expired please login again and update local data", "OK");
+                            //        //}
+                            //        //App.Current.MainPage = new NavigationPage(new LoginPage());
+                            //        //IsPresented = false;
+                            //        //return;
+                            //    }
+                            //}
                         }
                         else if (item.Title == "Marketplace")
                         {

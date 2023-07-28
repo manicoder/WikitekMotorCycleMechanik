@@ -74,6 +74,13 @@ namespace WikitekMotorCycleMechanik.ViewModels
                         },
                         new MasterModel
                         {
+                            Title= "Settings",
+                            IconMargin = 8,
+                            IconSource = "ic_settings.png"
+                            //TargetType = typeof(MyAssetPage),
+                        },
+                        new MasterModel
+                        {
                             Title= "Sync Data",
                             IconMargin = 8,
                             IconSource = "ic_sync_data.png"
